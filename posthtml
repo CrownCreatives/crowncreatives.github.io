@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starting Over with Colour | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Blog Post</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Back to Blog</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Starting Over with Colour</h2>
+        <div class="post-meta">Posted: 2026-04-03 · Tag: Recovery</div>
+        <p>
+            This is where you write your full post. Talk about the day, the struggle, the small win,
+            and how making something — even imperfect — moved you forward.
+        </p>
+        <p>
+            You can paste images, embed screenshots of your art, or link to videos that relate to this entry.
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Post
+</footer>
+
+</body>
+</html>
