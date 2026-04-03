@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown Creatives</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f7fb;
+            color: #1a1a1a;
+        }
+        header {
+            background: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #1e4c8f;
+        }
+        header img {
+            height: 60px;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero img {
+            max-width: 300px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #1e4c8f;
+            font-weight: bold;
+        }
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 250px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="banner-logo.png" alt="Crown Creatives Banner Logo">
+</header>
+
+<div class="hero">
+    <img src="big-logo.png" alt="Crown Creatives Logo">
+    <h1>Welcome to Crown Creatives</h1>
+    <p>Art, recovery, resilience, and the journey forward.</p>
+</div>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Art Gallery</a>
+    <a href="#blog">Blog</a>
+    <a href="#videos">Videos</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        Crown Creatives is my personal space to share my artwork, my creative process,
+        and my physical and mental road to recovery. This is where I rebuild, create,
+        and express myself through design, sculpture, and storytelling.
+    </p>
+</div>
+
+<div id="gallery" class="section">
+    <h2>Art Gallery</h2>
+    <div class="gallery">
+        <!-- Add your artwork images here -->
+        <img src="art1.jpg" alt="Artwork 1">
+        <img src="art2.jpg" alt="Artwork 2">
+        <img src="art3.jpg" alt="Artwork 3">
+    </div>
+</div>
+
+<div id="blog" class="section">
+    <h2>Blog</h2>
+    <p>Coming soon — personal stories, creative updates, and reflections.</p>
+</div>
+
+<div id="videos" class="section">
+    <h2>Videos</h2>
+    <p>Embed your YouTube or Vimeo videos here.</p>
+</div>
+
+<div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+</div>
+
+</body>
+</html>
