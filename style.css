@@ -97,3 +97,40 @@ footer {
     padding: 20px;
     margin-top: 40px;
 }
+.ticker-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 6px 0;
+    overflow: hidden;
+    z-index: 50;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.25);
+}
+
+.ticker-inner {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker-scroll-right 25s linear infinite;
+}
+
+.ticker-inner span {
+    padding: 0 40px;
+}
+
+@keyframes ticker-scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Prevent content being hidden behind ticker */
+body {
+    padding-bottom: 40px;
+}
