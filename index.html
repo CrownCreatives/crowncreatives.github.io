@@ -11,275 +11,6 @@
 │         banner-logo.png
 │     /posts
 │         (your blog posts go here)
-/* Global Theme */
-:root {
-    --primary: #1e3a8a; /* deep blue */
-    --secondary: #f97316; /* orange accent */
-    --gradient: linear-gradient(90deg, #facc15, #f97316, #ec4899);
-    --bg-light: #f0f4ff;
-    --text-dark: #1f2937;
-    --text-light: #ffffff;
-    --card-bg: #ffffffcc;
-    --shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--bg-light);
-    color: var(--text-dark);
-}
-
-/* Header */
-header {
-    background: var(--gradient);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    box-shadow: var(--shadow);
-}
-
-header img {
-    height: 80px;
-    margin-right: 20px;
-}
-
-header h1 {
-    color: var(--text-light);
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-/* Navigation */
-nav {
-    background: var(--primary);
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: var(--text-light);
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: var(--secondary);
-}
-
-/* Content */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 30px;
-}
-
-.card {
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    margin-bottom: 20px;
-}
-
-/* Footer */
-footer {
-    background: var(--primary);
-    color: var(--text-light);
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Crown Creatives | Home</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
-    <h1>Crown Creatives</h1>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">My Story</a>
-    <a href="blog.html">Blog</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="videos.html">Videos</a>
-</nav>
-
-<div class="container">
-    <div class="card">
-        <h2>Welcome to Crown Creatives</h2>
-        <p>
-            This is a personal space to share art, creativity, and the journey through physical and mental recovery.
-            Every piece of work, every blog post, and every update is part of rebuilding through creativity.
-        </p>
-        <img src="assets/images/big-logo.png" alt="Crown Creatives Logo" style="width:200px; display:block; margin:auto;">
-    </div>
-</div>
-
-<footer>
-    © 2026 Crown Creatives – Created by Pete
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Story | Crown Creatives</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
-    <h1>My Story</h1>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">My Story</a>
-    <a href="blog.html">Blog</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="videos.html">Videos</a>
-</nav>
-
-<div class="container">
-    <div class="card">
-        <h2>My Road to Recovery</h2>
-        <p>
-            This page is where I share the honest, unfiltered journey of rebuilding life — physically, mentally, and creatively.
-            Art became my therapy, my outlet, and my way back to myself.
-        </p>
-    </div>
-</div>
-
-<footer>
-    © 2026 Crown Creatives – Created by Pete
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog | Crown Creatives</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
-    <h1>Blog</h1>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">My Story</a>
-    <a href="blog.html">Blog</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="videos.html">Videos</a>
-</nav>
-
-<div class="container">
-    <div class="card">
-        <h2>Latest Posts</h2>
-        <p>Add your blog posts in <code>/assets/posts/</code> and link them here.</p>
-    </div>
-</div>
-
-<footer>
-    © 2026 Crown Creatives – Created by Pete
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Gallery | Crown Creatives</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
-    <h1>Gallery</h1>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">My Story</a>
-    <a href="blog.html">Blog</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="videos.html">Videos</a>
-</nav>
-
-<div class="container">
-    <div class="card">
-        <h2>My Artwork</h2>
-        <p>Upload your images to <code>/assets/images/</code> and display them here.</p>
-    </div>
-</div>
-
-<footer>
-    © 2026 Crown Creatives – Created by Pete
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Videos | Crown Creatives</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
-    <h1>Videos</h1>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">My Story</a>
-    <a href="blog.html">Blog</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="videos.html">Videos</a>
-</nav>
-
-<div class="container">
-    <div class="card">
-        <h2>My Video Journey</h2>
-        <p>You can embed YouTube or upload MP4 files here.</p>
-
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
-<footer>
-    © 2026 Crown Creatives – Created by Pete
-</footer>
-
-</body>
-</html>
 /* ---------- THEME ---------- */
 :root {
     --primary: #1e3a8a;
@@ -704,12 +435,265 @@ footer {
         <div class="card">
             <h3>Crown Creatives Brand</h3>
             <p>Developing a cohesive visual identity for my work and future collaborations.</p>
+        </di<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Blog</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Latest Posts</h2>
+        <div class="post-list">
+            <a class="post-item" href="post.html">
+                <h3>Starting Over with Colour</h3>
+                <div class="post-meta">Posted: 2026-04-03 · Tag: Recovery</div>
+                <p>A reflection on why I chose to document this journey publicly and creatively.</p>
+            </a>
+            <!-- Duplicate and edit for more posts -->
+        </div><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starting Over with Colour | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Blog Post</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Back to Blog</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Starting Over with Colour</h2>
+        <div class="post-meta">Posted: 2026-04-03 · Tag: Recovery</div>
+        <p>
+            This is where you write your full post. Talk about the day, the struggle, the small win,
+            and how making something — even imperfect — moved you forward.
+        </p>
+        <p>
+            You can paste images, embed screenshots of your art, or link to videos that relate to this entry.
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Post
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Gallery</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Artwork & Experiments</h2>
+        <p>Upload images to <code>assets/images/</code> and reference them below.</p>
+    </div>
+
+    <div class="grid-3">
+        <img src="assets/images/sample1.jpg" alt="Artwork 1" class="gallery-img">
+        <img src="assets/images/sample2.jpg" alt="Artwork 2" class="gallery-img">
+        <img src="assets/images/sample3.jpg" alt="Artwork 3" class="gallery-img">
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Gallery
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Videos</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>My Video Journey</h2>
+        <p>Swap the YouTube link below with your own videos.</p>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 </div>
 
 <footer>
-    © 2026 Crown Creatives – Projects
+    © 2026 Crown Creatives – Videos
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Story | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>My Story</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>The Road Back</h2>
+        <p>
+            This space is about honesty. Recovery isn’t linear, and neither is creativity.
+            Some days I’m sculpting, painting, or printing. Other days, just getting out of bed is the win.
+        </p>
+        <p>
+            Crown Creatives is my way of tracking that journey — not as a polished portfolio,
+            but as a record of showing up, learning, and slowly rebuilding strength.
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – My Story
+</footer>
+
+</body>
+</html>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Blog
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Contact</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Say Hello</h2>
+        <p>
+            Whether you’re here for the art, the story, or both — feel free to reach out.
+        </p>
+        <form>
+            <div>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@example.com">
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="What would you like to share?"></textarea>
+            </div>
+            <input type="submit" value="Send Message (static)">
+        </form>
+        <p style="margin-top:10px; font-size:0.8rem; color:#6b7280;">
+            Note: On GitHub Pages this form is static — you can later hook it to a service like Formspree or Netlify Forms.
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Contact
 </footer>
 
 </body>
