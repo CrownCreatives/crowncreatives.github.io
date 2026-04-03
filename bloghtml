@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Blog</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Latest Posts</h2>
+        <div class="post-list">
+            <a class="post-item" href="post.html">
+                <h3>Starting Over with Colour</h3>
+                <div class="post-meta">Posted: 2026-04-03 · Tag: Recovery</div>
+                <p>A reflection on why I chose to document this journey publicly and creatively.</p>
+            </a>
+            <!-- Duplicate and edit for more posts -->
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Blog
+</footer>
+
+</body>
+</html>
