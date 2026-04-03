@@ -69,7 +69,26 @@ nav a:hover {
     box-shadow: var(--shadow);
     margin-bottom: 20px;
 }
-
+.story-photo {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 20px;
+    object-fit: cover;
+    filter: brightness(1.05);
+    box-shadow: 0 0 40px rgba(0,0,0,0.35);
+    
+    /* Soft vignette + corner blur */
+    mask-image: radial-gradient(circle at center, 
+        black 55%, 
+        rgba(0,0,0,0.6) 75%, 
+        transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, 
+        black 55%, 
+        rgba(0,0,0,0.6) 75%, 
+        transparent 100%);
+}
 /* Footer */
 footer {
     background: var(--primary);
