@@ -1,111 +1,716 @@
+/ (root)
+│ index.html
+│ about.html
+│ blog.html
+│ gallery.html
+│ videos.html
+│ style.css
+│ /assets
+│     /images
+│         big-logo.png
+│         banner-logo.png
+│     /posts
+│         (your blog posts go here)
+/* Global Theme */
+:root {
+    --primary: #1e3a8a; /* deep blue */
+    --secondary: #f97316; /* orange accent */
+    --gradient: linear-gradient(90deg, #facc15, #f97316, #ec4899);
+    --bg-light: #f0f4ff;
+    --text-dark: #1f2937;
+    --text-light: #ffffff;
+    --card-bg: #ffffffcc;
+    --shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Header */
+header {
+    background: var(--gradient);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+header img {
+    height: 80px;
+    margin-right: 20px;
+}
+
+header h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    background: var(--primary);
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: var(--text-light);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* Content */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crown Creatives</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f2f7fb;
-            color: #1a1a1a;
-        }
-        header {
-            background: #ffffff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 3px solid #1e4c8f;
-        }
-        header img {
-            height: 60px;
-        }
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .hero img {
-            max-width: 300px;
-        }
-        nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #1e4c8f;
-            font-weight: bold;
-        }
-        .section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .gallery img {
-            width: 100%;
-            max-width: 250px;
-            margin: 10px;
-            border-radius: 8px;
-        }
-    </style>
+    <title>Crown Creatives | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <img src="banner-logo.png" alt="Crown Creatives Banner Logo">
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Crown Creatives</h1>
 </header>
 
-<div class="hero">
-    <img src="big-logo.png" alt="Crown Creatives Logo">
-    <h1>Welcome to Crown Creatives</h1>
-    <p>Art, recovery, resilience, and the journey forward.</p>
-</div>
-
 <nav>
-    <a href="#about">About</a>
-    <a href="#gallery">Art Gallery</a>
-    <a href="#blog">Blog</a>
-    <a href="#videos">Videos</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
 </nav>
 
-<div id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-        Crown Creatives is a space to share our artwork, creative process,
-        and aid healing. This is where we rebuild, create,
-        and express ourself through design, sculpture, and storytelling.
-    </p>
-</div>
-
-<div id="gallery" class="section">
-    <h2>Art Gallery</h2>
-    <div class="gallery">
-        <!-- Add your artwork images here -->
-        <img src="art1.jpg" alt="Artwork 1">
-        <img src="art2.jpg" alt="Artwork 2">
-        <img src="art3.jpg" alt="Artwork 3">
+<div class="container">
+    <div class="card">
+        <h2>Welcome to Crown Creatives</h2>
+        <p>
+            This is my personal space to share my art, my creativity, and my journey through physical and mental recovery.
+            Every piece of work, every blog post, and every update is part of rebuilding myself through creativity.
+        </p>
+        <img src="assets/images/big-logo.png" alt="Crown Creatives Logo" style="width:200px; display:block; margin:auto;">
     </div>
 </div>
 
-<div id="blog" class="section">
-    <h2>Blog</h2>
-    <p>Coming soon — personal stories, creative updates, and reflections.</p>
-</div>
-
-<div id="videos" class="section">
-    <h2>Videos</h2>
-    <p>Embed your YouTube or Vimeo videos here.</p>
-</div>
-
-<div id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:crowncreatives@outlook.com">crowncreatives@outlook.com</a></p>
-</div>
+<footer>
+    © 2026 Crown Creatives – Created by Pete
+</footer>
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Story | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>My Story</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>My Road to Recovery</h2>
+        <p>
+            This page is where I share the honest, unfiltered journey of rebuilding life — physically, mentally, and creatively.
+            Art became my therapy, my outlet, and my way back to myself.
+        </p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Created by Pete
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Blog</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Latest Posts</h2>
+        <p>Add your blog posts in <code>/assets/posts/</code> and link them here.</p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Created by Pete
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Gallery</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>My Artwork</h2>
+        <p>Upload your images to <code>/assets/images/</code> and display them here.</p>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Created by Pete
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Videos</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>My Video Journey</h2>
+        <p>You can embed YouTube or upload MP4 files here.</p>
+
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Created by Pete
+</footer>
+
+</body>
+</html>
+/* ---------- THEME ---------- */
+:root {
+    --primary: #1e3a8a;
+    --secondary: #f97316;
+    --accent-pink: #ec4899;
+    --accent-yellow: #facc15;
+    --bg-light: #f3f4ff;
+    --bg-dark: #0f172a;
+    --text-dark: #111827;
+    --text-muted: #6b7280;
+    --text-light: #ffffff;
+    --card-bg: #ffffffee;
+    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.18);
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --transition-fast: 0.2s ease-out;
+    --transition-med: 0.35s ease;
+}
+
+/* ---------- GLOBAL ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #fef3c7, #e0f2fe 40%, #f3e8ff 80%);
+    color: var(--text-dark);
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background: linear-gradient(120deg, var(--accent-yellow), var(--secondary), var(--accent-pink));
+    padding: 18px 5vw;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+header img {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+header h1 {
+    color: var(--text-light);
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ---------- NAV ---------- */
+nav {
+    background: rgba(15, 23, 42, 0.9);
+    padding: 10px 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    position: sticky;
+    top: 106px;
+    z-index: 19;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: background var(--transition-fast), transform var(--transition-fast), border var(--transition-fast);
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    background: var(--secondary);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-1px);
+}
+
+/* ---------- LAYOUT ---------- */
+.main-hero {
+    max-width: 1100px;
+    margin: 30px auto 10px;
+    padding: 0 5vw;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 24px;
+}
+
+@media (max-width: 800px) {
+    .main-hero {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto 40px;
+    padding: 0 5vw;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 22px 24px;
+    margin-bottom: 22px;
+    backdrop-filter: blur(8px);
+    animation: fadeInUp 0.6s var(--transition-med);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-top: 0;
+    color: var(--text-muted);
+}
+
+/* ---------- HERO SPECIAL ---------- */
+.hero-title {
+    font-size: 2.1rem;
+    margin-bottom: 8px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.hero-tag {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background: rgba(15,23,42,0.85);
+    color: var(--accent-yellow);
+}
+
+.hero-logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ---------- GRID / GALLERY ---------- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.gallery-img {
+    width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.gallery-img:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(15,23,42,0.35);
+}
+
+/* ---------- BLOG LIST ---------- */
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post-item {
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(148,163,184,0.4);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border var(--transition-fast);
+}
+
+.post-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--secondary);
+}
+
+.post-item h3 {
+    margin: 0 0 4px;
+}
+
+.post-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ---------- FORMS ---------- */
+form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(148,163,184,0.8);
+    font-size: 0.95rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+button,
+input[type="submit"] {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    color: var(--text-light);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+button:hover,
+input[type="submit"]:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+/* ---------- VIDEO ---------- */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+    font-size: 0.85rem;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crown Creatives | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Crown Creatives</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="main-hero">
+    <div class="card">
+        <h2 class="hero-title">Art, Recovery, and Rebuilding</h2>
+        <p class="hero-subtitle">
+            Crown Creatives is my living sketchbook — a record of my physical and mental road to recovery,
+            told through colour, texture, and story.
+        </p>
+        <div class="hero-tags">
+            <span class="hero-tag">3D & Fantasy Art</span>
+            <span class="hero-tag">Mental Health Journey</span>
+            <span class="hero-tag">Creative Recovery</span>
+        </div>
+        <p>
+            Here you’ll find works-in-progress, finished pieces, and honest reflections on what it means
+            to rebuild a life through creativity. Some days are messy, some are magic — all of them are real.
+        </p>
+    </div>
+
+    <div class="card hero-logo-card">
+        <img src="assets/images/big-logo.png" alt="Crown Creatives Logo" style="max-width:220px;">
+        <p style="margin-top:14px; color:#6b7280;">
+            A fusion of gears, brushes, and imagination — the emblem of rebuilding through making.
+        </p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="grid-3">
+        <div class="card">
+            <h2>Latest Blog</h2>
+            <p>Read reflections on recovery, setbacks, breakthroughs, and the role of art in all of it.</p>
+            <a href="blog.html"><button>Go to Blog</button></a>
+        </div>
+        <div class="card">
+            <h2>Art & Experiments</h2>
+            <p>From D&D-style characters to 3D prints — see what I’m building and learning.</p>
+            <a href="gallery.html"><button>View Gallery</button></a>
+        </div>
+        <div class="card">
+            <h2>Video Journey</h2>
+            <p>Short clips, process videos, and check-ins documenting the road back.</p>
+            <a href="videos.html"><button>Watch Videos</button></a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Created by Pete · crowncreatives.github.io
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects | Crown Creatives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/banner-logo.png" alt="Crown Creatives Banner Logo">
+    <h1>Projects</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">My Story</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Current Focus</h2>
+        <p>
+            This page highlights the creative projects that are helping me rebuild — from 3D-printed characters
+            to long-term personal pieces that track my recovery.
+        </p>
+    </div>
+
+    <div class="grid-3">
+        <div class="card">
+            <h3>Fantasy Character Series</h3>
+            <p>Iterating on D&D-style characters, refining anatomy, poses, and printability.</p>
+        </div>
+        <div class="card">
+            <h3>Recovery Milestones</h3>
+            <p>Artworks tied to key physical and mental milestones along the way.</p>
+        </div>
+        <div class="card">
+            <h3>Crown Creatives Brand</h3>
+            <p>Developing a cohesive visual identity for my work and future collaborations.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Crown Creatives – Projects
+</footer>
+
+</body>
+</html>
