@@ -486,3 +486,12 @@ body.page-loaded {
     background: linear-gradient(90deg, var(--accent-pink), var(--secondary), var(--accent-yellow));
     margin-bottom: 15px;
 }
+.footer-icon svg {
+    color: var(--secondary);
+    transition: 0.25s ease;
+}
+
+.footer-icon svg:hover {
+    color: var(--accent-pink);
+    transform: translateY(-3px);
+}
