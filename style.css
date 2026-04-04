@@ -166,6 +166,28 @@ nav a:hover {
 .ticker-inner span {
     padding: 0 40px;
 }
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-dark);
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 12px;
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-pink);
+    transform: translateY(-2px);
+}
 
 @keyframes ticker-scroll-right {
     0% { transform: translateX(-100%); }
