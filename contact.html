@@ -28,25 +28,13 @@
         <p>
             Whether you’re here for the art, the story, or both — feel free to reach out.
         </p>
-        <form>
-            <div>
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name">
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="you@example.com">
-            </div>
-            <div>
-                <label for="message">Message</label>
-                <textarea id="message" rows="5" placeholder="What would you like to share?"></textarea>
-            </div>
-            <input type="submit" value="Send Message (static)">
-        </form>
-        <p style="margin-top:10px; font-size:0.8rem; color:#6b7280;">
-            Note: On GitHub Pages this form is static — you can later hook it to a service like Formspree or Netlify Forms.
-        </p>
-    </div>
+       <form name="contact" method="POST" data-netlify="true">
+
+             <input type="hidden" name="form-name" value="contact">
+<input id="name" name="name" type="text" placeholder="Crown Creatives">
+<input id="email" name="email" type="email" placeholder="crowncreatives@outlook.com">
+<textarea id="message" name="message" rows="5" placeholder="What would you like to share?"></textarea>
+
 </div>
 
 <footer>
