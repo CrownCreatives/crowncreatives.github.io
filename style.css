@@ -147,5 +147,8 @@ body {
     margin: 0 0 10px 0;
     animation: fadeInDown 0.8s ease-out;
 }
-
+.welcome-colour {
+    text-align: center;
+    width: 100%;
+}
 
