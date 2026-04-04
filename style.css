@@ -104,6 +104,12 @@ nav a:hover {
     text-align: center;
     width: 100%;
 }
+.welcome-center {
+    grid-column: 1 / -1;   /* spans full width of the grid */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
 /* Footer */
 footer {
     background: var(--primary);
