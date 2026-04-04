@@ -89,6 +89,21 @@ nav a:hover {
         rgba(0,0,0,0.6) 75%, 
         transparent 100%);
 }
+.welcome-colour {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 10px 0;
+    animation: fadeInDown 0.8s ease-out;
+}
+.welcome-colour {
+    text-align: center;
+    width: 100%;
+}
 /* Footer */
 footer {
     background: var(--primary);
@@ -136,19 +151,3 @@ footer {
 body {
     padding-bottom: 40px;
 }
-.welcome-colour {
-    font-size: 3rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0 0 10px 0;
-    animation: fadeInDown 0.8s ease-out;
-}
-.welcome-colour {
-    text-align: center;
-    width: 100%;
-}
-
