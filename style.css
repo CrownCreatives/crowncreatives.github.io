@@ -96,14 +96,19 @@ nav a:hover {
     letter-spacing: 0.08em;
     background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow), var(--secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 0 10px 0;
+    text-fill-color: transparent;
+    margin: 0;
+
 }
 .welcome-center {
-    grid-column: 1 / -1;   /* spans full width of the grid */
+    grid-column: 1 / -1;   /* spans full width */
     text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
+    margin-top: 20px;      /* brings it DOWN slightly */
+    margin-bottom: 10px;
+}
+
 }
 /* Footer */
 footer {
