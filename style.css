@@ -137,14 +137,13 @@ footer {
     display: inline-flex;
     white-space: nowrap;
     animation: ticker-scroll-right 25s linear infinite;
-    will-change: transform;
 }
 
 .ticker-inner span {
     padding: 0 40px;
 }
 
-/* LEFT → RIGHT continuous scroll */
+/* LEFT → RIGHT continuous loop */
 @keyframes ticker-scroll-right {
     0% {
         transform: translateX(-100%);
@@ -154,7 +153,6 @@ footer {
     }
 }
 
-/* Make room so content isn't hidden behind ticker */
 body {
     padding-bottom: 40px;
 }
