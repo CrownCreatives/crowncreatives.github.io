@@ -101,7 +101,6 @@ nav a:hover {
     grid-column: 1 / -1;     /* span full grid width */
 }
 
-
 }
 .welcome-center {
     grid-column: 1 / -1;   /* spans full width */
