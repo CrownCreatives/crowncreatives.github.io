@@ -404,3 +404,23 @@ footer {
         filter: drop-shadow(0 0 8px var(--accent-pink));
     }
 }
+.logo-dark {
+    display: none;
+}
+
+.dark-mode .logo-light {
+    display: none;
+}
+
+.dark-mode .logo-dark {
+    display: block;
+}
+/* Page fade-in */
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
