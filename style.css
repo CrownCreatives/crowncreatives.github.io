@@ -85,7 +85,7 @@ header img.dark-logo { display: none; }
    4. NAVIGATION
    ========================================================= */
 nav {
-    background: rgba(15, 23, 42, 0.9);
+    background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent-pink));
     padding: 10px 5vw;
     display: flex;
     flex-wrap: wrap;
