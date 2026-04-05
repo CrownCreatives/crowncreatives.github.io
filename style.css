@@ -452,3 +452,45 @@ body.dark-mode .dark-logo {
 body.dark-mode .dark-logo {
   animation: emeraldPulse 6s ease-in-out infinite;
 }
+/* Force both crowns to occupy the exact same space */
+.logo-wrapper {
+  position: relative;
+  width: 1080px;   /* match your crown canvas width */
+  height: 1080px;  /* match your crown canvas height */
+  transform: scale(0.065); /* scales down to your header size */
+  transform-origin: top left;
+}
+
+/* Both logos stacked perfectly */
+.crown-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1080px;
+  object-fit: contain;
+  transition: opacity 20s ease-in-out, filter 20s ease-in-out;
+}
+
+/* Light mode crown visible */
+.light-logo {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px var(--crystal-light));
+}
+
+/* Emerald crown hidden by default */
+.dark-logo {
+  opacity: 0;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+/* Dark mode morph */
+body.dark-mode .light-logo {
+  opacity: 0;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+body.dark-mode .dark-logo {
+  opacity: 1;
+  filter: drop-shadow(0 0 16px #10b981);
+}
