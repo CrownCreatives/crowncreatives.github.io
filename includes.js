@@ -56,4 +56,3 @@ document.getElementById("include-ticker").innerHTML = `
     </div>
   </div>
 `;
-
