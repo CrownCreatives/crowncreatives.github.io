@@ -337,15 +337,82 @@ animation: ticker-scroll-right 25s linear infinite;
 /* =========================================================
    9. FOOTER
    ========================================================= */
+/* =========================================================
+   FOOTER (Blue Gradient Banner)
+   ========================================================= */
 .site-footer {
-    background: var(--footer-bg);
+    background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent-pink));
+    padding: 18px 5vw;
     color: var(--text-light);
-    padding: 20px 5vw 16px;
-    margin-top: 20px;
-    margin-bottom: 6px;
-    border-top: 3px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.4s ease;
+    box-shadow: var(--shadow-soft);
+    margin-top: 40px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-left {
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.footer-center {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.back-to-top,
+.dark-mode-toggle {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.back-to-top:hover,
+.dark-mode-toggle:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-email {
+    color: var(--text-light);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-icon svg {
+    width: 26px;
+    height: 26px;
+    color: var(--text-light);
+    transition: var(--transition-fast);
+}
+
+.footer-icon svg:hover {
+    color: var(--accent-yellow);
 }
 
 .site-footer:hover {
