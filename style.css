@@ -397,3 +397,12 @@ body.dark-mode .dark-logo {
     transform: scale(1.15);
     filter: drop-shadow(0 0 12px var(--crystal-light));
 }
+body.dark-mode .dark-logo {
+  filter: drop-shadow(0 0 12px #10b981);
+  animation: emeraldPulse 4s ease-in-out infinite;
+}
+
+@keyframes emeraldPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px #10b981); }
+  50% { filter: drop-shadow(0 0 16px #34d399); }
+}
