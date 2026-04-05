@@ -16,6 +16,12 @@ inject("include-header", `
       <h1>Crown Creatives</h1>
     </div>
   </header>
+  <div class="logo-wrapper">
+  <img src="assets/images/big-logo.png" class="light-logo crown-logo" alt="">
+  <img src="assets/images/emerald-crown.png" class="dark-logo crown-logo" alt="">
+  <div class="sparkle-trail"></div>
+</div>
+
 `);
 
 /* NAVIGATION */
