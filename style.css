@@ -693,3 +693,7 @@ body.page-loaded {
     border-top: 3px solid rgba(250, 204, 21, 0.4);
     color: var(--text-light);
 }
+.site-footer:hover {
+    box-shadow: 0 -6px 18px rgba(255, 255, 255, 0.25);
+    transition: box-shadow 0.4s ease;
+}
