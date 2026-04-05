@@ -97,6 +97,7 @@ nav {
     backdrop-filter: blur(10px);
 }
 
+
 nav a {
     color: var(--text-light);
     text-decoration: none;
