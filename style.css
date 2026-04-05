@@ -1,467 +1,106 @@
 /* ============================================================
-   CROWN CREATIVES — Arcane Crystal Theme
-   Fantasy Artisan UI • Sapphire + Ember • Magical Glow
-   Includes Soft Arcane Twilight Dark Mode
+   CROWN CREATIVES — Arcane Crystal + Emerald Twilight Theme
    ============================================================ */
 
 /* ---------- THEME VARIABLES ---------- */
 :root {
-    /* Light Mode */
-    --crystal-deep: #0b1e3d;
-    --crystal-mid: #1e3a8a;
-    --crystal-light: #60a5fa;
-
-    --ember: #f97316;
-    --ember-soft: #fbbf24;
-
-    --arcane-pink: #ec4899;
-    --arcane-violet: #a855f7;
-
-    --bg-light: #eef2ff;
-    --bg-dark: #0f172a;
-
-    --text-light: #ffffff;
-    --text-dark: #0f172a;
-    --text-muted: #94a3b8;
-
-    --card-bg: rgba(255, 255, 255, 0.08);
-    --card-border: rgba(255, 255, 255, 0.15);
-
-    --shadow-crystal: 0 10px 30px rgba(14, 30, 64, 0.45);
-    --shadow-ember: 0 0 18px rgba(249, 115, 22, 0.45);
-
-    --radius-lg: 18px;
-    --radius-md: 12px;
-
-    --transition-fast: 0.2s ease-out;
-    --transition-med: 0.35s ease;
+  --crystal-deep: #0b1e3d;
+  --crystal-mid: #1e3a8a;
+  --crystal-light: #60a5fa;
+  --ember: #f97316;
+  --arcane-pink: #ec4899;
+  --arcane-violet: #a855f7;
+  --emerald: #10b981;
+  --emerald-soft: #34d399;
+  --bg-light: #eef2ff;
+  --bg-dark: #0f172a;
+  --text-light: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --shadow-crystal: 0 10px 30px rgba(14, 30, 64, 0.45);
+  --shadow-ember: 0 0 18px rgba(249, 115, 22, 0.45);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --transition-fast: 0.2s ease-out;
+  --transition-med: 0.35s ease;
 }
 
 /* ---------- DARK MODE OVERRIDES ---------- */
 body.dark-mode {
-    --crystal-deep: #0a0f2a;
-    --crystal-mid: #1a2250;
-    --crystal-light: #7dd3fc;
-
-    --ember: #fb923c;
-    --ember-soft: #fcd34d;
-
-    --arcane-pink: #f472b6;
-    --arcane-violet: #c084fc;
-
-    --bg-light: #0a0f2a;
-    --bg-dark: #050716;
-
-    --text-light: #e2e8f0;
-    --text-dark: #cbd5e1;
-    --text-muted: #64748b;
-
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --card-border: rgba(255, 255, 255, 0.12);
-
-    --shadow-crystal: 0 10px 30px rgba(0, 0, 0, 0.55);
+  --crystal-deep: #0a0f2a;
+  --crystal-mid: #1a2250;
+  --crystal-light: #7dd3fc;
+  --ember: #fb923c;
+  --arcane-pink: #f472b6;
+  --arcane-violet: #c084fc;
+  --emerald: #10b981;
+  --emerald-soft: #34d399;
+  --bg-light: #0a0f2a;
+  --bg-dark: #050716;
+  --text-light: #e2e8f0;
+  --text-dark: #cbd5e1;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --shadow-crystal: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
 /* ---------- GLOBAL RESET ---------- */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top left,
-        var(--crystal-deep),
-        var(--crystal-mid) 40%,
-        var(--bg-dark) 80%);
-    color: var(--text-light);
-    overflow-x: hidden;
-    transition: background var(--transition-med), color var(--transition-med);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left,
+    var(--crystal-deep),
+    var(--crystal-mid) 40%,
+    var(--bg-dark) 80%);
+  color: var(--text-light);
+  overflow-x: hidden;
+  transition: background var(--transition-med), color var(--transition-med);
+  cursor: url('assets/images/crystal-cursor.png'), auto;
+}
+
+/* ---------- PAGE TRANSITION FADE ---------- */
+body.fade-enter {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+body.fade-enter-active {
+  opacity: 1;
 }
 
 /* ---------- HEADER ---------- */
 header {
-    background: linear-gradient(120deg,
-        var(--crystal-light),
-        var(--arcane-violet),
-        var(--ember));
-    padding: 20px 5vw;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    box-shadow: var(--shadow-crystal);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-}
-
-header img {
-    height: 70px;
-    width: auto;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45));
-    animation: floatLogo 4s ease-in-out infinite;
-}
-
-header h1 {
-    font-size: 2.4rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--text-light);
-}
-
-/* ---------- NAVIGATION ---------- */
-nav {
-    background: rgba(11, 30, 61, 0.85);
-    backdrop-filter: blur(12px);
-    padding: 12px 5vw;
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    position: sticky;
-    top: 106px;
-    z-index: 40;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 1px solid transparent;
-    transition: var(--transition-fast);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-nav a:hover {
-    background: linear-gradient(120deg,
-        var(--ember),
-        var(--arcane-pink));
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-ember);
-}
-
-/* ---------- LAYOUT ---------- */
-.main-hero {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 5vw;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 28px;
-}
-
-@media (max-width: 800px) {
-    .main-hero {
-        grid-template-columns: 1fr;
-    }
-}
-
-.container {
-    max-width: 1100px;
-    margin: 20px auto 60px;
-    padding: 0 5vw;
-}
-
-/* ---------- CARDS ---------- */
-.card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-    padding: 24px 26px;
-    box-shadow: var(--shadow-crystal);
-    backdrop-filter: blur(10px);
-    animation: fadeInUp 0.6s var(--transition-med);
-    transition: var(--transition-med);
-}
-
-.card:hover {
-    border-color: var(--crystal-light);
-    box-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
-    transform: translateY(-3px);
-}
-
-.card h2 {
-    margin-bottom: 10px;
-    color: var(--crystal-light);
-}
-
-.card p {
-    color: var(--text-muted);
-    line-height: 1.6;
-}
-
-/* ---------- BUTTONS ---------- */
-button {
-    background: linear-gradient(120deg,
-        var(--crystal-light),
-        var(--arcane-violet));
-    border: none;
-    padding: 10px 20px;
-    border-radius: var(--radius-md);
-    color: var(--text-light);
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    box-shadow: var(--shadow-crystal);
-}
-
-button:hover {
-    background: linear-gradient(120deg,
-        var(--ember),
-        var(--arcane-pink));
-    box-shadow: var(--shadow-ember);
-    transform: translateY(-2px);
-}
-
-/* ---------- TICKER ---------- */
-.ticker-bar {
-    width: 100%;
-    overflow: hidden;
-    background: rgba(11, 30, 61, 0.7);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-}
-
-.ticker-inner {
-    display: flex;
-    gap: 60px;
-    padding: 12px 0;
-    animation: tickerScroll 18s linear infinite;
-}
-
-.ticker-inner span {
-    white-space: nowrap;
-    color: var(--crystal-light);
-    font-weight: 600;
-}
-
-/* ---------- FOOTER ---------- */
-.site-footer {
-    background: rgba(11, 30, 61, 0.85);
-    padding: 30px 5vw;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-}
-
-.footer-row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-left,
-.footer-center,
-.footer-right {
-    color: var(--text-muted);
-}
-
-/* ---------- ANIMATIONS ---------- */
-@keyframes floatLogo {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes tickerScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-/* ---------- SOCIAL ICONS ---------- */
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 14px;
-    text-decoration: none;
-    transition: transform var(--transition-fast), filter var(--transition-fast);
-}
-
-.social-icon .icon {
-    width: 28px;
-    height: 28px;
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
-    transition: filter var(--transition-fast), transform var(--transition-fast);
-}
-/* ---------- HEADER LOGO GLOW + SPARKLE ---------- */
-.crown-logo {
-    height: 70px;
-    filter: drop-shadow(0 0 10px var(--crystal-light));
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.crown-logo:hover {
-    transform: scale(1.08) rotate(2deg);
-    filter: drop-shadow(0 0 18px var(--arcane-violet));
-}
-
-/* Sparkle trail */
-.sparkle-trail {
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    top: -10px;
-    left: -10px;
-    pointer-events: none;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
-    opacity: 0.4;
-    animation: sparklePulse 3s infinite ease-in-out;
-}
-
-@keyframes sparklePulse {
-    0%, 100% { transform: scale(1); opacity: 0.3; }
-    50% { transform: scale(1.3); opacity: 0.6; }
-}
-
-/* ---------- SOCIAL ICON RUNES ---------- */
-.social-group {
-    display: flex;
-    gap: 20px;
-}
-
-.social-icon {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icon .icon {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.social-icon:hover .icon {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 12px var(--crystal-light));
-}
-
-/* Rune circle */
-.rune-circle {
-    position: absolute;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 2px dashed var(--crystal-light);
-    opacity: 0.4;
-    animation: runeSpin 6s linear infinite;
-}
-
-@keyframes runeSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-/* ---------- LOGO TRANSITION ---------- */
-.crown-logo {
-  height: 70px;
-  position: absolute;
+  background: linear-gradient(120deg,
+    var(--crystal-light),
+    var(--arcane-violet),
+    var(--ember));
+  padding: 20px 5vw;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-crystal);
+  position: sticky;
   top: 0;
-  left: 0;
-  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+  z-index: 50;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
 
-.light-logo {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.dark-logo {
-  opacity: 0;
-  transform: scale(0.95);
-}
-
-/* When dark mode is active */
-body.dark-mode .light-logo {
-  opacity: 0;
-  transform: scale(0.95);
-}
-
-body.dark-mode .dark-logo {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.social-icon:hover .icon {
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 12px var(--crystal-light));
-}
-body.dark-mode .dark-logo {
-  filter: drop-shadow(0 0 12px #10b981);
-  animation: emeraldPulse 4s ease-in-out infinite;
-}
-
-@keyframes emeraldPulse {
-  0%, 100% { filter: drop-shadow(0 0 8px #10b981); }
-  50% { filter: drop-shadow(0 0 16px #34d399); }
-}
-/* ---------- LOGO TRANSITION (20s morph) ---------- */
+/* ---------- LOGO MORPH ---------- */
 .logo-wrapper {
   position: relative;
-  display: inline-block;
-  height: 70px;
-  width: auto;
-}
-
-.crown-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 70px;
-  width: auto;
-  transition: opacity 20s ease-in-out, filter 20s ease-in-out;
-}
-
-/* Default (light mode) */
-.light-logo {
-  opacity: 1;
-  filter: drop-shadow(0 0 10px var(--crystal-light));
-}
-
-.dark-logo {
-  opacity: 0;
-  filter: drop-shadow(0 0 0 transparent);
-}
-
-/* Dark mode morph */
-body.dark-mode .light-logo {
-  opacity: 0;
-  filter: drop-shadow(0 0 0 transparent);
-}
-
-body.dark-mode .dark-logo {
-  opacity: 1;
-  filter: drop-shadow(0 0 16px #10b981);
-}
-@keyframes emeraldPulse {
-  0%, 100% { filter: drop-shadow(0 0 8px #10b981); }
-  50% { filter: drop-shadow(0 0 18px #34d399); }
-}
-
-body.dark-mode .dark-logo {
-  animation: emeraldPulse 6s ease-in-out infinite;
-}
-/* Force both crowns to occupy the exact same space */
-.logo-wrapper {
-  position: relative;
-  width: 1080px;   /* match your crown canvas width */
-  height: 1080px;  /* match your crown canvas height */
-  transform: scale(0.065); /* scales down to your header size */
+  width: 1080px;
+  height: 1080px;
+  transform: scale(0.065);
   transform-origin: top left;
 }
 
-/* Both logos stacked perfectly */
 .crown-logo {
   position: absolute;
   top: 0;
@@ -472,19 +111,16 @@ body.dark-mode .dark-logo {
   transition: opacity 20s ease-in-out, filter 20s ease-in-out;
 }
 
-/* Light mode crown visible */
 .light-logo {
   opacity: 1;
   filter: drop-shadow(0 0 10px var(--crystal-light));
 }
 
-/* Emerald crown hidden by default */
 .dark-logo {
   opacity: 0;
   filter: drop-shadow(0 0 0 transparent);
 }
 
-/* Dark mode morph */
 body.dark-mode .light-logo {
   opacity: 0;
   filter: drop-shadow(0 0 0 transparent);
@@ -492,5 +128,382 @@ body.dark-mode .light-logo {
 
 body.dark-mode .dark-logo {
   opacity: 1;
-  filter: drop-shadow(0 0 16px #10b981);
+  filter: drop-shadow(0 0 16px var(--emerald));
+  animation: emeraldPulse 6s ease-in-out infinite;
 }
+
+/* Emerald particle shimmer */
+@keyframes emeraldPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px var(--emerald)); }
+  50% { filter: drop-shadow(0 0 18px var(--emerald-soft)); }
+}
+
+/* Sparkle trail */
+.sparkle-trail {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: -10px;
+  left: -10px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+  opacity: 0.4;
+  animation: sparklePulse 3s infinite ease-in-out;
+}
+
+@keyframes sparklePulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+  background: rgba(11, 30, 61, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 12px 5vw;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  position: sticky;
+  top: 106px;
+  z-index: 40;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: var(--transition-fast);
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+/* Glowing underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--crystal-light), var(--emerald));
+  transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- FLOATING AMBIENT PARTICLES (BEHIND CONTENT) ---------- */
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--emerald);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: floatParticle 8s infinite ease-in-out;
+  z-index: 0; /* behind all content */
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0); opacity: 0.4; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background: rgba(11, 30, 61, 0.85);
+  padding: 30px 5vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  color: var(--text-muted);
+}
+
+/* ---------- SOCIAL ICON RUNES ---------- */
+Perfect, Pete — here’s your **final, complete, clean, and modern `style.css`**, fully integrated with all your upgrades and tuned for **ambient particles behind content**.  
+This version replaces your old CSS entirely — just delete the old one and paste this in.
+
+---
+
+## 🎨 **CROWN CREATIVES — Arcane Crystal + Emerald Twilight (`style.css`)**
+
+```css
+/* ============================================================
+   CROWN CREATIVES — Arcane Crystal + Emerald Twilight Theme
+   ============================================================ */
+
+/* ---------- THEME VARIABLES ---------- */
+:root {
+  --crystal-deep: #0b1e3d;
+  --crystal-mid: #1e3a8a;
+  --crystal-light: #60a5fa;
+  --ember: #f97316;
+  --arcane-pink: #ec4899;
+  --arcane-violet: #a855f7;
+  --emerald: #10b981;
+  --emerald-soft: #34d399;
+  --bg-light: #eef2ff;
+  --bg-dark: #0f172a;
+  --text-light: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --shadow-crystal: 0 10px 30px rgba(14, 30, 64, 0.45);
+  --shadow-ember: 0 0 18px rgba(249, 115, 22, 0.45);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --transition-fast: 0.2s ease-out;
+  --transition-med: 0.35s ease;
+}
+
+/* ---------- DARK MODE OVERRIDES ---------- */
+body.dark-mode {
+  --crystal-deep: #0a0f2a;
+  --crystal-mid: #1a2250;
+  --crystal-light: #7dd3fc;
+  --ember: #fb923c;
+  --arcane-pink: #f472b6;
+  --arcane-violet: #c084fc;
+  --emerald: #10b981;
+  --emerald-soft: #34d399;
+  --bg-light: #0a0f2a;
+  --bg-dark: #050716;
+  --text-light: #e2e8f0;
+  --text-dark: #cbd5e1;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --shadow-crystal: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left,
+    var(--crystal-deep),
+    var(--crystal-mid) 40%,
+    var(--bg-dark) 80%);
+  color: var(--text-light);
+  overflow-x: hidden;
+  transition: background var(--transition-med), color var(--transition-med);
+  cursor: url('assets/images/crystal-cursor.png'), auto;
+}
+
+/* ---------- PAGE TRANSITION FADE ---------- */
+body.fade-enter {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+body.fade-enter-active {
+  opacity: 1;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(120deg,
+    var(--crystal-light),
+    var(--arcane-violet),
+    var(--ember));
+  padding: 20px 5vw;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-crystal);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- LOGO MORPH ---------- */
+.logo-wrapper {
+  position: relative;
+  width: 1080px;
+  height: 1080px;
+  transform: scale(0.065);
+  transform-origin: top left;
+}
+
+.crown-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1080px;
+  object-fit: contain;
+  transition: opacity 20s ease-in-out, filter 20s ease-in-out;
+}
+
+.light-logo {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px var(--crystal-light));
+}
+
+.dark-logo {
+  opacity: 0;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+body.dark-mode .light-logo {
+  opacity: 0;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+body.dark-mode .dark-logo {
+  opacity: 1;
+  filter: drop-shadow(0 0 16px var(--emerald));
+  animation: emeraldPulse 6s ease-in-out infinite;
+}
+
+/* Emerald particle shimmer */
+@keyframes emeraldPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px var(--emerald)); }
+  50% { filter: drop-shadow(0 0 18px var(--emerald-soft)); }
+}
+
+/* Sparkle trail */
+.sparkle-trail {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: -10px;
+  left: -10px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+  opacity: 0.4;
+  animation: sparklePulse 3s infinite ease-in-out;
+}
+
+@keyframes sparklePulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+  background: rgba(11, 30, 61, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 12px 5vw;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  position: sticky;
+  top: 106px;
+  z-index: 40;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: var(--transition-fast);
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+/* Glowing underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--crystal-light), var(--emerald));
+  transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- FLOATING AMBIENT PARTICLES (BEHIND CONTENT) ---------- */
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--emerald);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: floatParticle 8s infinite ease-in-out;
+  z-index: 0; /* behind all content */
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0); opacity: 0.4; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background: rgba(11, 30, 61, 0.85);
+  padding: 30px 5vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  color: var(--text-muted);
+}
+
+/* ---------- SOCIAL ICON RUNES ---------- */
+.social-group {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon .icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover .icon {
