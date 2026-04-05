@@ -285,7 +285,10 @@ nav a:hover::after {
 .ticker-inner span {
     padding: 0 40px;
 }
-
+@keyframes ticker-scroll-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
 /* =========================================================
    9. FOOTER
    ========================================================= */
