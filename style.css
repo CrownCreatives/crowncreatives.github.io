@@ -363,6 +363,35 @@ button:hover {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+/* ---------- LOGO TRANSITION ---------- */
+.crown-logo {
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.light-logo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dark-logo {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* When dark mode is active */
+body.dark-mode .light-logo {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+body.dark-mode .dark-logo {
+  opacity: 1;
+  transform: scale(1);
+}
 
 .social-icon:hover .icon {
     transform: scale(1.15);
