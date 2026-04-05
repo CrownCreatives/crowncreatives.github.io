@@ -82,19 +82,34 @@
     </div>
 </div>
 
-<footer>
+footer class="site-footer">
 
-    <div class="footer-divider"></div>
+    <div class="footer-row">
 
-    <div class="footer-top-row">
-        <p class="footer-left">© 2026 Crown Creatives – Created by Pete</p>
+        <!-- LEFT: COPYRIGHT -->
+        <div class="footer-left">
+            © 2026 Crown Creatives – Created by Pete
+        </div>
 
+        <!-- CENTER: STACKED BUTTONS -->
         <div class="footer-center">
+            <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
+                ↑ Back to Top
+            </button>
+
+            <button class="dark-mode-toggle" onclick="document.body.classList.toggle('dark-mode');">
+                🌙 Dark Mode
+            </button>
+        </div>
+
+        <!-- RIGHT: STACKED EMAIL + SOCIAL -->
+        <div class="footer-right">
+
             <a href="mailto:crowncreatives@outlook.com" class="footer-email">
                 crowncreatives@outlook.com
             </a>
 
-              <div class="footer-social">
+            <div class="footer-social">
                 <a href="https://facebook.com/profile.php?id=61556386467490" target="_blank" class="footer-icon">
                     <!-- Facebook Icon -->
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -122,6 +137,7 @@
         </div>
 
     </div>
+</footer>
 
         <div class="footer-right">
             <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
