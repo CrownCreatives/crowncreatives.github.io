@@ -418,9 +418,5 @@ animation: ticker-scroll-right 25s linear infinite;
 .site-footer:hover {
     box-shadow: 0 -6px 
 
-   <script>
-window.addEventListener("load", () => {
-    document.body.classList.add("page-loaded");
-});
-</script>
+
 
