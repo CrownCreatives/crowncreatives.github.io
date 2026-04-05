@@ -580,7 +580,7 @@ body.page-loaded {
 }
 .site-footer {
     background: #0a1a3a; /* deep blue */
-    color: var(--text-light);
+    color: var(#102a5c );
     padding: 20px 5vw;
     margin-top: 40px;
 }
