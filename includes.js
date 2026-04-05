@@ -30,12 +30,12 @@ document.getElementById("include-footer").innerHTML = `
         © ${new Date().getFullYear()} Crown Creatives
       </div>
       <div class="footer-center">
-        <a class="footer-email" href="mailto:youremail@example.com">
-          youremail@example.com
+        <a class="footer-email" href="mailto:crowncreatives@outlook.com">
+          crowncreatives@outlook.com
         </a>
         <div class="footer-social">
-          <a class="footer-icon" href="https://twitter.com" target="_blank" rel="noopener">X</a>
-          <a class="footer-icon" href="https://instagram.com" target="_blank" rel="noopener">IG</a>
+          <a class="footer-icon" href="https://facebook.com" target="profile.php?id=61556386467490" rel="noopener">X</a>
+          <a class="footer-icon" href="https://instagram.com" target="crown_creatives_uk/" rel="noopener">IG</a>
         </div>
       </div>
       <div class="footer-right">
