@@ -229,8 +229,10 @@ nav a:hover {
 }
 
 /* =========================================================
-   8. TICKER
+   8. TICKER (Enhanced)
    ========================================================= */
+
+/* Default: ticker sits ABOVE the footer */
 .ticker-bar {
     width: 100%;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -239,19 +241,34 @@ nav a:hover {
     padding: 6px 0;
     overflow: hidden;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.25);
-    position: relative; /* no longer fixed */
-    margin-top: 40px;   /* space above footer */
-
+    position: relative; /* normal flow */
+    margin-top: 40px;
 }
 
+/* Ticker content */
 .ticker-inner {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker-scroll-right 25s linear infinite;
+    animation: ticker-scroll-right 40s linear infinite; /* slower */
 }
 
+/* Pause on hover */
+.ticker-bar:hover .ticker-inner {
+    animation-play-state: paused;
+}
+
+/* Add spacing + icons */
 .ticker-inner span {
     padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticker-inner span svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 }
 
 /* Fade edges */
@@ -280,6 +297,26 @@ nav a:hover {
 @keyframes ticker-scroll-right {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
+}
+
+/* =========================================================
+   MOBILE BEHAVIOUR — FIXED ONLY ON SMALL SCREENS
+   ========================================================= */
+@media (max-width: 700px) {
+    .ticker-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin-top: 0;
+        font-size: 0.75rem; /* shrink */
+        padding: 4px 0;
+    }
+
+    .ticker-inner span {
+        padding: 0 20px; /* tighter spacing */
+    }
+}
+
 }
 
 /* =========================================================
