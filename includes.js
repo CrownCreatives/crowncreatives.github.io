@@ -4,27 +4,31 @@ function inject(id, html) {
   if (el) el.innerHTML = html;
 }
 
-/* HEADER */
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
 inject("include-header", `
   <header>
     <div class="header-inner">
       <div class="logo-wrapper">
+        <!-- Day Mode Logo -->
         <img src="assets/images/big-logo.png" class="light-logo crown-logo" alt="">
-        <img src="assets/images/big-logo-dark.png" class="dark-logo crown-logo" alt="">
+
+        <!-- Dark Mode Emerald Logo -->
+        <img src="assets/images/emerald-crown.png" class="dark-logo crown-logo" alt="">
+
+        <!-- Magical Sparkle Trail -->
         <div class="sparkle-trail"></div>
       </div>
+
       <h1>Crown Creatives</h1>
     </div>
   </header>
-  <div class="logo-wrapper">
-  <img src="assets/images/big-logo.png" class="light-logo crown-logo" alt="">
-  <img src="assets/images/emerald-crown.png" class="dark-logo crown-logo" alt="">
-  <div class="sparkle-trail"></div>
-</div>
-
 `);
 
-/* NAVIGATION */
+/* ---------------------------------------------------------
+   NAVIGATION
+--------------------------------------------------------- */
 inject("include-nav", `
   <nav>
     <a href="index.html">Home</a>
@@ -36,26 +40,33 @@ inject("include-nav", `
   </nav>
 `);
 
-/* TICKER */
+/* ---------------------------------------------------------
+   TICKER
+--------------------------------------------------------- */
 inject("include-ticker", `
   <div class="ticker-bar">
     <div class="ticker-inner">
       <span>Art • Recovery • Rebuilding • Crown Creatives •</span>
-      <span>3D & Fantasy Art • Mental Health Journey • Creative Recovery •</span>
+      <span>Fantasy • 3D • Creative Journey • Mental Health •</span>
     </div>
   </div>
 `);
 
-/* FOOTER — Option 3 layout */
+/* ---------------------------------------------------------
+   FOOTER — Option 3 (Left • Center • Right)
+--------------------------------------------------------- */
 inject("include-footer", `
   <footer class="site-footer">
     <div class="footer-row">
 
+      <!-- LEFT -->
       <div class="footer-left">
         © 2026 Crown Creatives – Created by Pete
       </div>
 
+      <!-- CENTER — Glowing Fantasy Icons -->
       <div class="footer-center social-group">
+
         <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
           <div class="rune-circle"></div>
           <svg viewBox="0 0 24 24" class="icon">
@@ -76,13 +87,15 @@ inject("include-footer", `
               <radialGradient id="fbGlow" cx="50%" cy="50%" r="70%">
                 <stop offset="0%" stop-color="var(--crystal-light)" />
                 <stop offset="100%" stop-color="var(--arcane-violet)" />
-              </radGradient>
+              </radialGradient>
             </defs>
             <path fill="url(#fbGlow)" d="M13 3h4V0h-4c-3.3 0-6 2.7-6 6v3H4v4h3v11h4V13h3l1-4h-4V6c0-1.1.9-2 2-2z"/>
           </svg>
         </a>
+
       </div>
 
+      <!-- RIGHT -->
       <div class="footer-right">
         <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑ Back to Top</button>
         <button class="dark-mode-toggle" onclick="document.body.classList.toggle('dark-mode');">🌙 Dark Mode</button>
