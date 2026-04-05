@@ -3,7 +3,8 @@
    ============================ */
 document.getElementById("include-header").innerHTML = `
   <header>
-    <img src="assets/images/big-logo.png" alt="Crown Creatives Logo">
+    <img src="assets/images/big-logo.png" class="light-logo" alt="Crown Creatives Logo">
+    <img src="assets/images/big-logo-dark.png" class="dark-logo" alt="Crown Creatives Logo Dark">
     <h1>Crown Creatives</h1>
 
     <div class="hamburger" onclick="document.body.classList.toggle('nav-open');">
@@ -34,12 +35,10 @@ document.getElementById("include-footer").innerHTML = `
   <footer class="site-footer">
     <div class="footer-row">
 
-      <!-- LEFT -->
       <div class="footer-left">
         © 2026 Crown Creatives – Created by Pete
       </div>
 
-      <!-- CENTER -->
       <div class="footer-center">
         <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">
           ↑ Back to Top
@@ -50,7 +49,6 @@ document.getElementById("include-footer").innerHTML = `
         </button>
       </div>
 
-      <!-- RIGHT -->
       <div class="footer-right">
         <a class="footer-email" href="mailto:crowncreatives@outlook.com">
           crowncreatives@outlook.com
