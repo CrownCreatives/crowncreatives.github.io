@@ -25,8 +25,8 @@ document.getElementById("include-nav").innerHTML = `
     <a href="gallery.html">Gallery</a>
     <a href="videos.html">Videos</a>
     <a href="about.html">About</a>
+     <a href="podcast.html">Podcast</a>
   </nav>
-`;
 
 /* ============================
    FOOTER
