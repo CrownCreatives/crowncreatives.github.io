@@ -1,22 +1,32 @@
-/* =========================================================
-   1. THEME VARIABLES
-   ========================================================= */
-:root {
-    --primary: #1e3a8a;
-    --secondary: #f97316;
-    --accent-pink: #ec4899;
-    --accent-yellow: #facc15;
+/* ============================================================
+   CROWN CREATIVES — Arcane Crystal Theme
+   Fantasy Artisan UI • Sapphire + Ember • Magical Glow
+   ============================================================ */
 
-    --bg-light: #f3f4ff;
+/* ---------- THEME VARIABLES ---------- */
+:root {
+    --crystal-deep: #0b1e3d;
+    --crystal-mid: #1e3a8a;
+    --crystal-light: #60a5fa;
+
+    --ember: #f97316;
+    --ember-soft: #fbbf24;
+
+    --arcane-pink: #ec4899;
+    --arcane-violet: #a855f7;
+
+    --bg-light: #eef2ff;
     --bg-dark: #0f172a;
 
-    --text-dark: #111827;
-    --text-muted: #6b7280;
+    --text-dark: #e2e8f0;
     --text-light: #ffffff;
+    --text-muted: #94a3b8;
 
-    --card-bg: #ffffffee;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.15);
 
-    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.18);
+    --shadow-crystal: 0 10px 30px rgba(14, 30, 64, 0.45);
+    --shadow-ember: 0 0 18px rgba(249, 115, 22, 0.45);
 
     --radius-lg: 18px;
     --radius-md: 12px;
@@ -25,103 +35,98 @@
     --transition-med: 0.35s ease;
 }
 
-/* =========================================================
-   2. GLOBAL
-   ========================================================= */
+/* ---------- GLOBAL RESET ---------- */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top left, #fef3c7, #e0f2fe 40%, #f3e8ff 80%);
-    color: var(--text-dark);
-    opacity: 0;
-    transition: opacity 0.6s ease;
+    background: radial-gradient(circle at top left,
+        #0b1e3d,
+        #1e3a8a 40%,
+        #0f172a 80%);
+    color: var(--text-light);
+    overflow-x: hidden;
 }
 
-body.page-loaded {
-    opacity: 1;
-}
-
-/* =========================================================
-   3. HEADER
-   ========================================================= */
+/* ---------- HEADER ---------- */
 header {
-    background: linear-gradient(120deg, var(--accent-yellow), var(--secondary), var(--accent-pink));
-    padding: 18px 5vw;
+    background: linear-gradient(120deg,
+        var(--crystal-light),
+        var(--arcane-violet),
+        var(--ember));
+    padding: 20px 5vw;
     display: flex;
     align-items: center;
     gap: 18px;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--shadow-crystal);
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 50;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 header img {
     height: 70px;
     width: auto;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45));
+    animation: floatLogo 4s ease-in-out infinite;
 }
 
 header h1 {
-    color: var(--text-light);
-    font-size: 2.2rem;
-    margin: 0;
+    font-size: 2.4rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-light);
 }
 
-/* Dark-mode logo swap */
-header img.light-logo { display: block; }
-header img.dark-logo { display: none; }
-
-.dark-mode header img.light-logo { display: none; }
-.dark-mode header img.dark-logo { display: block; }
-
-/* =========================================================
-   4. NAVIGATION
-   ========================================================= */
+/* ---------- NAVIGATION ---------- */
 nav {
-    background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent-pink)) !important;
-    padding: 10px 5vw;
+    background: rgba(11, 30, 61, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 12px 5vw;
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
     justify-content: center;
     position: sticky;
     top: 106px;
-    z-index: 19;
-    backdrop-filter: blur(10px);
+    z-index: 40;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
+
 nav a {
     color: var(--text-light);
     text-decoration: none;
-    font-weight: 600;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
     border: 1px solid transparent;
     transition: var(--transition-fast);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 nav a:hover {
-    background: var(--secondary);
-    border-color: rgba(255,255,255,0.6);
-    transform: translateY(-1px);
+    background: linear-gradient(120deg,
+        var(--ember),
+        var(--arcane-pink));
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-ember);
 }
 
-/* =========================================================
-   5. LAYOUT
-   ========================================================= */
+/* ---------- LAYOUT ---------- */
 .main-hero {
     max-width: 1100px;
-    margin: 30px auto 10px;
+    margin: 40px auto;
     padding: 0 5vw;
     display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    gap: 24px;
+    grid-template-columns: 3fr 2fr;
+    gap: 28px;
 }
 
 @media (max-width: 800px) {
@@ -132,241 +137,117 @@ nav a:hover {
 
 .container {
     max-width: 1100px;
-    margin: 20px auto 40px;
+    margin: 20px auto 60px;
     padding: 0 5vw;
 }
 
-/* =========================================================
-   6. CARDS
-   ========================================================= */
+/* ---------- CARDS ---------- */
 .card {
     background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    padding: 22px 24px;
-    margin-bottom: 22px;
-    backdrop-filter: blur(8px);
+    padding: 24px 26px;
+    box-shadow: var(--shadow-crystal);
+    backdrop-filter: blur(10px);
     animation: fadeInUp 0.6s var(--transition-med);
 }
 
-/* =========================================================
-   7. FOOTER (BLUE GRADIENT BANNER)
-   ========================================================= */
-.site-footer {
-    background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent-pink));
-    padding: 18px 5vw;
+.card:hover {
+    border-color: var(--crystal-light);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+    transform: translateY(-3px);
+    transition: var(--transition-med);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: var(--crystal-light);
+}
+
+.card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ---------- BUTTONS ---------- */
+button {
+    background: linear-gradient(120deg,
+        var(--crystal-light),
+        var(--arcane-violet));
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
     color: var(--text-light);
-    box-shadow: var(--shadow-soft);
-    margin-top: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-crystal);
+}
+
+button:hover {
+    background: linear-gradient(120deg,
+        var(--ember),
+        var(--arcane-pink));
+    box-shadow: var(--shadow-ember);
+    transform: translateY(-2px);
+}
+
+/* ---------- TICKER ---------- */
+.ticker-bar {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(11, 30, 61, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.ticker-inner {
+    display: flex;
+    gap: 60px;
+    padding: 12px 0;
+    animation: tickerScroll 18s linear infinite;
+}
+
+.ticker-inner span {
+    white-space: nowrap;
+    color: var(--crystal-light);
+    font-weight: 600;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+    background: rgba(11, 30, 61, 0.85);
+    padding: 30px 5vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
 }
 
 .footer-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 20px;
 }
 
-.footer-left {
-    font-weight: 600;
-    opacity: 0.9;
-}
-
-.footer-center {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-}
-
-.back-to-top,
-.dark-mode-toggle {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 6px 14px;
-    border-radius: 999px;
-    color: var(--text-light);
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.back-to-top:hover,
-.dark-mode-toggle:hover {
-    background: rgba(255,255,255,0.3);
-}
-
+.footer-left,
+.footer-center,
 .footer-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    color: var(--text-muted);
 }
 
-.footer-email {
-    color: var(--text-light);
-    font-weight: 600;
-    text-decoration: none;
+/* ---------- ANIMATIONS ---------- */
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
 
-.footer-email:hover {
-    text-decoration: underline;
-}
-
-.footer-social {
-    display: flex;
-    gap: 12px;
-}
-
-.footer-icon svg {
-    width: 26px;
-    height: 26px;
-    color: var(--text-light);
-    transition: var(--transition-fast);
-}
-
-.footer-icon svg:hover {
-    color: var(--accent-yellow);
-}
-
-/* =========================================================
-   8. TICKER (Enhanced)
-   ========================================================= */
-
-/* Default: ticker sits ABOVE the footer */
-.ticker-bar {
-    width: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    color: #ffffff;
-    font-size: 0.9rem;
-    padding: 6px 0;
-    overflow: hidden;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.25);
-    position: relative; /* normal flow */
-    margin-top: 40px;
-}
-
-/* Ticker content */
-.ticker-inner {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: ticker-scroll-right 40s linear infinite; /* slower */
-}
-
-/* Pause on hover */
-.ticker-bar:hover .ticker-inner {
-    animation-play-state: paused;
-}
-
-/* Add spacing + icons */
-.ticker-inner span {
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.ticker-inner span svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-}
-
-/* Fade edges */
-.ticker-bar::before,
-.ticker-bar::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 60px;
-    height: 100%;
-    z-index: 1000;
-    pointer-events: none;
-}
-
-.ticker-bar::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(15,23,42,0.7), transparent);
-}
-
-.ticker-bar::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(15,23,42,0.7), transparent);
-}
-
-/* Animation */
-@keyframes ticker-scroll-right {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-/* =========================================================
-   MOBILE BEHAVIOUR — FIXED ONLY ON SMALL SCREENS
-   ========================================================= */
-@media (max-width: 700px) {
-    .ticker-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        margin-top: 0;
-        font-size: 0.75rem; /* shrink */
-        padding: 4px 0;
-    }
-
-    .ticker-inner span {
-        padding: 0 20px; /* tighter spacing */
-    }
-}
-
-}
-
-/* =========================================================
-   9. DARK MODE
-   ========================================================= */
-.dark-mode {
-    background: var(--bg-dark);
-    color: var(--text-light);
-}
-
-.dark-mode .card {
-    background: rgba(255,255,255,0.08);
-    color: var(--text-light);
-}
-
-.dark-mode .site-footer {
-    background: linear-gradient(120deg, #1a1f2e, #0f172a, #000814);
-}
-
-.dark-mode .footer-email,
-.dark-mode .footer-icon svg {
-    color: var(--accent-yellow);
-}
-
-/* =========================================================
-   10. ANIMATIONS
-   ========================================================= */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* Glow pulse animation for ticker icons */
-@keyframes tickerIconPulse {
-    0% {
-        filter: drop-shadow(0 0 0px rgba(250, 204, 21, 0.0));
-        transform: scale(1);
-    }
-    50% {
-        filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.7));
-        transform: scale(1.12);
-    }
-    100% {
-        filter: drop-shadow(0 0 0px rgba(250, 204, 21, 0.0));
-        transform: scale(1);
-    }
+
+@keyframes tickerScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
-/* Apply glow to icons inside ticker */
-.ticker-inner span svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    animation: tickerIconPulse 2.8s ease-in-out infinite;
-}
