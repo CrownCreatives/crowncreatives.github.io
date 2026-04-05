@@ -1,7 +1,14 @@
+/* Helper to safely inject HTML */
+function inject(id, html) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.innerHTML = html;
+}
+
 /* ============================
    HEADER
    ============================ */
-document.getElementById("include-header").innerHTML = `
+inject("include-header", `
   <header>
     <img src="assets/images/big-logo.png" class="light-logo" alt="Crown Creatives Logo">
     <img src="assets/images/big-logo-dark.png" class="dark-logo" alt="Crown Creatives Logo Dark">
@@ -13,12 +20,12 @@ document.getElementById("include-header").innerHTML = `
       <span></span>
     </div>
   </header>
-`;
+`);
 
 /* ============================
    NAVIGATION
    ============================ */
-document.getElementById("include-nav").innerHTML = `
+inject("include-nav", `
   <nav>
     <a href="index.html">Home</a>
     <a href="blog.html">Blog</a>
@@ -27,12 +34,12 @@ document.getElementById("include-nav").innerHTML = `
     <a href="podcast.html">Podcast</a>
     <a href="about.html">About</a>
   </nav>
-`;
+`);
 
 /* ============================
    FOOTER
    ============================ */
-document.getElementById("include-footer").innerHTML = `
+inject("include-footer", `
   <footer class="site-footer">
     <div class="footer-row">
 
@@ -76,12 +83,12 @@ document.getElementById("include-footer").innerHTML = `
 
     </div>
   </footer>
-`;
+`);
 
 /* ============================
    TICKER
    ============================ */
-document.getElementById("include-ticker").innerHTML = `
+inject("include-ticker", `
   <div class="ticker-bar">
     <div class="ticker-inner">
 
@@ -97,4 +104,4 @@ document.getElementById("include-ticker").innerHTML = `
 
     </div>
   </div>
-`;
+`);
