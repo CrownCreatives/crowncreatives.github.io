@@ -406,3 +406,49 @@ body.dark-mode .dark-logo {
   0%, 100% { filter: drop-shadow(0 0 8px #10b981); }
   50% { filter: drop-shadow(0 0 16px #34d399); }
 }
+/* ---------- LOGO TRANSITION (20s morph) ---------- */
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 70px;
+  width: auto;
+}
+
+.crown-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: auto;
+  transition: opacity 20s ease-in-out, filter 20s ease-in-out;
+}
+
+/* Default (light mode) */
+.light-logo {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px var(--crystal-light));
+}
+
+.dark-logo {
+  opacity: 0;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+/* Dark mode morph */
+body.dark-mode .light-logo {
+  opacity: 0;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+body.dark-mode .dark-logo {
+  opacity: 1;
+  filter: drop-shadow(0 0 16px #10b981);
+}
+@keyframes emeraldPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px #10b981); }
+  50% { filter: drop-shadow(0 0 18px #34d399); }
+}
+
+body.dark-mode .dark-logo {
+  animation: emeraldPulse 6s ease-in-out infinite;
+}
