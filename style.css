@@ -312,6 +312,27 @@ animation: ticker-scroll-right 25s linear infinite;
     right: 0;
     background: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
 }
+/* Fade edges for ticker */
+.ticker-bar::before,
+.ticker-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.ticker-bar::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(15,23,42,0.7), transparent);
+}
+
+.ticker-bar::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(15,23,42,0.7), transparent);
+}
 
 /* =========================================================
    9. FOOTER
