@@ -278,3 +278,24 @@ button:hover {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
+/* ---------- SOCIAL ICONS ---------- */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 14px;
+    text-decoration: none;
+    transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.social-icon .icon {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
+    transition: filter var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-icon:hover .icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px var(--crystal-light));
+}
