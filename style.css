@@ -490,6 +490,89 @@ body.page-loaded {
     color: var(--secondary);
     transition: 0.25s ease;
 }
+/* ---------- CLEAN 3‑COLUMN FOOTER ABOVE TICKER ---------- */
+
+.site-footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 20px 5vw;
+    margin-top: 40px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT COLUMN */
+.footer-left {
+    flex: 1;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* CENTER COLUMN (stacked buttons) */
+.footer-center {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* RIGHT COLUMN (stacked email + icons) */
+.footer-right {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+/* Email */
+.footer-email {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Icons */
+.footer-icon svg {
+    color: var(--secondary);
+    transition: 0.25s ease;
+}
+
+.footer-icon svg:hover {
+    color: var(--accent-pink);
+    transform: translateY(-3px);
+}
+
+/* Buttons */
+.back-to-top,
+.dark-mode-toggle {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.back-to-top:hover,
+.dark-mode-toggle:hover {
+    background: var(--accent-pink);
+    transform: translateY(-3px);
+}
 
 .footer-icon svg:hover {
     color: var(--accent-pink);
