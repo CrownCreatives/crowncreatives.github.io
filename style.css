@@ -348,3 +348,26 @@ nav a:hover {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* Glow pulse animation for ticker icons */
+@keyframes tickerIconPulse {
+    0% {
+        filter: drop-shadow(0 0 0px rgba(250, 204, 21, 0.0));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.7));
+        transform: scale(1.12);
+    }
+    100% {
+        filter: drop-shadow(0 0 0px rgba(250, 204, 21, 0.0));
+        transform: scale(1);
+    }
+}
+
+/* Apply glow to icons inside ticker */
+.ticker-inner span svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    animation: tickerIconPulse 2.8s ease-in-out infinite;
+}
