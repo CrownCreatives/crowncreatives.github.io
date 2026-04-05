@@ -289,6 +289,8 @@ nav a:hover::after {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
 }
+animation: ticker-scroll-right 25s linear infinite;
+
 /* =========================================================
    9. FOOTER
    ========================================================= */
