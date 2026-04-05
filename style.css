@@ -1,4 +1,22 @@
 :root {
+    html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+    img, video {
+    max-width: 100%;
+    height: auto;
+}
+    @media (max-width: 800px) {
+    .main-hero {
+        grid-template-columns: 1fr;
+    }
+}
+    body {
+    font-size: clamp(16px, 1.6vw, 20px);
+}
+
     --primary: #1e3a8a;
     --secondary: #f97316;
     --accent-pink: #ec4899;
@@ -59,7 +77,7 @@ header h1 {
 
 /* ---------- NAV ---------- */
 nav {
-    background: rgba(15, 23, 42, 0.9);
+    background: linear-gradient(180deg, #102a5c, #0a1a3a);
     padding: 10px 5vw;
     display: flex;
     flex-wrap: wrap;
@@ -69,6 +87,7 @@ nav {
     top: 106px;
     z-index: 19;
     backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255,255,255,0.15);
 }
 
 nav a {
@@ -696,4 +715,31 @@ body.page-loaded {
 .site-footer:hover {
     box-shadow: 0 -6px 18px rgba(255, 255, 255, 0.25);
     transition: box-shadow 0.4s ease;
+}
+@media (max-width: 900px) {
+    .footer-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        flex: unset;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-right {
+        flex-direction: column;
+    }
+}
+.container,
+.card {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+.site-footer {
+    margin-bottom: 6px;
 }
