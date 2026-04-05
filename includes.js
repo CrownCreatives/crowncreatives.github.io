@@ -83,8 +83,17 @@ document.getElementById("include-footer").innerHTML = `
 document.getElementById("include-ticker").innerHTML = `
   <div class="ticker-bar">
     <div class="ticker-inner">
-      <span>Art • Recovery • Rebuilding • Crown Creatives •</span>
-      <span>3D & Fantasy Art • Mental Health Journey • Creative Recovery •</span>
+
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 2L15 8H9L12 2Z"/></svg>
+        Art • Recovery • Rebuilding • Crown Creatives •
+      </span>
+
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 22L9 16H15L12 22Z"/></svg>
+        3D & Fantasy Art • Mental Health Journey • Creative Recovery •
+      </span>
+
     </div>
   </div>
 `;
