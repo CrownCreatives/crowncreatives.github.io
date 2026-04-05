@@ -74,6 +74,39 @@ header h1 {
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
+<div class="hamburger" onclick="document.body.classList.toggle('nav-open');">
+    <span></span><span></span><span></span>
+</div>
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 4px;
+}
+
+@media (max-width: 800px) {
+    nav {
+        display: none;
+    }
+
+    body.nav-open nav {
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(180deg, #102a5c, #0a1a3a);
+        padding: 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
 
 /* ---------- NAV ---------- */
 nav {
@@ -742,4 +775,47 @@ body.page-loaded {
 }
 .site-footer {
     margin-bottom: 6px;
+}
+nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent-pink);
+    transition: 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 70%;
+}
+
+nav a:hover {
+    color: var(--accent-yellow);
+    transform: translateY(-2px);
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 20px 5vw;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    transition: 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
