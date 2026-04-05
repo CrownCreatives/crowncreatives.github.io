@@ -19,14 +19,14 @@ document.getElementById("include-header").innerHTML = `
    NAVIGATION
    ============================ */
 document.getElementById("include-nav").innerHTML = `
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="videos.html">Videos</a>
-    <a href="about.html">About</a>
-     <a href="podcast.html">Podcast</a>
-  </nav>
+ <nav>
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="videos.html">Videos</a>
+  <a href="podcast.html">Podcast</a>
+  <a href="about.html">About</a>
+</nav>
 
 /* ============================
    FOOTER
