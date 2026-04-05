@@ -45,15 +45,31 @@ inject("include-footer", `
         </button>
       </div>
 
-      <div class="footer-right">
-        <a class="footer-email" href="mailto:crowncreatives@outlook.com">
-          crowncreatives@outlook.com
-        </a>
-      </div>
+   <div class="footer-right">
+  <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" class="icon">
+      <defs>
+        <radialGradient id="igGlow" cx="50%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="var(--arcane-pink)" />
+          <stop offset="100%" stop-color="var(--ember)" />
+        </radialGradient>
+      </defs>
+      <path fill="url(#igGlow)" d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+    </svg>
+  </a>
 
-    </div>
-  </footer>
-`);
+  <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" class="icon">
+      <defs>
+        <radialGradient id="fbGlow" cx="50%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="var(--crystal-light)" />
+          <stop offset="100%" stop-color="var(--arcane-violet)" />
+        </radialGradient>
+      </defs>
+      <path fill="url(#fbGlow)" d="M13 3h4V0h-4c-3.3 0-6 2.7-6 6v3H4v4h3v11h4V13h3l1-4h-4V6c0-1.1.9-2 2-2z"/>
+    </svg>
+  </a>
+</div>
 
 /* TICKER */
 inject("include-ticker", `
