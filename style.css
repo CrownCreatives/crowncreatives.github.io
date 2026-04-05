@@ -85,7 +85,7 @@ header img.dark-logo { display: none; }
    4. NAVIGATION
    ========================================================= */
 nav {
-    background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent-pink));
+    background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent-pink)) !important;
     padding: 10px 5vw;
     display: flex;
     flex-wrap: wrap;
@@ -96,8 +96,6 @@ nav {
     z-index: 19;
     backdrop-filter: blur(10px);
 }
-
-
 nav a {
     color: var(--text-light);
     text-decoration: none;
