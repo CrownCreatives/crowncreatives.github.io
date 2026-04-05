@@ -291,6 +291,28 @@ nav a:hover::after {
 }
 animation: ticker-scroll-right 25s linear infinite;
 
+/* Fade edges */
+.ticker-bar::before,
+.ticker-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60px; /* adjust for stronger/weaker fade */
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.ticker-bar::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+.ticker-bar::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+}
+
 /* =========================================================
    9. FOOTER
    ========================================================= */
