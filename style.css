@@ -578,3 +578,10 @@ body.page-loaded {
     color: var(--accent-pink);
     transform: translateY(-3px);
 }
+.site-footer {
+    background: #0a1a3a; /* deep blue */
+    color: var(--text-light);
+    padding: 20px 5vw;
+    margin-top: 40px;
+}
+
