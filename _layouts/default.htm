@@ -6,61 +6,61 @@
   <title>{{ page.title }} | Crown Creatives</title>
 
   <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="/assets/js/script.js"></script>
 </head>
 
 <body class="fade-enter">
 
-  <!-- HEADER -->
+  <!-- ===========================
+       HEADER
+  ============================ -->
   <header class="site-header">
- <div class="header-inner">
 
-  <!-- Floating Crown with Shimmer -->
-  <div class="crown-wrapper">
-    <img src="/assets/images/big-logo.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
-    <img src="/assets/images/big-logo-dark.png" class="crown-logo dark-logo" alt="Crown Creatives Dark Logo">
-    <div class="crown-shimmer"></div>
-  </div>
+    <div class="header-inner">
 
-  <div class="header-text">
-    <h1>Crown Creatives</h1>
-    <p class="tagline">Artistry • Resilience • Imagination</p>
-  </div>
+      <!-- Crown Wrapper (Parallax + Shimmer + Crossfade) -->
+      <div class="crown-wrapper">
+        <img src="/assets/images/big-logo.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
+        <img src="/assets/images/big-logo-dark.png" class="crown-logo dark-logo" alt="Crown Creatives Dark Logo">
+        <div class="crown-shimmer"></div>
+      </div>
 
-</div>
+      <!-- Header Text -->
+      <div class="header-text">
+        <h1>Crown Creatives</h1>
+        <p class="tagline">Artistry • Resilience • Imagination</p>
+      </div>
 
-    <header class="site-header">
-  <div class="header-inner">
-
-    <!-- Crown Wrapper (Parallax + Shimmer + Crossfade) -->
-    <div class="crown-wrapper">
-      <img src="/assets/images/big-logo.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
-      <img src="/assets/images/big-logo-dark.png" class="crown-logo dark-logo" alt="Crown Creatives Dark Logo">
-      <div class="crown-shimmer"></div>
     </div>
-
-    <!-- Text -->
-    <div class="header-text">
-      <h1>Crown Creatives</h1>
-      <p class="tagline">Artistry • Resilience • Imagination</p>
-    </div>
-
-  </div>
 
   </header>
 
-  <!-- NAVIGATION -->
+
+  <!-- ===========================
+       NAVIGATION
+  ============================ -->
   <nav class="site-nav">
     <a href="/">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/blog.html">Blog</a>
     <a href="/gallery.html">Gallery</a>
     <a href="/projects.html">Projects</a>
     <a href="/videos.html">Videos</a>
     <a href="/podcasts.html">Podcasts</a>
-    <a href="/contacts.html">Contact</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/about.html">About</a>
   </nav>
 
-  <!-- TICKER -->
+
+  <!-- ===========================
+       MAIN CONTENT
+  ============================ -->
+  <main class="container">
+    {{ content }}
+  </main>
+
+
+  <!-- ===========================
+       TICKER (ABOVE FOOTER)
+  ============================ -->
   <div class="ticker-bar">
     <div class="ticker-inner">
       <span>Welcome to Crown Creatives — Crafting worlds with intention.</span>
@@ -69,16 +69,11 @@
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="container">
-    {{ content }}
-  </main>
 
-  <!-- FOOTER -->
+  <!-- ===========================
+       FOOTER
+  ============================ -->
   {% include includes.js %}
-
-  <!-- GLOBAL SCRIPT -->
-  <script src="/assets/js/script.js"></script>
 
 </body>
 </html>
