@@ -62,12 +62,27 @@ body.dark-mode {
 
 /* ---------- HEADER ---------- */
 .site-header {
-    background: linear-gradient(120deg, #facc15, #f97316, #ec4899);
-    padding: 20px 5vw;
+    background: linear-gradient(
+        120deg,
+        #3b1e5a,
+        #1e3a8a,
+        #0f172a
+    );
+    padding: 28px 5vw;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-soft);
+   
+}
+.site-header h1 {
+    color: var(--text-light);
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(255,255,255,0.25);
 }
 
 .header-inner {
@@ -77,10 +92,28 @@ body.dark-mode {
 }
 
 .crown-logo {
-    height: 70px;
+    height: 110px;
     width: auto;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
-    transition: opacity 0.4s ease;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
+    animation: crownFloat 6s ease-in-out infinite;
+}
+@keyframes crownFloat {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+.crown-logo {
+    position: relative;
+}
+
+.crown-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(147,51,234,0.35), transparent 70%);
+    filter: blur(20px);
+    z-index: -1;
 }
 
 .dark-logo {
