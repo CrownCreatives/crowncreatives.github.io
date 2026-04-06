@@ -421,3 +421,8 @@ nav a:hover::after {
     align-items: flex-start;
   }
 }
+@keyframes floatParticle {
+  0%   { transform: translateY(0) translateX(0); opacity: 0.3; }
+  50%  { transform: translateY(-20px) translateX(var(--wind)); opacity: 0.8; }
+  100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+}
