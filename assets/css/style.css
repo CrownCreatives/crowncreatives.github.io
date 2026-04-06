@@ -254,3 +254,12 @@ button:hover {
 body.dark-mode .particle {
     background: rgba(255,255,255,0.3);
 }
+.social-icon svg {
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.social-icon:hover svg {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--accent-yellow);
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.6));
+}
