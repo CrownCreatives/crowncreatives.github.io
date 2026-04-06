@@ -11,31 +11,31 @@
 <body class="fade-enter">
 
   <!-- HEADER -->
-  <header>
+  <header class="site-header">
     <div class="header-inner">
-      <div class="logo-wrapper">
-        <img src="/assets/images/day-crown.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
-        <img src="/assets/images/emerald-crown.png" class="crown-logo dark-logo" alt="Crown Creatives Emerald Logo">
-        <div class="sparkle-trail"></div>
-      </div>
+      <img src="/assets/images/big-logo.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
+      <img src="/assets/images/big-logo-dark.png" class="crown-logo dark-logo" alt="Crown Creatives Dark Logo">
       <h1>Crown Creatives</h1>
     </div>
   </header>
 
   <!-- NAVIGATION -->
-  <nav>
+  <nav class="site-nav">
     <a href="/">Home</a>
     <a href="/about.html">About</a>
     <a href="/blog.html">Blog</a>
     <a href="/gallery.html">Gallery</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/videos.html">Videos</a>
+    <a href="/podcasts.html">Podcasts</a>
+    <a href="/contacts.html">Contact</a>
   </nav>
 
-  <!-- TICKER TAPE -->
+  <!-- TICKER -->
   <div class="ticker-bar">
     <div class="ticker-inner">
       <span>Welcome to Crown Creatives — Crafting worlds with intention.</span>
-      <span>New artwork added regularly.</span>
+      <span>New artwork and podcasts added regularly.</span>
       <span>Creativity, recovery, and resilience in motion.</span>
     </div>
   </div>
@@ -45,10 +45,11 @@
     {{ content }}
   </main>
 
-  <!-- FOOTER INCLUDE -->
+  <!-- FOOTER -->
   {% include includes.js %}
 
   <!-- GLOBAL SCRIPT -->
   <script src="/assets/js/script.js"></script>
+
 </body>
 </html>
