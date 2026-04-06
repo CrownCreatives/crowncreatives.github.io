@@ -100,6 +100,42 @@ inject("include-footer", `
         <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">↑ Back to Top</button>
         <button class="dark-mode-toggle" onclick="document.body.classList.toggle('dark-mode');">🌙 Dark Mode</button>
       </div>
+/* ============================================================
+   CROWN CREATIVES — Ambient Emerald Particle Generator
+   Spawns drifting particles behind all content
+   ============================================================ */
+
+(function spawnAmbientParticles() {
+  const particleCount = 40; // adjust for more/less particles
+
+  for (let i = 0; i < particleCount; i++) {
+    createParticle();
+  }
+
+  function createParticle() {
+    const p = document.createElement("div");
+    p.classList.add("particle");
+
+    // random starting position
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.top = Math.random() * 100 + "vh";
+
+    // random animation duration + delay
+    const duration = 6 + Math.random() * 6; // 6–12s
+    const delay = Math.random() * 6;
+
+    p.style.animationDuration = duration + "s";
+    p.style.animationDelay = delay + "s";
+
+    document.body.appendChild(p);
+
+    // respawn particle when animation ends
+    p.addEventListener("animationend", () => {
+      p.remove();
+      createParticle();
+    });
+  }
+})();
 
     </div>
   </footer>
