@@ -34,7 +34,6 @@ body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-    /* FANTASY BACKGROUND */
     background: radial-gradient(circle at 20% 20%, #3b1e5a, #1e3a8a 40%, #0f172a 80%);
     color: var(--text-light);
     overflow-x: hidden;
@@ -56,7 +55,7 @@ body.dark-mode {
 }
 
 /* ============================================================
-   HEADER — FINAL CORRECTED VERSION
+   HEADER
    ============================================================ */
 
 .site-header {
@@ -69,7 +68,7 @@ body.dark-mode {
     overflow: hidden;
 }
 
-/* Animated runes behind header */
+/* Animated runes */
 .site-header::before {
     content: "ᚠᛃᚱᛟᚾᛞᛁᚾᚷᛊᚨᚱᛏ";
     position: absolute;
@@ -102,7 +101,7 @@ body.dark-mode {
     box-shadow: 0 0 12px rgba(147,51,234,0.6);
 }
 
-/* ---------- HEADER LAYOUT (FIXED & BALANCED) ---------- */
+/* Header layout */
 .header-inner {
     position: relative;
     width: 100%;
@@ -110,21 +109,21 @@ body.dark-mode {
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 200px 1fr 200px; /* crown | centered text | balance */
+    grid-template-columns: 200px 1fr 200px;
     align-items: center;
     z-index: 2;
 }
 
-/* ---------- CROWN POSITIONING (LEFT + UP) ---------- */
+/* Crown */
 .crown-wrapper {
     position: relative;
     justify-self: start;
     margin-left: -40px;
     margin-top: -120px;
     pointer-events: none;
+    animation: parallaxFloat 10s ease-in-out infinite;
 }
 
-/* Crown logos stacked for crossfade */
 .crown-logo {
     position: absolute;
     top: 0;
@@ -135,26 +134,19 @@ body.dark-mode {
     filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
 }
 
-/* Light mode */
 .light-logo { opacity: 1; }
 .dark-logo  { opacity: 0; }
 
-/* Dark mode crossfade */
 body.dark-mode .light-logo { opacity: 0; }
 body.dark-mode .dark-logo  { opacity: 1; }
 
-/* Parallax float */
 @keyframes parallaxFloat {
     0%   { transform: translateY(0px); }
     50%  { transform: translateY(-6px); }
     100% { transform: translateY(0px); }
 }
 
-.crown-wrapper {
-    animation: parallaxFloat 10s ease-in-out infinite;
-}
-
-/* Shimmer sweep */
+/* Shimmer */
 .crown-shimmer {
     position: absolute;
     top: 0;
@@ -177,7 +169,7 @@ body.dark-mode .dark-logo  { opacity: 1; }
     100% { left: 150%; }
 }
 
-/* ---------- HEADER TEXT (CENTERED) ---------- */
+/* Header text */
 .header-text {
     text-align: center;
     justify-self: center;
@@ -244,7 +236,7 @@ body.dark-mode .dark-logo  { opacity: 1; }
 }
 
 /* ============================================================
-   CARDS — GLASSY FANTASY PANELS
+   CARDS
    ============================================================ */
 
 .card {
@@ -349,26 +341,47 @@ body.dark-mode .dark-logo  { opacity: 1; }
 body.dark-mode .particle {
     background: rgba(255,255,255,0.3);
 }
+
 /* ============================================================
-   RESPONSIVE FIXES — MOBILE & TABLET
+   RESPONSIVE — CROWN BEHIND TEXT
    ============================================================ */
 
-/* Tablet (≤ 900px) */
 @media (max-width: 900px) {
 
     .header-inner {
-        grid-template-columns: 1fr; /* stack crown + text */
+        display: block !important;
+        position: relative !important;
         text-align: center;
+        padding: 40px 0;
+        z-index: 2;
     }
 
     .crown-wrapper {
-        margin: 0 auto;
-        margin-top: -40px;
-        transform: scale(0.85);
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) scale(0.9) !important;
+        margin: 0 !important;
+        z-index: 0 !important;
+        opacity: 0.25 !important;
+        pointer-events: none;
+    }
+
+    .crown-logo {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        height: 120px;
+        width: auto;
+    }
+
+    .header-text {
+        position: relative !important;
+        z-index: 3 !important;
     }
 
     .header-text h1 {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
     }
 
     .tagline {
@@ -376,17 +389,11 @@ body.dark-mode .particle {
     }
 }
 
-/* Mobile (≤ 600px) */
 @media (max-width: 600px) {
 
-    .header-inner {
-        grid-template-columns: 1fr;
-        padding: 0;
-    }
-
     .crown-wrapper {
-        margin-top: -20px;
-        transform: scale(0.75);
+        transform: translate(-50%, -50%) scale(0.65) !important;
+        opacity: 0.22 !important;
     }
 
     .header-text h1 {
@@ -398,64 +405,6 @@ body.dark-mode .particle {
         font-size: 0.85rem;
         letter-spacing: 0.12em;
     }
-
-    .site-nav {
-        gap: 6px;
-        padding: 10px 4vw;
-    }
-
-    .site-nav a {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-    }
-/* ============================================================
-   CROWN BEHIND TEXT — MOBILE & TABLET
-   ============================================================ */
-
-/* Tablet (≤ 900px) */
-@media (max-width: 900px) {
-
-    .header-inner {
-        grid-template-columns: 1fr; /* stack crown + text */
-        position: relative;
-        text-align: center;
-    }
-
-    .crown-wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.9);
-        margin: 0;
-        z-index: 0; /* behind text */
-        opacity: 0.25; /* subtle background */
-        pointer-events: none;
-    }
-
-    .header-text {
-        position: relative;
-        z-index: 2; /* above crown */
-    }
-}
-
-/* Mobile (≤ 600px) */
-@media (max-width: 600px) {
-
-    .crown-wrapper {
-        transform: translate(-50%, -50%) scale(0.7);
-        opacity: 0.22;
-    }
-
-    .header-text h1 {
-        font-size: 2rem;
-        letter-spacing: 0.08em;
-    }
-
-    .tagline {
-        font-size: 0.85rem;
-        letter-spacing: 0.12em;
-    }
-}
 
     .card {
         padding: 18px 18px;
