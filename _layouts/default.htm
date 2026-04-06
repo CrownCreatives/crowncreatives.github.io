@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Crown Creatives</title>
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="fade-enter">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-wrapper">
+        <img src="/assets/images/day-crown.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
+        <img src="/assets/images/emerald-crown.png" class="crown-logo dark-logo" alt="Crown Creatives Emerald Logo">
+        <div class="sparkle-trail"></div>
+      </div>
+      <h1>Crown Creatives</h1>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/gallery.html">Gallery</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+
+  <!-- TICKER TAPE -->
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      <span>Welcome to Crown Creatives — Crafting worlds with intention.</span>
+      <span>New artwork added weekly.</span>
+      <span>Follow the journey — Creativity, recovery, and resilience.</span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <!-- FOOTER INCLUDE -->
+  {% include includes.js %}
+
+  <!-- GLOBAL SCRIPT -->
+  <script src="/assets/js/script.js"></script>
+
+</body>
+</html>
 
