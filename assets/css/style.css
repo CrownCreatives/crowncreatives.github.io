@@ -1,5 +1,5 @@
 /* ============================================================
-   CROWN CREATIVES — FULL FANTASY THEME (CLEAN VALIDATED BUILD)
+   CROWN CREATIVES — CLEAN VALIDATED FANTASY THEME (FINAL BUILD)
    ============================================================ */
 
 /* ---------- THEME VARIABLES ---------- */
@@ -56,14 +56,13 @@ body.dark-mode {
 }
 
 /* ============================================================
-   HEADER — FANTASY VERSION
+   HEADER — FINAL CORRECTED VERSION
    ============================================================ */
 
 .site-header {
     background: linear-gradient(120deg, #3b1e5a, #1e3a8a, #0f172a);
     padding: 32px 5vw;
     display: flex;
-    align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-soft);
     position: relative;
@@ -103,40 +102,27 @@ body.dark-mode {
     box-shadow: 0 0 12px rgba(147,51,234,0.6);
 }
 
-/* Header layout */
+/* ---------- HEADER LAYOUT (FIXED & BALANCED) ---------- */
 .header-inner {
     position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5vw;
 
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 200px 1fr 200px; /* crown | centered text | balance */
     align-items: center;
     z-index: 2;
 }
 
-}
-
-/* Parallax float */
-.crown-wrapper {
-    position: relative;
-    animation: parallaxFloat 10s ease-in-out infinite;
-}
-
-@keyframes parallaxFloat {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
+/* ---------- CROWN POSITIONING (LEFT + UP) ---------- */
 .crown-wrapper {
     position: relative;
     justify-self: start;
-    margin-left: -40px;   /* move left */
-    margin-top: -20px;    /* move upward */
+    margin-left: -10px;
+    margin-top: -8px;
+    pointer-events: none;
 }
-
 
 /* Crown logos stacked for crossfade */
 .crown-logo {
@@ -156,6 +142,17 @@ body.dark-mode {
 /* Dark mode crossfade */
 body.dark-mode .light-logo { opacity: 0; }
 body.dark-mode .dark-logo  { opacity: 1; }
+
+/* Parallax float */
+@keyframes parallaxFloat {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+.crown-wrapper {
+    animation: parallaxFloat 10s ease-in-out infinite;
+}
 
 /* Shimmer sweep */
 .crown-shimmer {
@@ -180,7 +177,12 @@ body.dark-mode .dark-logo  { opacity: 1; }
     100% { left: 150%; }
 }
 
-/* Header text */
+/* ---------- HEADER TEXT (CENTERED) ---------- */
+.header-text {
+    text-align: center;
+    justify-self: center;
+}
+
 .header-text h1 {
     font-size: 3.4rem;
     margin: 0;
