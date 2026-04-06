@@ -1,9 +1,18 @@
+/* ============================================================
+   CROWN CREATIVES — FINAL SCRIPT.JS (MERGED + CLEANED)
+   ============================================================ */
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Fade-in
+  /* -------------------------------
+     PAGE FADE-IN
+  -------------------------------- */
   document.body.classList.add("fade-enter-active");
 
-  // Back to top
+
+  /* -------------------------------
+     BACK TO TOP BUTTON
+  -------------------------------- */
   const backToTop = document.querySelector(".back-to-top");
   if (backToTop) {
     backToTop.addEventListener("click", () => {
@@ -11,15 +20,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Dark mode
-  const toggle = document.querySelector(".dark-mode-toggle");
+
+  /* -------------------------------
+     DARK MODE TOGGLE
+     (CSS expects .dark-toggle)
+  -------------------------------- */
+  const toggle = document.querySelector(".dark-toggle");
   if (toggle) {
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
+
+      // Save preference
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
     });
   }
 
-  // Ambient particles
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+
+  /* -------------------------------
+     AMBIENT PARTICLES
+  -------------------------------- */
   const count = 40;
 
   function createParticle() {
@@ -47,22 +75,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   for (let i = 0; i < count; i++) createParticle();
-  
+
+
+  /* -------------------------------
+     SCROLL FADE-IN
+  -------------------------------- */
+  const elements = document.querySelectorAll(".scroll-fade");
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+          }
+      });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+
+
+  /* -------------------------------
+     PARALLAX CROWN
+  -------------------------------- */
+  document.addEventListener("mousemove", (e) => {
+    const crown = document.querySelector(".crown-wrapper");
+    if (!crown) return;
+
+    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+    crown.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
 });
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".scroll-fade");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
-        });
-    }, { threshold: 0.2 });
-
-    elements.forEach(el => observer.observe(el));
-});
-</script>
-
