@@ -689,3 +689,55 @@ body.dark-mode .social-icon svg {
         transform: translate(40px, -40px) scale(0.1);
     }
 }
+/* ============================================================
+   MOBILE FOOTER COMPRESSION
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    /* Move copyright to the top */
+    .footer-center {
+        order: 1;
+        font-size: 0.85rem;
+        opacity: 0.9;
+    }
+
+    /* Email next */
+    .footer-left {
+        order: 2;
+        justify-content: center;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    /* Social icons + toggle grouped together */
+    .footer-right {
+        order: 3;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .footer-left .social-icon,
+    .footer-right .social-icon,
+    .footer-right .dark-toggle {
+        transform: scale(0.9);
+    }
+
+    /* Make icons sit in one row */
+    .footer-left,
+    .footer-right {
+        flex-direction: row;
+    }
+
+    /* Remove extra spacing */
+    .site-footer {
+        padding: 15px 0;
+    }
+}
