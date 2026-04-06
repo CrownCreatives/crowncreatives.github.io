@@ -408,6 +408,54 @@ body.dark-mode .particle {
         padding: 6px 12px;
         font-size: 0.9rem;
     }
+/* ============================================================
+   CROWN BEHIND TEXT — MOBILE & TABLET
+   ============================================================ */
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+
+    .header-inner {
+        grid-template-columns: 1fr; /* stack crown + text */
+        position: relative;
+        text-align: center;
+    }
+
+    .crown-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        margin: 0;
+        z-index: 0; /* behind text */
+        opacity: 0.25; /* subtle background */
+        pointer-events: none;
+    }
+
+    .header-text {
+        position: relative;
+        z-index: 2; /* above crown */
+    }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+
+    .crown-wrapper {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0.22;
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+    }
+}
 
     .card {
         padding: 18px 18px;
