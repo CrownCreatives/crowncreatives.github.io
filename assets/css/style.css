@@ -1,6 +1,7 @@
 /* ============================================================
-   CROWN CREATIVES — GLOBAL THEME
-   Clean rebuild: colours, layout, header, nav, ticker, cards
+   CROWN CREATIVES — FANTASY THEME (FULL CLEAN REBUILD)
+   Magical gradients, recovery symbolism, soft animations,
+   professional polish, and dark mode.
    ============================================================ */
 
 /* ---------- THEME COLOURS ---------- */
@@ -15,11 +16,12 @@
 
     --text-dark: #111827;
     --text-light: #ffffff;
-    --text-muted: #6b7280;
+    --text-muted: #9ca3af;
 
-    --card-bg: #ffffffee;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-bg-dark: rgba(255, 255, 255, 0.08);
 
-    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.18);
+    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.25);
 
     --radius-lg: 18px;
     --radius-md: 12px;
@@ -36,7 +38,9 @@
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top left, #fef3c7, #e0f2fe 40%, #f3e8ff 80%);
+
+    /* FANTASY GRADIENT — SYMBOLISING RECOVERY */
+    background: radial-gradient(circle at 20% 20%, #3b1e5a, #1e3a8a 40%, #0f172a 80%);
     color: var(--text-dark);
     overflow-x: hidden;
 }
@@ -50,9 +54,15 @@ body.fade-enter-active {
     opacity: 1;
 }
 
+/* ---------- DARK MODE ---------- */
+body.dark-mode {
+    background: radial-gradient(circle at 20% 20%, #0a0f1f, #0d1b2a 50%, #000000 90%);
+    color: var(--text-light);
+}
+
 /* ---------- HEADER ---------- */
 .site-header {
-    background: linear-gradient(120deg, var(--accent-yellow), var(--secondary), var(--accent-pink));
+    background: linear-gradient(120deg, #facc15, #f97316, #ec4899);
     padding: 20px 5vw;
     display: flex;
     align-items: center;
@@ -86,7 +96,7 @@ body.dark-mode .dark-logo {
 
 /* ---------- NAVIGATION ---------- */
 .site-nav {
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.85);
     padding: 12px 5vw;
     display: flex;
     flex-wrap: wrap;
@@ -114,36 +124,6 @@ body.dark-mode .dark-logo {
     transform: translateY(-1px);
 }
 
-/* ---------- TICKER ---------- */
-.ticker-bar {
-    background: var(--primary);
-    color: var(--text-light);
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px 0;
-}
-
-.ticker-inner {
-    display: inline-block;
-    animation: ticker 18s linear infinite;
-}
-
-.ticker-inner span {
-    margin-right: 50px;
-    font-weight: 600;
-}
-
-@keyframes ticker {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
-.ticker-bar {
-    background: linear-gradient(90deg, #1e3a8a, #9333ea, #ec4899);
-    color: var(--text-light);
-    padding: 12px 0;
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
-}
-
 /* ---------- MAIN LAYOUT ---------- */
 .container {
     max-width: 1100px;
@@ -162,9 +142,39 @@ body.dark-mode .dark-logo {
     animation: fadeInUp 0.6s var(--transition-med);
 }
 
+body.dark-mode .card {
+    background: var(--card-bg-dark);
+    color: var(--text-light);
+}
+
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- TICKER (NOW ABOVE FOOTER) ---------- */
+.ticker-bar {
+    background: linear-gradient(90deg, #1e3a8a, #9333ea, #ec4899);
+    color: var(--text-light);
+    padding: 12px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+}
+
+.ticker-inner {
+    display: inline-block;
+    animation: ticker 18s linear infinite;
+}
+
+.ticker-inner span {
+    margin-right: 50px;
+    font-weight: 600;
+}
+
+@keyframes ticker {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
 }
 
 /* ---------- FOOTER ---------- */
@@ -219,21 +229,6 @@ button {
 
 button:hover {
     background: var(--accent-pink);
-}
-
-/* ---------- DARK MODE ---------- */
-body.dark-mode {
-    background: var(--bg-dark);
-    color: var(--text-light);
-}
-
-body.dark-mode .card {
-    background: rgba(255,255,255,0.08);
-    color: var(--text-light);
-}
-
-body.dark-mode .site-nav {
-    background: rgba(0,0,0,0.6);
 }
 
 /* ---------- PARTICLES ---------- */
