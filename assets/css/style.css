@@ -349,3 +349,67 @@ body.dark-mode .dark-logo  { opacity: 1; }
 body.dark-mode .particle {
     background: rgba(255,255,255,0.3);
 }
+/* ============================================================
+   RESPONSIVE FIXES — MOBILE & TABLET
+   ============================================================ */
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+
+    .header-inner {
+        grid-template-columns: 1fr; /* stack crown + text */
+        text-align: center;
+    }
+
+    .crown-wrapper {
+        margin: 0 auto;
+        margin-top: -40px;
+        transform: scale(0.85);
+    }
+
+    .header-text h1 {
+        font-size: 2.6rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+
+    .header-inner {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .crown-wrapper {
+        margin-top: -20px;
+        transform: scale(0.75);
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+    }
+
+    .site-nav {
+        gap: 6px;
+        padding: 10px 4vw;
+    }
+
+    .site-nav a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 18px 18px;
+    }
+}
