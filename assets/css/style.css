@@ -119,8 +119,8 @@ body.dark-mode {
 .crown-wrapper {
     position: relative;
     justify-self: start;
-    margin-left: -10px;
-    margin-top: -80px;
+    margin-left: -20px;
+    margin-top: -100px;
     pointer-events: none;
 }
 
