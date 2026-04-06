@@ -366,6 +366,84 @@ body.dark-mode .dark-logo  { opacity: 1; }
 }
 
 /* ============================================================
+   FOOTER LAYOUT (UPDATED WITH SOCIAL ICONS)
+   ============================================================ */
+
+.site-footer {
+    background: #0f172a;
+    color: var(--text-light);
+    padding: 30px 5vw;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    text-align: center;
+    gap: 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+}
+
+/* Email */
+.footer-email {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    margin-right: 16px;
+}
+
+.footer-email:hover {
+    opacity: 0.7;
+}
+
+/* Social Icons */
+.footer-social {
+    display: inline-flex;
+    gap: 14px;
+    vertical-align: middle;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--text-light);
+    transition: transform 0.25s ease, filter 0.25s ease, fill 0.25s ease;
+}
+
+/* Glow on hover */
+.social-icon:hover svg {
+    transform: translateY(-3px) scale(1.15);
+    fill: var(--accent-yellow);
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.7));
+}
+
+/* Glow in dark mode */
+body.dark-mode .social-icon svg {
+    fill: var(--accent-yellow);
+    filter: drop-shadow(0 0 4px rgba(250, 204, 21, 0.4));
+}
+
+/* Footer toggle button */
+.footer-right .dark-toggle {
+    position: static;
+    margin-left: auto;
+    transform: none;
+}
+
+
+/* ============================================================
    PARTICLES
    ============================================================ */
 
