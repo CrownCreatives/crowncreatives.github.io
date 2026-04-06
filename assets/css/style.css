@@ -137,6 +137,12 @@ body.dark-mode .dark-logo {
     from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
 }
+.ticker-bar {
+    background: linear-gradient(90deg, #1e3a8a, #9333ea, #ec4899);
+    color: var(--text-light);
+    padding: 12px 0;
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+}
 
 /* ---------- MAIN LAYOUT ---------- */
 .container {
