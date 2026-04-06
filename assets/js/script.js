@@ -1,5 +1,5 @@
 /* ============================================================
-   CROWN CREATIVES — FINAL SCRIPT.JS (MERGED + CLEANED)
+   CROWN CREATIVES — FINAL SCRIPT.JS (DESKTOP PARTICLES ONLY)
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* -------------------------------
      DARK MODE TOGGLE
-     (CSS expects .dark-toggle)
   -------------------------------- */
   const toggle = document.querySelector(".dark-toggle");
   if (toggle) {
@@ -46,35 +45,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* -------------------------------
-     AMBIENT PARTICLES
+     PARTICLES — DESKTOP ONLY
   -------------------------------- */
-  const count = 40;
+  const isMobile = window.matchMedia("(max-width: 900px)").matches;
 
-  function createParticle() {
-    const p = document.createElement("div");
-    p.classList.add("particle");
+  if (!isMobile) {
+    const count = 40;
 
-    const size = 4 + Math.random() * 10;
-    p.style.width = size + "px";
-    p.style.height = size + "px";
+    function createParticle() {
+      const p = document.createElement("div");
+      p.classList.add("particle");
 
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.top = Math.random() * 100 + "vh";
+      const size = 4 + Math.random() * 10;
+      p.style.width = size + "px";
+      p.style.height = size + "px";
 
-    const duration = 6 + Math.random() * 6;
-    p.style.animationDuration = duration + "s";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.top = Math.random() * 100 + "vh";
 
-    if (Math.random() < 0.2) p.classList.add("particle-twinkle");
+      const duration = 6 + Math.random() * 6;
+      p.style.animationDuration = duration + "s";
 
-    document.body.appendChild(p);
+      if (Math.random() < 0.2) p.classList.add("particle-twinkle");
 
-    p.addEventListener("animationend", () => {
-      p.remove();
-      createParticle();
-    });
+      document.body.appendChild(p);
+
+      p.addEventListener("animationend", () => {
+        p.remove();
+        createParticle();
+      });
+    }
+
+    for (let i = 0; i < count; i++) createParticle();
   }
-
-  for (let i = 0; i < count; i++) createParticle();
 
 
   /* -------------------------------
