@@ -477,5 +477,20 @@ body.dark-mode .particle {
     opacity: 1;
     transform: translateY(0);
 }
+   .gear-divider {
+    text-align: center;
+    font-size: 1.4rem;
+    opacity: 0.35;
+    margin: 50px 0;
+    letter-spacing: 0.5em;
+    color: #a3b2ff; /* cool steel-lavender tone */
+    user-select: none;
+    filter: drop-shadow(0 0 6px rgba(147, 51, 234, 0.35));
+    transition: opacity 0.3s ease-out;
+}
+
+.gear-divider:hover {
+    opacity: 0.55;
+}
 
 }
