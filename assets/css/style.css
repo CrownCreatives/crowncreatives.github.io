@@ -558,3 +558,53 @@ body.dark-mode .particle {
         padding: 18px 18px;
     }
 }
+
+/* ============================================================
+   FOOTER SHIMMER EFFECT
+   ============================================================ */
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer layer */
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 300%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 100%
+    );
+
+    animation: footerShimmer 12s linear infinite;
+    pointer-events: none;
+}
+
+/* Dark mode shimmer tint */
+body.dark-mode .site-footer::before {
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(250, 204, 21, 0.10) 50%,
+        transparent 100%
+    );
+}
+
+/* Animation */
+@keyframes footerShimmer {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
