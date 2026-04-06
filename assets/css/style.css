@@ -227,6 +227,35 @@ body.dark-mode .dark-logo {
     0%   { left: -150%; }
     100% { left: 150%; }
 }
+/* Both logos stacked */
+.crown-wrapper {
+    position: relative;
+}
+
+.crown-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: auto;
+    transition: opacity 20s ease-in-out;
+}
+
+/* Light mode: show light logo, hide dark */
+.light-logo {
+    opacity: 1;
+}
+.dark-logo {
+    opacity: 0;
+}
+
+/* Dark mode: fade to dark logo */
+body.dark-mode .light-logo {
+    opacity: 0;
+}
+body.dark-mode .dark-logo {
+    opacity: 1;
+}
 
 /* ---------- NAVIGATION ---------- */
 .site-nav {
