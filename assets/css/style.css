@@ -1,5 +1,5 @@
 /* ============================================================
-   CROWN CREATIVES — CLEAN VALIDATED FANTASY THEME (FINAL BUILD)
+   CROWN CREATIVES — COMPLETE REVISED THEME (FINAL VERSION)
    ============================================================ */
 
 /* ---------- THEME VARIABLES ---------- */
@@ -37,6 +37,7 @@ body {
     background: radial-gradient(circle at 20% 20%, #3b1e5a, #1e3a8a 40%, #0f172a 80%);
     color: var(--text-light);
     overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Fade-in on load */
@@ -52,6 +53,36 @@ body.fade-enter-active {
 body.dark-mode {
     background: radial-gradient(circle at 20% 20%, #0a0f1f, #0d1b2a 50%, #000000 90%);
     color: var(--text-light);
+}
+
+/* ============================================================
+   DARK MODE TOGGLE BUTTON
+   ============================================================ */
+
+.dark-toggle {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 50;
+}
+
+.dark-toggle:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
+}
+
+body.dark-mode .dark-toggle {
+    background: rgba(0,0,0,0.35);
+    border-color: rgba(255,255,255,0.15);
 }
 
 /* ============================================================
@@ -343,7 +374,7 @@ body.dark-mode .particle {
 }
 
 /* ============================================================
-   RESPONSIVE — CROWN BEHIND TEXT
+   RESPONSIVE — CROWN BEHIND CR + MOBILE GLOW
    ============================================================ */
 
 @media (max-width: 900px) {
@@ -360,19 +391,40 @@ body.dark-mode .particle {
         position: absolute !important;
         top: 50% !important;
         left: 50% !important;
-        transform: translate(-50%, -50%) scale(0.9) !important;
+
+        /* Align behind CR */
+        transform:
+            translate(
+                calc(-50% + 7%),
+                calc(-50% - 10px)
+            )
+            scale(1) !important;
+
         margin: 0 !important;
         z-index: 0 !important;
         opacity: 0.25 !important;
         pointer-events: none;
     }
 
-    .crown-logo {
-        position: absolute !important;
-        top: 0;
-        left: 0;
-        height: 120px;
-        width: auto;
+    /* MOBILE‑ONLY GLOW */
+    .crown-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 220px;
+        height: 220px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(255, 215, 120, 0.35) 0%,
+            rgba(255, 215, 120, 0.15) 40%,
+            rgba(255, 215, 120, 0.0) 70%
+        );
+        filter: blur(18px);
+        z-index: -1;
+        pointer-events: none;
     }
 
     .header-text {
@@ -392,7 +444,13 @@ body.dark-mode .particle {
 @media (max-width: 600px) {
 
     .crown-wrapper {
-        transform: translate(-50%, -50%) scale(0.65) !important;
+        transform:
+            translate(
+                calc(-50% + 7%),
+                calc(-50% - 10px)
+            )
+            scale(1) !important;
+
         opacity: 0.22 !important;
     }
 
