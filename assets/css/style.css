@@ -147,6 +147,14 @@ body.dark-mode .dark-logo {
     animation: fadeInUp 0.6s var(--transition-med);
     color: var(--text-light);
 }
+body.dark-mode .card {
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.02)
+    );
+    border-color: rgba(255, 255, 255, 0.18);
+}
 
 body.dark-mode .card {
     background: var(--card-bg-dark);
