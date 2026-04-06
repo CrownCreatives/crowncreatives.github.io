@@ -130,6 +130,13 @@ body.dark-mode {
     50%  { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
+.crown-wrapper {
+    position: relative;
+    justify-self: start;
+    margin-left: -40px;   /* move left */
+    margin-top: -20px;    /* move upward */
+}
+
 
 /* Crown logos stacked for crossfade */
 .crown-logo {
