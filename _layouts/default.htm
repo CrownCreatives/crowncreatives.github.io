@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | Crown Creatives</title>
 
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JS -->
   <script defer src="/assets/js/script.js"></script>
 </head>
 
@@ -15,10 +18,9 @@
        HEADER
   ============================ -->
   <header class="site-header">
-
     <div class="header-inner">
 
-      <!-- Crown Wrapper (Parallax + Shimmer + Crossfade) -->
+      <!-- Crown Wrapper -->
       <div class="crown-wrapper">
         <img src="/assets/images/big-logo.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
         <img src="/assets/images/big-logo-dark.png" class="crown-logo dark-logo" alt="Crown Creatives Dark Logo">
@@ -32,7 +34,6 @@
       </div>
 
     </div>
-
   </header>
 
 
@@ -59,7 +60,7 @@
 
 
   <!-- ===========================
-       TICKER (ABOVE FOOTER)
+       TICKER
   ============================ -->
   <div class="ticker-bar">
     <div class="ticker-inner">
@@ -73,7 +74,9 @@
   <!-- ===========================
        FOOTER
   ============================ -->
-  {% include includes.js %}
+  <footer class="site-footer">
+    <p>© {{ site.time | date: "%Y" }} Crown Creatives — All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
