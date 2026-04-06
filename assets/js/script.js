@@ -1,139 +1,123 @@
-/* ============================================================
-   CROWN CREATIVES — Global Script
-   Page fade • Dark mode • Particle engine • UI helpers
-   ============================================================ */
+// ============================================================
+// CROWN CREATIVES — Ambient Emerald Engine
+// Particles, dark mode, back-to-top, page fade, morph boost
+// ============================================================
 
-
-/* ------------------------------------------------------------
-   PAGE TRANSITION FADE-IN
------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
+  // -----------------------------
+  // Page fade-in
+  // -----------------------------
   document.body.classList.add("fade-enter-active");
-});
 
+  // -----------------------------
+  // Back to top
+  // -----------------------------
+  const backToTopBtn = document.querySelector(".back-to-top");
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
-/* ------------------------------------------------------------
-   DARK MODE TOGGLE
------------------------------------------------------------- */
-const darkToggle = document.querySelector(".dark-mode-toggle");
+  // -----------------------------
+  // Dark mode toggle
+  // -----------------------------
+  const darkToggle = document.querySelector(".dark-mode-toggle");
+  const root = document.documentElement;
 
-if (darkToggle) {
-  darkToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
-}
+  function applyDarkMode(isDark) {
+    if (isDark) {
+      root.classList.add("dark-mode");
+    } else {
+      root.classList.remove("dark-mode");
+    }
+  }
 
+  // Load preference
+  const storedTheme = localStorage.getItem("cc-theme");
+  if (storedTheme === "dark") applyDarkMode(true);
 
-/* ------------------------------------------------------------
-   BACK TO TOP BUTTON
------------------------------------------------------------- */
-const backToTop = document.querySelector(".back-to-top");
+  if (darkToggle) {
+    darkToggle.addEventListener("click", () => {
+      const isDark = !root.classList.contains("dark-mode");
+      applyDarkMode(isDark);
+      localStorage.setItem("cc-theme", isDark ? "dark" : "light");
+    });
+  }
 
-if (backToTop) {
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+  // -----------------------------
+  // Ambient particles
+  // -----------------------------
+  const particleCount = 40;
 
-
-/* ============================================================
-   ADVANCED AMBIENT PARTICLE ENGINE
-   Emerald-reactive • Dark-mode aware • Morph-intensifying
-============================================================ */
-
-(function ambientParticles() {
-
-  /* CONFIG -------------------------------------------------- */
-  let baseCount = 40;          // normal particle count
-  let morphBoost = 30;         // extra particles during emerald morph
-  let darkModeBoost = 20;      // extra particles in dark mode
-  let windStrength = 15;       // px horizontal drift
-
-  /* STATE --------------------------------------------------- */
-  let isDarkMode = document.body.classList.contains("dark-mode");
-  let isMorphing = false;
-
-  /* PARTICLE SPAWNER ---------------------------------------- */
-  function spawnParticle() {
+  function createParticle() {
     const p = document.createElement("div");
     p.classList.add("particle");
 
-    /* Random size variation */
-    const size = 2 + Math.random() * 6; // 2–8px
+    // Random size
+    const size = 4 + Math.random() * 10; // 4–14px
     p.style.width = size + "px";
     p.style.height = size + "px";
 
-    /* Random position */
+    // Random position
     p.style.left = Math.random() * 100 + "vw";
     p.style.top = Math.random() * 100 + "vh";
 
-    /* Random animation duration + delay */
+    // Random duration + delay
     const duration = 6 + Math.random() * 6; // 6–12s
     const delay = Math.random() * 6;
     p.style.animationDuration = duration + "s";
     p.style.animationDelay = delay + "s";
 
-    /* Occasional bright twinkle */
-    if (Math.random() < 0.08) {
-      p.style.boxShadow = "0 0 12px var(--emerald-soft)";
-      p.style.opacity = "0.9";
+    // Occasional bright twinkle
+    if (Math.random() < 0.2) {
+      p.classList.add("particle-twinkle");
     }
 
-    /* Directional wind drift */
-    p.style.setProperty("--wind", windStrength + "px");
-
-    /* Dark mode reaction */
-    if (isDarkMode) {
-      p.style.background = "var(--emerald-soft)";
-      p.style.opacity = "0.6";
+    // Directional wind drift (randomized direction)
+    if (Math.random() < 0.5) {
+      p.classList.add("particle-drift-left");
+    } else {
+      p.classList.add("particle-drift-right");
     }
+
+    // React to dark mode via CSS (using .dark-mode on :root)
+    // No extra JS needed; CSS can style .dark-mode .particle
 
     document.body.appendChild(p);
 
-    /* Respawn when animation ends */
     p.addEventListener("animationend", () => {
       p.remove();
-      spawnParticle();
+      createParticle(); // respawn
     });
   }
 
-  /* INITIAL SPAWN ------------------------------------------ */
-  function spawnInitialParticles() {
-    let total = baseCount;
-
-    if (isDarkMode) total += darkModeBoost;
-    if (isMorphing) total += morphBoost;
-
-    for (let i = 0; i < total; i++) {
-      spawnParticle();
+  function spawnAmbientParticles() {
+    for (let i = 0; i < particleCount; i++) {
+      createParticle();
     }
   }
 
-  spawnInitialParticles();
+  spawnAmbientParticles();
 
-  /* DARK MODE LISTENER -------------------------------------- */
-  const observer = new MutationObserver(() => {
-    const nowDark = document.body.classList.contains("dark-mode");
-    if (nowDark !== isDarkMode) {
-      isDarkMode = nowDark;
-      spawnInitialParticles();
+  // -----------------------------
+  // Intensify particles during emerald morph
+  // -----------------------------
+  // Assumes you add/remove a class like .emerald-morph-active on <body>
+  // via CSS animation or JS trigger if you want to sync it.
+  const EMERALD_BOOST_CLASS = "emerald-boost";
+
+  function setEmeraldBoost(active) {
+    if (active) {
+      document.body.classList.add(EMERALD_BOOST_CLASS);
+    } else {
+      document.body.classList.remove(EMERALD_BOOST_CLASS);
     }
-  });
-
-  observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
-
-  /* EMERALD MORPH INTENSITY --------------------------------- */
-  const darkLogo = document.querySelector(".dark-logo");
-  if (darkLogo) {
-    darkLogo.addEventListener("transitionstart", () => {
-      isMorphing = true;
-      spawnInitialParticles();
-    });
-
-    darkLogo.addEventListener("transitionend", () => {
-      isMorphing = false;
-    });
   }
 
-})();
-
+  // Example: pulse boost every 20s to match emerald morph cycle
+  setInterval(() => {
+    setEmeraldBoost(true);
+    setTimeout(() => setEmeraldBoost(false), 4000); // 4s boost window
+  }, 20000);
+});
