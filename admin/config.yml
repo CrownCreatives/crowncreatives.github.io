@@ -5,6 +5,7 @@ backend:
   auth_scope: repo
   client_id: Ov231iMG2inEpdIRr1M9
 
+
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
