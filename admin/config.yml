@@ -2,6 +2,8 @@ backend:
   name: github
   repo: CrownCreatives/crowncreatives.github.io
   branch: main
+  auth_scope: repo
+  client_id: PmR76
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
