@@ -3,8 +3,8 @@ backend:
   repo: CrownCreatives/crowncreatives.github.io
   branch: main
   auth_scope: repo
-  client_id: Ov2311MG2inEpdlRIr1M9
-
+  client_id: Ov23liMG2inEpdIRrlM9
+  
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
