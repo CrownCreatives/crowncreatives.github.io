@@ -4,13 +4,13 @@ backend:
   branch: main
   auth_scope: repo
   client_id: Ov231iMG2inEpdIRr1M9
+
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
 site_url: "https://crowncreatives.github.io"
 
 collections:
-  # BLOG POSTS
   - name: "blog"
     label: "Blog Posts"
     folder: "content/blog"
@@ -19,111 +19,4 @@ collections:
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "date", label: "Date", widget: "datetime" }
-      - { name: "image", label: "Featured Image", widget: "image", required: false }
-      - { name: "tags", label: "Tags", widget: "list", required: false }
-      - { name: "body", label: "Content", widget: "markdown" }
-
-  # PROJECTS
-  - name: "projects"
-    label: "Projects"
-    folder: "content/projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "date", label: "Date", widget: "datetime", required: false }
-      - { name: "image", label: "Main Image", widget: "image", required: false }
-      - { name: "summary", label: "Summary", widget: "text", required: false }
-      - { name: "body", label: "Description", widget: "markdown" }
-
-  # GALLERY ITEMS
-  - name: "gallery"
-    label: "Gallery Items"
-    folder: "content/gallery"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "image", label: "Image", widget: "image" }
-      - { name: "caption", label: "Caption", widget: "text", required: false }
-      - { name: "category", label: "Category", widget: "string", required: false }
-
-  # PODCASTS
-  - name: "podcasts"
-    label: "Podcasts"
-    folder: "content/podcasts"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "date", label: "Date", widget: "datetime", required: false }
-      - { name: "audio_url", label: "Audio URL", widget: "string", required: false }
-      - { name: "image", label: "Episode Image", widget: "image", required: false }
-      - { name: "description", label: "Description", widget: "markdown" }
-
-  # VIDEOS
-  - name: "videos"
-    label: "Videos"
-    folder: "content/videos"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "date", label: "Date", widget: "datetime", required: false }
-      - { name: "video_url", label: "Video URL (YouTube/Vimeo)", widget: "string" }
-      - { name: "thumbnail", label: "Thumbnail Image", widget: "image", required: false }
-      - { name: "description", label: "Description", widget: "markdown", required: false }
-
-  # ABOUT PAGE
-  - name: "about"
-    label: "About Page"
-    files:
-      - file: "content/about.md"
-        name: "about_page"
-        label: "About"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "body", label: "Content", widget: "markdown" }
-
-  # HOMEPAGE
-  - name: "homepage"
-    label: "Homepage"
-    files:
-      - file: "content/homepage.yml"
-        name: "homepage_content"
-        label: "Homepage Content"
-        fields:
-          - { name: "hero_title", label: "Hero Title", widget: "string" }
-          - { name: "hero_subtitle", label: "Hero Subtitle", widget: "text" }
-          - name: "cards"
-            label: "Homepage Cards"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Card Title", widget: "string" }
-              - { name: "text", label: "Card Text", widget: "text" }
-              - { name: "image", label: "Card Image", widget: "image", required: false }
-              - { name: "link", label: "Card Link", widget: "string", required: false }
-
-  # FOOTER
-  - name: "footer"
-    label: "Footer"
-    files:
-      - file: "content/footer.yml"
-        name: "footer_content"
-        label: "Footer Content"
-        fields:
-          - { name: "email", label: "Contact Email", widget: "string" }
-          - { name: "facebook_url", label: "Facebook URL", widget: "string", required: false }
-          - { name: "instagram_url", label: "Instagram URL", widget: "string", required: false }
-          - { name: "copyright", label: "Copyright Text", widget: "string" }
-
-  # USER GUIDE
-  - name: "user_guide"
-    label: "User Guide"
-    files:
-      - file: "content/user-guide.md"
-        name: "user_guide_file"
-        label: "User Guide"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "body", label: "Content", widget: "markdown" }
+      - { name: "body", label: "Body", widget: "markdown" }
