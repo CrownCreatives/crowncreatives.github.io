@@ -289,3 +289,52 @@ body.theme-dark {
         right: 20px;
     }
 }
+/* -----------------------------------
+   HEADER LAYOUT
+----------------------------------- */
+
+.site-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 220px;
+  margin: 0 auto;
+  height: 220px; /* ensures both logos overlap perfectly */
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 15s ease-in-out;
+  opacity: 0;
+}
+
+.light-logo {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .light-logo {
+    opacity: 0;
+  }
+  .dark-logo {
+    opacity: 1;
+  }
+}
+
+/* TAGLINE */
+.tagline {
+  margin-top: 140px; /* tight spacing under logo */
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
