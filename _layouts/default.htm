@@ -1,116 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | Crown Creatives</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Crown Creatives</title>
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
 
-  <!-- JS -->
-  <script defer src="/assets/js/script.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
-<body class="fade-enter">
+<body class="theme-light">
 
-  <!-- ===========================
-       HEADER
-  ============================ -->
-  <header class="site-header">
-    <div class="header-inner">
+    <!-- HEADER -->
+    {% include header.html %}
 
-      <!-- Crown Wrapper -->
-      <div class="crown-wrapper">
-        <img src="/assets/images/big-logo.png" class="crown-logo light-logo" alt="Crown Creatives Logo">
-        <img src="/assets/images/big-logo-dark.png" class="crown-logo dark-logo" alt="Crown Creatives Dark Logo">
-        <div class="crown-shimmer"></div>
-      </div>
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="content-wrapper">
+        <div class="content-card">
+            {{ content }}
+        </div>
+    </main>
 
-      <!-- Header Text -->
-      <div class="header-text">
-        <h1>Crown Creatives</h1>
-        <p class="tagline">Artistry • Resilience • Imagination</p>
-      </div>
+    <!-- TICKER -->
+    {% include ticker.html %}
 
-    </div>
-  </header>
+    <!-- FOOTER -->
+    {% include footer.html %}
 
+    <!-- BACK TO TOP BUTTON -->
+    {% include backtotop.html %}
 
-  <!-- ===========================
-       NAVIGATION
-  ============================ -->
-  <nav class="site-nav">
-    <a href="/">Home</a>
-    <a href="/gallery.html">Gallery</a>
-    <a href="/projects.html">Projects</a>
-    <a href="/videos.html">Videos</a>
-    <a href="/podcasts.html">Podcasts</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/about.html">About</a>
-  </nav>
+    <!-- JS for toggles -->
+    <script src="/assets/js/theme-toggle.js"></script>
+    <script src="/assets/js/mobile-menu.js"></script>
+    <script src="/assets/js/backtotop.js"></script>
 
-
-  <!-- ===========================
-       MAIN CONTENT
-  ============================ -->
-  <main class="container">
-    {{ content }}
-  </main>
-
-
-  <!-- ===========================
-       TICKER
-  ============================ -->
-  <div class="ticker-bar">
-    <div class="ticker-inner">
-      <span>Welcome to Crown Creatives — Crafting worlds with intention.</span>
-      <span>New artwork and podcasts added regularly.</span>
-      <span>Creativity, recovery, and resilience in motion.</span>
-    </div>
-  </div>
-
-    <!-- ===========================
-       FOOTER
-  ============================ -->
-<footer class="site-footer">
-  <div class="footer-content">
-
-    <!-- LEFT: Email + Facebook -->
-    <div class="footer-left">
-      <a href="mailto:contact@crowncreatives.co.uk" class="footer-email">
-        contact@crowncreatives.co.uk
-      </a>
-
-      <a href="https://facebook.com/people/Crown-Creatives/61556386467490/" 
-         target="_blank" 
-         class="social-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- CENTRE: Copyright -->
-    <div class="footer-center">
-      © 2026 Crown Creatives — All Rights Reserved
-    </div>
-
-    <!-- RIGHT: Instagram + Dark Mode Toggle -->
-    <div class="footer-right">
-
-      <a href="https://instagram.com/crown_creatives_uk/" 
-         target="_blank" 
-         class="social-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.7-8.8a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
-        </svg>
-      </a>
-
-      <button class="dark-toggle">☾</button>
-    </div>
-
-  </div>
-</footer>
-
-
+</body>
+</html>
