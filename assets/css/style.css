@@ -733,3 +733,8 @@ body::after {
   border-radius: 12px;
   padding: 20px;
 }
+.hero-header {
+  height: 260px; /* medium hero height */
+  padding-top: 30px;
+}
+
