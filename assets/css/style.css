@@ -338,3 +338,137 @@ body.theme-dark {
   color: #ffffff;
   letter-spacing: 1px;
 }
+/* -----------------------------------
+   BACKGROUND GRADIENT + CIRCLES
+----------------------------------- */
+
+body {
+  background: radial-gradient(circle at top left, #4b2e83, #1a1a2e);
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+body::before {
+  width: 300px;
+  height: 300px;
+  top: -80px;
+  left: -80px;
+}
+
+body::after {
+  width: 250px;
+  height: 250px;
+  bottom: -60px;
+  right: -60px;
+}
+/* -----------------------------------
+   DESKTOP NAVIGATION
+----------------------------------- */
+
+.main-nav {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+/* -----------------------------------
+   MOBILE NAVIGATION
+----------------------------------- */
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.toggle-bar {
+  width: 28px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.85);
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 30;
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* MOBILE BREAKPOINT */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+/* -----------------------------------
+   INTRO BOX
+----------------------------------- */
+
+.intro-box {
+  max-width: 800px;
+  margin: 60px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 5;
+}
