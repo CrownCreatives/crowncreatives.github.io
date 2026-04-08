@@ -9,7 +9,7 @@ public_folder: "/assets/images/uploads"
 collections:
 
   # -----------------------------
-  # PAGES
+  # STATIC PAGES
   # -----------------------------
   - name: "pages"
     label: "Pages"
@@ -76,6 +76,69 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
+
+  # -----------------------------
+  # GALLERY ITEMS
+  # -----------------------------
+  - name: "gallery_items"
+    label: "Gallery Items"
+    folder: "_gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # -----------------------------
+  # PROJECTS
+  # -----------------------------
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # -----------------------------
+  # VIDEOS
+  # -----------------------------
+  - name: "videos"
+    label: "Videos"
+    folder: "_videos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Video URL", name: "url", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # -----------------------------
+  # PODCASTS
+  # -----------------------------
+  - name: "podcasts"
+    label: "Podcasts"
+    folder: "_podcasts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Episode Title", name: "title", widget: "string" }
+      - { label: "Audio URL", name: "audio", widget: "string" }
+      - { label: "Episode Number", name: "episode", widget: "number" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
 
   # -----------------------------
   # TICKER MESSAGE
