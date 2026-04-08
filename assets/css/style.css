@@ -612,3 +612,124 @@ body::after {
     display: flex;
   }
 }
+/* HERO HEADER */
+.hero-header {
+  position: relative;
+  height: 320px; /* Medium hero height */
+  display: flex;
+  align-items: flex-start; /* Crown + text sit slightly higher */
+  justify-content: center;
+  padding-top: 40px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+/* Crown + Text Block */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px; /* Tight spacing */
+}
+
+/* Crown size: slightly taller than text block */
+.hero-crown {
+  height: 95px;
+  width: auto;
+  opacity: 1;
+  transition: opacity 15s ease-in-out;
+}
+
+.dark-logo { opacity: 0; }
+
+@media (prefers-color-scheme: dark) {
+  .light-logo { opacity: 0; }
+  .dark-logo { opacity: 1; }
+}
+
+/* Text Block */
+.hero-text {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: #ffffff;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* Navigation */
+.hero-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 22px;
+  padding: 0;
+}
+
+.hero-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.hero-nav a:hover {
+  opacity: 0.7;
+}
+
+/* Bubble Background */
+.bubble-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble-bg span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  animation: float 12s infinite ease-in-out;
+}
+
+.bubble-bg span:nth-child(1) { left: 10%; animation-duration: 14s; }
+.bubble-bg span:nth-child(2) { left: 25%; animation-duration: 11s; }
+.bubble-bg span:nth-child(3) { left: 40%; animation-duration: 13s; }
+.bubble-bg span:nth-child(4) { left: 55%; animation-duration: 10s; }
+.bubble-bg span:nth-child(5) { left: 70%; animation-duration: 15s; }
+.bubble-bg span:nth-child(6) { left: 85%; animation-duration: 12s; }
+
+@keyframes float {
+  0% { transform: translateY(100%); opacity: 0; }
+  20% { opacity: 0.4; }
+  100% { transform: translateY(-120%); opacity: 0; }
+}
+
+/* Transparent Cards */
+.card,
+.intro-box,
+.post-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 20px;
+}
