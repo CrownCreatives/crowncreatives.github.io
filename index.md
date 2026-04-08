@@ -1,4 +1,9 @@
-<div class="intro-box">
+---
+layout: default
+title: Home
+---
+
+<div class="intro-box fade-in">
   <p>
     Crown Creatives is a space where artistry, imagination, and personal resilience come together. 
     Explore creative projects, 3D models, podcasts, and more.
