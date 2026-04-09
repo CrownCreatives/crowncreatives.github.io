@@ -359,4 +359,29 @@ body.theme-dark .logo {
   box-shadow: 0 0 22px rgba(160, 180, 255, 0.25);
   transition: 0.4s ease;
 }
+/* Fix navigation click-through */
+.bubble-bg {
+  z-index: 1;
+}
+
+.header-inner,
+.main-nav,
+.nav-links a,
+.theme-toggle {
+  position: relative;
+  z-index: 5;
+}
+/* Crown offset left */
+.logo-wrapper {
+  width: 160px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  transform: none;
+}
 
