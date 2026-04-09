@@ -440,3 +440,10 @@ body.theme-dark .dark-logo  { opacity: 1; }
 .bubble-bg {
   z-index: 1;
 }
+/* Center all text inside the header bar */
+.header-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  text-align: center;
+}
