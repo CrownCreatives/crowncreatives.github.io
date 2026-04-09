@@ -237,3 +237,60 @@ body.theme-light {
   color: #ffffff;
   font-size: 1.2rem;
 }
+/* --------------------------------------------------
+   MAGICAL ETHEREAL BACKGROUND GRADIENT
+-------------------------------------------------- */
+
+body.theme-light {
+  background: radial-gradient(
+    circle at 30% 0%,
+    #243b6b 0%,
+    #1a2a55 25%,
+    #111b3d 50%,
+    #0b1028 75%,
+    #070a1a 100%
+  );
+}
+/* --------------------------------------------------
+   BUBBLE VISIBILITY + MAGIC
+-------------------------------------------------- */
+
+.bubble-bg span {
+  background: rgba(255, 255, 255, 0.22); /* brighter */
+  filter: blur(4px);
+  animation: float 14s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0) scale(1); opacity: 0.5; }
+  50%  { transform: translateY(-80px) scale(1.25); opacity: 0.9; }
+  100% { transform: translateY(0) scale(1); opacity: 0.5; }
+}
+/* --------------------------------------------------
+   CROWN LOGO MAGIC TRANSITION
+-------------------------------------------------- */
+
+.logo-wrapper {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.6s ease;
+}
+
+.light-logo { opacity: 1; }
+.dark-logo  { opacity: 0; }
+
+body.theme-dark .light-logo { opacity: 0; }
+body.theme-dark .dark-logo  { opacity: 1; }
+
+.brand-text .site-title {
+  text-shadow:
+    0 0 12px rgba(180, 200, 255, 0.25),
+    0 0 24px rgba(120, 150, 255, 0.15);
+}
