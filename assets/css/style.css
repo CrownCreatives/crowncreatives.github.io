@@ -285,3 +285,6 @@ body.theme-dark .dark-logo  { opacity: 1; }
   display: flex;
   align-items: flex-start;
 }
+.logo-wrapper {
+  margin-left: 20px;
+}
