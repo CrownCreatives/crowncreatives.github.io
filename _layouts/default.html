@@ -3,41 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | Crown Creatives</title>
+    <title>{{ page.title | default: "Crown Creatives" }}</title>
 
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Main Magical CSS -->
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body class="theme-light">
 
-    <!-- HEADER -->
-    {% include header.html %}
+    <!-- ⭐ MAGIC FOG LAYER (behind bubbles, above swirl) -->
+    <div class="magic-fog"></div>
 
-    <!-- MAIN CONTENT WRAPPER -->
-    <main class="content-wrapper">
-        <div class="content-card fade-in">
-            {{ content }}
+    <!-- ⭐ BUBBLE BACKGROUND (add spans for bubbles) -->
+    <div class="bubble-bg">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ⭐ HEADER -->
+    <header class="site-header">
+        <div class="header-bar">
+            <div class="header-content">
+
+                <!-- Crown (light + dark stacked) -->
+                <div class="header-left">
+                    <img src="/assets/light-crown.png" class="logo light-logo" alt="Crown Creatives Logo">
+                    <img src="/assets/dark-crown.png" class="logo dark-logo" alt="Crown Creatives Logo Dark">
+                </div>
+
+                <!-- Title + Tagline -->
+                <div class="brand-text">
+                    <h1 class="site-title">CROWN CREATIVES</h1>
+                    <p class="site-tagline">ARTISTRY • RESILIENCE • IMAGINATION</p>
+                </div>
+
+                <!-- Theme Toggle -->
+                <div class="theme-toggle" id="themeToggle">☾</div>
+
+            </div>
         </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/videos">Videos</a></li>
+                <li><a href="/podcasts">Podcasts</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ⭐ MAIN CONTENT -->
+    <main class="content-wrapper">
+        {{ content }}
     </main>
 
-    <!-- TICKER -->
-    {% include ticker.html %}
+    <!-- ⭐ FOOTER -->
+    <footer class="site-footer">
+        <p>© {{ "now" | date: "%Y" }} Crown Creatives — A Journey of Artistry & Imagination</p>
+    </footer>
 
-    <!-- FOOTER -->
-    {% include footer.html %}
+    <!-- ⭐ THEME TOGGLE SCRIPT -->
+    <script>
+        const toggle = document.getElementById("themeToggle");
 
-    <!-- BACK TO TOP BUTTON -->
-    {% include backtotop.html %}
-
-    <!-- JS -->
-    <script src="/assets/js/theme-toggle.js"></script>
-    <script src="/assets/js/mobile-menu.js"></script>
-    <script src="/assets/js/backtotop.js"></script>
-    <script src="/assets/js/lightbox.js"></script>
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("theme-dark");
+            toggle.textContent = document.body.classList.contains("theme-dark") ? "☀" : "☾";
+        });
+    </script>
 
 </body>
 </html>
