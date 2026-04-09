@@ -7,44 +7,112 @@
   box-sizing: border-box;
 }
 
-body.theme-light {
+body {
   font-family: 'Inter', sans-serif;
   color: #ffffff;
-  background: radial-gradient(circle at top, #0a1a33 0%, #020617 70%);
   overflow-x: hidden;
 }
 
 /* --------------------------------------------------
-   HEADER
+   MAGICAL ETHEREAL BACKGROUND
+-------------------------------------------------- */
+body.theme-light {
+  background: radial-gradient(
+    circle at 30% 0%,
+    #2a3f73 0%,
+    #1c2d58 30%,
+    #131d3f 55%,
+    #0b1129 80%,
+    #070a1a 100%
+  );
+  animation: etherealSwirl 40s infinite linear;
+}
+
+body.theme-dark {
+  background: radial-gradient(
+    circle at 70% 100%,
+    #0d0a1f 0%,
+    #120f2e 30%,
+    #1b1547 60%,
+    #0a0718 100%
+  );
+  animation: etherealSwirlDark 50s infinite linear;
+}
+
+@keyframes etherealSwirl {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes etherealSwirlDark {
+  0% { background-position: 100% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 100% 0%; }
+}
+
+/* --------------------------------------------------
+   HEADER — MAGICAL VERSION
 -------------------------------------------------- */
 .site-header {
   position: relative;
-  padding: 60px 20px 40px;
-  text-align: center;
-  z-index: 2;
+  padding: 50px 20px 40px;
+  z-index: 5;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
 }
 
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------
+   CROWN + BRAND TEXT
+-------------------------------------------------- */
 .logo-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  position: relative;
 }
 
 .logo {
-  width: 160px;
+  width: 130px;
   height: auto;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.15));
+  margin-bottom: 10px;
+  transition: opacity 15s ease-in-out, filter 1.5s ease-in-out;
+  filter: drop-shadow(0 0 14px rgba(160,120,255,0.35))
+          drop-shadow(0 0 28px rgba(120,150,255,0.25));
 }
 
-.brand-text .site-title {
+body.theme-dark .logo {
+  filter: drop-shadow(0 0 18px rgba(200,140,255,0.45))
+          drop-shadow(0 0 32px rgba(140,160,255,0.35));
+}
+
+.light-logo { opacity: 1; }
+.dark-logo  { opacity: 0; }
+
+body.theme-dark .light-logo { opacity: 0; }
+body.theme-dark .dark-logo  { opacity: 1; }
+
+.brand-text {
+  margin-top: 4px;
+  text-align: left;
+}
+
+.site-title {
   font-family: 'Cinzel', serif;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(255,255,255,0.15);
+  text-shadow: 0 0 12px rgba(180,200,255,0.25);
 }
 
-.brand-text .site-tagline {
+.site-tagline {
   font-size: 1rem;
   opacity: 0.85;
   letter-spacing: 1px;
@@ -54,14 +122,15 @@ body.theme-light {
    NAVIGATION
 -------------------------------------------------- */
 .main-nav {
-  margin-top: 25px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 28px;
+  gap: 30px;
 }
 
 .nav-links a {
@@ -73,35 +142,57 @@ body.theme-light {
 
 .nav-links a:hover {
   color: #ffffff;
-  text-shadow: 0 0 8px rgba(255,255,255,0.4);
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
 /* --------------------------------------------------
-   BUBBLE BACKGROUND
+   THEME TOGGLE
+-------------------------------------------------- */
+.theme-toggle {
+  margin-left: auto;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+
+/* --------------------------------------------------
+   MAGICAL BUBBLE BACKGROUND
 -------------------------------------------------- */
 .bubble-bg {
   position: absolute;
   inset: 0;
-  overflow: hidden;
   z-index: 1;
+  overflow: hidden;
 }
 
 .bubble-bg span {
   position: absolute;
   display: block;
-  width: 18px;
-  height: 18px;
-  background: rgba(255,255,255,0.12);
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.22);
   border-radius: 50%;
-  animation: float 12s infinite ease-in-out;
-  filter: blur(2px);
+  filter: blur(4px);
+  animation: float 14s infinite ease-in-out;
+  opacity: 0.7;
 }
 
 @keyframes float {
-  0% { transform: translateY(0) scale(1); opacity: 0.4; }
-  50% { transform: translateY(-60px) scale(1.2); opacity: 0.7; }
-  100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  0% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-80px) scale(1.25); opacity: 0.9; }
+  100% { transform: translateY(0) scale(1); opacity: 0.5; }
 }
+
+/* Parallax layers */
+.bubble-bg span:nth-child(3n) { animation-duration: 18s; transform: scale(1.3); opacity: 0.55; }
+.bubble-bg span:nth-child(4n) { animation-duration: 26s; transform: scale(0.8); opacity: 0.35; }
+.bubble-bg span:nth-child(5n) { animation-duration: 32s; transform: scale(1.6); opacity: 0.45; }
 
 /* --------------------------------------------------
    CONTENT WRAPPER + FROSTED CARDS
@@ -118,8 +209,7 @@ body.theme-light {
   padding: 40px;
   border-radius: 16px;
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px); /* medium blur */
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,0.12);
   box-shadow: 0 0 25px rgba(0,0,0,0.35);
   animation: fadeIn 1.2s ease forwards;
@@ -130,14 +220,8 @@ body.theme-light {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.content-card p {
-  line-height: 1.7;
-  margin-bottom: 18px;
-  color: #f0f4ff;
-}
-
 /* --------------------------------------------------
-   GALLERY (RESTORED SIMPLE VERSION)
+   GALLERY
 -------------------------------------------------- */
 .gallery-grid {
   column-count: 3;
@@ -158,26 +242,6 @@ body.theme-light {
 }
 
 /* --------------------------------------------------
-   TICKER
--------------------------------------------------- */
-.ticker-wrapper {
-  margin-top: 60px;
-}
-
-.ticker-gradient {
-  background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0));
-  padding: 12px 0;
-}
-
-.ticker-content {
-  text-align: center;
-  font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  opacity: 0.9;
-}
-
-/* --------------------------------------------------
    FOOTER
 -------------------------------------------------- */
 .site-footer {
@@ -188,346 +252,3 @@ body.theme-light {
   border-top: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
 }
-
-.footer-content p {
-  margin-bottom: 12px;
-  opacity: 0.85;
-}
-
-.footer-social a {
-  margin: 0 10px;
-  color: #e6e6e6;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(255,255,255,0.4);
-}
-
-/* --------------------------------------------------
-   BACK TO TOP BUTTON
--------------------------------------------------- */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0 0 12px rgba(255,255,255,0.25);
-  transition: 0.3s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.backtotop-icon {
-  color: #ffffff;
-  font-size: 1.2rem;
-}
-/* --------------------------------------------------
-   MAGICAL ETHEREAL BACKGROUND GRADIENT
--------------------------------------------------- */
-
-body.theme-light {
-  background: radial-gradient(
-    circle at 30% 0%,
-    #243b6b 0%,
-    #1a2a55 25%,
-    #111b3d 50%,
-    #0b1028 75%,
-    #070a1a 100%
-  );
-}
-/* --------------------------------------------------
-   BUBBLE VISIBILITY + MAGIC
--------------------------------------------------- */
-
-.bubble-bg span {
-  background: rgba(255, 255, 255, 0.22); /* brighter */
-  filter: blur(4px);
-  animation: float 14s infinite ease-in-out;
-  opacity: 0.7;
-}
-
-@keyframes float {
-  0%   { transform: translateY(0) scale(1); opacity: 0.5; }
-  50%  { transform: translateY(-80px) scale(1.25); opacity: 0.9; }
-  100% { transform: translateY(0) scale(1); opacity: 0.5; }
-}
-/* --------------------------------------------------
-   CROWN LOGO MAGIC TRANSITION
--------------------------------------------------- */
-
-.logo-wrapper {
-  position: relative;
-}
-
-.logo {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: opacity 0.6s ease;
-}
-
-.light-logo { opacity: 1; }
-.dark-logo  { opacity: 0; }
-
-body.theme-dark .light-logo { opacity: 0; }
-body.theme-dark .dark-logo  { opacity: 1; }
-
-.brand-text .site-title {
-  text-shadow:
-    0 0 12px rgba(180, 200, 255, 0.25),
-    0 0 24px rgba(120, 150, 255, 0.15);
-}
-/* --------------------------------------------------
-   ETHEREAL SWIRLING BACKGROUND
--------------------------------------------------- */
-
-body.theme-light {
-  background: radial-gradient(
-    circle at 30% 0%,
-    #2a3f73 0%,
-    #1c2d58 30%,
-    #131d3f 55%,
-    #0b1129 80%,
-    #070a1a 100%
-  );
-  animation: etherealSwirl 40s infinite linear;
-}
-
-@keyframes etherealSwirl {
-  0%   { background-position: 0% 0%; }
-  50%  { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-/* --------------------------------------------------
-   PARALLAX BUBBLES
--------------------------------------------------- */
-
-.bubble-bg span:nth-child(3n) {
-  animation-duration: 18s;
-  transform: scale(1.3);
-  opacity: 0.55;
-}
-
-.bubble-bg span:nth-child(4n) {
-  animation-duration: 26s;
-  transform: scale(0.8);
-  opacity: 0.35;
-}
-
-.bubble-bg span:nth-child(5n) {
-  animation-duration: 32s;
-  transform: scale(1.6);
-  opacity: 0.45;
-}
-/* --------------------------------------------------
-   CROWN AURA MAGIC
--------------------------------------------------- */
-
-.logo {
-  filter: drop-shadow(0 0 12px rgba(120, 150, 255, 0.35))
-          drop-shadow(0 0 24px rgba(160, 120, 255, 0.25));
-  transition: opacity 0.6s ease, filter 1.2s ease;
-}
-
-body.theme-dark .logo {
-  filter: drop-shadow(0 0 14px rgba(180, 120, 255, 0.35))
-          drop-shadow(0 0 28px rgba(120, 150, 255, 0.25));
-}
-/* --------------------------------------------------
-   FROSTED GLASS HOVER GLOW
--------------------------------------------------- */
-
-.content-card:hover {
-  border-color: rgba(200, 220, 255, 0.35);
-  box-shadow: 0 0 22px rgba(160, 180, 255, 0.25);
-  transition: 0.4s ease;
-}
-/* Fix navigation click-through */
-.bubble-bg {
-  z-index: 1;
-}
-
-.header-inner,
-.main-nav,
-.nav-links a,
-.theme-toggle {
-  position: relative;
-  z-index: 5;
-}
-/* Crown offset left */
-.logo-wrapper {
-  width: 160px;
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-}
-
-.logo {
-  position: absolute;
-  left: 0;
-  transform: none;
-}
-/* Ensure toggle and nav appear above bubbles */
-.header-inner,
-.theme-toggle,
-.main-nav,
-.nav-links a {
-  position: relative;
-  z-index: 5;
-}
-
-.bubble-bg {
-  z-index: 1;
-}
-/* --------------------------------------------------
-   HEADER FIXES — REQUIRED FOR NEW HEADER STRUCTURE
--------------------------------------------------- */
-
-/* Keep bubbles behind everything */
-.bubble-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* Bring header content above bubbles */
-.header-inner,
-.main-nav,
-.nav-links a,
-.theme-toggle,
-.logo-wrapper,
-.logo {
-  position: relative;
-  z-index: 5;
-}
-
-/* Align crown to the left */
-.logo-wrapper {
-  width: 160px;
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-}
-
-.logo {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: none;
-}
-
-/* Center navigation */
-.main-nav {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
-/* Right-align theme toggle */
-.theme-toggle {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(8px);
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.2rem;
-  transition: 0.3s ease;
-}
-/* Move theme toggle fully to the right */
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.theme-toggle {
-  margin-left: auto;
-}
-.logo {
-  transition: opacity 15s ease-in-out;
-}
-/* Crown + brand text layout */
-.logo-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-}
-
-.logo {
-  width: 120px; /* adjust if needed */
-  height: auto;
-  margin-bottom: 8px;
-  position: relative;
-  left: 0;
-  top: 0;
-  transform: none;
-}
-
-.brand-text {
-  margin-top: 4px;
-  text-align: left;
-}
-
-.site-title {
-  font-size: 1.8rem;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.site-tagline {
-  margin: 0;
-  opacity: 0.85;
-  font-size: 0.9rem;
-}
-/* Toggle alignment */
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.theme-toggle {
-  margin-left: auto;
-}
-/* Original Crown Creatives background */
-body {
-  background: radial-gradient(
-    circle at top,
-    #1a2340 0%,
-    #0f1628 50%,
-    #070b16 100%
-  );
-}
-/* Original frosted header bar */
-.site-header {
-  background: rgba(10, 15, 30, 0.55);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-/* Force 15-second fade between light/dark crowns */
-.light-logo,
-.dark-logo {
-  transition: opacity 15s ease-in-out !important;
-}
-
-
