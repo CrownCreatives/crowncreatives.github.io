@@ -279,3 +279,9 @@ body.theme-dark .dark-logo  { opacity: 1; }
   display: flex;
   align-items: flex-start;
 }
+/* Give the left column a proper width so the nav can center */
+.header-left {
+  width: 360px;   /* ← this is the correct width for your crown + text */
+  display: flex;
+  align-items: flex-start;
+}
