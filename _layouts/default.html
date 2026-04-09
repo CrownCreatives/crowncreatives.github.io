@@ -10,8 +10,11 @@ layout: none
 
   <title>{{ page.title }} | Crown Creatives</title>
 
-  <!-- Your CSS file -->
+  <!-- Global CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Load favicon + SEO tags -->
+  {% include head.html %}
 </head>
 
 <body>
@@ -21,28 +24,7 @@ layout: none
   <div class="magic-bubbles"></div>
 
   <!-- ✨ Header -->
-  <header class="site-header">
-    <div class="site-header-inner">
-
-      <div class="header-left">
-        <div class="header-crown">
-          <img src="/assets/icons/crown.svg" alt="Crown">
-        </div>
-
-        <div class="header-title-block">
-          <div class="site-title">Crown Creatives</div>
-          <div class="site-tagline">Where imagination becomes reality</div>
-        </div>
-      </div>
-
-      <div class="header-right">
-        <div class="theme-toggle">
-          <div class="theme-toggle-knob"></div>
-        </div>
-      </div>
-
-    </div>
-  </header>
+  {% include header.html %}
 
   <!-- ✨ Main Content -->
   <main class="page-wrapper">
