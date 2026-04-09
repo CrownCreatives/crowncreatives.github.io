@@ -263,3 +263,15 @@ body.theme-dark .dark-logo  { opacity: 1; }
   display: flex;
   justify-content: center;
 }
+.bubble-bg {
+  z-index: 1 !important;
+}
+
+.header-inner,
+.logo-wrapper,
+.logo,
+.main-nav,
+.theme-toggle {
+  position: relative;
+  z-index: 5 !important;
+}
