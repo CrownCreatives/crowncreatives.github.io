@@ -279,3 +279,8 @@ body.theme-dark .dark-logo  { opacity: 1; }
   display: flex;
   align-items: flex-start;
 }
+.header-left {
+  width: 300px;
+  display: flex;
+  align-items: flex-start;
+}
