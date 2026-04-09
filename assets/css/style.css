@@ -396,4 +396,60 @@ body.theme-dark .logo {
 .bubble-bg {
   z-index: 1;
 }
+/* --------------------------------------------------
+   HEADER FIXES — REQUIRED FOR NEW HEADER STRUCTURE
+-------------------------------------------------- */
+
+/* Keep bubbles behind everything */
+.bubble-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Bring header content above bubbles */
+.header-inner,
+.main-nav,
+.nav-links a,
+.theme-toggle,
+.logo-wrapper,
+.logo {
+  position: relative;
+  z-index: 5;
+}
+
+/* Align crown to the left */
+.logo-wrapper {
+  width: 160px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: none;
+}
+
+/* Center navigation */
+.main-nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Right-align theme toggle */
+.theme-toggle {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
 
