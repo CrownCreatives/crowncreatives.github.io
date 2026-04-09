@@ -1,0 +1,21 @@
+<div class="gallery-container fade-in">
+
+  <div class="masonry-grid">
+    {% for image in site.static_files %}
+      {% if image.path contains '/_gallery/' %}
+        <div class="masonry-item">
+          <a href="{{ image.path }}" class="lightbox-trigger">
+            <img src="{{ image.path }}" alt="Gallery Image">
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">×</span>
+  <img class="lightbox-image" src="" alt="">
+</div>
