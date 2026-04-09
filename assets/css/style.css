@@ -1,153 +1,478 @@
-/* ----------------------------------------------------
-   GLOBAL RESET
----------------------------------------------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================================
+   ✨ Crown Creatives — Full Magical Theme CSS
+   Fully responsive • Fully editable • Fantasy atmosphere
+   ========================================================= */
+
+/* ----------------------------- */
+/*  Global Reset & Base Styles   */
+/* ----------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #0a0f1f, #1a1f35);
-    color: #fff;
-    overflow-x: hidden;
-    position: relative;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e9f1ff;
+  background: radial-gradient(circle at top, #1b2340 0%, #050816 55%, #02030a 100%);
+  overflow-x: hidden;
 }
 
-/* ----------------------------------------------------
-   MAGIC FOG BACKGROUND
----------------------------------------------------- */
-.magic-fog {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 70%);
-    filter: blur(80px);
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: -2;
+/* Smooth text */
+body,
+button,
+input,
+textarea {
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ----------------------------------------------------
-   BUBBLE BACKGROUND
----------------------------------------------------- */
-.bubble-bg span {
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 20px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 50%;
-    animation: float 12s infinite ease-in-out;
+/* Links */
+a {
+  color: #c6ddff;
+  text-decoration: none;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
 }
 
-@keyframes float {
-    0% { transform: translateY(0) scale(1); opacity: 0.4; }
-    50% { transform: translateY(-200px) scale(1.2); opacity: 0.7; }
-    100% { transform: translateY(0) scale(1); opacity: 0.4; }
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(200, 240, 255, 0.9);
 }
 
-/* ----------------------------------------------------
-   HEADER — 3 COLUMN LAYOUT
-   (Crown | Title + Tagline | Toggle)
----------------------------------------------------- */
-.header-3col {
-    display: grid;
-    grid-template-columns: 140px 1fr 140px;
-    align-items: center;
-    width: 100%;
-    padding: 20px 0;
+/* Utility container */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 16px 120px;
 }
 
-/* Crown column */
+/* -------------------------------- */
+/*  Magical Background Atmosphere   */
+/* -------------------------------- */
+
+.magic-bg-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(120, 180, 255, 0.18) 0, transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(180, 120, 255, 0.16) 0, transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(120, 255, 210, 0.12) 0, transparent 55%);
+  filter: blur(2px);
+}
+
+/* Floating bubbles / particles */
+.magic-bubbles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.18) 0, transparent 60%),
+    radial-gradient(circle, rgba(200, 230, 255, 0.16) 0, transparent 60%),
+    radial-gradient(circle, rgba(180, 210, 255, 0.14) 0, transparent 60%);
+  background-size: 220px 220px, 260px 260px, 300px 300px;
+  background-position: 10% 90%, 80% 20%, 50% 50%;
+  animation: bubblesDrift 40s linear infinite alternate;
+  opacity: 0.45;
+}
+
+@keyframes bubblesDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -40px, 0);
+  }
+}
+
+/* ----------------------------- */
+/*  Header + Day/Night Toggle    */
+/* ----------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 10, 30, 0.92),
+    rgba(5, 10, 30, 0.75),
+    transparent
+  );
+  border-bottom: 1px solid rgba(180, 210, 255, 0.18);
+}
+
+.site-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 16px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left: Crown + Title */
 .header-left {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.header-left img {
-    width: 80px;
-    height: auto;
-    transition: opacity 0.6s ease;
+.header-crown {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffffff 0, #f5f5f5 18%, #c0d4ff 40%, #6c8cff 100%);
+  box-shadow:
+    0 0 18px rgba(200, 220, 255, 0.9),
+    0 0 40px rgba(120, 160, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: crownBreath 6s ease-in-out infinite;
 }
 
-/* Title + Tagline */
-.brand-text {
-    text-align: center;
+/* Inner emblem suggestion (brushes/cogs etc. as SVG or icon) */
+.header-crown img,
+.header-crown svg {
+  width: 70%;
+  height: 70%;
+}
+
+/* Tiny sparkles */
+.header-crown::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.7) 0, transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.5) 0, transparent 45%);
+  mix-blend-mode: screen;
+  opacity: 0.0;
+  animation: crownSparkle 10s ease-in-out infinite;
+}
+
+@keyframes crownBreath {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 16px rgba(200, 220, 255, 0.8),
+      0 0 32px rgba(120, 160, 255, 0.6);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow:
+      0 0 22px rgba(220, 240, 255, 1),
+      0 0 46px rgba(140, 180, 255, 0.9);
+  }
+}
+
+@keyframes crownSparkle {
+  0%, 60%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  70% {
+    opacity: 0.7;
+    transform: translate3d(-4px, -4px, 0);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translate3d(4px, 4px, 0);
+  }
+}
+
+/* Title + tagline */
+.header-title-block {
+  display: flex;
+  flex-direction: column;
 }
 
 .site-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.6rem;
-    letter-spacing: 2px;
-    margin-bottom: 4px;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f5f7ff;
 }
 
 .site-tagline {
-    font-size: 1rem;
-    opacity: 0.85;
-    letter-spacing: 3px;
+  font-size: 0.85rem;
+  color: #c3d4ff;
+  opacity: 0.9;
 }
 
-/* Toggle column */
+/* Right: Day/Night Toggle */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Toggle container */
 .theme-toggle {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 2rem;
-    cursor: pointer;
-    padding-right: 20px;
+  width: 64px;
+  height: 32px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1b2340, #050816);
+  border: 1px solid rgba(180, 210, 255, 0.5);
+  box-shadow: 0 0 12px rgba(120, 160, 255, 0.7);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-/* ----------------------------------------------------
-   NAVIGATION
----------------------------------------------------- */
-.main-nav .nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    list-style: none;
-    margin: 20px 0;
+/* Toggle knob */
+.theme-toggle-knob {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffffff 0, #f5f5f5 30%, #d0e0ff 100%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  transform: translateX(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.main-nav .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: opacity 0.3s ease;
+/* Day/Night states via .is-night on body */
+body.is-night .theme-toggle {
+  background: linear-gradient(135deg, #02030a, #050816);
+  border-color: rgba(120, 150, 255, 0.9);
+  box-shadow: 0 0 18px rgba(120, 150, 255, 0.9);
 }
 
-.main-nav .nav-links a:hover {
+body.is-night .theme-toggle-knob {
+  transform: translateX(28px);
+  box-shadow: 0 0 14px rgba(180, 210, 255, 1);
+}
+
+/* Optional tiny icons inside toggle (sun/moon) */
+.theme-toggle::before,
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.theme-toggle::before {
+  left: 8px;
+  background: radial-gradient(circle, #ffe9a3 0, #ffcf5a 40%, transparent 70%);
+  opacity: 1;
+}
+
+.theme-toggle::after {
+  right: 8px;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0, #d0ddff 40%, transparent 70%);
+  opacity: 0.2;
+}
+
+body.is-night .theme-toggle::before {
+  opacity: 0.2;
+}
+
+body.is-night .theme-toggle::after {
+  opacity: 1;
+}
+
+/* ----------------------------- */
+/*  Hero Section + Main Crown    */
+/* ----------------------------- */
+
+.hero {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.hero-crown-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.hero-crown {
+  width: clamp(120px, 18vw, 180px);
+  height: clamp(120px, 18vw, 180px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffffff 0, #f5f5f5 20%, #d0e0ff 45%, #7c96ff 100%);
+  box-shadow:
+    0 0 30px rgba(210, 230, 255, 1),
+    0 0 80px rgba(120, 160, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: heroCrownBreath 7s ease-in-out infinite;
+}
+
+/* Inner emblem (brushes, cogs, etc.) */
+.hero-crown img,
+.hero-crown svg {
+  width: 70%;
+  height: 70%;
+}
+
+/* Extra magical swirl */
+.hero-crown::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background:
+    conic-gradient(from 0deg,
+      rgba(255, 255, 255, 0.0),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.0),
+      rgba(200, 220, 255, 0.5),
+      rgba(255, 255, 255, 0.0)
+    );
+  mix-blend-mode: screen;
+  opacity: 0.0;
+  animation: heroCrownSwirl 12s linear infinite;
+}
+
+@keyframes heroCrownBreath {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+
+@keyframes heroCrownSwirl {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  40% {
     opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
 }
 
-/* ----------------------------------------------------
-   CONTENT WRAPPER
----------------------------------------------------- */
-.content-wrapper {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+/* Hero text */
+.hero-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-/* ----------------------------------------------------
-   FOOTER
----------------------------------------------------- */
-.site-footer {
-    text-align: center;
-    padding: 40px 0;
-    opacity: 0.7;
-    font-size: 0.9rem;
+.hero-subtitle {
+  font-size: 1rem;
+  color: #c7d6ff;
+  max-width: 520px;
+  margin: 0 auto;
 }
-/* --------------------------------------------- */
-/*  ✨ Inspirational Ticker — Left → Right Magic  */
-/* --------------------------------------------- */
+
+/* ----------------------------- */
+/*  Frosted Glass Content Cards  */
+/* ----------------------------- */
+
+.cards-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.magic-card {
+  position: relative;
+  padding: 18px 18px 20px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 20, 50, 0.75),
+    rgba(20, 40, 80, 0.65)
+  );
+  border: 1px solid rgba(180, 210, 255, 0.35);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 24px rgba(120, 160, 255, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Subtle inner glow / gradient overlay */
+.magic-card::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(200, 230, 255, 0.25) 0, transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(160, 210, 255, 0.18) 0, transparent 55%);
+  opacity: 0.0;
+  mix-blend-mode: screen;
+  transition: opacity 0.35s ease;
+}
+
+.magic-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(210, 235, 255, 0.9);
+  background: linear-gradient(
+    135deg,
+    rgba(15, 30, 70, 0.9),
+    rgba(30, 60, 110, 0.8)
+  );
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.7),
+    0 0 32px rgba(160, 210, 255, 0.7);
+}
+
+.magic-card:hover::before {
+  opacity: 1;
+}
+
+/* Card content */
+.magic-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #f3f6ff;
+}
+
+.magic-card-subtitle {
+  font-size: 0.9rem;
+  color: #c3d4ff;
+  margin-bottom: 10px;
+}
+
+.magic-card-body {
+  font-size: 0.9rem;
+  color: #d7e3ff;
+  line-height: 1.5;
+}
+
+/* ----------------------------- */
+/*  Inspirational Ticker         */
+/* ----------------------------- */
 
 .ticker-container {
   width: 100%;
@@ -156,7 +481,8 @@ body {
   padding: 8px 0;
   margin-top: 40px;
   backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.04);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -165,8 +491,9 @@ body {
   white-space: nowrap;
   animation: tickerScroll 25s linear infinite;
   color: #e8f1ff;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   text-shadow: 0 0 6px rgba(180, 220, 255, 0.8);
+  padding-left: 100%;
 }
 
 .ticker-container:hover .ticker-track {
@@ -174,32 +501,49 @@ body {
 }
 
 @keyframes tickerScroll {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
-/* --------------------------------------------- */
-/*  ✨ Magical Glowing Footer Line + Floating Icons */
-/* --------------------------------------------- */
+/* ----------------------------- */
+/*  Magical Glowing Footer       */
+/* ----------------------------- */
 
+.site-footer {
+  margin-top: 24px;
+  padding: 18px 16px 32px;
+  text-align: center;
+  position: relative;
+}
+
+/* Glowing line */
 .footer-magic-line {
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg,
-    rgba(120,180,255,0.2),
-    rgba(180,220,255,0.9),
-    rgba(120,180,255,0.2)
+  background: linear-gradient(
+    90deg,
+    rgba(120, 180, 255, 0.2),
+    rgba(180, 220, 255, 0.9),
+    rgba(120, 180, 255, 0.2)
   );
-  box-shadow: 0 0 12px rgba(160,200,255,0.8);
+  box-shadow: 0 0 12px rgba(160, 200, 255, 0.8);
   animation: footerGlow 6s ease-in-out infinite alternate;
 }
 
 @keyframes footerGlow {
-  0% { opacity: 0.6; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Floating social icons */
+/* Floating icons */
 .footer-icons {
   display: flex;
   justify-content: center;
@@ -211,10 +555,98 @@ body {
   display: inline-block;
   transform: translateY(-6px);
   transition: transform 0.4s ease, filter 0.4s ease;
-  filter: drop-shadow(0 0 6px rgba(180,220,255,0.6));
+  filter: drop-shadow(0 0 6px rgba(180, 220, 255, 0.6));
 }
 
 .footer-icons a:hover {
   transform: translateY(-14px) scale(1.08);
-  filter: drop-shadow(0 0 12px rgba(200,240,255,1));
+  filter: drop-shadow(0 0 12px rgba(200, 240, 255, 1));
+}
+
+/* Footer text */
+.footer-text {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #c3d4ff;
+  opacity: 0.9;
+}
+
+/* Copilot link styling */
+.footer-text a {
+  color: #d5e6ff;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.footer-text a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(200, 240, 255, 0.9);
+}
+
+/* ----------------------------- */
+/*  Responsiveness               */
+/* ----------------------------- */
+
+@media (max-width: 992px) {
+  .site-header-inner {
+    padding-inline: 12px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header-inner {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .header-left {
+    flex: 1 1 100%;
+  }
+
+  .header-right {
+    flex: 1 1 100%;
+    justify-content: flex-end;
+  }
+
+  .page-wrapper {
+    padding: 70px 14px 100px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-icons {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 1.1rem;
+  }
+
+  .site-tagline {
+    font-size: 0.78rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .ticker-track {
+    font-size: 0.9rem;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
 }
