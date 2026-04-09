@@ -1,111 +1,89 @@
 ---
+layout: none
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: "Crown Creatives" }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>{{ page.title }} | Crown Creatives</title>
 
-    <!-- Correct CSS Path -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-
+  <!-- Your CSS file -->
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
-<body class="theme-light">
+<body>
 
-    <!-- MAGIC FOG -->
-    <div class="magic-fog"></div>
+  <!-- ✨ Magical Background Layers -->
+  <div class="magic-bg-layer"></div>
+  <div class="magic-bubbles"></div>
 
-    <!-- BUBBLES -->
-    <div class="bubble-bg">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
+  <!-- ✨ Header -->
+  <header class="site-header">
+    <div class="site-header-inner">
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="header-bar">
-           <div class="header-content header-3col">
-
-                <div class="header-left">
-                  <img src="/assets/images/light-crown.png" class="logo light-logo">
-<img src="/assets/images/dark-crown.png" class="logo dark-logo">
-
-                </div>
-
-                <div class="brand-text">
-                    <h1 class="site-title">CROWN CREATIVES</h1>
-                    <p class="site-tagline">ARTISTRY • RESILIENCE • IMAGINATION</p>
-                </div>
-
-                <div class="theme-toggle" id="themeToggle">☾</div>
-
-            </div>
+      <div class="header-left">
+        <div class="header-crown">
+          <img src="/assets/icons/crown.svg" alt="Crown">
         </div>
 
-        <nav class="main-nav">
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/videos">Videos</a></li>
-                <li><a href="/podcasts">Podcasts</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/about">About</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="header-title-block">
+          <div class="site-title">Crown Creatives</div>
+          <div class="site-tagline">Where imagination becomes reality</div>
+        </div>
+      </div>
 
-    <main class="content-wrapper">
-        {{ content }}
-    </main>
-    <!-- ✨ Inspirational Ticker -->
-<div class="ticker-container">
-  <div class="ticker-track">
-    Believe in your creativity • Every idea begins with imagination • Keep creating • Magic happens when you do
+      <div class="header-right">
+        <div class="theme-toggle">
+          <div class="theme-toggle-knob"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ✨ Main Content -->
+  <main class="page-wrapper">
+    {{ content }}
+  </main>
+
+  <!-- ✨ Inspirational Ticker -->
+  <div class="ticker-container">
+    <div class="ticker-track">
+      Believe in your creativity • Every idea begins with imagination • Keep creating • Magic happens when you do
+    </div>
   </div>
-</div>
 
-<!-- ✨ Magical Glowing Footer Line -->
-<div class="footer-magic-line"></div>
+  <!-- ✨ Magical Glowing Footer Line -->
+  <div class="footer-magic-line"></div>
 
-<!-- ✨ Floating Footer Icons -->
-<div class="footer-icons">
-  <a href="https://www.facebook.com/people/Crown-Creatives/61556386467490/" target="_blank">
-    <img src="/assets/icons/facebook.svg" alt="Facebook" width="28">
-  </a>
+  <!-- ✨ Floating Footer Icons -->
+  <div class="footer-icons">
+    <a href="https://www.facebook.com/people/Crown-Creatives/61556386467490/" target="_blank">
+      <img src="/assets/icons/facebook.svg" alt="Facebook" width="28">
+    </a>
 
-  <a href="https://www.instagram.com/crown_creatives_uk/" target="_blank">
-    <img src="/assets/icons/instagram.svg" alt="Instagram" width="28">
-  </a>
+    <a href="https://www.instagram.com/crown_creatives_uk/" target="_blank">
+      <img src="/assets/icons/instagram.svg" alt="Instagram" width="28">
+    </a>
 
-  <a href="mailto:crowncreatives@outlook.com">
-    <img src="/assets/icons/email.svg" alt="Email" width="28">
-  </a>
+    <a href="mailto:crowncreatives@outlook.com">
+      <img src="/assets/icons/email.svg" alt="Email" width="28">
+    </a>
 
-  <a href="https://copilot.microsoft.com" target="_blank">
-    <img src="/assets/icons/copilot.svg" alt="Copilot" width="28">
-  </a>
-</div>
+    <a href="https://copilot.microsoft.com" target="_blank">
+      <img src="/assets/icons/copilot.svg" alt="Copilot" width="28">
+    </a>
+  </div>
 
-    <footer class="site-footer">
-        <p>© {{ "now" | date: "%Y" }} Crown Creatives — A Journey of Artistry & Imagination</p>
-    </footer>
-
-    <script>
-        const toggle = document.getElementById("themeToggle");
-        toggle.addEventListener("click", () => {
-            document.body.classList.toggle("theme-dark");
-            toggle.textContent = document.body.classList.contains("theme-dark") ? "☀" : "☾";
-        });
-    </script>
+  <!-- ✨ Footer Text -->
+  <footer class="site-footer">
+    <div class="footer-text">
+      © Crown Creatives — Powered by <a href="https://copilot.microsoft.com" target="_blank">Copilot</a>
+    </div>
+  </footer>
 
 </body>
 </html>
