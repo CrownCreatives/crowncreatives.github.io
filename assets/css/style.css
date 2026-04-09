@@ -461,3 +461,16 @@ body.theme-dark .dark-logo  { opacity: 1; }
   width: 120px;
   height: auto;
 }
+/* Perfect 3‑column centering */
+.header-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  text-align: center;
+}
+/* Make header bar translucent so magic shows through */
+.header-bar {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+}
+
