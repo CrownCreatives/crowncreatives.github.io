@@ -273,3 +273,9 @@ body.theme-dark .dark-logo  { opacity: 1; }
   position: relative;
   z-index: 10;
 }
+/* Fix left column width so nav can center */
+.header-left {
+  width: 260px;
+  display: flex;
+  align-items: flex-start;
+}
