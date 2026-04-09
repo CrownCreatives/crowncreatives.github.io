@@ -3,6 +3,21 @@ layout: default
 title: Home
 ---
 
+<!-- ✨ Hero Section -->
+<section class="hero">
+  <div class="hero-crown-wrapper">
+    <div class="hero-crown">
+      <img src="/assets/icons/crown.svg" alt="Crown Emblem">
+    </div>
+  </div>
+
+  <h1 class="hero-title">Crown Creatives</h1>
+  <p class="hero-subtitle">
+    Artistry • Resilience • Imagination
+  </p>
+</section>
+
+<!-- ✨ Intro Text -->
 <div class="intro-box fade-in">
   <p>
     Crown Creatives is a space where artistry, imagination, and personal resilience come together. 
@@ -15,3 +30,32 @@ title: Home
     every post is part of that ongoing story.
   </p>
 </div>
+
+<!-- ✨ Frosted Glass Cards -->
+<section class="cards-grid">
+
+  <div class="magic-card">
+    <div class="magic-card-title">3D Models</div>
+    <div class="magic-card-subtitle">Sculpting • Texturing • Rendering</div>
+    <div class="magic-card-body">
+      Explore a growing collection of 3D creations — characters, props, environments, and more.
+    </div>
+  </div>
+
+  <div class="magic-card">
+    <div class="magic-card-title">Creative Projects</div>
+    <div class="magic-card-subtitle">Art • Design • Experiments</div>
+    <div class="magic-card-body">
+      A space for artistic exploration, visual storytelling, and imaginative expression.
+    </div>
+  </div>
+
+  <div class="magic-card">
+    <div class="magic-card-title">Podcasts</div>
+    <div class="magic-card-subtitle">Thoughts • Stories • Growth</div>
+    <div class="magic-card-body">
+      Conversations about creativity, resilience, and the journey of rebuilding life.
+    </div>
+  </div>
+
+</section>
