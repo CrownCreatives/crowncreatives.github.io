@@ -289,8 +289,9 @@ body.theme-dark .dark-logo  { opacity: 1; }
   margin-left: 20px;
 }
 /* Restore old centered header layout */
+}
 .header-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
