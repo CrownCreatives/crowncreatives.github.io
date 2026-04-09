@@ -499,4 +499,43 @@ body.theme-dark .dark-logo  { opacity: 1; }
   position: relative;
   z-index: 5;
 }
+/* Prevent nav shifting when clicking links */
+.nav-links a {
+  display: inline-block;
+  padding: 8px 0;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:active,
+.nav-links a:focus,
+.nav-links .current {
+  border-bottom: 2px solid rgba(255,255,255,0.6);
+  font-weight: 600; /* prevents width jump */
+}
+.header-bar {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+}
+.bubble-bg {
+  z-index: 2;
+}
+
+.header-bar,
+.main-nav {
+  position: relative;
+  z-index: 5;
+}
+.header-left {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.header-left .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+}
 
