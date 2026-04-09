@@ -670,3 +670,144 @@ a:hover {
     background: radial-gradient(circle at top, #28346a 0, #151b3a 55%, #050814 100%);
   }
 }
+/* ----------------------------------------------------
+   CROWN CREATIVES — MAGICAL MASONRY GALLERY
+   Option C: Full Glow + Shimmer + Fantasy Borders
+-----------------------------------------------------*/
+
+.gallery-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .masonry-grid { column-count: 2; }
+}
+
+@media (max-width: 600px) {
+  .masonry-grid { column-count: 1; }
+}
+
+/* Masonry Items */
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Image */
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Hover Magic */
+.masonry-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(255, 215, 130, 0.6);
+  box-shadow: 0 0 35px rgba(255, 215, 130, 0.35),
+              0 0 60px rgba(255, 215, 130, 0.15);
+}
+
+.masonry-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.25) saturate(1.2);
+}
+
+/* Shimmer Overlay */
+.masonry-item::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -120%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  opacity: 0;
+  transform: rotate(25deg);
+  transition: opacity 0.6s ease;
+}
+
+.masonry-item:hover::after {
+  opacity: 0.35;
+  animation: shimmerSweep 1.4s ease forwards;
+}
+
+@keyframes shimmerSweep {
+  0% { transform: translate(-50%, -50%) rotate(25deg); }
+  100% { transform: translate(50%, 50%) rotate(25deg); }
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.lightbox-image {
+  margin: auto;
+  display: block;
+  max-width: 92%;
+  max-height: 82vh;
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(255,255,255,0.35),
+              0 0 80px rgba(255,215,130,0.25);
+  animation: popIn 0.35s ease forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 42px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lightbox-close:hover {
+  color: #ffd782;
+  text-shadow: 0 0 15px rgba(255,215,130,0.8);
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
