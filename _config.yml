@@ -1,0 +1,31 @@
+title: Crown Creatives
+description: Artistry • Resilience • Imagination
+baseurl: ""
+url: "https://crowncreatives.github.io"
+
+markdown: kramdown
+theme: minima
+
+collections:
+  gallery:
+    output: true
+  projects:
+    output: true
+  videos:
+    output: true
+  podcasts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+
+include:
+  - _pages
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
