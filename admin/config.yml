@@ -28,28 +28,28 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - name: "projects"
-        label: "Projects"
+      - name: "projects_page"
+        label: "Projects Page"
         file: "projects.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - name: "videos"
-        label: "Videos"
+      - name: "videos_page"
+        label: "Videos Page"
         file: "videos.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - name: "podcasts"
-        label: "Podcasts"
+      - name: "podcasts_page"
+        label: "Podcasts Page"
         file: "podcasts.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - name: "blog"
+      - name: "blog_page"
         label: "Blog Page"
         file: "blog.md"
         fields:
@@ -93,7 +93,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown", required: false }
 
   # -----------------------------
-  # PROJECTS
+  # PROJECTS (FOLDER COLLECTION)
   # -----------------------------
   - name: "projects"
     label: "Projects"
@@ -108,43 +108,9 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
 
   # -----------------------------
-  # VIDEOS
+  # VIDEOS (FOLDER COLLECTION)
   # -----------------------------
   - name: "videos"
     label: "Videos"
     folder: "_videos"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Video URL", name: "url", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
-      - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown", required: false }
-
-  # -----------------------------
-  # PODCASTS
-  # -----------------------------
-  - name: "podcasts"
-    label: "Podcasts"
-    folder: "_podcasts"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Episode Title", name: "title", widget: "string" }
-      - { label: "Audio URL", name: "audio", widget: "string" }
-      - { label: "Episode Number", name: "episode", widget: "number" }
-      - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Cover Image", name: "image", widget: "image", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown", required: false }
-
-  # -----------------------------
-  # TICKER MESSAGE
-  # -----------------------------
-  - name: "ticker"
-    label: "Ticker Message"
-    file: "_data/ticker.yml"
-    fields:
-      - { label: "Message", name: "message", widget: "string" }
+    create
