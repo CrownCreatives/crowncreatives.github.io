@@ -452,4 +452,14 @@ body.theme-dark .logo {
   font-size: 1.2rem;
   transition: 0.3s ease;
 }
+/* Move theme toggle fully to the right */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-toggle {
+  margin-left: auto;
+}
 
