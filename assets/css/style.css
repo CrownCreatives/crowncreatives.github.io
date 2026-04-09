@@ -384,4 +384,16 @@ body.theme-dark .logo {
   left: 0;
   transform: none;
 }
+/* Ensure toggle and nav appear above bubbles */
+.header-inner,
+.theme-toggle,
+.main-nav,
+.nav-links a {
+  position: relative;
+  z-index: 5;
+}
+
+.bubble-bg {
+  z-index: 1;
+}
 
