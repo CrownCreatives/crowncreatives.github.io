@@ -1,6 +1,6 @@
-<style>
-  body { border: 10px solid red !important; }
-</style>
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,46 +13,46 @@
 
     <!-- Correct CSS Path -->
     <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- TEMPORARY TEST -->
+    <style>
+      body { border: 10px solid red !important; }
+    </style>
 </head>
 
 <body class="theme-light">
 
-    <!-- ⭐ MAGIC FOG LAYER -->
+    <!-- MAGIC FOG -->
     <div class="magic-fog"></div>
 
-    <!-- ⭐ BUBBLE BACKGROUND -->
+    <!-- BUBBLES -->
     <div class="bubble-bg">
-        <!-- 20 bubbles for now — you can add more -->
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- ⭐ HEADER -->
+    <!-- HEADER -->
     <header class="site-header">
         <div class="header-bar">
             <div class="header-content">
 
-                <!-- Crown (light + dark stacked) -->
                 <div class="header-left">
                     <img src="/assets/light-crown.png" class="logo light-logo" alt="Crown Creatives Logo">
                     <img src="/assets/dark-crown.png" class="logo dark-logo" alt="Crown Creatives Logo Dark">
                 </div>
 
-                <!-- Title + Tagline -->
                 <div class="brand-text">
                     <h1 class="site-title">CROWN CREATIVES</h1>
                     <p class="site-tagline">ARTISTRY • RESILIENCE • IMAGINATION</p>
                 </div>
 
-                <!-- Theme Toggle -->
                 <div class="theme-toggle" id="themeToggle">☾</div>
 
             </div>
         </div>
 
-        <!-- Navigation -->
         <nav class="main-nav">
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
@@ -66,20 +66,16 @@
         </nav>
     </header>
 
-    <!-- ⭐ MAIN CONTENT -->
     <main class="content-wrapper">
         {{ content }}
     </main>
 
-    <!-- ⭐ FOOTER -->
     <footer class="site-footer">
         <p>© {{ "now" | date: "%Y" }} Crown Creatives — A Journey of Artistry & Imagination</p>
     </footer>
 
-    <!-- ⭐ THEME TOGGLE SCRIPT -->
     <script>
         const toggle = document.getElementById("themeToggle");
-
         toggle.addEventListener("click", () => {
             document.body.classList.toggle("theme-dark");
             toggle.textContent = document.body.classList.contains("theme-dark") ? "☀" : "☾";
@@ -88,4 +84,3 @@
 
 </body>
 </html>
-
