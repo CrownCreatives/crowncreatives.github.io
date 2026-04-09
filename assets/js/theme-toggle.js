@@ -1,11 +1,11 @@
-// Theme Toggle
-document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("themeToggle");
+const toggle = document.getElementById("themeToggle");
 
-    if (!toggle) return;
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("theme-dark");
 
-    toggle.addEventListener("click", () => {
-        document.body.classList.toggle("theme-dark");
-        document.body.classList.toggle("theme-light");
-    });
+  if (document.body.classList.contains("theme-dark")) {
+    toggle.textContent = "🌙";
+  } else {
+    toggle.textContent = "☀️";
+  }
 });
