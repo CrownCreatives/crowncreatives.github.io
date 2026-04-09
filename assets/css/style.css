@@ -252,3 +252,14 @@ body.theme-dark .dark-logo  { opacity: 1; }
   border-top: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
 }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.main-nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
