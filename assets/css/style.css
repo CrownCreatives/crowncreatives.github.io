@@ -447,3 +447,17 @@ body.theme-dark .dark-logo  { opacity: 1; }
   align-items: center;
   text-align: center;
 }
+/* Stack crowns perfectly for magical fade */
+.header-left {
+  position: relative;
+  width: 120px; /* matches logo width */
+  height: 120px; /* ensures consistent box */
+}
+
+.header-left .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: auto;
+}
