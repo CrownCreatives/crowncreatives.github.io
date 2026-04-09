@@ -465,4 +465,38 @@ body.theme-dark .logo {
 .logo {
   transition: opacity 15s ease-in-out;
 }
+/* Crown + brand text layout */
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.logo {
+  width: 120px; /* adjust if needed */
+  height: auto;
+  margin-bottom: 8px;
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+}
+
+.brand-text {
+  margin-top: 4px;
+  text-align: left;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.site-tagline {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 0.9rem;
+}
 
