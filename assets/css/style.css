@@ -570,4 +570,38 @@ body.theme-dark {
   min-width: 60px;
   text-align: center;
 }
+.header-bar {
+  background: rgba(255,255,255,0.05) !important;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 40px rgba(160,120,255,0.25);
+  position: relative;
+  z-index: 10;
+}
+.bubble-bg {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3 !important;
+  pointer-events: none;
+  overflow: visible !important;
+}
+
+.bubble-bg span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.22);
+  border-radius: 50%;
+  filter: blur(4px);
+  animation: float 14s infinite ease-in-out;
+  opacity: 0.7;
+}
+body.theme-light,
+body.theme-dark {
+  background-position: center center !important;
+  background-size: 200% 200% !important;
+}
 
