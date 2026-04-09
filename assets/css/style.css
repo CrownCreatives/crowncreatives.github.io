@@ -464,6 +464,32 @@ body.theme-dark .header-left .logo {
     transform: translateY(0);
   }
 }
+body.theme-light {
+  background: radial-gradient(
+    circle at center,
+    #4f6dff 0%,
+    #3b3fa0 30%,
+    #1b1f4f 60%,
+    #050616 100%
+  ) !important;
+}
+
+body.theme-dark {
+  background: radial-gradient(
+    circle at center,
+    #140824 0%,
+    #241047 30%,
+    #351c6f 60%,
+    #05030d 100%
+  ) !important;
+}
+/* FORCE SWIRL TO CENTRE — FINAL OVERRIDE */
+body.theme-light,
+body.theme-dark {
+  background-position: 50% 50% !important;
+  background-size: 260% 260% !important;
+  background-repeat: no-repeat !important;
+}
 
   .site-tagline {
     font-size: 0.9rem;
