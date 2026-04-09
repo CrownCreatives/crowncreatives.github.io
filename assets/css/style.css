@@ -499,4 +499,35 @@ body.theme-dark .logo {
   opacity: 0.85;
   font-size: 0.9rem;
 }
+/* Toggle alignment */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-toggle {
+  margin-left: auto;
+}
+/* Original Crown Creatives background */
+body {
+  background: radial-gradient(
+    circle at top,
+    #1a2340 0%,
+    #0f1628 50%,
+    #070b16 100%
+  );
+}
+/* Original frosted header bar */
+.site-header {
+  background: rgba(10, 15, 30, 0.55);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+/* Force 15-second fade between light/dark crowns */
+.light-logo,
+.dark-logo {
+  transition: opacity 15s ease-in-out !important;
+}
+
 
