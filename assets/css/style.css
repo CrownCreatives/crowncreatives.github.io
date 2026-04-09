@@ -1,601 +1,82 @@
-/* --------------------------------------------------
+/* ----------------------------------------------------
    GLOBAL RESET
--------------------------------------------------- */
+---------------------------------------------------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #ffffff;
-  overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #0a0f1f, #1a1f35);
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* --------------------------------------------------
-   MAGICAL ASTRAL BACKGROUND
--------------------------------------------------- */
-body.theme-light {
-  background: radial-gradient(
-    circle at center,
-    #4f6dff 0%,
-    #3b3fa0 30%,
-    #1b1f4f 60%,
-    #050616 100%
-  );
-  background-position: 50% 50%;
-  background-size: 240% 240%;
-  animation: etherealSwirl 40s infinite linear;
+/* ----------------------------------------------------
+   MAGIC FOG BACKGROUND
+---------------------------------------------------- */
+.magic-fog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 70%);
+    filter: blur(80px);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -2;
 }
 
-body.theme-dark {
-  background: radial-gradient(
-    circle at center,
-    #140824 0%,
-    #241047 30%,
-    #351c6f 60%,
-    #05030d 100%
-  );
-  background-position: 50% 50%;
-  background-size: 240% 240%;
-  animation: etherealSwirlDark 50s infinite linear;
-}
-
-@keyframes etherealSwirl {
-  0%   { background-position: 0% 0%; }
-  50%  { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
-@keyframes etherealSwirlDark {
-  0%   { background-position: 100% 0%; }
-  50%  { background-position: 0% 100%; }
-  100% { background-position: 100% 0%; }
-}
-
-/* --------------------------------------------------
-   FLOATING BUBBLES LAYER
--------------------------------------------------- */
-.bubble-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  pointer-events: none;
-  overflow: visible;
-}
-
+/* ----------------------------------------------------
+   BUBBLE BACKGROUND
+---------------------------------------------------- */
 .bubble-bg span {
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: rgba(255,255,255,0.22);
-  border-radius: 50%;
-  filter: blur(4px);
-  animation: float 14s infinite ease-in-out;
-  opacity: 0.7;
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    animation: float 12s infinite ease-in-out;
 }
 
 @keyframes float {
-  0%   { transform: translateY(0) scale(1);   opacity: 0.4; }
-  50%  { transform: translateY(-90px) scale(1.3); opacity: 0.9; }
-  100% { transform: translateY(0) scale(1);   opacity: 0.4; }
+    0% { transform: translateY(0) scale(1); opacity: 0.4; }
+    50% { transform: translateY(-200px) scale(1.2); opacity: 0.7; }
+    100% { transform: translateY(0) scale(1); opacity: 0.4; }
 }
 
-/* Parallax variations */
-.bubble-bg span:nth-child(3n) {
-  animation-duration: 18s;
-  transform: scale(1.3);
-  opacity: 0.55;
-}
-.bubble-bg span:nth-child(4n) {
-  animation-duration: 26s;
-  transform: scale(0.8);
-  opacity: 0.35;
-}
-.bubble-bg span:nth-child(5n) {
-  animation-duration: 32s;
-  transform: scale(1.6);
-  opacity: 0.45;
-}
-
-/* --------------------------------------------------
-   HEADER — ENCHANTED CROWN BAR
--------------------------------------------------- */
-.site-header {
-  position: relative;
-  padding: 0 20px 30px;
-  z-index: 5;
-}
-
-/* 40mm‑ish header bar */
-.header-bar {
-  height: 150px;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.10),
-    rgba(255,255,255,0.04)
-  );
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.16);
-  box-shadow:
-    0 0 40px rgba(10,10,40,0.9),
-    0 0 60px rgba(120,140,255,0.35);
-  position: relative;
-  z-index: 10;
-}
-/* HEADER LAYOUT FIX */
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    text-align: center;
-}
-
-.header-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.brand-text {
-    text-align: center;
-}
-
-.site-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.4rem;
-    letter-spacing: 2px;
-    margin-bottom: 4px;
-}
-
-.site-tagline {
-    font-size: 1rem;
-    opacity: 0.8;
-    letter-spacing: 3px;
-}
-
-/* 3‑column layout: crown | text | toggle */
-.header-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 220px auto 70px;
-  align-items: center;
-}
-
-/* Crown container (left) */
-.header-left {
-  position: relative;
-  width: 130px;
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* Stack light/dark crowns perfectly */
-.header-left .logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 130px;
-  height: auto;
-  transition: opacity 1.2s ease-in-out, filter 1.5s ease-in-out, transform 0.8s ease-out;
-  filter:
-    drop-shadow(0 0 14px rgba(180,150,255,0.45))
-    drop-shadow(0 0 28px rgba(120,170,255,0.35));
-}
-
-body.theme-dark .header-left .logo {
-  filter:
-    drop-shadow(0 0 18px rgba(220,160,255,0.55))
-    drop-shadow(0 0 34px rgba(150,190,255,0.45));
-}
-
-.light-logo { opacity: 1; }
-.dark-logo  { opacity: 0; }
-
-body.theme-dark .light-logo { opacity: 0; }
-body.theme-dark .dark-logo  { opacity: 1; }
-
-/* Subtle crown “lift” on theme change */
-body.theme-dark .header-left .logo {
-  transform: translateY(-4px);
-}
-
-/* Centered brand text */
-.brand-text {
-  text-align: center;
-}
-
-.site-title {
-  font-family: 'Cinzel', serif;
-  font-size: 2.1rem;
-  letter-spacing: 2px;
-  margin: 0;
-  text-shadow:
-    0 0 14px rgba(190,210,255,0.35),
-    0 0 26px rgba(120,150,255,0.35);
-}
-
-.site-tagline {
-  font-size: 1rem;
-  opacity: 0.9;
-  letter-spacing: 1.2px;
-  margin: 4px 0 0;
-}
-
-/* Theme toggle (right) */
-.theme-toggle {
-  justify-self: end;
-  background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.35), rgba(255,255,255,0.08));
-  border: 1px solid rgba(255,255,255,0.35);
-  backdrop-filter: blur(12px);
-  padding: 8px 12px;
-  border-radius: 999px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.2rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-  box-shadow: 0 0 18px rgba(160,180,255,0.55);
-  z-index: 15;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-1px) scale(1.03);
-  box-shadow: 0 0 26px rgba(190,210,255,0.75);
-}
-/* ---------------------------------------------
-   HEADER — 3 COLUMN LAYOUT (Crown | Text | Toggle)
----------------------------------------------- */
+/* ----------------------------------------------------
+   HEADER — 3 COLUMN LAYOUT
+   (Crown | Title + Tagline | Toggle)
+---------------------------------------------------- */
 .header-3col {
     display: grid;
-    grid-template-columns: 160px 1fr 160px;
+    grid-template-columns: 140px 1fr 140px;
     align-items: center;
     width: 100%;
-    text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 /* Crown column */
 .header-left {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-left: 20px;
 }
 
 .header-left img {
     width: 80px;
     height: auto;
-    position: absolute;
     transition: opacity 0.6s ease;
 }
 
-/* Title + Tagline column */
-.brand-text {
-    text-align: center;
-}
-
-.site-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.4rem;
-    letter-spacing: 2px;
-    margin: 0;
-}
-
-.site-tagline {
-    font-size: 1rem;
-    opacity: 0.85;
-    letter-spacing: 3px;
-    margin-top: 4px;
-}
-
-/* Toggle column */
-.theme-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-/* --------------------------------------------------
-   NAVIGATION BELOW HEADER BAR
--------------------------------------------------- */
-.main-nav {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 10;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  display: inline-block;
-  min-width: 60px;
-  text-align: center;
-  color: #e6e6f5;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 0;
-  border-bottom: 2px solid transparent;
-  transition: color 0.25s ease, text-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255,255,255,0.6);
-  transform: translateY(-1px);
-}
-
-.nav-links a:active,
-.nav-links a:focus,
-.nav-links .current {
-  border-bottom-color: rgba(255,255,255,0.75);
-  font-weight: 600;
-}
-
-/* --------------------------------------------------
-   CONTENT WRAPPER + FROSTED CARDS
--------------------------------------------------- */
-.content-wrapper {
-  max-width: 900px;
-  margin: 40px auto 80px;
-  padding: 0 20px;
-  position: relative;
-  z-index: 3;
-}
-
-.content-card {
-  padding: 40px;
-  border-radius: 18px;
-  background: radial-gradient(circle at top left,
-    rgba(255,255,255,0.18),
-    rgba(255,255,255,0.06)
-  );
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),
-    0 0 40px rgba(120,150,255,0.25);
-  animation: cardFadeIn 1.1s ease forwards;
-}
-
-@keyframes cardFadeIn {
-  from { opacity: 0; transform: translateY(14px) scale(0.99); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.content-card h1,
-.content-card h2,
-.content-card h3 {
-  font-family: 'Cinzel', serif;
-  margin-bottom: 16px;
-}
-
-.content-card p {
-  line-height: 1.7;
-  opacity: 0.95;
-}
-
-/* --------------------------------------------------
-   GALLERY GRID
--------------------------------------------------- */
-.gallery-grid {
-  column-count: 3;
-  column-gap: 18px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  margin-bottom: 18px;
-  border-radius: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-  box-shadow: 0 0 18px rgba(0,0,0,0.55);
-  filter: saturate(1.05);
-}
-
-.gallery-grid img:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow:
-    0 18px 30px rgba(0,0,0,0.7),
-    0 0 26px rgba(200,220,255,0.45);
-  filter: saturate(1.15);
-}
-
-/* --------------------------------------------------
-   FOOTER
--------------------------------------------------- */
-.site-footer {
-  padding: 40px 20px;
-  text-align: center;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255,255,255,0.16);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.7);
-  position: relative;
-  z-index: 4;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-/* --------------------------------------------------
-   RESPONSIVE TWEAKS
--------------------------------------------------- */
-@media (max-width: 768px) {
-  .header-content {
-    grid-template-columns: 1fr;
-    row-gap: 12px;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .header-left {
-    justify-content: center;
-  }
-
-  .theme-toggle {
-    justify-self: center;
-  }
-
-  .nav-links {
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  .content-card {
-    padding: 28px;
-  }
-
-  .gallery-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-grid {
-    column-count: 1;
-  }
-
-  .site-title {
-    font-size: 1.7rem;
-  }
-/* Magical breathing glow around the title */
-.site-title {
-  position: relative;
-  font-size: 2.6rem; /* bigger, more presence */
-  letter-spacing: 3px;
-  animation: titleGlow 6s ease-in-out infinite;
-}
-
-@keyframes titleGlow {
-  0%   { text-shadow: 0 0 12px rgba(180,200,255,0.25); }
-  50%  { text-shadow: 0 0 28px rgba(200,220,255,0.55), 0 0 60px rgba(120,150,255,0.35); }
-  100% { text-shadow: 0 0 12px rgba(180,200,255,0.25); }
-}
-/* Sparkle ring around tagline */
-.site-tagline {
-  font-size: 1.15rem;
-  letter-spacing: 2px;
-  position: relative;
-  animation: taglineShimmer 8s linear infinite;
-}
-
-@keyframes taglineShimmer {
-  0%   { opacity: 0.85; filter: drop-shadow(0 0 4px rgba(255,255,255,0.2)); }
-  50%  { opacity: 1; filter: drop-shadow(0 0 10px rgba(255,255,255,0.45)); }
-  100% { opacity: 0.85; filter: drop-shadow(0 0 4px rgba(255,255,255,0.2)); }
-}
-/* Soft drifting magical fog */
-.magic-fog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 2;
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 70%);
-  animation: fogDrift 40s ease-in-out infinite;
-  mix-blend-mode: screen;
-  opacity: 0.35;
-}
-
-@keyframes fogDrift {
-  0%   { transform: translate(-10%, -10%) scale(1); }
-  50%  { transform: translate(10%, 10%) scale(1.2); }
-  100% { transform: translate(-10%, -10%) scale(1); }
-}
-.header-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 200px auto 70px;
-  align-items: center;
-  justify-items: center;
-}
-.site-title {
-  opacity: 0;
-  transform: translateY(12px);
-  animation: titleReveal 1.4s ease forwards, titleGlow 6s ease-in-out infinite 1.4s;
-}
-
-@keyframes titleReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-body.theme-light {
-  background: radial-gradient(
-    circle at center,
-    #4f6dff 0%,
-    #3b3fa0 30%,
-    #1b1f4f 60%,
-    #050616 100%
-  ) !important;
-}
-
-body.theme-dark {
-  background: radial-gradient(
-    circle at center,
-    #140824 0%,
-    #241047 30%,
-    #351c6f 60%,
-    #05030d 100%
-  ) !important;
-}
-/* FORCE SWIRL TO CENTRE — FINAL OVERRIDE */
-body.theme-light,
-body.theme-dark {
-  background-position: 50% 50% !important;
-  background-size: 260% 260% !important;
-  background-repeat: no-repeat !important;
-}
-
-  .site-tagline {
-    font-size: 0.9rem;
-  }
-}
-/* HEADER FIX — CENTER EVERYTHING */
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
-}
-
-.header-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Title + Tagline */
 .brand-text {
     text-align: center;
 }
@@ -604,12 +85,63 @@ body.theme-dark {
     font-family: 'Cinzel', serif;
     font-size: 2.6rem;
     letter-spacing: 2px;
-    margin: 0;
+    margin-bottom: 4px;
 }
 
 .site-tagline {
     font-size: 1rem;
     opacity: 0.85;
     letter-spacing: 3px;
-    margin-top: 4px;
+}
+
+/* Toggle column */
+.theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+/* ----------------------------------------------------
+   NAVIGATION
+---------------------------------------------------- */
+.main-nav .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin: 20px 0;
+}
+
+.main-nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav .nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* ----------------------------------------------------
+   CONTENT WRAPPER
+---------------------------------------------------- */
+.content-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ----------------------------------------------------
+   FOOTER
+---------------------------------------------------- */
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
 }
