@@ -673,3 +673,14 @@ body.is-night .theme-toggle::after {
     font-size: 0.8rem;
   }
 }
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e9f1ff;
+
+  background:
+    radial-gradient(circle at 20% 10%, rgba(120, 180, 255, 0.35) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(200, 140, 255, 0.32) 0%, transparent 65%),
+    radial-gradient(circle at 50% 85%, rgba(120, 255, 210, 0.28) 0%, transparent 60%),
+    linear-gradient(180deg, #0b1230 0%, #0a0f2a 40%, #050816 100%);
+}
