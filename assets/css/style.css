@@ -126,8 +126,8 @@ body {
 
 .cc-hero-orb {
   position: relative;
-  width: clamp(90px, 12vw, 120px);
-  height: clamp(90px, 12vw, 120px);
+  width: clamp(70px, 10vw, 110px);
+  height: clamp(70px, 10vw, 110px);
   border-radius: 50%;
   background:
     radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.22) 0, transparent 55%),
