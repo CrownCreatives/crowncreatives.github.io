@@ -457,6 +457,29 @@ body.dark-mode .theme-toggle {
   margin-top: 22px;
   max-width: 520px; /* forces 2 lines */
 }
+/* --- HERO CARD REFINEMENTS (Two lines + 20% emblem increase) --- */
+
+/* Slightly wider hero card */
+.hero-card {
+  max-width: 720px; /* was ~676px */
+}
+
+/* Orb + Crown increased by 20% */
+.hero-crown {
+  width: 74px;   /* was 62px */
+  height: 74px;
+}
+
+.hero-crown img {
+  width: 50px;   /* was 42px */
+  height: 50px;
+}
+
+/* Force explainer text to two lines by narrowing width */
+.hero-explainer {
+  max-width: 480px; /* narrower → forces 2 lines */
+  margin-top: 20px; /* moves text downward slightly */
+}
 
 /* ============================================
    TICKER — CLEAN, WORKING, NO DUPLICATES
