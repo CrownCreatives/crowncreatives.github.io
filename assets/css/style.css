@@ -1,6 +1,6 @@
 /* =========================================================
-   Crown Creatives — NEW Magical Fantasy Theme (2026)
-   Clean • Crisp • Colourful • No Blur • Fully Responsive
+   Crown Creatives — Clean Fantasy Theme (2026)
+   Crisp • Colourful • No Blur • Fully Responsive
    ========================================================= */
 
 /* ----------------------------- */
@@ -24,7 +24,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #e9f1ff;
 
-  /* ✨ NEW crisp fantasy background */
+  /* ✨ Crisp fantasy background */
   background:
     radial-gradient(circle at 20% 10%, rgba(120, 180, 255, 0.35) 0%, transparent 60%),
     radial-gradient(circle at 80% 20%, rgba(200, 140, 255, 0.32) 0%, transparent 65%),
@@ -81,8 +81,7 @@ body.is-night {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(5, 10, 30, 0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(5, 10, 30, 0.92);
   border-bottom: 1px solid rgba(180, 210, 255, 0.18);
 }
 
@@ -158,8 +157,10 @@ body.is-night .theme-toggle-knob {
 
 /* Navigation */
 .main-nav {
-  background: rgba(5, 10, 30, 0.75);
+  background: rgba(5, 10, 30, 0.92);
   border-top: 1px solid rgba(180, 210, 255, 0.15);
+  position: relative;
+  z-index: 10;
 }
 
 .nav-links {
@@ -202,13 +203,12 @@ body.is-night .theme-toggle-knob {
   gap: 24px;
 }
 
-/* Frosted glass card */
+/* Frosted card (NO blur) */
 .magic-card {
   padding: 20px;
   border-radius: 18px;
   background: rgba(20, 40, 80, 0.55);
   border: 1px solid rgba(180, 210, 255, 0.35);
-  backdrop-filter: blur(8px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -248,10 +248,12 @@ body.is-night .theme-toggle-knob {
 .ticker-container {
   width: 100%;
   overflow: hidden;
-  padding: 8px 0;
+  padding: 10px 0;
   margin-top: 40px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(10, 15, 35, 0.65);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 50;
 }
 
 .ticker-track {
@@ -275,6 +277,8 @@ body.is-night .theme-toggle-knob {
 .site-footer {
   text-align: center;
   padding: 20px 16px 40px;
+  position: relative;
+  z-index: 15;
 }
 
 /* Glowing line */
@@ -287,7 +291,7 @@ body.is-night .theme-toggle-knob {
     rgba(180, 220, 255, 0.9),
     rgba(120, 180, 255, 0.2)
   );
-  box-shadow: 0 0 12px rgba(160, 200, 255, 0.8);
+  box-shadow: 0 0 8px rgba(160, 200, 255, 0.6);
 }
 
 /* Crisp, bold, slightly larger icons */
@@ -340,20 +344,4 @@ body.is-night .theme-toggle-knob {
   .cards-grid {
     grid-template-columns: 1fr;
   }
-}
-.site-header,
-.main-nav {
-  backdrop-filter: none;
-}
-.ticker-container {
-  position: relative;
-  z-index: 20;
-}
-.main-nav {
-  position: relative;
-  z-index: 10;
-}
-.site-footer {
-  position: relative;
-  z-index: 15;
 }
