@@ -88,7 +88,7 @@ body.is-night {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 1.2rem;   /* vertical | horizontal */
+  padding: 6rem 1.2rem;   /* vertical | horizontal */
   position: relative;
 }
 
