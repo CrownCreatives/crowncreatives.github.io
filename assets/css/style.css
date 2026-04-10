@@ -435,6 +435,28 @@ body.dark-mode .theme-toggle {
   color: var(--cc-text-soft);
   line-height: 1.6;
 }
+/* --- Updated Hero Card Layout --- */
+
+.hero-card {
+  max-width: 780px; /* wider card */
+}
+
+/* Orb + Crown increased by 60% */
+.hero-crown {
+  width: 100px;
+  height: 100px;
+}
+
+.hero-crown img {
+  width: 67px;
+  height: 67px;
+}
+
+/* Move text downward */
+.hero-explainer {
+  margin-top: 22px;
+  max-width: 520px; /* forces 2 lines */
+}
 
 /* ============================================
    TICKER — CLEAN, WORKING, NO DUPLICATES
