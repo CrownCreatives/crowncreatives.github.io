@@ -18,6 +18,8 @@ layout: none
 </head>
 
 <body>
+
+  <!-- ✨ Soft Magical Swirl Layer -->
   <div class="magic-swirl-layer"></div>
 
   <!-- ✨ Magical Background Layers -->
@@ -32,54 +34,8 @@ layout: none
     {{ content }}
   </main>
 
-  <!-- ✨ Inspirational Ticker -->
-  <div class="ticker-container">
-    <div class="ticker-track">
-      Believe in your creativity • Every idea begins with imagination • Keep creating • Magic happens when you do
-    </div>
-  </div>
-
-  <!-- ✨ Magical Glowing Footer Line -->
-  <div class="footer-magic-line"></div>
-
-  <!-- ✨ Floating Footer Icons -->
-  <div class="footer-icons">
-    <a href="https://www.facebook.com/people/Crown-Creatives/61556386467490/" target="_blank">
-      <img src="/assets/icons/facebook.svg" alt="Facebook" width="28">
-    </a>
-
-    <a href="https://www.instagram.com/crown_creatives_uk/" target="_blank">
-      <img src="/assets/icons/instagram.svg" alt="Instagram" width="28">
-    </a>
-
-    <a href="mailto:crowncreatives@outlook.com">
-      <img src="/assets/icons/email.svg" alt="Email" width="28">
-    </a>
-
-    <a href="https://copilot.microsoft.com" target="_blank">
-      <img src="/assets/icons/copilot.svg" alt="Copilot" width="28">
-    </a>
-  </div>
-
-  <!-- ✨ Footer Text -->
-  <footer class="site-footer">
-    <div class="footer-text">
-      © Crown Creatives — Powered by <a href="https://copilot.microsoft.com" target="_blank">Copilot</a>
-    </div>
-  </footer>
-  <script>
-document.querySelector('.theme-toggle-moon').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-
-  const crown = document.getElementById('crown-emblem');
-
-  if (document.body.classList.contains('dark-mode')) {
-    crown.src = "/assets/images/dark-crown.png";
-  } else {
-    crown.src = "/assets/images/light-crown.png";
-  }
-});
-</script>
+  <!-- ✨ Footer (single source of truth) -->
+  {% include footer.html %}
 
 </body>
 </html>
