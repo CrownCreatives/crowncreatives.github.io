@@ -89,7 +89,7 @@ body.is-night {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 16px;
-  min-height: 72px;
+  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
