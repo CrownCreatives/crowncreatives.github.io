@@ -882,3 +882,57 @@ svg {
 .cards-grid {
   margin-top: 60px;
 }
+/* ---------------------------------------------------------
+   HEADER + NAV RESTORATION + SPACING FIXES (Unified Block)
+   --------------------------------------------------------- */
+
+/* 1. Increase header height to match footer */
+.site-header-inner {
+  padding: 26px 24px; /* taller header */
+}
+
+/* 2. Increase header crown + orb by 20% */
+.header-crown-img {
+  width: 55px;
+  height: 55px;
+}
+
+.theme-toggle-orb {
+  width: 62px;
+  height: 62px;
+}
+
+/* 3. Ensure nav bar sits BELOW the header and is visible */
+nav.site-nav {
+  position: relative;
+  z-index: 50; /* above magical background layers */
+  margin-top: 10px;
+}
+
+/* 4. Ensure magical background layers do NOT cover header/nav */
+.magic-swirl-layer,
+.magic-bg-layer,
+.magic-bubbles {
+  z-index: 1;
+}
+
+.site-header,
+.site-nav,
+.page-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+/* 5. Add scrolling space so nav + header have breathing room */
+.page-wrapper {
+  padding-top: 60px;
+}
+
+.hero {
+  margin-top: 40px;
+}
+
+.cards-grid {
+  margin-top: 80px;
+}
+
