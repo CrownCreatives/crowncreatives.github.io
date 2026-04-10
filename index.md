@@ -8,18 +8,13 @@ title: Home
   <div class="hero-card">
     <div class="hero-crown-wrapper">
       <div class="hero-crown">
-        <img src="/assets/icons/crown.svg" alt="Crown Emblem">
+        <img src="/assets/images/light-crown.png" alt="Crown Emblem">
       </div>
       <p class="hero-explainer">
         The emblem of rebuilding, artistry, and personal transformation — a reminder that creativity is not just
         something we make, but something we become.
       </p>
     </div>
-
-    <h1 class="hero-title">Crown Creatives</h1>
-    <p class="hero-subtitle">
-      Artistry • Resilience • Imagination
-    </p>
   </div>
 </section>
 
