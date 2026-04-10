@@ -84,15 +84,12 @@ body.is-night {
   background: rgba(5, 10, 30, 0.92);
   border-bottom: 1px solid rgba(180, 210, 255, 0.18);
 }
-
 .site-header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 16px;
-  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.6rem 1.2rem;   /* vertical | horizontal */
+  position: relative;
 }
 
 .header-crown img {
