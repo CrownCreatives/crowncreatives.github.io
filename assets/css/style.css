@@ -118,14 +118,9 @@ body.is-night {
 }
 
 .site-title {
-  font-size: 1.3rem;
+  font-size: 2rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.site-tagline {
-  font-size: 0.85rem;
-  color: #c3d4ff;
 }
 
 /* Toggle */
