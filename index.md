@@ -58,6 +58,5 @@ title: Home
       Conversations about creativity, resilience, and the journey of rebuilding life.
     </div>
   </div>
-</div>
 
 </section>
