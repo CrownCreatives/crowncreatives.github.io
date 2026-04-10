@@ -363,6 +363,29 @@ body.dark-mode .theme-toggle {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+/* --- HERO CARD REFINEMENTS (Two lines + 40% emblem increase) --- */
+
+/* Slightly wider hero card */
+.hero-card {
+  max-width: 760px; /* was ~676px */
+}
+
+/* Orb + Crown increased by 40% */
+.hero-crown {
+  width: 87px;   /* was 62px → +40% */
+  height: 87px;
+}
+
+.hero-crown img {
+  width: 59px;   /* was 42px → +40% */
+  height: 59px;
+}
+
+/* Force explainer text to two lines by narrowing width */
+.hero-explainer {
+  max-width: 450px; /* narrower → forces 2 lines */
+  margin-top: 22px; /* moves text downward slightly */
+}
 /* ============================================
    INTRO BOX + FADE-IN
    ============================================ */
