@@ -363,6 +363,55 @@ body.dark-mode .theme-toggle {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+/* Widen top two cards by 20% */
+.cards-grid .magic-card:nth-child(1),
+.cards-grid .magic-card:nth-child(2) {
+  width: 120%;        /* 20% wider */
+  max-width: 120%;
+  margin-left: auto;
+  margin-right: auto; /* keeps them centred */
+}
+/* Widen top two cards by 20% */
+.cards-grid .magic-card:nth-child(1),
+.cards-grid .magic-card:nth-child(2) {
+  width: 120%;        /* 20% wider */
+  max-width: 120%;
+  margin-left: auto;
+  margin-right: auto; /* keeps them centred */
+}
+/* Hero emblem +40% */
+.hero-crown {
+  width: 87px;
+  height: 87px;
+}
+
+.hero-crown img {
+  width: 59px;
+  height: 59px;
+}
+/* Header height increased to match footer */
+.site-header-inner {
+  padding: 18px 20px; /* slightly taller */
+}
+
+/* Crown + orb +20% */
+.header-crown-img {
+  width: 55px;   /* was 46px */
+  height: 55px;
+}
+
+.theme-toggle-orb {
+  width: 62px;   /* was 52px */
+  height: 62px;
+}
+
+/* Re‑centre title + tagline */
+.header-center {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
 /* --- HERO CARD REFINEMENTS (Two lines + 40% emblem increase) --- */
 
 /* Slightly wider hero card */
