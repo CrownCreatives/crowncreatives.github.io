@@ -341,3 +341,7 @@ body.is-night .theme-toggle-knob {
     grid-template-columns: 1fr;
   }
 }
+.site-header,
+.main-nav {
+  backdrop-filter: none;
+}
