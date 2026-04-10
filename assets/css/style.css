@@ -370,7 +370,7 @@ body.is-night .theme-toggle-knob {
 
 }
 .header-crown-img {
-  width: 33px;   /* was ~30px — this is +10% */
+  width: 50px;   /* was ~33px — this is +10% */
   height: auto;
   max-width: 100%;
   object-fit: contain;
@@ -378,8 +378,8 @@ body.is-night .theme-toggle-knob {
 }
 
 .header-crown-orb {
-  width: 55px;   /* was 50px — also +10% */
-  height: 55px;
+  width: 60px;   /* was 50px — also +10% */
+  height: 60px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
