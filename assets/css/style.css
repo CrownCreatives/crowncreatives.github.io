@@ -27,6 +27,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Night mode base */
+body.is-night {
+  background: radial-gradient(circle at top, #050816 0%, #02030a 45%, #000000 100%);
+  color: #e4ebff;
+}
+
 /* Smooth text */
 body,
 button,
@@ -106,17 +112,19 @@ a:hover {
   backdrop-filter: blur(14px);
   background: linear-gradient(
     to bottom,
-    rgba(5, 10, 30, 0.92),
-    rgba(5, 10, 30, 0.75),
-    transparent
+    rgba(5, 10, 30, 0.96),
+    rgba(5, 10, 30, 0.82),
+    rgba(5, 10, 30, 0.0)
   );
   border-bottom: 1px solid rgba(180, 210, 255, 0.18);
 }
 
+/* Slim, non-dominant header bar */
 .site-header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 16px 10px;
+  padding: 10px 16px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -214,11 +222,12 @@ a:hover {
   opacity: 0.9;
 }
 
-/* Right: Day/Night Toggle */
+/* Right: Day/Night Toggle (locked to far right) */
 .header-right {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: auto;
 }
 
 /* Toggle container */
@@ -515,7 +524,7 @@ body.is-night .theme-toggle::after {
 
 .site-footer {
   margin-top: 24px;
-  padding: 18px 16px 32px;
+  padding: 16px 16px 26px;
   text-align: center;
   position: relative;
 }
@@ -547,25 +556,39 @@ body.is-night .theme-toggle::after {
 .footer-icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 28px;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
+/* SVG icons: medium, visible, magical */
+.footer-icons svg,
+.footer-icons img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* Remove any accidental boxes/backgrounds on SVG wrappers */
 .footer-icons a {
-  display: inline-block;
-  transform: translateY(-6px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-4px);
   transition: transform 0.4s ease, filter 0.4s ease;
   filter: drop-shadow(0 0 6px rgba(180, 220, 255, 0.6));
+  background: transparent;
+  border-radius: 999px;
 }
 
 .footer-icons a:hover {
-  transform: translateY(-14px) scale(1.08);
+  transform: translateY(-10px) scale(1.08);
   filter: drop-shadow(0 0 12px rgba(200, 240, 255, 1));
 }
 
 /* Footer text */
 .footer-text {
-  margin-top: 18px;
+  margin-top: 16px;
   font-size: 0.85rem;
   color: #c3d4ff;
   opacity: 0.9;
@@ -608,7 +631,7 @@ body.is-night .theme-toggle::after {
   }
 
   .header-right {
-    flex: 1 1 100%;
+    flex: 1 1 auto;
     justify-content: flex-end;
   }
 
