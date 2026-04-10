@@ -916,6 +916,15 @@ body.dark-mode .theme-toggle {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.ticker-inner {
+  animation: ticker-scroll 26s linear infinite;
+  white-space: nowrap;
+}
 
 .ticker-inner {
   animation: ticker-scroll 26s linear infinite;
