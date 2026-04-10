@@ -148,70 +148,100 @@ a:hover {
 
 /* ---------- Header ---------- */
 
+/* ============================================
+   MAGICAL HEADER — MATCHES FOOTER THEME
+   ============================================ */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(5, 8, 26, 0.9);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.25) 0, transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.25) 0, transparent 55%),
+    rgba(5, 8, 26, 0.92);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(160, 190, 255, 0.3);
+  border-bottom: 1px solid rgba(160, 190, 255, 0.25);
 }
 
+/* 15% slimmer header */
 .site-header-inner {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 14px 18px;
+  padding: 10px 16px; /* was 14px → 15% reduction */
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-}
-
+/* LEFT — Crown (20% larger) */
 .header-crown-img {
-  width: 38px;
-  height: 38px;
+  width: 46px;   /* was 38px → +20% */
+  height: 46px;
   object-fit: contain;
-  display: block;
   filter:
     drop-shadow(0 0 7px rgba(255, 255, 255, 0.85))
     drop-shadow(0 0 12px rgba(127, 93, 255, 0.8));
 }
 
-.header-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  pointer-events: none;
-}
-
-.header-title-block {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
+/* CENTER — Title (20% larger) */
 .site-title {
-  font-size: 1.38rem;
+  font-size: 1.66rem; /* was 1.38rem → +20% */
   font-weight: 600;
   letter-spacing: 0.05em;
 }
 
 .site-tagline {
-  font-size: 0.86rem;
+  font-size: 1.03rem; /* was 0.86rem → +20% */
   color: #c2c6ff;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.header-right {
+/* RIGHT — Magical Orb Toggle (same style as scroll-up button) */
+.theme-toggle-orb {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(190, 210, 255, 0.8);
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.18) 0, transparent 55%),
+    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.65) 0, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.65) 0, transparent 60%),
+    rgba(7, 12, 35, 0.96);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  cursor: pointer;
+  box-shadow:
+    0 0 40px rgba(127, 93, 255, 0.7),
+    0 0 32px rgba(79, 213, 255, 0.6);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.theme-toggle-orb:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.9),
+    0 0 46px rgba(127, 93, 255, 0.9),
+    0 0 38px rgba(79, 213, 255, 0.8);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Glowing division line between header + nav */
+.header-magic-line {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--cc-accent-alt), var(--cc-accent), var(--cc-accent-alt));
+  box-shadow:
+    0 0 24px rgba(127, 93, 255, 0.8),
+    0 0 20px rgba(79, 213, 255, 0.7);
 }
 
 .theme-toggle {
