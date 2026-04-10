@@ -59,4 +59,24 @@ title: Home
     </div>
   </div>
 
+  <div class="ticker-container">
+  <div class="ticker-track">
+    <div class="ticker-inner">
+      <div class="ticker-item">
+        <span class="ticker-dot"></span>
+        <span>Rebuilding through creativity and imagination.</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-dot"></span>
+        <span>3D models, podcasts, and personal storytelling.</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-dot"></span>
+        <span>Artistry • Resilience • Transformation.</span>
+      </div>
+      <!-- repeat items if you want denser content -->
+    </div>
+  </div>
+</div>
+
 </section>
