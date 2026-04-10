@@ -784,3 +784,6 @@ svg {
   max-width: 100%;
   height: auto;
 }
+.cards-grid {
+  margin-top: 60px;
+}
