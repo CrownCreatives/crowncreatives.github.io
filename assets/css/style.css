@@ -736,3 +736,6 @@ body, header, footer, .hero-card, .floating-nav {
 .cards-grid {
   margin-top: 20px !important;
 }
+.magic-gallery-zone {
+  height: 160px;
+}
