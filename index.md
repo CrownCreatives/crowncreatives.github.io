@@ -32,6 +32,13 @@ title: Home
   </p>
 </div>
 
+<!-- ⭐ PLACE THE MAGIC GALLERY HERE (correct spot) -->
+<div class="magic-gallery">
+  <img class="magic-gallery-image" src="/assets/images/gallery/image1.jpg">
+  <img class="magic-gallery-image" src="/assets/images/gallery/image2.jpg">
+  <img class="magic-gallery-image" src="/assets/images/gallery/image3.jpg">
+</div>
+
 <!-- ✨ Frosted Glass Cards -->
 <section class="cards-grid">
 
