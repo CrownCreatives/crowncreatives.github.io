@@ -3,10 +3,10 @@ layout: default
 title: Home
 ---
 
-<!-- ✨ Hero Section -->
+<!-- ✨ HERO SECTION — Geometric Frosted Crown Card -->
 <section class="hero">
-  <div class="hero-card">
-    <div class="hero-crown-wrapper">
+  <div class="hero-crown-card">
+    <div class="hero-crown-inner">
       <div class="hero-crown">
         <img src="/assets/images/light-crown.png" alt="Crown Emblem">
       </div>
@@ -18,7 +18,7 @@ title: Home
   </div>
 </section>
 
-<!-- ✨ Intro Text -->
+<!-- ✨ INTRO TEXT -->
 <div class="intro-box fade-in">
   <p>
     Crown Creatives is a space where artistry, imagination, and personal resilience come together. 
@@ -34,6 +34,7 @@ title: Home
 
 <!-- ✨ FIRST CARD ROW (2 cards) -->
 <section class="cards-grid top-row">
+
   <div class="magic-card">
     <div class="magic-card-title">3D Models</div>
     <div class="magic-card-subtitle">Sculpting • Texturing • Rendering</div>
@@ -49,6 +50,7 @@ title: Home
       A space for artistic exploration, visual storytelling, and imaginative expression.
     </div>
   </div>
+
 </section>
 
 <!-- ⭐ MAGIC GALLERY LANE -->
