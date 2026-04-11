@@ -1,21 +1,15 @@
-<div class="gallery-container fade-in">
-
-  <div class="masonry-grid">
+<div class="magic-gallery-zone fade-in">
+  <div class="magic-gallery">
     {% for image in site.static_files %}
-      {% if image.path contains '/_gallery/' %}
-        <div class="masonry-item">
-          <a href="{{ image.path }}" class="lightbox-trigger">
-            <img src="{{ image.path }}" alt="Gallery Image">
-          </a>
-        </div>
+      {% if image.path contains '/assets/images/gallery/' %}
+        <img class="magic-gallery-image" src="{{ image.path }}" alt="Gallery Image">
       {% endif %}
     {% endfor %}
   </div>
-
 </div>
 
 <!-- Lightbox -->
-<div id="lightbox" class="lightbox">
+<div id="lightbox" class="lightbox-overlay">
+  <img id="lightbox-img" src="" alt="">
   <span class="lightbox-close">×</span>
-  <img class="lightbox-image" src="" alt="">
 </div>
