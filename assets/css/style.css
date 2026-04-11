@@ -422,3 +422,104 @@ nav.site-nav a:hover {
     padding: 10px 20px;
   }
 }
+/* ============================================================
+   CROWN CREATIVES — MAGICAL UI 2026
+   PART 3 — BACKGROUND LAYERS (FOG • BUBBLES • SWIRL)
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BACKGROUND WRAPPER
+   ------------------------------------------------------------ */
+.magic-bg-layer,
+.magic-bubbles,
+.magic-swirl,
+.magic-fog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -10;
+}
+
+/* ------------------------------------------------------------
+   BASE BACKGROUND — MIDNIGHT GRADIENT
+   ------------------------------------------------------------ */
+.magic-bg-layer {
+  background: radial-gradient(
+      circle at 50% 20%,
+      rgba(40, 20, 80, 0.6),
+      rgba(5, 5, 16, 1)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 25, 1),
+      rgba(0, 0, 0, 1)
+    );
+  filter: blur(2px);
+}
+
+/* ------------------------------------------------------------
+   FLOATING BUBBLES
+   ------------------------------------------------------------ */
+.magic-bubbles {
+  background-image:
+    radial-gradient(circle, rgba(127, 91, 255, 0.35) 0%, transparent 60%),
+    radial-gradient(circle, rgba(77, 226, 255, 0.35) 0%, transparent 60%),
+    radial-gradient(circle, rgba(127, 91, 255, 0.25) 0%, transparent 60%),
+    radial-gradient(circle, rgba(77, 226, 255, 0.25) 0%, transparent 60%);
+  background-size: 220px 220px, 180px 180px, 260px 260px, 200px 200px;
+  background-position:
+    10% 80%,
+    80% 20%,
+    50% 60%,
+    30% 30%;
+  animation: cc-bubbles 22s linear infinite;
+  opacity: 0.35;
+}
+
+@keyframes cc-bubbles {
+  0% { background-position: 10% 80%, 80% 20%, 50% 60%, 30% 30%; }
+  50% { background-position: 12% 78%, 78% 22%, 48% 62%, 32% 28%; }
+  100% { background-position: 10% 80%, 80% 20%, 50% 60%, 30% 30%; }
+}
+
+/* ------------------------------------------------------------
+   SWIRLING NEBULA
+   ------------------------------------------------------------ */
+.magic-swirl {
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(127, 91, 255, 0.25),
+    transparent 70%
+  );
+  filter: blur(60px);
+  animation: cc-swirl 40s linear infinite;
+  opacity: 0.25;
+}
+
+@keyframes cc-swirl {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.15); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ------------------------------------------------------------
+   SOFT FOG LAYER
+   ------------------------------------------------------------ */
+.magic-fog {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.06),
+    transparent 70%
+  );
+  filter: blur(80px);
+  animation: cc-fog 18s ease-in-out infinite;
+  opacity: 0.22;
+}
+
+@keyframes cc-fog {
+  0% { transform: translateY(0px); opacity: 0.18; }
+  50% { transform: translateY(-20px); opacity: 0.28; }
+  100% { transform: translateY(0px); opacity: 0.18; }
+}
