@@ -3,7 +3,7 @@ layout: default
 title: About
 permalink: /about/
 ---
-#About
+# About
 
 <section class="hero-section">
   <div class="hero-card">
