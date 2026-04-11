@@ -3,20 +3,18 @@ layout: default
 title: Home
 ---
 
-<!-- ✨ HERO SECTION — Geometric Frosted Crown Card -->
-<section class="hero">
-  <div class="hero-crown-card">
-    <div class="hero-crown-inner">
-      <div class="hero-crown">
-        <img src="/assets/images/light-crown.png" alt="Crown Emblem">
-      </div>
-      <p class="hero-explainer">
-        The emblem of rebuilding, artistry, and personal transformation — a reminder that creativity is not just
-        something we make, but something we become.
-      </p>
+<section class="hero-section">
+  <div class="hero-card">
+    <h1 class="cc-soft-glow">Artistry in the Face of Adversity</h1>
+    <p class="cc-soft-glow">
+      Crown Creatives celebrates imagination, resilience, and the quiet magic of making something beautiful anyway.
+    </p>
+    <div style="margin-top: 26px;">
+      <a href="/gallery/" class="cc-button">Enter the Gallery</a>
     </div>
   </div>
 </section>
+
 
 <!-- ✨ INTRO TEXT -->
 <div class="intro-box fade-in">
