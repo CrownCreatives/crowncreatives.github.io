@@ -29,25 +29,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 15000);
   }
 
-  /* ---------------------------------------------
-     GALLERY FADE-IN/OUT MAGIC
-  ---------------------------------------------- */
+ /* ---------------------------------------------
+   FLOATING SIDE-IMAGE MAGIC
+---------------------------------------------- */
 
-  const galleryImages = document.querySelectorAll('.magic-gallery-image');
-  let galleryIndex = 0;
+const galleryImages = document.querySelectorAll('.magic-gallery-image');
+let galleryIndex = 0;
 
-  function cycleGallery() {
-    galleryImages.forEach((img, i) => {
-      img.style.opacity = i === galleryIndex ? 1 : 0;
-    });
+function randomY() {
+  return Math.floor(Math.random() * 200) + 20; // 20px–220px vertical range
+}
 
-    galleryIndex = (galleryIndex + 1) % galleryImages.length;
+function cycleGallery() {
+  galleryImages.forEach((img, i) => {
+    img.style.opacity = 0;
+  });
+
+  const img = galleryImages[galleryIndex];
+
+  // Randomly choose left or right
+  if (Math.random() > 0.5) {
+    img.classList.add('magic-left');
+    img.classList.remove('magic-right');
+  } else {
+    img.classList.add('magic-right');
+    img.classList.remove('magic-left');
   }
 
-  if (galleryImages.length > 0) {
-    cycleGallery();
-    setInterval(cycleGallery, 6000);
-  }
+  // Random vertical position
+  img.style.top = randomY() + "px";
 
-});
+  // Fade in
+  img.style.opacity = 1;
 
+  galleryIndex = (galleryIndex + 1) % galleryImages.length;
+}
+
+if (galleryImages.length > 0) {
+  cycleGallery();
+  setInterval(cycleGallery, 5000);
+}
