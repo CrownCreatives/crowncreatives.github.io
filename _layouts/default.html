@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  {% include head.html %}
   <title>{{ page.title }} — Crown Creatives</title>
-
-  <!-- Main Magical UI Stylesheet -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
 <body>
 
-  <!-- ✨ MAGICAL BACKGROUND LAYERS -->
-  <div class="magic-bg">
-    <div class="magic-bg-layer magic-bg-fog"></div>
-    <div class="magic-bg-layer magic-bg-bubbles"></div>
-    <div class="magic-bg-layer magic-bg-swirl"></div>
-  </div>
+  <!-- ✨ MAGICAL BACKGROUND LAYERS (correct class names) -->
+  <div class="magic-bg-layer"></div>
+  <div class="magic-bubbles"></div>
+  <div class="magic-swirl"></div>
+  <div class="magic-fog"></div>
 
   <!-- ✨ HEADER -->
   {% include header.html %}
