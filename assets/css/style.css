@@ -286,23 +286,26 @@ nav.site-nav a:hover {
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
+/* Inline SVG icons */
+.footer-icon {
+  width: 34px;
+  height: 34px;
+  stroke: currentColor;
+  fill: none;
+  filter: drop-shadow(var(--cc-glow-soft));
+  transition: transform 0.3s ease, filter 0.5s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(var(--cc-glow-strong));
+}
+
 .footer-icons {
   display: flex;
   justify-content: center;
   gap: 26px;
   margin-bottom: 18px;
-}
-
-.footer-icons img {
-  width: 34px;
-  height: 34px;
-  filter: drop-shadow(var(--cc-glow-soft));
-  transition: transform 0.3s ease, filter 0.5s ease;
-}
-
-.footer-icons img:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(var(--cc-glow-strong));
 }
 
 .footer-text {
