@@ -782,3 +782,26 @@ body, header, footer, .hero-card, .floating-nav {
   margin-top: 40px;
   margin-bottom: 60px;
 }
+/* FORCE OVERRIDE: Top row = 2 cards */
+section.cards-grid.top-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 30px !important;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+/* FORCE OVERRIDE: Magic lane spacing */
+.magic-gallery-zone {
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+}
+
+/* FORCE OVERRIDE: Bottom row = auto-fit */
+section.cards-grid.bottom-row {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 30px !important;
+  margin-top: 40px !important;
+  margin-bottom: 60px !important;
+}
