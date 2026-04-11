@@ -870,3 +870,50 @@ section.cards-grid.bottom-row {
   color: #e8e4ff;
   text-shadow: 0 0 6px rgba(255,255,255,0.3);
 }
+/* ----------------------------------------------------------
+   HERO CROWN CARD — 10% BIGGER + MAGICAL GLOW
+----------------------------------------------------------- */
+
+.hero-crown-card {
+  width: 100%;              /* was 90% */
+  max-width: 570px;         /* was 520px */
+  margin: 0 auto;
+  padding: 48px 34px;       /* slightly larger padding */
+  position: relative;
+
+  /* Frosted glass */
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  /* Geometric crown silhouette */
+  clip-path: polygon(
+    50% 0%,
+    72% 20%,
+    100% 38%,
+    92% 100%,
+    8% 100%,
+    0% 38%,
+    28% 20%
+  );
+
+  /* Magical glow */
+  border: 1px solid rgba(200, 170, 255, 0.35);
+  box-shadow:
+    0 0 22px rgba(180, 140, 255, 0.35),
+    0 0 45px rgba(150, 120, 255, 0.25),
+    0 0 70px rgba(120, 90, 255, 0.18);
+  animation: heroGlowPulse 8s ease-in-out infinite;
+}
+
+@keyframes heroGlowPulse {
+  0%   { box-shadow: 0 0 22px rgba(180,140,255,0.35), 0 0 45px rgba(150,120,255,0.25); }
+  50%  { box-shadow: 0 0 32px rgba(200,160,255,0.55), 0 0 70px rgba(170,140,255,0.35); }
+  100% { box-shadow: 0 0 22px rgba(180,140,255,0.35), 0 0 45px rgba(150,120,255,0.25); }
+}
+/* Crown emblem inside hero card — 20% larger */
+.hero-crown img {
+  width: 140%;     /* was 120% */
+  max-width: 140%;
+  transform-origin: center;
+}
