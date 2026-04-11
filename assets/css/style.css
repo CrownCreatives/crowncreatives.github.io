@@ -669,6 +669,19 @@ body, header, footer, .hero-card, .floating-nav {
 }
 
 /* ----------------------------------------------------------
+   SAFE ZONE FOR FLOATING IMAGES — PREVENT OVERLAP
+----------------------------------------------------------- */
+
+.magic-gallery-zone {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: visible;
+}
+
+/* ----------------------------------------------------------
    FLOATING SIDE-IMAGES — MAGIC + DRIFT + ROTATION + SPARKLES
 ----------------------------------------------------------- */
 
@@ -689,6 +702,7 @@ body, header, footer, .hero-card, .floating-nav {
   transition: opacity 2.5s ease-in-out, transform 6s ease-in-out;
   filter: drop-shadow(0 0 12px rgba(120, 90, 255, 0.6));
   animation: floatDrift 12s ease-in-out infinite;
+  z-index: 2;
 }
 
 .magic-left { left: -40px; }
@@ -710,3 +724,10 @@ body, header, footer, .hero-card, .floating-nav {
   animation: sparklePulse 3s ease-in-out infinite;
 }
 
+/* Ensure hero card stays above floating images */
+.hero-card,
+.hero-crown-wrapper,
+.hero-crown img {
+  position: relative;
+  z-index: 5;
+}
