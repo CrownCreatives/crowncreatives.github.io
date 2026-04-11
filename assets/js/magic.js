@@ -1,5 +1,5 @@
 /* ---------------------------------------------
-   MAGIC.JS — FIXED + FULLY WORKING VERSION
+   MAGIC.JS — FINAL FULLY WORKING VERSION
 ---------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,43 +29,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 15000);
   }
 
- /* ---------------------------------------------
-   FLOATING SIDE-IMAGE MAGIC
----------------------------------------------- */
+  /* ---------------------------------------------
+     FLOATING SIDE-IMAGE MAGIC — FULL VERSION
+  ---------------------------------------------- */
 
-const galleryImages = document.querySelectorAll('.magic-gallery-image');
-let galleryIndex = 0;
+  const galleryImages = document.querySelectorAll('.magic-gallery-image');
+  let galleryIndex = 0;
 
-function randomY() {
-  return Math.floor(Math.random() * 200) + 20; // 20px–220px vertical range
-}
-
-function cycleGallery() {
-  galleryImages.forEach((img, i) => {
-    img.style.opacity = 0;
-  });
-
-  const img = galleryImages[galleryIndex];
-
-  // Randomly choose left or right
-  if (Math.random() > 0.5) {
-    img.classList.add('magic-left');
-    img.classList.remove('magic-right');
-  } else {
-    img.classList.add('magic-right');
-    img.classList.remove('magic-left');
+  function randomY() {
+    return Math.floor(Math.random() * 220) + 20; // 20px–240px vertical range
   }
 
-  // Random vertical position
-  img.style.top = randomY() + "px";
+  function cycleGallery() {
+    // Hide all images first
+    galleryImages.forEach(img => {
+      img.style.opacity = 0;
+      img.classList.remove('sparkle');
+    });
 
-  // Fade in
-  img.style.opacity = 1;
+    const img = galleryImages[galleryIndex];
 
-  galleryIndex = (galleryIndex + 1) % galleryImages.length;
-}
+    // Random left or right placement
+    if (Math.random() > 0.5) {
+      img.classList.add('magic-left');
+      img.classList.remove('magic-right');
+    } else {
+      img.classList.add('magic-right');
+      img.classList.remove('magic-left');
+    }
 
-if (galleryImages.length > 0) {
-  cycleGallery();
-  setInterval(cycleGallery, 5000);
-}
+    // Random vertical position
+    img.style.top = randomY() + "px";
+
+    // Fade in
+    img.style.opacity = 1;
+
+    // Add sparkle pulse
+    img.classList.add('sparkle');
+
+    // Move to next image
+    galleryIndex = (galleryIndex + 1) % galleryImages.length;
+  }
+
+  if (galleryImages.length > 0) {
+    cycleGallery();
+    setInterval(cycleGallery, 5000);
+  }
+
+});
