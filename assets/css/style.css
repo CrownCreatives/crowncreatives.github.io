@@ -1,7 +1,7 @@
 /* ============================================================
    CROWN CREATIVES — MAGICAL UI 2026
-   PART 1 — HEADER + NAV + TOGGLE ORB
-   (Dark Mode = Neon • Light Mode = Pastel)
+   FULL STYLE.CSS (PART 1 + PART 2 MERGED)
+   HEADER • NAV • ORB • HERO • FOOTER • GLOW • ANIMATIONS
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -45,6 +45,10 @@ body {
   transition: background 0.5s ease, color 0.5s ease;
 }
 
+/* ============================================================
+   PART 1 — HEADER + NAV + ORB
+   ============================================================ */
+
 /* ------------------------------------------------------------
    HEADER — NEON / PASTEL GLASS BAR
    ------------------------------------------------------------ */
@@ -69,18 +73,14 @@ body {
   justify-content: space-between;
 }
 
-/* ------------------------------------------------------------
-   HEADER — LEFT (CROWN)
-   ------------------------------------------------------------ */
+/* HEADER — LEFT (CROWN) */
 .header-left img {
   width: 70px;
   filter: drop-shadow(var(--cc-glow-soft));
   transition: filter 0.5s ease;
 }
 
-/* ------------------------------------------------------------
-   HEADER — CENTER (TITLE + TAGLINE)
-   ------------------------------------------------------------ */
+/* HEADER — CENTER (TITLE + TAGLINE) */
 .header-center {
   text-align: center;
   flex: 1;
@@ -102,9 +102,7 @@ body {
   transition: text-shadow 0.5s ease;
 }
 
-/* ------------------------------------------------------------
-   HEADER — MAGIC LINE
-   ------------------------------------------------------------ */
+/* HEADER — MAGIC LINE */
 .header-magic-line {
   width: 100%;
   height: 2px;
@@ -119,7 +117,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-   TOGGLE ORB — FOOTER-STYLE (NEON / PASTEL)
+   TOGGLE ORB
    ------------------------------------------------------------ */
 .theme-toggle-orb {
   width: 48px;
@@ -136,6 +134,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: box-shadow 0.5s ease, transform 0.3s ease;
+  animation: cc-pulse 4s ease-in-out infinite;
 }
 
 .theme-toggle-orb:hover {
@@ -149,21 +148,11 @@ body {
   transition: opacity 0.4s ease;
 }
 
-.theme-toggle-sun {
-  opacity: 0;
-}
+.theme-toggle-sun { opacity: 0; }
+.theme-toggle-moon { opacity: 1; }
 
-.theme-toggle-moon {
-  opacity: 1;
-}
-
-body.light-mode .theme-toggle-sun {
-  opacity: 1;
-}
-
-body.light-mode .theme-toggle-moon {
-  opacity: 0;
-}
+body.light-mode .theme-toggle-sun { opacity: 1; }
+body.light-mode .theme-toggle-moon { opacity: 0; }
 
 /* ------------------------------------------------------------
    NAV BAR — NEON / PASTEL PILL
@@ -199,13 +188,13 @@ nav.site-nav a {
 nav.site-nav a:hover {
   text-shadow: var(--cc-glow-strong);
 }
+
 /* ============================================================
-   CROWN CREATIVES — MAGICAL UI 2026
-   PART 2 — HERO + FOOTER + GLOW SYSTEM + ANIMATIONS + VARIABLES
+   PART 2 — HERO + FOOTER + GLOW + ANIMATIONS
    ============================================================ */
 
 /* ------------------------------------------------------------
-   HERO SECTION — NEON / PASTEL HALO CARD
+   HERO SECTION — HALO CARD
    ------------------------------------------------------------ */
 .hero-section {
   max-width: 1200px;
@@ -227,7 +216,6 @@ nav.site-nav a:hover {
   transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Inner neon/pastel halo ring */
 .hero-card::before {
   content: "";
   position: absolute;
@@ -245,25 +233,21 @@ nav.site-nav a:hover {
   transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
-/* Hero title */
 .hero-card h1 {
   font-size: 2.6rem;
   margin-bottom: 14px;
   text-shadow: var(--cc-glow-soft);
-  transition: text-shadow 0.5s ease;
 }
 
-/* Hero subtitle */
 .hero-card p {
   font-size: 1.2rem;
   opacity: 0.9;
   line-height: 1.6;
   text-shadow: var(--cc-glow-soft);
-  transition: text-shadow 0.5s ease;
 }
 
 /* ------------------------------------------------------------
-   FOOTER — NEON / PASTEL LINE + ICONS
+   FOOTER
    ------------------------------------------------------------ */
 .site-footer {
   margin-top: 80px;
@@ -283,10 +267,15 @@ nav.site-nav a:hover {
   );
   box-shadow: var(--cc-glow-strong);
   margin-bottom: 26px;
-  transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Inline SVG icons */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin-bottom: 18px;
+}
+
 .footer-icon {
   width: 34px;
   height: 34px;
@@ -301,47 +290,27 @@ nav.site-nav a:hover {
   filter: drop-shadow(var(--cc-glow-strong));
 }
 
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 26px;
-  margin-bottom: 18px;
-}
-
 .footer-text {
   font-size: 0.9rem;
   opacity: 0.75;
   text-shadow: var(--cc-glow-soft);
-  transition: text-shadow 0.5s ease;
 }
 
 /* ------------------------------------------------------------
-   GLOBAL GLOW SYSTEM — UNIFIED NEON / PASTEL
+   GLOW SYSTEM
    ------------------------------------------------------------ */
-.cc-glow {
-  text-shadow: var(--cc-glow-strong);
-}
-
-.cc-soft-glow {
-  text-shadow: var(--cc-glow-soft);
-}
-
-.cc-outline-glow {
-  box-shadow: var(--cc-glow-strong);
-}
+.cc-glow { text-shadow: var(--cc-glow-strong); }
+.cc-soft-glow { text-shadow: var(--cc-glow-soft); }
+.cc-outline-glow { box-shadow: var(--cc-glow-strong); }
 
 /* ------------------------------------------------------------
-   BUTTONS — NEON / PASTEL
+   BUTTONS
    ------------------------------------------------------------ */
 .cc-button {
   display: inline-block;
   padding: 12px 26px;
   border-radius: 40px;
-  background: linear-gradient(
-    135deg,
-    var(--cc-accent-1),
-    var(--cc-accent-2)
-  );
+  background: linear-gradient(135deg, var(--cc-accent-1), var(--cc-accent-2));
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -356,10 +325,8 @@ nav.site-nav a:hover {
 }
 
 /* ------------------------------------------------------------
-   ANIMATIONS — SHIMMER, FLOAT, PULSE
+   ANIMATIONS
    ------------------------------------------------------------ */
-
-/* Floating crown animation */
 @keyframes cc-float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
@@ -370,7 +337,6 @@ nav.site-nav a:hover {
   animation: cc-float 4s ease-in-out infinite;
 }
 
-/* Shimmer sweep for hero card */
 @keyframes cc-shimmer {
   0% { opacity: 0.1; transform: translateX(-120%); }
   50% { opacity: 0.4; }
@@ -394,132 +360,20 @@ nav.site-nav a:hover {
   pointer-events: none;
 }
 
-/* Soft pulse for magical elements */
 @keyframes cc-pulse {
   0% { box-shadow: var(--cc-glow-soft); }
   50% { box-shadow: var(--cc-glow-strong); }
   100% { box-shadow: var(--cc-glow-soft); }
 }
 
-.theme-toggle-orb {
-  animation: cc-pulse 4s ease-in-out infinite;
-}
-
 /* ------------------------------------------------------------
-   RESPONSIVE TWEAKS
+   RESPONSIVE
    ------------------------------------------------------------ */
 @media (max-width: 768px) {
-  .site-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-card {
-    padding: 40px 26px;
-  }
-
+  .site-title { font-size: 1.8rem; }
+  .hero-card { padding: 40px 26px; }
   nav.site-nav ul {
     gap: 18px;
     padding: 10px 20px;
   }
-}
-/* ============================================================
-   CROWN CREATIVES — MAGICAL UI 2026
-   PART 3 — BACKGROUND LAYERS (FOG • BUBBLES • SWIRL)
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   BACKGROUND WRAPPER
-   ------------------------------------------------------------ */
-.magic-bg-layer,
-.magic-bubbles,
-.magic-swirl,
-.magic-fog {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -10;
-}
-
-/* ------------------------------------------------------------
-   BASE BACKGROUND — MIDNIGHT GRADIENT
-   ------------------------------------------------------------ */
-.magic-bg-layer {
-  background: radial-gradient(
-      circle at 50% 20%,
-      rgba(40, 20, 80, 0.6),
-      rgba(5, 5, 16, 1)
-    ),
-    linear-gradient(
-      180deg,
-      rgba(10, 10, 25, 1),
-      rgba(0, 0, 0, 1)
-    );
-  filter: blur(2px);
-}
-
-/* ------------------------------------------------------------
-   FLOATING BUBBLES
-   ------------------------------------------------------------ */
-.magic-bubbles {
-  background-image:
-    radial-gradient(circle, rgba(127, 91, 255, 0.35) 0%, transparent 60%),
-    radial-gradient(circle, rgba(77, 226, 255, 0.35) 0%, transparent 60%),
-    radial-gradient(circle, rgba(127, 91, 255, 0.25) 0%, transparent 60%),
-    radial-gradient(circle, rgba(77, 226, 255, 0.25) 0%, transparent 60%);
-  background-size: 220px 220px, 180px 180px, 260px 260px, 200px 200px;
-  background-position:
-    10% 80%,
-    80% 20%,
-    50% 60%,
-    30% 30%;
-  animation: cc-bubbles 22s linear infinite;
-  opacity: 0.35;
-}
-
-@keyframes cc-bubbles {
-  0% { background-position: 10% 80%, 80% 20%, 50% 60%, 30% 30%; }
-  50% { background-position: 12% 78%, 78% 22%, 48% 62%, 32% 28%; }
-  100% { background-position: 10% 80%, 80% 20%, 50% 60%, 30% 30%; }
-}
-
-/* ------------------------------------------------------------
-   SWIRLING NEBULA
-   ------------------------------------------------------------ */
-.magic-swirl {
-  background: radial-gradient(
-    circle at 60% 40%,
-    rgba(127, 91, 255, 0.25),
-    transparent 70%
-  );
-  filter: blur(60px);
-  animation: cc-swirl 40s linear infinite;
-  opacity: 0.25;
-}
-
-@keyframes cc-swirl {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.15); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-/* ------------------------------------------------------------
-   SOFT FOG LAYER
-   ------------------------------------------------------------ */
-.magic-fog {
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0.06),
-    transparent 70%
-  );
-  filter: blur(80px);
-  animation: cc-fog 18s ease-in-out infinite;
-  opacity: 0.22;
-}
-
-@keyframes cc-fog {
-  0% { transform: translateY(0px); opacity: 0.18; }
-  50% { transform: translateY(-20px); opacity: 0.28; }
-  100% { transform: translateY(0px); opacity: 0.18; }
 }
