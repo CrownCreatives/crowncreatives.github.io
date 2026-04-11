@@ -7,7 +7,7 @@
   <title>{{ page.title }} — Crown Creatives</title>
 
   <!-- Main Magical UI Stylesheet -->
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 
 <body>
@@ -24,10 +24,10 @@
 
   <!-- ✨ MOBILE MENU PANEL -->
   <div class="mobile-menu-panel" id="mobileMenu">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/gallery/">Gallery</a>
-    <a href="/contact/">Contact</a>
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/about/' | relative_url }}">About</a>
+    <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+    <a href="{{ '/contact/' | relative_url }}">Contact</a>
   </div>
 
   <!-- ✨ PAGE CONTENT -->
@@ -47,9 +47,9 @@
   {% include footer.html %}
 
   <!-- ✨ JAVASCRIPT (LOAD ORDER MATTERS) -->
-  <script src="/assets/js/theme-toggle.js"></script>
-  <script src="/assets/js/mobile-menu.js"></script>
-  <script src="/assets/js/lightbox.js"></script>
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/mobile-menu.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
 
 </body>
 </html>
