@@ -60,8 +60,9 @@ title: Home
   </div>
 </div>
 
-<!-- ✨ SECOND CARD ROW (1–3 cards) -->
+<!-- ✨ SECOND CARD ROW (Podcasts + Get in Touch) -->
 <section class="cards-grid bottom-row">
+
   <div class="magic-card">
     <div class="magic-card-title">Podcasts</div>
     <div class="magic-card-subtitle">Thoughts • Stories • Growth</div>
@@ -69,4 +70,13 @@ title: Home
       Conversations about creativity, resilience, and the journey of rebuilding life.
     </div>
   </div>
+
+  <div class="magic-card">
+    <div class="magic-card-title">Get in Touch</div>
+    <div class="magic-card-subtitle">Let’s create, collaborate, or just say hello.</div>
+    <div class="magic-card-body">
+      Find me on social media below — I’d love to connect.
+    </div>
+  </div>
+
 </section>
