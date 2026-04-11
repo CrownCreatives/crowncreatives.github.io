@@ -425,42 +425,119 @@ section.cards-grid.bottom-row {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
-
 /* ============================================
-   FOOTER — MAGIC LINE + ICONS + TEXT
+   FOOTER — Strong Glow + Colourful Magical Pop
    ============================================ */
 
 .footer-magic-line {
-  margin-top: 40px;
-  height: 2px;
+  margin-top: 50px;
+  height: 3px;
   width: 100%;
   max-width: var(--cc-max-width);
   margin-left: auto;
   margin-right: auto;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--cc-accent-alt), var(--cc-accent), var(--cc-accent-alt));
+
+  background: linear-gradient(90deg, #4fd5ff, #7f5dff, #b18cff, #7f5dff, #4fd5ff);
+
   box-shadow:
-    0 0 24px rgba(127, 93, 255, 0.8),
-    0 0 20px rgba(79, 213, 255, 0.7);
+    0 0 32px rgba(127, 93, 255, 0.85),
+    0 0 28px rgba(79, 213, 255, 0.75),
+    0 0 18px rgba(255, 255, 255, 0.45);
 }
 
 .footer-icons {
-  margin-top: 18px;
+  margin-top: 22px;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 22px;
 }
 
 .footer-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 1px solid rgba(190, 210, 255, 0.8);
+
+  border: 1px solid rgba(200, 220, 255, 0.9);
+
   background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.18) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.65) 0, transparent 60%),
-    radial-gradient(circle at 0
-                    
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.22) 0, transparent 55%),
+    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.75) 0, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.75) 0, transparent 60%),
+    rgba(7, 12, 35, 0.96);
+
+  box-shadow:
+    0 0 50px rgba(127, 93, 255, 0.85),
+    0 0 40px rgba(79, 213, 255, 0.75);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-icons a:hover {
+  transform: translateY(-4px);
+}
+
+.footer-icons svg {
+  width: 60%;
+  height: 60%;
+  stroke: #ffffff;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  filter:
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 18px rgba(127, 93, 255, 0.95));
+}
+
+.site-footer {
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #d0d0ff;
+
+  text-shadow:
+    0 0 10px rgba(127,93,255,0.45),
+    0 0 14px rgba(79,213,255,0.35);
+}
+
+/* Scroll‑up orb */
+.scroll-up {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 220, 255, 0.9);
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.22) 0, transparent 55%),
+    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.75) 0, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.75) 0, transparent 60%),
+    rgba(7, 12, 35, 0.96);
+
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 50px rgba(127, 93, 255, 0.85),
+    0 0 40px rgba(79, 213, 255, 0.75);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 999;
+}
+
+.scroll-up:hover {
+  transform: translateY(-5px);
+}
+
