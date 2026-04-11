@@ -1,543 +1,421 @@
-/* ============================================
-   CROWN CREATIVES — UNIFIED MAGICAL THEME 2026
-   ============================================ */
+/* ============================================================
+   CROWN CREATIVES — MAGICAL UI 2026
+   PART 1 — HEADER + NAV + TOGGLE ORB
+   (Dark Mode = Neon • Light Mode = Pastel)
+   ============================================================ */
 
-/* ---------- Root + Reset ---------- */
-
+/* ------------------------------------------------------------
+   THEME VARIABLES — DARK MODE (DEFAULT)
+   ------------------------------------------------------------ */
 :root {
-  --cc-bg: radial-gradient(circle at top left, #1b2a4a 0%, #050816 45%, #05010f 100%);
-  --cc-surface: rgba(10, 18, 40, 0.9);
-  --cc-surface-soft: rgba(15, 24, 55, 0.85);
-  --cc-border-subtle: rgba(120, 150, 255, 0.25);
-  --cc-border-strong: rgba(160, 190, 255, 0.55);
-  --cc-accent: #7f5dff;
-  --cc-accent-soft: rgba(127, 93, 255, 0.35);
-  --cc-accent-strong: #b18cff;
-  --cc-accent-alt: #4fd5ff;
-  --cc-text-main: #f5f5ff;
-  --cc-text-soft: #c2c6ff;
-  --cc-text-muted: #8b90c7;
-  --cc-radius-lg: 22px;
-  --cc-radius-md: 16px;
-  --cc-radius-pill: 999px;
-  --cc-shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
-  --cc-shadow-glow-mixed: 0 0 40px rgba(127, 93, 255, 0.55), 0 0 32px rgba(79, 213, 255, 0.45);
-  --cc-max-width: 1120px;
-  --cc-transition-fast: 160ms ease-out;
-  --cc-transition-med: 220ms ease-out;
+  --cc-bg: #050510;
+  --cc-text: #e8e8ff;
+  --cc-accent-1: #7f5bff;
+  --cc-accent-2: #4de2ff;
+  --cc-glow-strong: 0 0 22px rgba(127, 91, 255, 0.9),
+                    0 0 38px rgba(77, 226, 255, 0.9);
+  --cc-glow-soft: 0 0 12px rgba(127, 91, 255, 0.6),
+                  0 0 20px rgba(77, 226, 255, 0.6);
+  --cc-glass-bg: rgba(10, 10, 25, 0.55);
+  --cc-glass-border: rgba(160, 120, 255, 0.35);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* ------------------------------------------------------------
+   THEME VARIABLES — LIGHT MODE (PASTEL)
+   ------------------------------------------------------------ */
+body.light-mode {
+  --cc-bg: #faf7ff;
+  --cc-text: #2a2a40;
+  --cc-accent-1: #c7a8ff;
+  --cc-accent-2: #9be7ff;
+  --cc-glow-strong: 0 0 18px rgba(199, 168, 255, 0.7),
+                    0 0 28px rgba(155, 231, 255, 0.7);
+  --cc-glow-soft: 0 0 10px rgba(199, 168, 255, 0.45),
+                  0 0 16px rgba(155, 231, 255, 0.45);
+  --cc-glass-bg: rgba(255, 255, 255, 0.55);
+  --cc-glass-border: rgba(199, 168, 255, 0.35);
 }
 
-html,
+/* ------------------------------------------------------------
+   GLOBAL RESET
+   ------------------------------------------------------------ */
 body {
-  margin: 0;
-  padding: 0;
+  background: var(--cc-bg);
+  color: var(--cc-text);
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-body {
-  min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-  color: var(--cc-text-main);
-  background: #020312;
-  background-image:
-    radial-gradient(circle at 10% 0%, rgba(127, 93, 255, 0.35) 0, transparent 55%),
-    radial-gradient(circle at 90% 0%, rgba(79, 213, 255, 0.32) 0, transparent 55%),
-    radial-gradient(circle at 50% 100%, rgba(127, 93, 255, 0.28) 0, transparent 60%),
-    var(--cc-bg);
-  background-attachment: fixed;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  padding-top: 40px; /* breathing room for nav */
-}
-
-/* ============================================
-   HEADER — Centered Logo Lock‑Up (+20% Larger)
-   ============================================ */
-
+/* ------------------------------------------------------------
+   HEADER — NEON / PASTEL GLASS BAR
+   ------------------------------------------------------------ */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-
-  background:
-    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.45) 0, transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.45) 0, transparent 55%),
-    rgba(5, 8, 26, 0.92);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border-bottom: 1px solid rgba(160, 190, 255, 0.45);
-  box-shadow:
-    0 0 28px rgba(127, 93, 255, 0.45),
-    0 0 40px rgba(79, 213, 255, 0.35);
+  position: relative;
+  width: 100%;
+  padding: 20px 0 10px;
+  background: var(--cc-glass-bg);
+  border-bottom: 1px solid var(--cc-glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--cc-glow-soft);
+  transition: background 0.5s ease, border-color 0.5s ease;
 }
 
 .site-header-inner {
-  max-width: var(--cc-max-width);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 26px 24px;
-
+  padding: 0 22px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 22px; /* increased for larger logo */
+  justify-content: space-between;
 }
 
-/* Crown icon — +20% larger */
-.header-crown-img {
-  width: 94px;   /* was 78px */
-  height: 94px;
-  object-fit: contain;
-
-  filter:
-    drop-shadow(0 0 12px rgba(255,255,255,0.95))
-    drop-shadow(0 0 22px rgba(127,93,255,0.95))
-    drop-shadow(0 0 32px rgba(79,213,255,0.55));
+/* ------------------------------------------------------------
+   HEADER — LEFT (CROWN)
+   ------------------------------------------------------------ */
+.header-left img {
+  width: 70px;
+  filter: drop-shadow(var(--cc-glow-soft));
+  transition: filter 0.5s ease;
 }
 
-/* Title + tagline block */
+/* ------------------------------------------------------------
+   HEADER — CENTER (TITLE + TAGLINE)
+   ------------------------------------------------------------ */
 .header-center {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  text-align: center;
+  flex: 1;
 }
 
-/* Title — brighter, more magical */
 .site-title {
-  font-size: 2.1rem; /* +20% */
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 0.065em;
-
-  background: linear-gradient(90deg, #d8c8ff, #9a7dff, #5fe0ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 14px rgba(127,93,255,0.55),
-    0 0 20px rgba(79,213,255,0.45);
+  letter-spacing: 2px;
+  text-shadow: var(--cc-glow-soft);
+  transition: text-shadow 0.5s ease;
 }
 
-/* Tagline — brighter, cleaner, magical */
 .site-tagline {
-  font-size: 1.15rem; /* +20% */
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-
-  color: #eae6ff;
-  text-shadow:
-    0 0 12px rgba(127,93,255,0.45),
-    0 0 16px rgba(79,213,255,0.35);
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-top: 4px;
+  text-shadow: var(--cc-glow-soft);
+  transition: text-shadow 0.5s ease;
 }
 
-/* ============================================
-   FLOATING NAV — Restored Magical Glow Theme
-   ============================================ */
+/* ------------------------------------------------------------
+   HEADER — MAGIC LINE
+   ------------------------------------------------------------ */
+.header-magic-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--cc-accent-1),
+    var(--cc-accent-2),
+    var(--cc-accent-1)
+  );
+  box-shadow: var(--cc-glow-strong);
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
 
-.floating-nav {
-  position: relative;
-  margin: 22px auto 0 auto;
-  max-width: 940px;
+/* ------------------------------------------------------------
+   TOGGLE ORB — FOOTER-STYLE (NEON / PASTEL)
+   ------------------------------------------------------------ */
+.theme-toggle-orb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--cc-accent-2),
+    var(--cc-accent-1)
+  );
+  box-shadow: var(--cc-glow-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease, transform 0.3s ease;
+}
 
-  background:
-    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.25) 0, transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.25) 0, transparent 55%),
-    rgba(255, 255, 255, 0.10);
+.theme-toggle-orb:hover {
+  transform: scale(1.08);
+}
 
-  backdrop-filter: blur(16px);
-  border-radius: 48px;
-  padding: 16px 34px;
+.theme-icon {
+  position: absolute;
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
 
-  box-shadow:
-    0 0 32px rgba(127, 93, 255, 0.55),
-    0 0 40px rgba(79, 213, 255, 0.45);
-
-  animation: navFadeIn 1.4s ease forwards;
+.theme-toggle-sun {
   opacity: 0;
 }
 
-.floating-nav ul {
+.theme-toggle-moon {
+  opacity: 1;
+}
+
+body.light-mode .theme-toggle-sun {
+  opacity: 1;
+}
+
+body.light-mode .theme-toggle-moon {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------
+   NAV BAR — NEON / PASTEL PILL
+   ------------------------------------------------------------ */
+nav.site-nav {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+nav.site-nav ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  gap: 28px;
-  padding: 0;
-  margin: 0;
+  gap: 26px;
+  padding: 12px 28px;
+  background: var(--cc-glass-bg);
+  border: 1px solid var(--cc-glass-border);
+  border-radius: 40px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--cc-glow-soft);
+  transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-.floating-nav a {
-  color: #ffffff;
-  font-weight: 600;
+nav.site-nav a {
+  color: var(--cc-text);
+  font-size: 1rem;
   text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 24px;
-  transition: all 0.35s ease;
+  letter-spacing: 1px;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
 }
 
-.floating-nav a:hover {
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow:
-    0 0 18px rgba(140, 110, 255, 0.7),
-    0 0 22px rgba(90, 180, 255, 0.55);
-  transform: translateY(-3px);
+nav.site-nav a:hover {
+  text-shadow: var(--cc-glow-strong);
+}
+/* ============================================================
+   CROWN CREATIVES — MAGICAL UI 2026
+   PART 2 — HERO + FOOTER + GLOW SYSTEM + ANIMATIONS + VARIABLES
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   HERO SECTION — NEON / PASTEL HALO CARD
+   ------------------------------------------------------------ */
+.hero-section {
+  max-width: 1200px;
+  margin: 60px auto 40px;
+  padding: 0 22px;
 }
 
-/* ============================================
-   HERO — PREMIUM GLASS CROWN BADGE (ENHANCED)
-   ============================================ */
-
-.hero {
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
-  margin-bottom: 32px;
-}
-
-.hero-crown-card {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 52px 36px 40px;
+.hero-card {
+  background: var(--cc-glass-bg);
+  border: 1px solid var(--cc-glass-border);
+  border-radius: 28px;
+  padding: 50px 40px;
+  text-align: center;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--cc-glow-strong);
   position: relative;
+  overflow: hidden;
+  transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
 
-  background:
-    radial-gradient(circle at 20% 0%, rgba(127, 93, 255, 0.45) 0, transparent 60%),
-    radial-gradient(circle at 80% 100%, rgba(79, 213, 255, 0.42) 0, transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.12) 0, transparent 70%),
-    rgba(255, 255, 255, 0.10);
-
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-
-  clip-path: polygon(
-    50% 0%,
-    78% 18%,
-    100% 40%,
-    92% 100%,
-    8% 100%,
-    0% 40%,
-    22% 18%
+/* Inner neon/pastel halo ring */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--cc-accent-1),
+    var(--cc-accent-2),
+    var(--cc-accent-1)
   );
-
-  border: 1px solid rgba(200, 170, 255, 0.4);
-  box-shadow:
-    0 0 28px rgba(160, 120, 255, 0.45),
-    0 0 60px rgba(120, 90, 255, 0.28);
-
-  animation: heroGlowPulse 8s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(18px);
+  opacity: 0.55;
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
-.hero-crown {
-  width: 165px;
-  height: 165px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
-
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.22) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127,93,255,0.75) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79,213,255,0.75) 0, transparent 60%);
-
-  box-shadow:
-    inset 0 0 18px rgba(255,255,255,0.35),
-    0 0 32px rgba(127,93,255,0.75),
-    0 0 26px rgba(79,213,255,0.55);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Hero title */
+.hero-card h1 {
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+  text-shadow: var(--cc-glow-soft);
+  transition: text-shadow 0.5s ease;
 }
 
-.hero-crown img {
-  width: 98%;
-  max-width: 98%;
-  object-fit: contain;
-  filter:
-    drop-shadow(0 0 12px rgba(255,255,255,0.95))
-    drop-shadow(0 0 18px rgba(127,93,255,0.95));
-}
-
-/* ============================================
-   INTRO BOX
-   ============================================ */
-
-.intro-box {
-  max-width: 720px;
-  margin: 0 auto 24px;
-  padding: 16px 18px;
-  border-radius: var(--cc-radius-md);
-  background: var(--cc-surface-soft);
-  border: 1px solid var(--cc-border-subtle);
-  box-shadow: var(--cc-shadow-soft);
-  color: var(--cc-text-soft);
-  font-size: 0.94rem;
-  line-height: 1.7;
-}
-
-/* ============================================
-   MAGIC GALLERY — CENTERED IMAGES
-   ============================================ */
-
-.magic-gallery-zone {
-  position: relative;
-  width: 100%;
-  height: 260px;
-  margin-top: 16px;
-  margin-bottom: 36px;
-  overflow: visible;
-  z-index: 2;
-}
-
-.magic-gallery {
-  position: relative;
-  width: 100%;
-  height: 0;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.magic-gallery-image {
-  width: 270px;
-  height: 270px;
-  opacity: 0;
-  border-radius: 18px;
-  object-fit: cover;
-  filter: drop-shadow(0 0 14px rgba(120, 90, 255, 0.6));
-  animation: floatDrift 12s ease-in-out infinite;
-  transition: opacity 2.5s ease-in-out, transform 6s ease-in-out;
-}
-
-@keyframes floatDrift {
-  0%   { transform: translateY(0px) rotate(0deg); }
-  50%  { transform: translateY(-20px) rotate(4deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-/* ============================================
-   CARD GRID — SMALLER, ROUNDED, CENTERED
-   ============================================ */
-
-.cards-grid {
-  display: grid;
-  gap: 22px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-section.cards-grid.top-row {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-section.cards-grid.bottom-row {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 8px;
-  margin-bottom: 40px;
-}
-
-.magic-card {
-  position: relative;
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.32) 0, transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.28) 0, transparent 55%),
-    rgba(7, 12, 35, 0.96);
-  border: 1px solid var(--cc-border-subtle);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
-  padding: 16px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  overflow: hidden;
-}
-
-.magic-card-title {
-  font-size: 1.4rem;
-  color: #bda4ff;
-  text-shadow: 0 0 10px rgba(189, 164, 255, 0.7);
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.4px;
-}
-
-.magic-card-subtitle {
-  font-size: 0.82rem;
-  color: var(--cc-text-soft);
-  text-align: center;
-}
-
-.magic-card-body {
-  font-size: 0.86rem;
-  color: var(--cc-text-soft);
+/* Hero subtitle */
+.hero-card p {
+  font-size: 1.2rem;
+  opacity: 0.9;
   line-height: 1.6;
+  text-shadow: var(--cc-glow-soft);
+  transition: text-shadow 0.5s ease;
+}
+
+/* ------------------------------------------------------------
+   FOOTER — NEON / PASTEL LINE + ICONS
+   ------------------------------------------------------------ */
+.site-footer {
+  margin-top: 80px;
+  padding: 40px 0 30px;
   text-align: center;
+  background: transparent;
 }
-
-/* ============================================
-   TICKER — FIXED, CLEAN, CONTINUOUS
-   ============================================ */
-
-.ticker-container {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.ticker-track {
-  max-width: var(--cc-max-width);
-  width: 100%;
-  border-radius: 999px;
-  border: 1px solid rgba(160, 190, 255, 0.5);
-  background:
-    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.35) 0, transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.35) 0, transparent 55%),
-    rgba(7, 12, 35, 0.96);
-  box-shadow: 0 0 26px rgba(0, 0, 0, 0.85);
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
-
-.ticker-inner {
-  display: inline-flex;
-  align-items: center;
-  gap: 32px;
-  animation: ticker-scroll 26s linear infinite;
-  font-size: 0.82rem;
-  color: #c2c6ff;
-}
-
-@keyframes ticker-scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-/* ============================================
-   FOOTER — Strong Glow + Colourful Magical Pop
-   ============================================ */
 
 .footer-magic-line {
-  margin-top: 50px;
-  height: 3px;
   width: 100%;
-  max-width: var(--cc-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 999px;
-
-  background: linear-gradient(90deg, #4fd5ff, #7f5dff, #b18cff, #7f5dff, #4fd5ff);
-
-  box-shadow:
-    0 0 32px rgba(127, 93, 255, 0.85),
-    0 0 28px rgba(79, 213, 255, 0.75),
-    0 0 18px rgba(255, 255, 255, 0.45);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--cc-accent-1),
+    var(--cc-accent-2),
+    var(--cc-accent-1)
+  );
+  box-shadow: var(--cc-glow-strong);
+  margin-bottom: 26px;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
 .footer-icons {
-  margin-top: 22px;
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 26px;
+  margin-bottom: 18px;
 }
 
-.footer-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-
-  border: 1px solid rgba(200, 220, 255, 0.9);
-
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.22) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.75) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.75) 0, transparent 60%),
-    rgba(7, 12, 35, 0.96);
-
-  box-shadow:
-    0 0 50px rgba(127, 93, 255, 0.85),
-    0 0 40px rgba(79, 213, 255, 0.75);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.footer-icons img {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(var(--cc-glow-soft));
+  transition: transform 0.3s ease, filter 0.5s ease;
 }
 
-.footer-icons a:hover {
-  transform: translateY(-4px);
-}
-
-.footer-icons svg {
-  width: 60%;
-  height: 60%;
-  stroke: #ffffff;
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-
-  filter:
-    drop-shadow(0 0 12px rgba(255, 255, 255, 0.95))
-    drop-shadow(0 0 18px rgba(127, 93, 255, 0.95));
-}
-
-.site-footer {
-  margin-top: 20px;
-  padding-bottom: 40px;
+.footer-icons img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(var(--cc-glow-strong));
 }
 
 .footer-text {
-  text-align: center;
   font-size: 0.9rem;
-  color: #d0d0ff;
-
-  text-shadow:
-    0 0 10px rgba(127,93,255,0.45),
-    0 0 14px rgba(79,213,255,0.35);
+  opacity: 0.75;
+  text-shadow: var(--cc-glow-soft);
+  transition: text-shadow 0.5s ease;
 }
 
-/* Scroll‑up orb */
-.scroll-up {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  border: 1px solid rgba(200, 220, 255, 0.9);
-
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.22) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.75) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.75) 0, transparent 60%),
-    rgba(7, 12, 35, 0.96);
-
-  color: #ffffff;
-  font-size: 1.4rem;
-  cursor: pointer;
-
-  box-shadow:
-    0 0 50px rgba(127, 93, 255, 0.85),
-    0 0 40px rgba(79, 213, 255, 0.75);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  z-index: 999;
+/* ------------------------------------------------------------
+   GLOBAL GLOW SYSTEM — UNIFIED NEON / PASTEL
+   ------------------------------------------------------------ */
+.cc-glow {
+  text-shadow: var(--cc-glow-strong);
 }
 
-.scroll-up:hover {
-  transform: translateY(-5px);
+.cc-soft-glow {
+  text-shadow: var(--cc-glow-soft);
 }
 
+.cc-outline-glow {
+  box-shadow: var(--cc-glow-strong);
+}
+
+/* ------------------------------------------------------------
+   BUTTONS — NEON / PASTEL
+   ------------------------------------------------------------ */
+.cc-button {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 40px;
+  background: linear-gradient(
+    135deg,
+    var(--cc-accent-1),
+    var(--cc-accent-2)
+  );
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: var(--cc-glow-strong);
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+.cc-button:hover {
+  transform: scale(1.08);
+  box-shadow: var(--cc-glow-strong), 0 0 18px rgba(255, 255, 255, 0.4);
+}
+
+/* ------------------------------------------------------------
+   ANIMATIONS — SHIMMER, FLOAT, PULSE
+   ------------------------------------------------------------ */
+
+/* Floating crown animation */
+@keyframes cc-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.header-crown-img {
+  animation: cc-float 4s ease-in-out infinite;
+}
+
+/* Shimmer sweep for hero card */
+@keyframes cc-shimmer {
+  0% { opacity: 0.1; transform: translateX(-120%); }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.1; transform: translateX(120%); }
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  animation: cc-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Soft pulse for magical elements */
+@keyframes cc-pulse {
+  0% { box-shadow: var(--cc-glow-soft); }
+  50% { box-shadow: var(--cc-glow-strong); }
+  100% { box-shadow: var(--cc-glow-soft); }
+}
+
+.theme-toggle-orb {
+  animation: cc-pulse 4s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE TWEAKS
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-card {
+    padding: 40px 26px;
+  }
+
+  nav.site-nav ul {
+    gap: 18px;
+    padding: 10px 20px;
+  }
+}
