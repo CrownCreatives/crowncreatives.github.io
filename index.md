@@ -32,18 +32,8 @@ title: Home
   </p>
 </div>
 
-<!-- ⭐ MAGIC GALLERY LANE -->
-<div class="magic-gallery-zone">
-  <div class="magic-gallery">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Face.jpeg">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Flower.jpeg">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Fly.jpeg">
-  </div>
-</div>
-
-<!-- ✨ Frosted Glass Cards -->
-<section class="cards-grid">
-
+<!-- ✨ FIRST CARD ROW (2 cards) -->
+<section class="cards-grid top-row">
   <div class="magic-card">
     <div class="magic-card-title">3D Models</div>
     <div class="magic-card-subtitle">Sculpting • Texturing • Rendering</div>
@@ -59,7 +49,19 @@ title: Home
       A space for artistic exploration, visual storytelling, and imaginative expression.
     </div>
   </div>
+</section>
 
+<!-- ⭐ MAGIC GALLERY LANE -->
+<div class="magic-gallery-zone">
+  <div class="magic-gallery">
+    <img class="magic-gallery-image" src="/assets/images/gallery/Face.jpeg">
+    <img class="magic-gallery-image" src="/assets/images/gallery/Flower.jpeg">
+    <img class="magic-gallery-image" src="/assets/images/gallery/Fly.jpeg">
+  </div>
+</div>
+
+<!-- ✨ SECOND CARD ROW (1–3 cards) -->
+<section class="cards-grid bottom-row">
   <div class="magic-card">
     <div class="magic-card-title">Podcasts</div>
     <div class="magic-card-subtitle">Thoughts • Stories • Growth</div>
@@ -67,5 +69,4 @@ title: Home
       Conversations about creativity, resilience, and the journey of rebuilding life.
     </div>
   </div>
-
 </section>
