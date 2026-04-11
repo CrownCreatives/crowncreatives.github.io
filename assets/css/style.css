@@ -804,3 +804,69 @@ section.cards-grid.bottom-row {
   border: 1px solid rgba(169, 139, 255, 0.25);
   box-shadow: 0 0 18px rgba(169, 139, 255, 0.15);
 }
+/* Magical card title styling */
+.magic-card-title {
+  font-size: 1.45rem; /* slightly larger */
+  color: #a98bff; /* magical violet */
+  text-shadow: 0 0 8px rgba(169, 139, 255, 0.6);
+  font-weight: 600;
+  text-align: center;
+}
+/* Magical card titles — bigger + violet glow */
+.magic-card-title {
+  font-size: 1.55rem; /* larger than before */
+  color: #bda4ff; /* soft magical violet */
+  text-shadow: 0 0 10px rgba(189, 164, 255, 0.7);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+/* Hero crown 20% larger */
+.hero-crown img {
+  width: 120%;
+  max-width: 120%;
+  transform-origin: center;
+}
+/* ----------------------------------------------------------
+   GEOMETRIC FROSTED-GLASS CROWN HERO CARD
+----------------------------------------------------------- */
+
+.hero-crown-card {
+  width: 90%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  position: relative;
+
+  /* Frosted glass */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Geometric crown silhouette */
+  clip-path: polygon(
+    50% 0%,   /* top point */
+    70% 20%,  /* right upper peak */
+    100% 35%, /* right mid */
+    90% 100%, /* bottom right */
+    10% 100%, /* bottom left */
+    0% 35%,   /* left mid */
+    30% 20%   /* left upper peak */
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(150, 120, 255, 0.25);
+  z-index: 5;
+}
+
+.hero-crown-inner {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.hero-explainer {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #e8e4ff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.3);
+}
