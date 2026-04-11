@@ -677,3 +677,97 @@ svg {
   max-width: 100%;
   height: auto;
 }
+/* ----------------------------------------------------------
+   FLOATING MAGICAL NAV BAR (MEDIUM PILL, 10–20px HOVER GAP)
+----------------------------------------------------------- */
+
+.floating-nav {
+  position: relative;
+  margin: 18px auto 0 auto;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 12px 28px;
+  box-shadow: 0 0 22px rgba(120, 90, 255, 0.45),
+              0 0 40px rgba(90, 180, 255, 0.35);
+  animation: navFadeIn 1.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.floating-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-nav a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.35s ease;
+}
+
+.floating-nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 14px rgba(140, 110, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+/* ----------------------------------------------------------
+   HERO CROWN +20% SIZE
+----------------------------------------------------------- */
+
+.hero-crown {
+  width: 120%;
+  max-width: 120%;
+  transform-origin: center;
+}
+
+/* ----------------------------------------------------------
+   HERO CROWN COLOUR-SHIFT GLOW LOOP
+----------------------------------------------------------- */
+
+@keyframes crownGlow {
+  0%   { filter: drop-shadow(0 0 8px #8a5bff); }
+  33%  { filter: drop-shadow(0 0 12px #5bd4ff); }
+  66%  { filter: drop-shadow(0 0 10px #c45bff); }
+  100% { filter: drop-shadow(0 0 8px #8a5bff); }
+}
+
+.hero-crown {
+  animation: crownGlow 12s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------
+   GLOBAL 15-SECOND THEME TRANSITION
+----------------------------------------------------------- */
+
+body, header, footer, .hero-card, .floating-nav {
+  transition: all 15s ease !important;
+}
+
+/* ----------------------------------------------------------
+   GALLERY MAGIC — SOFT FADE-IN/OUT LOOP
+----------------------------------------------------------- */
+
+.magic-gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+}
