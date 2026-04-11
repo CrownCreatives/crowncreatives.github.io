@@ -34,9 +34,12 @@ title: Home
 
 <!-- ⭐ PLACE THE MAGIC GALLERY HERE (correct spot) -->
 <div class="magic-gallery">
-  <img class="magic-gallery-image" src="/assets/images/gallery/face.jpg">
-  <img class="magic-gallery-image" src="/assets/images/gallery/flower.jpg">
-  <img class="magic-gallery-image" src="/assets/images/gallery/fly.jpg">
+  <div class="magic-gallery">
+  <img class="magic-gallery-image" src="/assets/images/gallery/Face.jpeg">
+  <img class="magic-gallery-image" src="/assets/images/gallery/Flower.jpeg">
+  <img class="magic-gallery-image" src="/assets/images/gallery/Fly.jpeg">
+</div>
+
 </div>
 
 <!-- ✨ Frosted Glass Cards -->
