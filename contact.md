@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Contact
-published: false
+permalink: /contact/
 ---
+
 
 <section class="hero-section">
   <div class="hero-card">
