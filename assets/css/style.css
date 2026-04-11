@@ -790,3 +790,17 @@ section.cards-grid.bottom-row {
 .magic-card-body {
   text-align: center !important;
 }
+/* Get in Touch card — subtle magical highlight */
+.magic-card:nth-child(2) .magic-card-title {
+  color: #a98bff;
+  text-shadow: 0 0 8px rgba(169, 139, 255, 0.6);
+}
+
+.magic-card:nth-child(2) .magic-card-subtitle {
+  color: #d6c8ff;
+}
+
+.magic-card:nth-child(2) {
+  border: 1px solid rgba(169, 139, 255, 0.25);
+  box-shadow: 0 0 18px rgba(169, 139, 255, 0.15);
+}
