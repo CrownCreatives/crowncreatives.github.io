@@ -36,9 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryImages = document.querySelectorAll('.magic-gallery-image');
   let galleryIndex = 0;
 
-  function randomY() {
-    return Math.floor(Math.random() * 220) + 20; // 20px–240px vertical range
-  }
+function randomY() {
+  return Math.floor(Math.random() * 180) + 20; 
+}
+
 
   function cycleGallery() {
     // Hide all images first
