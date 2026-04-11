@@ -1,41 +1,53 @@
 /* ---------------------------------------------
-   HERO CROWN IMAGE SWAP (EVERY 15 SECONDS)
+   MAGIC.JS — FIXED + FULLY WORKING VERSION
 ---------------------------------------------- */
 
-const crown = document.querySelector('.hero-crown');
-const crownImages = [
-  '/assets/img/crown1.png',
-  '/assets/img/crown2.png',
-  '/assets/img/crown3.png'
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-let crownIndex = 0;
+  /* ---------------------------------------------
+     HERO CROWN IMAGE SWAP (EVERY 15 SECONDS)
+  ---------------------------------------------- */
 
-setInterval(() => {
-  crownIndex = (crownIndex + 1) % crownImages.length;
-  crown.style.opacity = 0;
+  const crown = document.querySelector('.hero-crown img');
+  const crownImages = [
+    '/assets/images/crown1.png',
+    '/assets/images/crown2.png',
+    '/assets/images/crown3.png'
+  ];
 
-  setTimeout(() => {
-    crown.src = crownImages[crownIndex];
-    crown.style.opacity = 1;
-  }, 800);
-}, 15000);
+  let crownIndex = 0;
 
+  if (crown) {
+    setInterval(() => {
+      crownIndex = (crownIndex + 1) % crownImages.length;
+      crown.style.opacity = 0;
 
-/* ---------------------------------------------
-   GALLERY FADE-IN/OUT MAGIC
----------------------------------------------- */
+      setTimeout(() => {
+        crown.src = crownImages[crownIndex];
+        crown.style.opacity = 1;
+      }, 800);
+    }, 15000);
+  }
 
-const galleryImages = document.querySelectorAll('.magic-gallery-image');
-let galleryIndex = 0;
+  /* ---------------------------------------------
+     GALLERY FADE-IN/OUT MAGIC
+  ---------------------------------------------- */
 
-function cycleGallery() {
-  galleryImages.forEach((img, i) => {
-    img.style.opacity = i === galleryIndex ? 1 : 0;
-  });
+  const galleryImages = document.querySelectorAll('.magic-gallery-image');
+  let galleryIndex = 0;
 
-  galleryIndex = (galleryIndex + 1) % galleryImages.length;
-}
+  function cycleGallery() {
+    galleryImages.forEach((img, i) => {
+      img.style.opacity = i === galleryIndex ? 1 : 0;
+    });
 
-setInterval(cycleGallery, 6000);
-cycleGallery();
+    galleryIndex = (galleryIndex + 1) % galleryImages.length;
+  }
+
+  if (galleryImages.length > 0) {
+    cycleGallery();
+    setInterval(cycleGallery, 6000);
+  }
+
+});
+
