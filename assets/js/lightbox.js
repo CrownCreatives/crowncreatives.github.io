@@ -1,23 +1,25 @@
+// Magical Lightbox
 document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.querySelector(".lightbox-image");
-  const closeBtn = document.querySelector(".lightbox-close");
+  const lightboxImg = document.getElementById("lightbox-img");
 
-  document.querySelectorAll(".lightbox-trigger").forEach(item => {
-    item.addEventListener("click", e => {
-      e.preventDefault();
-      lightbox.style.display = "block";
-      lightboxImg.src = item.href;
+  // Open lightbox when clicking any gallery image
+  document.querySelectorAll(".magic-gallery-image").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add("open");
     });
   });
 
-  closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
+  // Close button
+  document.querySelector(".lightbox-close").addEventListener("click", () => {
+    lightbox.classList.remove("open");
   });
 
+  // Click outside image closes lightbox
   lightbox.addEventListener("click", e => {
     if (e.target === lightbox) {
-      lightbox.style.display = "none";
+      lightbox.classList.remove("open");
     }
   });
 });
