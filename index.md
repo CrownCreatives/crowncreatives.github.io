@@ -32,15 +32,13 @@ title: Home
   </p>
 </div>
 
-<!-- ⭐ PLACE THE MAGIC GALLERY HERE (correct spot) -->
+<!-- ⭐ MAGIC GALLERY LANE -->
 <div class="magic-gallery-zone">
   <div class="magic-gallery">
     <img class="magic-gallery-image" src="/assets/images/gallery/Face.jpeg">
     <img class="magic-gallery-image" src="/assets/images/gallery/Flower.jpeg">
     <img class="magic-gallery-image" src="/assets/images/gallery/Fly.jpeg">
   </div>
-</div>
-
 </div>
 
 <!-- ✨ Frosted Glass Cards -->
