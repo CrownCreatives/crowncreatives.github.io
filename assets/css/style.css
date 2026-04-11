@@ -739,3 +739,18 @@ body, header, footer, .hero-card, .floating-nav {
 .magic-gallery-zone {
   height: 160px;
 }
+/* Card row spacing */
+.top-row {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.magic-gallery-zone {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.bottom-row {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
