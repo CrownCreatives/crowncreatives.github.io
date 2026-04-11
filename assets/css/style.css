@@ -725,12 +725,12 @@ svg {
 }
 
 /* ----------------------------------------------------------
-   HERO CROWN +20% SIZE
+   HERO CROWN +40% SIZE
 ----------------------------------------------------------- */
 
 .hero-crown {
-  width: 120%;
-  max-width: 120%;
+  width: 140%;
+  max-width: 140%;
   transform-origin: center;
 }
 
@@ -770,4 +770,12 @@ body, header, footer, .hero-card, .floating-nav {
   object-fit: cover;
   opacity: 0;
   transition: opacity 2.5s ease-in-out;
+}
+.floating-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
 }
