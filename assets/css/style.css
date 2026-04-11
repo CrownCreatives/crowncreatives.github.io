@@ -573,96 +573,6 @@ nav.site-nav {
 }
 
 /* ============================================
-   RESPONSIVE — CLEAN + UNIFIED
-   ============================================ */
-
-@media (max-width: 1024px) {
-  .page-wrapper {
-    padding: 100px 16px 60px;
-  }
-
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hero-title {
-    font-size: 1.9rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-wrapper {
-    padding: 90px 14px 50px;
-  }
-
-  .hero-card {
-    padding: 20px 18px 24px;
-  }
-
-  .hero-title {
-    font-size: 1.7rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .ticker-track {
-    font-size: 0.78rem;
-  }
-
-  .footer-icons a {
-    width: 54px;
-    height: 54px;
-  }
-
-  .scroll-up {
-    width: 48px;
-    height: 48px;
-    bottom: 22px;
-    right: 22px;
-  }
-}
-
-@media (max-width: 480px) {
-  .page-wrapper {
-    padding: 80px 12px 40px;
-  }
-
-  .hero-card {
-    padding: 16px 14px 18px;
-  }
-
-  .intro-box {
-    padding: 14px;
-  }
-
-  .magic-card {
-    padding: 14px 14px 12px;
-  }
-
-  .footer-icons a {
-    width: 48px;
-    height: 48px;
-  }
-
-  .scroll-up {
-    width: 44px;
-    height: 44px;
-    bottom: 18px;
-    right: 18px;
-  }
-}
-
-/* ============================================
    FINAL CLEANUP — SAFE GLOBAL IMG/SVG
    ============================================ */
 
@@ -677,6 +587,7 @@ svg {
   max-width: 100%;
   height: auto;
 }
+
 /* ----------------------------------------------------------
    FLOATING MAGICAL NAV BAR (MEDIUM PILL, 10–20px HOVER GAP)
 ----------------------------------------------------------- */
@@ -758,29 +669,6 @@ body, header, footer, .hero-card, .floating-nav {
 }
 
 /* ----------------------------------------------------------
-   GALLERY MAGIC — SOFT FADE-IN/OUT LOOP
------------------------------------------------------------ */
-
-.magic-gallery-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 2.5s ease-in-out;
-}
-.floating-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  gap: 22px;
-  padding: 0;
-  margin: 0;
-}
-
-/* ----------------------------------------------------------
    FLOATING SIDE-IMAGES — MAGIC + DRIFT + ROTATION + SPARKLES
 ----------------------------------------------------------- */
 
@@ -803,18 +691,15 @@ body, header, footer, .hero-card, .floating-nav {
   animation: floatDrift 12s ease-in-out infinite;
 }
 
-/* Left or right placement */
 .magic-left { left: -40px; }
 .magic-right { right: -40px; }
 
-/* Slow drift + soft rotation */
 @keyframes floatDrift {
   0%   { transform: translateY(0px) rotate(0deg); }
   50%  { transform: translateY(-20px) rotate(4deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
 
-/* Sparkle pulse */
 @keyframes sparklePulse {
   0%   { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)); }
   50%  { filter: drop-shadow(0 0 14px rgba(255,255,255,0.9)); }
@@ -824,3 +709,4 @@ body, header, footer, .hero-card, .floating-nav {
 .magic-gallery-image.sparkle {
   animation: sparklePulse 3s ease-in-out infinite;
 }
+
