@@ -142,7 +142,7 @@ a:hover {
   100% { transform: rotate(360deg) scale(1); }
 }
 
-/* ---------- Header (Final Scrub) ---------- */
+/* ---------- Header ---------- */
 
 .site-header {
   position: sticky;
@@ -159,7 +159,7 @@ a:hover {
 .site-header-inner {
   max-width: var(--cc-max-width);
   margin: 0 auto;
-  padding: 26px 24px; /* matches footer height */
+  padding: 26px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -195,402 +195,7 @@ a:hover {
   text-transform: uppercase;
 }
 
-.theme-toggle-orb {
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  border: 1px solid rgba(190, 210, 255, 0.8);
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.18) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.65) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.65) 0, transparent 60%),
-    rgba(7, 12, 35, 0.96);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow:
-    0 0 40px rgba(127, 93, 255, 0.7),
-    0 0 32px rgba(79, 213, 255, 0.6);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.theme-toggle-orb:hover {
-  transform: translateY(-3px);
-}
-
-/* ---------- Navigation ---------- */
-
-nav.site-nav {
-  position: relative;
-  z-index: 50;
-  margin-top: 10px;
-}
-
-.site-header,
-.site-nav,
-.page-wrapper {
-  position: relative;
-  z-index: 10;
-}
-/* ============================================
-   HERO — CLEAN, UNIFIED, +40% EMBLEM
-   ============================================ */
-
-.hero {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px; /* spacing under nav */
-  margin-bottom: 40px;
-}
-
-.hero-card {
-  max-width: 760px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: var(--cc-radius-lg);
-  background:
-    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.35) 0, transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.32) 0, transparent 55%),
-    rgba(7, 12, 35, 0.96);
-  border: 1px solid var(--cc-border-strong);
-  box-shadow: var(--cc-shadow-soft), var(--cc-shadow-glow-mixed);
-  padding: 32px 32px 38px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid rgba(127, 93, 255, 0.35);
-  mix-blend-mode: screen;
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.hero-crown-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-/* FINAL HERO EMBLEM SIZE — +40% */
-.hero-crown {
-  width: 87px;
-  height: 87px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.18) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.55) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.55) 0, transparent 60%);
-  box-shadow:
-    0 0 32px rgba(127, 93, 255, 0.55),
-    0 0 26px rgba(79, 213, 255, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-crown img {
-  width: 59px;
-  height: 59px;
-  object-fit: contain;
-  filter:
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.9))
-    drop-shadow(0 0 14px rgba(127, 93, 255, 0.9));
-}
-
-.hero-title {
-  font-size: 2.2rem;
-  margin: 18px 0 8px;
-  color: var(--cc-text-main);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.hero-subtitle {
-  font-size: 1.05rem;
-  color: var(--cc-text-soft);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.hero-explainer {
-  font-size: 1.06rem;
-  color: var(--cc-text-soft);
-  line-height: 1.65;
-  max-width: 480px; /* forces 2 lines */
-  margin: 20px auto 0;
-}
-
-/* ============================================
-   INTRO BOX
-   ============================================ */
-
-.intro-box {
-  max-width: 720px;
-  margin: 0 auto 28px;
-  padding: 18px 20px;
-  border-radius: var(--cc-radius-md);
-  background: var(--cc-surface-soft);
-  border: 1px solid var(--cc-border-subtle);
-  box-shadow: var(--cc-shadow-soft);
-  color: var(--cc-text-soft);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(8px);
-  animation: fadeInUp 600ms ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ============================================
-   CARDS GRID — CLEAN + UNIFIED
-   ============================================ */
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 80px; /* spacing under hero */
-}
-
-.magic-card {
-  position: relative;
-  border-radius: var(--cc-radius-md);
-  background:
-    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.32) 0, transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.28) 0, transparent 55%),
-    rgba(7, 12, 35, 0.96);
-  border: 1px solid var(--cc-border-subtle);
-  box-shadow: var(--cc-shadow-soft);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  overflow: hidden;
-}
-
-.magic-card-title {
-  font-size: 1rem;
-  color: var(--cc-text-main);
-}
-
-.magic-card-subtitle {
-  font-size: 0.85rem;
-  color: var(--cc-text-soft);
-}
-
-.magic-card-body {
-  font-size: 0.88rem;
-  color: var(--cc-text-soft);
-  line-height: 1.6;
-}
-
-/* Top two cards +20% wider */
-.cards-grid .magic-card:nth-child(1),
-.cards-grid .magic-card:nth-child(2) {
-  width: 120%;
-  max-width: 120%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ============================================
-   TICKER — FIXED, CLEAN, CONTINUOUS
-   ============================================ */
-
-.ticker-container {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 32px;
-  display: flex;
-  justify-content: center;
-}
-
-.ticker-track {
-  max-width: var(--cc-max-width);
-  width: 100%;
-  border-radius: 999px;
-  border: 1px solid rgba(160, 190, 255, 0.5);
-  background:
-    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.35) 0, transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.35) 0, transparent 55%),
-    rgba(7, 12, 35, 0.96);
-  box-shadow: 0 0 26px rgba(0, 0, 0, 0.85);
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
-
-.ticker-inner {
-  display: inline-flex;
-  align-items: center;
-  gap: 32px;
-  animation: ticker-scroll 26s linear infinite;
-  font-size: 0.82rem;
-  color: #c2c6ff;
-}
-
-@keyframes ticker-scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.ticker-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--cc-accent-alt) 0, var(--cc-accent) 60%, transparent 100%);
-  box-shadow: 0 0 10px rgba(79, 213, 255, 0.9);
-}
-
-/* ============================================
-   FOOTER — MAGIC LINE + ICONS + TEXT
-   ============================================ */
-
-.footer-magic-line {
-  margin-top: 40px;
-  height: 2px;
-  width: 100%;
-  max-width: var(--cc-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--cc-accent-alt), var(--cc-accent), var(--cc-accent-alt));
-  box-shadow:
-    0 0 24px rgba(127, 93, 255, 0.8),
-    0 0 20px rgba(79, 213, 255, 0.7);
-}
-
-.footer-icons {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.footer-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1px solid rgba(190, 210, 255, 0.8);
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.18) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.65) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.65) 0, transparent 60%),
-    rgba(7, 12, 35, 0.96);
-  box-shadow:
-    0 0 40px rgba(127, 93, 255, 0.7),
-    0 0 32px rgba(79, 213, 255, 0.6);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.footer-icons a:hover {
-  transform: translateY(-3px);
-}
-
-.footer-icons svg {
-  width: 60%;
-  height: 60%;
-  stroke: #f5f5ff;
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter:
-    drop-shadow(0 0 8px rgba(255, 255, 255, 0.9))
-    drop-shadow(0 0 14px rgba(127, 93, 255, 0.9));
-}
-
-.site-footer {
-  margin-top: 16px;
-  padding-bottom: 32px;
-}
-
-.footer-text {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--cc-text-muted);
-}
-
-/* ============================================
-   SCROLL-UP ORB
-   ============================================ */
-
-.scroll-up {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid rgba(190, 210, 255, 0.8);
-  background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.18) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.65) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.65) 0, transparent 60%),
-    rgba(7, 12, 35, 0.96);
-  color: #f5f5ff;
-  font-size: 1.4rem;
-  cursor: pointer;
-  box-shadow:
-    0 0 40px rgba(127, 93, 255, 0.7),
-    0 0 32px rgba(79, 213, 255, 0.6);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-  z-index: 999;
-}
-
-.scroll-up:hover {
-  transform: translateY(-4px);
-}
-
-/* ============================================
-   FINAL CLEANUP — SAFE GLOBAL IMG/SVG
-   ============================================ */
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* ----------------------------------------------------------
-   FLOATING MAGICAL NAV BAR (MEDIUM PILL, 10–20px HOVER GAP)
------------------------------------------------------------ */
+/* ---------- Floating Nav ---------- */
 
 .floating-nav {
   position: relative;
@@ -635,258 +240,28 @@ svg {
   transform: translateY(-3px);
 }
 
-/* ----------------------------------------------------------
-   HERO CROWN +40% SIZE
------------------------------------------------------------ */
-.hero-crown {
-  width: 140%;
-  max-width: 140%;
-  transform-origin: center;
-  animation: crownGlow 12s ease-in-out infinite;
-}
+/* ============================================
+   HERO — ENHANCED GEOMETRIC FROSTED CROWN CARD
+   ============================================ */
 
-/* ----------------------------------------------------------
-   HERO CROWN COLOUR-SHIFT GLOW LOOP
------------------------------------------------------------ */
-@keyframes crownGlow {
-  0%   { filter: drop-shadow(0 0 8px #8a5bff); }
-  33%  { filter: drop-shadow(0 0 12px #5bd4ff); }
-  66%  { filter: drop-shadow(0 0 10px #c45bff); }
-  100% { filter: drop-shadow(0 0 8px #8a5bff); }
+.hero {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-
-/* ----------------------------------------------------------
-   GLOBAL 15-SECOND THEME TRANSITION
------------------------------------------------------------ */
-body, header, footer, .hero-card, .floating-nav {
-  transition: all 15s ease !important;
-}
-
-/* ----------------------------------------------------------
-   MAGIC GALLERY LANE — CLEAN + CORRECT
------------------------------------------------------------ */
-.magic-gallery-zone {
-  position: relative;
-  width: 100%;
-  height: 220px !important; /* final correct height */
-  margin-top: 20px !important;
-  margin-bottom: 40px !important;
-  overflow: visible;
-  z-index: 2;
-}
-
-.magic-gallery {
-  position: relative;
-  width: 100%;
-  height: 0;
-  pointer-events: none;
-}
-
-.magic-gallery-image {
-  position: absolute;
-  width: 224px;
-  height: 224px;
-  object-fit: cover;
-  border-radius: 18px;
-  opacity: 0;
-  transition: opacity 2.5s ease-in-out, transform 6s ease-in-out;
-  filter: drop-shadow(0 0 12px rgba(120, 90, 255, 0.6));
-  animation: floatDrift 12s ease-in-out infinite;
-  z-index: 2;
-}
-
-@keyframes floatDrift {
-  0%   { transform: translateY(0px) rotate(0deg); }
-  50%  { transform: translateY(-20px) rotate(4deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-/* ----------------------------------------------------------
-   CARD GRID — CLEAN + CORRECT
------------------------------------------------------------ */
-
-/* Default grid (fallback) */
-.cards-grid {
-  display: grid;
-  gap: 30px;
-}
-
-/* Top row: exactly 2 cards */
-section.cards-grid.top-row {
-  grid-template-columns: repeat(2, 1fr) !important;
-  margin-top: 40px !important;
-  margin-bottom: 40px !important;
-}
-
-/* Bottom row: auto-fit 1–3 cards */
-section.cards-grid.bottom-row {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  margin-top: 10px !important;
-  margin-bottom: 60px !important;
-}
-
-/* Centre card text */
-.magic-card-body {
-  text-align: center;
-}
-/* ----------------------------------------------------------
-   MAGIC GALLERY LANE — FINAL CLEAN VERSION
------------------------------------------------------------ */
-.magic-gallery-zone {
-  position: relative;
-  width: 100%;
-  height: 240px !important;
-  margin-top: 20px !important;
-  margin-bottom: 40px !important;
-  overflow: visible;
-  z-index: 2;
-}
-
-.magic-gallery {
-  position: relative;
-  width: 100%;
-  height: 0;
-  pointer-events: none;
-}
-
-.magic-gallery-image {
-  position: absolute;
-  width: 224px;
-  height: 224px;
-  object-fit: cover;
-  border-radius: 18px;
-  opacity: 0;
-  transition: opacity 2.5s ease-in-out, transform 6s ease-in-out;
-  filter: drop-shadow(0 0 12px rgba(120, 90, 255, 0.6));
-  animation: floatDrift 12s ease-in-out infinite;
-  z-index: 2;
-}
-
-/* ----------------------------------------------------------
-   CARD GRID — FINAL CLEAN VERSION
------------------------------------------------------------ */
-
-/* Default grid */
-.cards-grid {
-  display: grid !important;
-  gap: 30px !important;
-}
-
-/* Top row: exactly 2 cards */
-section.cards-grid.top-row {
-  grid-template-columns: repeat(2, 1fr) !important;
-  margin-top: 40px !important;
-  margin-bottom: 40px !important;
-}
-
-/* Bottom row: auto-fit 1–3 cards */
-section.cards-grid.bottom-row {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  margin-top: 10px !important;
-  margin-bottom: 60px !important;
-}
-
-/* Centre card text */
-.magic-card-body {
-  text-align: center !important;
-}
-/* Get in Touch card — subtle magical highlight */
-.magic-card:nth-child(2) .magic-card-title {
-  color: #a98bff;
-  text-shadow: 0 0 8px rgba(169, 139, 255, 0.6);
-}
-
-.magic-card:nth-child(2) .magic-card-subtitle {
-  color: #d6c8ff;
-}
-
-.magic-card:nth-child(2) {
-  border: 1px solid rgba(169, 139, 255, 0.25);
-  box-shadow: 0 0 18px rgba(169, 139, 255, 0.15);
-}
-/* Magical card title styling */
-.magic-card-title {
-  font-size: 1.45rem; /* slightly larger */
-  color: #a98bff; /* magical violet */
-  text-shadow: 0 0 8px rgba(169, 139, 255, 0.6);
-  font-weight: 600;
-  text-align: center;
-}
-/* Magical card titles — bigger + violet glow */
-.magic-card-title {
-  font-size: 1.55rem; /* larger than before */
-  color: #bda4ff; /* soft magical violet */
-  text-shadow: 0 0 10px rgba(189, 164, 255, 0.7);
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-/* Hero crown 20% larger */
-.hero-crown img {
-  width: 120%;
-  max-width: 120%;
-  transform-origin: center;
-}
-/* ----------------------------------------------------------
-   GEOMETRIC FROSTED-GLASS CROWN HERO CARD
------------------------------------------------------------ */
 
 .hero-crown-card {
-  width: 90%;
-  max-width: 520px;
+  width: 100%;
+  max-width: 570px;
   margin: 0 auto;
-  padding: 40px 30px;
+  padding: 48px 34px;
   position: relative;
 
-  /* Frosted glass */
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  /* Geometric crown silhouette */
-  clip-path: polygon(
-    50% 0%,   /* top point */
-    70% 20%,  /* right upper peak */
-    100% 35%, /* right mid */
-    90% 100%, /* bottom right */
-    10% 100%, /* bottom left */
-    0% 35%,   /* left mid */
-    30% 20%   /* left upper peak */
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 25px rgba(150, 120, 255, 0.25);
-  z-index: 5;
-}
-
-.hero-crown-inner {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.hero-explainer {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: #e8e4ff;
-  text-shadow: 0 0 6px rgba(255,255,255,0.3);
-}
-/* ----------------------------------------------------------
-   HERO CROWN CARD — 10% BIGGER + MAGICAL GLOW
------------------------------------------------------------ */
-
-.hero-crown-card {
-  width: 100%;              /* was 90% */
-  max-width: 570px;         /* was 520px */
-  margin: 0 auto;
-  padding: 48px 34px;       /* slightly larger padding */
-  position: relative;
-
-  /* Frosted glass */
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 
-  /* Geometric crown silhouette */
   clip-path: polygon(
     50% 0%,
     72% 20%,
@@ -897,7 +272,6 @@ section.cards-grid.bottom-row {
     28% 20%
   );
 
-  /* Magical glow */
   border: 1px solid rgba(200, 170, 255, 0.35);
   box-shadow:
     0 0 22px rgba(180, 140, 255, 0.35),
@@ -911,25 +285,83 @@ section.cards-grid.bottom-row {
   50%  { box-shadow: 0 0 32px rgba(200,160,255,0.55), 0 0 70px rgba(170,140,255,0.35); }
   100% { box-shadow: 0 0 22px rgba(180,140,255,0.35), 0 0 45px rgba(150,120,255,0.25); }
 }
-/* Crown emblem inside hero card — 20% larger */
-.hero-crown img {
-  width: 140%;     /* was 120% */
-  max-width: 140%;
-  transform-origin: center;
+
+.hero-crown-inner {
+  text-align: center;
+  padding-top: 20px;
 }
-/* Center floating images + increase size by 20% */
+
+.hero-crown img {
+  width: 168% !important;
+  max-width: 168% !important;
+  transform-origin: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.hero-explainer {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #e8e4ff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.3);
+}
+
+/* ============================================
+   INTRO BOX
+   ============================================ */
+
+.intro-box {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  padding: 18px 20px;
+  border-radius: var(--cc-radius-md);
+  background: var(--cc-surface-soft);
+  border: 1px solid var(--cc-border-subtle);
+  box-shadow: var(--cc-shadow-soft);
+  color: var(--cc-text-soft);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInUp 600ms ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   MAGIC GALLERY — CENTERED IMAGES
+   ============================================ */
+
+.magic-gallery-zone {
+  position: relative;
+  width: 100%;
+  height: 260px !important;
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+  overflow: visible;
+  z-index: 2;
+}
+
 .magic-gallery {
   position: relative;
   width: 100%;
   height: 0;
   pointer-events: none;
   display: flex;
-  justify-content: center;   /* centers the images */
-  gap: 40px;                 /* spacing between images */
+  justify-content: center;
+  gap: 40px;
 }
 
 .magic-gallery-image {
-  width: 270px !important;   /* was 224px → +20% */
+  width: 270px !important;
   height: 270px !important;
   opacity: 0;
   border-radius: 18px;
@@ -938,14 +370,117 @@ section.cards-grid.bottom-row {
   animation: floatDrift 12s ease-in-out infinite;
   transition: opacity 2.5s ease-in-out, transform 6s ease-in-out;
 }
-/* Hero crown emblem — additional 20% increase */
-.hero-crown img {
-  width: 168% !important;   /* was 140% → now 168% */
-  max-width: 168% !important;
-  transform-origin: center;
-  margin: 0 auto;
-  display: block;           /* ensures perfect centering */
+
+@keyframes floatDrift {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-20px) rotate(4deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }
-.hero-crown-inner {
+
+/* ============================================
+   CARD GRID — CLEAN + UNIFIED
+   ============================================ */
+
+.cards-grid {
+  display: grid !important;
+  gap: 30px !important;
+}
+
+section.cards-grid.top-row {
+  grid-template-columns: repeat(2, 1fr) !important;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+section.cards-grid.bottom-row {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  margin-top: 10px !important;
+  margin-bottom: 60px !important;
+}
+
+.magic-card {
+  position: relative;
+  border-radius: var(--cc-radius-md);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.32) 0, transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.28) 0, transparent 55%),
+    rgba(7, 12, 35, 0.96);
+  border: 1px solid var(--cc-border-subtle);
+  box-shadow: var(--cc-shadow-soft);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.magic-card-title {
+  font-size: 1.55rem;
+  color: #bda4ff;
+  text-shadow: 0 0 10px rgba(189, 164, 255, 0.7);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.magic-card-subtitle {
+  font-size: 0.85rem;
+  color: var(--cc-text-soft);
+}
+
+.magic-card-body {
+  font-size: 0.88rem;
+  color: var(--cc-text-soft);
+  line-height: 1.6;
   text-align: center;
 }
+
+/* Get in Touch highlight */
+section.cards-grid.bottom-row .magic-card:nth-child(2) {
+  border: 1px solid rgba(169, 139, 255, 0.25);
+  box-shadow: 0 0 18px rgba(169, 139, 255, 0.15);
+}
+
+section.cards-grid.bottom-row .magic-card:nth-child(2) .magic-card-title {
+  color: #a98bff;
+  text-shadow: 0 0 8px rgba(169, 139, 255, 0.6);
+}
+
+section.cards-grid.bottom-row .magic-card:nth-child(2) .magic-card-subtitle {
+  color: #d6c8ff;
+}
+
+/* ============================================
+   TICKER — FIXED, CLEAN, CONTINUOUS
+   ============================================ */
+
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.ticker-track {
+  max-width: var(--cc-max-width);
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(160, 190, 255, 0.5);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.35) 0, transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.35) 0, transparent 55%),
+    rgba(7, 12, 35, 0.96);
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.ticker-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  animation: ticker
