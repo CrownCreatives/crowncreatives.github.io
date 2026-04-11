@@ -1,20 +1,23 @@
 ---
 layout: default
 title: Home
+permalink: /
 ---
 
-<section class="hero-section">
-  <div class="hero-card">
-    <h1 class="cc-soft-glow">Artistry in the Face of Adversity</h1>
-    <p class="cc-soft-glow">
-      Crown Creatives celebrates imagination, resilience, and the quiet magic of making something beautiful anyway.
-    </p>
-    <div style="margin-top: 26px;">
-      <a href="/gallery/" class="cc-button">Enter the Gallery</a>
+<!-- ✨ HERO SECTION — Geometric Frosted Crown Card -->
+<section class="hero">
+  <div class="hero-crown-card">
+    <div class="hero-crown-inner">
+      <div class="hero-crown">
+        <img src="/assets/images/crown2.png" alt="Crown Emblem" style="opacity: 1;">
+      </div>
+      <p class="hero-explainer">
+        The emblem of rebuilding, artistry, and personal transformation — a reminder that creativity is not just
+        something we make, but something we become.
+      </p>
     </div>
   </div>
 </section>
-
 
 <!-- ✨ INTRO TEXT -->
 <div class="intro-box fade-in">
@@ -54,9 +57,9 @@ title: Home
 <!-- ⭐ MAGIC GALLERY LANE -->
 <div class="magic-gallery-zone">
   <div class="magic-gallery">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Face.jpeg">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Flower.jpeg">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Fly.jpeg">
+    <img class="magic-gallery-image magic-left sparkle" src="/assets/images/gallery/Face.jpeg" style="opacity: 1; top: 73px;">
+    <img class="magic-gallery-image magic-left" src="/assets/images/gallery/Flower.jpeg" style="opacity: 0; top: 47px;">
+    <img class="magic-gallery-image magic-right" src="/assets/images/gallery/Fly.jpeg" style="opacity: 0; top: 37px;">
   </div>
 </div>
 
