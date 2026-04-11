@@ -759,3 +759,26 @@ body, header, footer, .hero-card, .floating-nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+/* Top row: 2 cards */
+.cards-grid.top-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Magic lane spacing */
+.magic-gallery-zone {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Bottom row: 1–3 cards depending on how many exist */
+.cards-grid.bottom-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
