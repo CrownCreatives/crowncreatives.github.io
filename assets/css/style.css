@@ -638,17 +638,16 @@ svg {
 /* ----------------------------------------------------------
    HERO CROWN +40% SIZE
 ----------------------------------------------------------- */
-
 .hero-crown {
   width: 140%;
   max-width: 140%;
   transform-origin: center;
+  animation: crownGlow 12s ease-in-out infinite;
 }
 
 /* ----------------------------------------------------------
    HERO CROWN COLOUR-SHIFT GLOW LOOP
 ----------------------------------------------------------- */
-
 @keyframes crownGlow {
   0%   { filter: drop-shadow(0 0 8px #8a5bff); }
   33%  { filter: drop-shadow(0 0 12px #5bd4ff); }
@@ -656,34 +655,25 @@ svg {
   100% { filter: drop-shadow(0 0 8px #8a5bff); }
 }
 
-.hero-crown {
-  animation: crownGlow 12s ease-in-out infinite;
-}
-
 /* ----------------------------------------------------------
    GLOBAL 15-SECOND THEME TRANSITION
 ----------------------------------------------------------- */
-
 body, header, footer, .hero-card, .floating-nav {
   transition: all 15s ease !important;
 }
 
 /* ----------------------------------------------------------
-   SAFE ZONE FOR FLOATING IMAGES — PREVENT OVERLAP
+   MAGIC GALLERY LANE — CLEAN + CORRECT
 ----------------------------------------------------------- */
-
 .magic-gallery-zone {
   position: relative;
   width: 100%;
-  height: 160px; /* narrowed zone */
-  margin-top: 10px;
-  margin-bottom: 10px;
+  height: 220px !important; /* final correct height */
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
   overflow: visible;
+  z-index: 2;
 }
-
-/* ----------------------------------------------------------
-   FLOATING SIDE-IMAGES — MAGIC + DRIFT + ROTATION + SPARKLES
------------------------------------------------------------ */
 
 .magic-gallery {
   position: relative;
@@ -694,7 +684,7 @@ body, header, footer, .hero-card, .floating-nav {
 
 .magic-gallery-image {
   position: absolute;
-  width: 224px;   /* 40% larger */
+  width: 224px;
   height: 224px;
   object-fit: cover;
   border-radius: 18px;
@@ -705,109 +695,37 @@ body, header, footer, .hero-card, .floating-nav {
   z-index: 2;
 }
 
-.magic-left { left: -40px; }
-.magic-right { right: -40px; }
-
 @keyframes floatDrift {
   0%   { transform: translateY(0px) rotate(0deg); }
   50%  { transform: translateY(-20px) rotate(4deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
 
-@keyframes sparklePulse {
-  0%   { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)); }
-  50%  { filter: drop-shadow(0 0 14px rgba(255,255,255,0.9)); }
-  100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)); }
-}
+/* ----------------------------------------------------------
+   CARD GRID — CLEAN + CORRECT
+----------------------------------------------------------- */
 
-.magic-gallery-image.sparkle {
-  animation: sparklePulse 3s ease-in-out infinite;
-}
-
-/* Ensure hero card stays above floating images */
-.hero-card,
-.hero-crown-wrapper,
-.hero-crown img {
-  position: relative;
-  z-index: 5;
-}
-
-/* Reduce gap between card rows */
-.cards-grid {
-  margin-top: 20px !important;
-}
-.magic-gallery-zone {
-  height: 160px;
-}
-/* Card row spacing */
-.top-row {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.magic-gallery-zone {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-.bottom-row {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
+/* Default grid (fallback) */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-/* Top row: 2 cards */
-.cards-grid.top-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
-/* Magic lane spacing */
-.magic-gallery-zone {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-/* Bottom row: 1–3 cards depending on how many exist */
-.cards-grid.bottom-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-/* FORCE OVERRIDE: Top row = 2 cards */
+/* Top row: exactly 2 cards */
 section.cards-grid.top-row {
-  display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
-  gap: 30px !important;
   margin-top: 40px !important;
   margin-bottom: 40px !important;
 }
 
-/* FORCE OVERRIDE: Magic lane spacing */
-.magic-gallery-zone {
-  margin-top: 20px !important;
-  margin-bottom: 40px !important;
-}
-
-/* FORCE OVERRIDE: Bottom row = auto-fit */
+/* Bottom row: auto-fit 1–3 cards */
 section.cards-grid.bottom-row {
-  display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  gap: 30px !important;
-  margin-top: 40px !important;
+  margin-top: 10px !important;
   margin-bottom: 60px !important;
 }
-.magic-gallery-zone {
-  height: 220px !important;
-  overflow: visible;
-  position: relative;
-  z-index: 2;
+
+/* Centre card text */
+.magic-card-body {
+  text-align: center;
 }
