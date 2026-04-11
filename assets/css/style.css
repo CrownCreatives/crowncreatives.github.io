@@ -779,33 +779,48 @@ body, header, footer, .hero-card, .floating-nav {
   padding: 0;
   margin: 0;
 }
+
 /* ----------------------------------------------------------
-   FLOATING SIDE-IMAGES — MAGICAL RANDOM POSITIONS
+   FLOATING SIDE-IMAGES — MAGIC + DRIFT + ROTATION + SPARKLES
 ----------------------------------------------------------- */
 
 .magic-gallery {
   position: relative;
   width: 100%;
-  height: 0; /* no height needed */
+  height: 0;
+  pointer-events: none;
 }
 
 .magic-gallery-image {
   position: absolute;
-  width: 160px;            /* size of floating images */
+  width: 160px;
   height: 160px;
   object-fit: cover;
   border-radius: 18px;
   opacity: 0;
   transition: opacity 2.5s ease-in-out, transform 6s ease-in-out;
-  filter: drop-shadow(0 0 12px rgba(120, 90, 255, 0.5));
+  filter: drop-shadow(0 0 12px rgba(120, 90, 255, 0.6));
+  animation: floatDrift 12s ease-in-out infinite;
 }
 
-/* Left side positions */
-.magic-left {
-  left: -40px;
+/* Left or right placement */
+.magic-left { left: -40px; }
+.magic-right { right: -40px; }
+
+/* Slow drift + soft rotation */
+@keyframes floatDrift {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-20px) rotate(4deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }
 
-/* Right side positions */
-.magic-right {
-  right: -40px;
+/* Sparkle pulse */
+@keyframes sparklePulse {
+  0%   { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)); }
+  50%  { filter: drop-shadow(0 0 14px rgba(255,255,255,0.9)); }
+  100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.4)); }
+}
+
+.magic-gallery-image.sparkle {
+  animation: sparklePulse 3s ease-in-out infinite;
 }
