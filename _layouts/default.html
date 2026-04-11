@@ -7,42 +7,26 @@
 
 <body>
 
-  <!-- ✨ MAGICAL BACKGROUND LAYERS (correct class names) -->
+  <!-- ✨ MAGICAL BACKGROUND LAYERS (from original magic.js system) -->
   <div class="magic-bg-layer"></div>
   <div class="magic-bubbles"></div>
   <div class="magic-swirl"></div>
   <div class="magic-fog"></div>
 
-  <!-- ✨ HEADER -->
+  <!-- ✨ HEADER (rebuilt to match original) -->
   {% include header.html %}
 
-  <!-- ✨ MOBILE MENU PANEL -->
-  <div class="mobile-menu-panel" id="mobileMenu">
-    <a href="{{ '/' | relative_url }}">Home</a>
-    <a href="{{ '/about/' | relative_url }}">About</a>
-    <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
-    <a href="{{ '/contact/' | relative_url }}">Contact</a>
-  </div>
-
-  <!-- ✨ PAGE CONTENT -->
-  <main class="site-content">
+  <!-- ✨ PAGE WRAPPER (matches your old structure) -->
+  <div class="page-wrapper">
     {{ content }}
-  </main>
-
-  <!-- ✨ LIGHTBOX OVERLAY -->
-  <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-      <img id="lightbox-img" src="">
-    </div>
-    <div class="lightbox-close" onclick="closeLightbox()">×</div>
   </div>
 
-  <!-- ✨ FOOTER -->
+  <!-- ✨ FOOTER (rebuilt to match original) -->
   {% include footer.html %}
 
-  <!-- ✨ JAVASCRIPT (LOAD ORDER MATTERS) -->
+  <!-- ✨ JAVASCRIPT (original load order) -->
   <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/mobile-menu.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/magic.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
 
 </body>
