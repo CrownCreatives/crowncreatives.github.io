@@ -805,3 +805,9 @@ section.cards-grid.bottom-row {
   margin-top: 40px !important;
   margin-bottom: 60px !important;
 }
+.magic-gallery-zone {
+  height: 220px !important;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
