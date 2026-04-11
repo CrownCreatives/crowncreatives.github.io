@@ -37,9 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let galleryIndex = 0;
 
 function randomY() {
-  return Math.floor(Math.random() * 180) + 20; 
+  return Math.floor(Math.random() * 100) + 20; 
 }
-
 
   function cycleGallery() {
     // Hide all images first
