@@ -6,16 +6,6 @@ url: "https://crowncreatives.github.io"
 markdown: kramdown
 theme: minima
 
-collections:
-  gallery:
-    output: true
-  projects:
-    output: true
-  videos:
-    output: true
-  podcasts:
-    output: true
-
 defaults:
   - scope:
       path: ""
