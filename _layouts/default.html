@@ -1,75 +1,22 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Crown Creatives</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
 
-<!-- ✨ Hero Section -->
-<section class="hero">
-  <div class="hero-card">
-    <div class="hero-crown-wrapper">
-      <div class="hero-crown">
-        <img src="/assets/images/light-crown.png" alt="Crown Emblem">
-      </div>
-      <p class="hero-explainer">
-        The emblem of rebuilding, artistry, and personal transformation — a reminder that creativity is not just
-        something we make, but something we become.
-      </p>
-    </div>
-  </div>
-</section>
+<body>
 
-<!-- ✨ Intro Text -->
-<div class="intro-box fade-in">
-  <p>
-    Crown Creatives is a space where artistry, imagination, and personal resilience come together. 
-    Explore creative projects, 3D models, podcasts, and more.
-  </p>
+  {% include header.html %}
 
-  <p>
-    This site represents a journey — rebuilding life with intention, rediscovering creativity, 
-    and transforming challenges into something meaningful. Every piece of art, every sculpt, 
-    every post is part of that ongoing story.
-  </p>
-</div>
-
-<!-- ✨ FIRST CARD ROW (2 cards) -->
-<section class="cards-grid top-row">
-  <div class="magic-card">
-    <div class="magic-card-title">3D Models</div>
-    <div class="magic-card-subtitle">Sculpting • Texturing • Rendering</div>
-    <div class="magic-card-body">
-      Explore a growing collection of 3D creations — characters, props, environments, and more.
-    </div>
+  <div class="page-wrapper">
+    {{ content }}
   </div>
 
-  <div class="magic-card">
-    <div class="magic-card-title">Creative Projects</div>
-    <div class="magic-card-subtitle">Art • Design • Experiments</div>
-    <div class="magic-card-body">
-      A space for artistic exploration, visual storytelling, and imaginative expression.
-    </div>
-  </div>
-</section>
+  {% include footer.html %}
 
-<!-- ⭐ MAGIC GALLERY LANE (now in the perfect place) -->
-<div class="magic-gallery-zone">
-  <div class="magic-gallery">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Face.jpeg">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Flower.jpeg">
-    <img class="magic-gallery-image" src="/assets/images/gallery/Fly.jpeg">
-  </div>
-</div>
-
-<!-- ✨ SECOND CARD ROW (3 cards) -->
-<section class="cards-grid bottom-row">
-  <div class="magic-card">
-    <div class="magic-card-title">Podcasts</div>
-    <div class="magic-card-subtitle">Thoughts • Stories • Growth</div>
-    <div class="magic-card-body">
-      Conversations about creativity, resilience, and the journey of rebuilding life.
-    </div>
-  </div>
-
-  <!-- You can add 2 more cards here later if needed -->
-</section>
-
+  <script src="/assets/js/magic.js"></script>
+</body>
+</html>
