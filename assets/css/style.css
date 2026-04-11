@@ -241,90 +241,97 @@ a:hover {
 }
 
 /* ============================================
-   HERO — ENHANCED GEOMETRIC FROSTED CROWN CARD
+   HERO — PREMIUM GLASS CROWN BADGE
    ============================================ */
 
 .hero {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 48px;
   margin-bottom: 32px;
 }
 
 .hero-crown-card {
   width: 100%;
-  max-width: 570px;
-  margin: 0 auto;
-  padding: 40px 30px 34px;
+  max-width: 600px; /* slightly larger */
+  padding: 52px 36px 40px;
+  border-radius: 28px;
   position: relative;
 
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  /* Smooth frosted glass */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 
+  /* Soft rounded crown silhouette */
   clip-path: polygon(
     50% 0%,
-    72% 20%,
-    100% 38%,
+    78% 18%,
+    100% 40%,
     92% 100%,
     8% 100%,
-    0% 38%,
-    28% 20%
+    0% 40%,
+    22% 18%
   );
 
-  border: 1px solid rgba(200, 170, 255, 0.4);
+  /* Outer magical glow */
   box-shadow:
-    0 0 22px rgba(180, 140, 255, 0.4),
-    0 0 45px rgba(150, 120, 255, 0.3),
-    0 0 70px rgba(120, 90, 255, 0.22);
+    0 0 28px rgba(160, 120, 255, 0.45),
+    0 0 60px rgba(120, 90, 255, 0.28);
+
   animation: heroGlowPulse 8s ease-in-out infinite;
 }
 
 @keyframes heroGlowPulse {
-  0%   { box-shadow: 0 0 22px rgba(180,140,255,0.35), 0 0 45px rgba(150,120,255,0.25); }
-  50%  { box-shadow: 0 0 32px rgba(200,160,255,0.6), 0 0 70px rgba(170,140,255,0.4); }
-  100% { box-shadow: 0 0 22px rgba(180,140,255,0.35), 0 0 45px rgba(150,120,255,0.25); }
+  0%   { box-shadow: 0 0 26px rgba(160,120,255,0.45), 0 0 60px rgba(120,90,255,0.28); }
+  50%  { box-shadow: 0 0 36px rgba(190,150,255,0.65), 0 0 90px rgba(150,120,255,0.38); }
+  100% { box-shadow: 0 0 26px rgba(160,120,255,0.45), 0 0 60px rgba(120,90,255,0.28); }
 }
 
 .hero-crown-inner {
   text-align: center;
 }
 
-/* Crown orb + emblem — clean, centered, larger */
+/* Orb container — larger, smoother, centred */
 .hero-crown {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto 14px;
+  width: 150px;   /* increased */
+  height: 150px;  /* increased */
+  margin: 0 auto 16px;
   border-radius: 50%;
+
   background:
-    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.22) 0, transparent 55%),
-    radial-gradient(circle at 70% 100%, rgba(127, 93, 255, 0.7) 0, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(79, 213, 255, 0.7) 0, transparent 60%);
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.22) 0, transparent 55%),
+    radial-gradient(circle at 70% 100%, rgba(127,93,255,0.75) 0, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(79,213,255,0.75) 0, transparent 60%);
+
   box-shadow:
-    0 0 26px rgba(127, 93, 255, 0.7),
-    0 0 22px rgba(79, 213, 255, 0.55);
+    inset 0 0 18px rgba(255,255,255,0.35),
+    0 0 32px rgba(127,93,255,0.75),
+    0 0 26px rgba(79,213,255,0.55);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
+/* Crown emblem — +20% larger, perfectly centred */
 .hero-crown img {
-  width: 72%;
-  max-width: 72%;
+  width: 82%; /* previously 72% */
+  max-width: 82%;
   object-fit: contain;
   filter:
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.95))
-    drop-shadow(0 0 16px rgba(127, 93, 255, 0.95));
+    drop-shadow(0 0 12px rgba(255,255,255,0.95))
+    drop-shadow(0 0 18px rgba(127,93,255,0.95));
 }
 
+/* Shorter, pinched explainer text */
 .hero-explainer {
-  margin-top: 10px;
-  font-size: 0.98rem;
+  margin-top: 12px;
+  font-size: 0.92rem;
   color: #e8e4ff;
   text-shadow: 0 0 6px rgba(255,255,255,0.3);
-  line-height: 1.55;
-  max-width: 420px;
+  line-height: 1.45;
+  max-width: 380px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -640,17 +647,44 @@ section.cards-grid.bottom-row .magic-card:nth-child(2) .magic-card-subtitle {
 }
 
 /* ============================================
-   SAFE GLOBAL IMG/SVG
+   TICKER — FIXED, CLEAN, CONTINUOUS
    ============================================ */
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
 }
 
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.ticker-track {
+  max-width: var(--cc-max-width);
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(160, 190, 255, 0.5);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(127, 93, 255, 0.35) 0, transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(79, 213, 255, 0.35) 0, transparent 55%),
+    rgba(7, 12, 35, 0.96);
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.ticker-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  animation: ticker-scroll 26s linear infinite;
+  font-size: 0.82rem;
+  color: #c2c6ff;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
