@@ -4,7 +4,6 @@ baseurl: ""
 url: "https://crowncreatives.github.io"
 
 markdown: kramdown
-theme: minima
 
 defaults:
   - scope:
