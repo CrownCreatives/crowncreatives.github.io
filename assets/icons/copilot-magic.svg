@@ -1,18 +1,24 @@
 <svg viewBox="0 0 64 64" fill="none"
      xmlns="http://www.w3.org/2000/svg">
-  <!-- Outer magical circle -->
+
   <circle cx="32" cy="32" r="28"
           stroke="currentColor"
           stroke-width="3"
           fill="none"/>
 
-  <!-- Copilot core symbol -->
+  <defs>
+    <linearGradient id="cpGrad" x1="0" y1="0" x2="64" y2="64">
+      <stop offset="0%" stop-color="#8AF3FF"/>
+      <stop offset="50%" stop-color="#B78CFF"/>
+      <stop offset="100%" stop-color="#FF8AE2"/>
+    </linearGradient>
+  </defs>
+
   <path d="M22 24C22 20.7 24.7 18 28 18H36C39.3 18 42 20.7 42 24V40C42 43.3 39.3 46 36 46H28C24.7 46 22 43.3 22 40V24Z"
-        stroke="currentColor"
+        stroke="url(#cpGrad)"
         stroke-width="3"
         fill="none"/>
 
-  <!-- Inner swirl / dual‑loop Copilot motif -->
   <path d="M28 28C28 26.3 29.3 25 31 25H33C34.7 25 36 26.3 36 28V36C36 37.7 34.7 39 33 39H31C29.3 39 28 37.7 28 36V28Z"
-        fill="currentColor"/>
+        fill="url(#cpGrad)"/>
 </svg>
