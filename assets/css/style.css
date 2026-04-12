@@ -502,3 +502,31 @@ body {
 .back-to-top:hover {
   transform: scale(1.2);
 }
+/* -----------------------------------------------------------
+   ✨ THEME TOGGLE — Top Right, Magical Orb
+   ----------------------------------------------------------- */
+
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  font-size: 1.3rem;
+  color: var(--cc-text);
+  box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong);
+}
