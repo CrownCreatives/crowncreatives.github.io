@@ -72,7 +72,7 @@ body.light-mode {
 }
 
 /* ------------------------------------------------------------
-   HEADER CROWN — RESTORED SIZE + FLOAT
+   HEADER CROWN — FLOATING ANIMATION
    ------------------------------------------------------------ */
 .header-left img,
 .header-crown-img {
@@ -115,7 +115,7 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   THEME TOGGLE — TOP RIGHT MAGICAL ORB (FINAL VERSION)
+   THEME TOGGLE — MAGICAL ORB
    ============================================================ */
 .theme-toggle {
   position: fixed;
@@ -133,28 +133,21 @@ nav.site-nav a:hover {
   z-index: 999;
   font-size: 1.3rem;
   color: var(--cc-text);
-
-  /* Glow + pulse */
   box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong);
   animation: orbPulse 4s ease-in-out infinite;
-
-  /* Smooth transitions */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover — magical expansion */
 .theme-toggle:hover {
   transform: scale(1.12);
   box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong);
 }
 
-/* Active — tactile press-down */
 .theme-toggle:active {
   transform: scale(0.92);
   box-shadow: 0 0 8px var(--cc-glow-soft), 0 0 14px var(--cc-glow-strong);
 }
 
-/* Magical heartbeat pulse */
 @keyframes orbPulse {
   0%   { box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong); }
   50%  { box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong); }
@@ -162,15 +155,15 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   HERO — LUMINOUS CROWN + EMBLEM EXPLANATION
+   HERO — CROWN + EMBLEM
    ============================================================ */
 .hero-container {
-  margin-top: 2px; /* raised closer to nav bar */
+  margin-top: 2px;
   text-align: center;
 }
 
 .hero-crown {
-  width: 260px; /* same size as live site */
+  width: 260px;
   max-width: 90%;
   filter: drop-shadow(0 0 22px var(--cc-glow-strong));
   animation: cc-float 4s ease-in-out infinite;
@@ -179,17 +172,17 @@ nav.site-nav a:hover {
 
 .hero-emblem-text {
   font-family: 'Cinzel', serif;
-  font-size: 2rem; /* larger */
+  font-size: 2rem;
   line-height: 1.55;
   max-width: 760px;
-  margin: 6px auto 0; /* closer to crown */
+  margin: 6px auto 0;
   color: var(--cc-text);
   text-shadow: 0 0 14px var(--cc-glow-soft);
   opacity: 0.95;
 }
 
 /* ============================================================
-   FOOTER — GLOWING, DAY/NIGHT REACTIVE
+   FOOTER — MAGICAL, GLOWING, CLEAN
    ============================================================ */
 .site-footer {
   margin-top: 80px;
@@ -227,11 +220,14 @@ nav.site-nav a:hover {
   filter: drop-shadow(0 0 14px var(--cc-glow-strong));
 }
 
-.footer-tagline {
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-bottom: 6px;
+.footer-brand {
+  margin-bottom: 12px;
+}
+
+.footer-brand img {
+  width: 38px;
+  height: 38px;
+  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
 }
 
 .footer-copy {
@@ -271,51 +267,4 @@ nav.site-nav a:hover {
   .site-title { font-size: 1.6rem; }
   .hero-emblem-text { font-size: 1.1rem; }
   .hero-crown { width: 200px; }
-}
-.site-footer {
-  text-align: center;
-  padding: 40px 0 30px;
-  background: transparent;
-  color: var(--cc-text);
-  position: relative;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  margin-bottom: 20px;
-}
-
-.back-to-top {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 38px;
-  height: 38px;
-  cursor: pointer;
-  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
-  transition: transform 0.25s ease;
-}
-
-.footer-tagline {
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-bottom: 6px;
-}
-
-.footer-copy {
-  font-size: 0.8rem;
-  opacity: 0.7;
-  text-align: center;
-}
-.footer-brand {
-  margin-bottom: 12px;
-}
-
-.footer-brand img {
-  width: 38px;
-  height: 38px;
-  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
 }
