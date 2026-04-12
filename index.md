@@ -10,6 +10,13 @@ permalink: /
   <div class="hero-visual">
     <img src="/assets/images/illuminus-crown.png" class="hero-crown-cinematic">
 
+    <!-- NEW: Side Gallery Images -->
+    <div class="hero-side-gallery">
+      <img class="hero-side-image" src="/assets/images/gallery/Face.jpeg">
+      <img class="hero-side-image" src="/assets/images/gallery/Flower.jpeg">
+      <img class="hero-side-image" src="/assets/images/gallery/Fly.jpeg">
+    </div>
+
     <div class="hero-light-beam"></div>
     <div class="hero-mist-rise"></div>
   </div>
@@ -46,47 +53,38 @@ permalink: /
 
 <!-- ✨ FIRST CARD ROW (3D Models + Creative Projects) -->
 <section class="cards-grid top-row">
-  <div class="magic-card">
-    <div class="magic-card-title">3D Models</div>
-    <div class="magic-card-subtitle">Sculpting • Texturing • Rendering</div>
-    <div class="magic-card-body">
+
+  <div class="cc-card">
+    <h3 class="cc-card-title">3D Models</h3>
+    <p class="cc-card-text">
       Explore a growing collection of 3D creations — characters, props, environments, and more.
-    </div>
+    </p>
   </div>
 
-  <div class="magic-card">
-    <div class="magic-card-title">Creative Projects</div>
-    <div class="magic-card-subtitle">Art • Design • Experiments</div>
-    <div class="magic-card-body">
+  <div class="cc-card">
+    <h3 class="cc-card-title">Creative Projects</h3>
+    <p class="cc-card-text">
       A space for artistic exploration, visual storytelling, and imaginative expression.
-    </div>
+    </p>
   </div>
-</section>
 
-<!-- ⭐ MAGIC GALLERY LANE -->
-<div class="magic-gallery-zone" style="margin: 60px 0;">
-  <div class="magic-gallery">
-    <img class="magic-gallery-image magic-left sparkle" src="/assets/images/gallery/Face.jpeg" style="opacity: 1; top: 60px;">
-    <img class="magic-gallery-image magic-left" src="/assets/images/gallery/Flower.jpeg" style="opacity: 0; top: 40px;">
-    <img class="magic-gallery-image magic-right" src="/assets/images/gallery/Fly.jpeg" style="opacity: 0; top: 30px;">
-  </div>
-</div>
+</section>
 
 <!-- ✨ SECOND CARD ROW (Podcasts + Get in Touch) -->
 <section class="cards-grid bottom-row">
-  <div class="magic-card">
-    <div class="magic-card-title">Podcasts</div>
-    <div class="magic-card-subtitle">Thoughts • Stories • Growth</div>
-    <div class="magic-card-body">
+
+  <div class="cc-card">
+    <h3 class="cc-card-title">Podcasts</h3>
+    <p class="cc-card-text">
       Conversations about creativity, resilience, and the journey of rebuilding life.
-    </div>
+    </p>
   </div>
 
-  <div class="magic-card">
-    <div class="magic-card-title">Get in Touch</div>
-    <div class="magic-card-subtitle">Let’s create, collaborate, or just say hello.</div>
-    <div class="magic-card-body">
+  <div class="cc-card">
+    <h3 class="cc-card-title">Get in Touch</h3>
+    <p class="cc-card-text">
       Find me on social media below — I’d love to connect.
-    </div>
+    </p>
   </div>
+
 </section>
