@@ -165,7 +165,7 @@ nav.site-nav a:hover {
    HERO — LUMINOUS CROWN + EMBLEM EXPLANATION
    ============================================================ */
 .hero-container {
-  margin-top: 10px; /* raised closer to nav bar */
+  margin-top: 2px; /* raised closer to nav bar */
   text-align: center;
 }
 
