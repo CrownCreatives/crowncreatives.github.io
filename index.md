@@ -30,8 +30,6 @@ permalink: /
       Crown Creatives celebrates imagination, resilience, and the quiet magic of making something beautiful anyway.
     </p>
 
-  </section>
-
 <!-- ✨ FIRST CARD ROW (3D Models + Creative Projects) -->
 <section class="cards-grid top-row">
 
