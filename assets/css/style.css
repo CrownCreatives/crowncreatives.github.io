@@ -391,4 +391,9 @@ nav.site-nav a:hover {
     margin-left: 0;
   }
 }
+.footer-icon-lg {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain;
+}
 
