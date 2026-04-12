@@ -391,3 +391,114 @@ body {
   --cc-card-bg: rgba(0, 0, 0, 0.25);
   --cc-footer-bg: rgba(0, 0, 0, 0.18);
 }
+/* -----------------------------------------------------------
+   ✨ HEADER — Transparent, Glowing, Day/Night Reactive
+   ----------------------------------------------------------- */
+
+.site-header {
+  width: 100%;
+  padding: 1.2rem 0;
+  text-align: center;
+  background: transparent;
+  color: var(--cc-text);
+  text-shadow: 0 0 12px var(--cc-glow-soft);
+  position: relative;
+  z-index: 10;
+}
+
+.site-header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--cc-text);
+}
+
+.site-tagline {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--cc-text);
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 6px var(--cc-glow-soft));
+}
+/* -----------------------------------------------------------
+   ✨ FOOTER — Glowing, Day/Night Reactive
+   ----------------------------------------------------------- */
+
+.site-footer {
+  margin-top: 80px;
+  padding: 40px 0 30px;
+  text-align: center;
+  background: transparent;
+  color: var(--cc-text);
+  position: relative;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--cc-glow-soft);
+  box-shadow: 0 0 12px var(--cc-glow-strong);
+  margin-bottom: 25px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 20px;
+}
+
+.footer-icon {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 0 8px var(--cc-glow-strong));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 14px var(--cc-glow-strong));
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
+  transition: transform 0.25s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.2);
+}
