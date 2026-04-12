@@ -465,43 +465,30 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   FOOTER — SLIM, MAGICAL, CLEAN
+   FOOTER — SLIM, TRANSPARENT, RIGHT‑ALIGNED UP ARROW
    ============================================================ */
 
 .site-footer {
-  margin-top: 80px;
-  padding: 40px 20px;
-  background: var(--cc-footer-bg);
-  backdrop-filter: blur(12px);
+  margin-top: 60px;
+  padding: 20px 0 30px;
+  background: transparent; /* no block */
+  backdrop-filter: none;
   text-align: center;
   color: var(--cc-text);
-  box-shadow: 0 0 18px var(--cc-glow-soft);
+  position: relative;
 }
 
-.footer-upper {
-  margin-bottom: 20px;
-}
-
-.footer-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 12px var(--cc-glow-soft);
-}
-
+/* Social icons row stays centered */
 .footer-icons-row {
   display: flex;
   justify-content: center;
   gap: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
-.footer-icons-row img,
-.footer-icon-lg {
-  width: 48px;
-  height: 48px;
-  max-width: 48px;
-  max-height: 48px;
+.footer-icons-row img {
+  width: 42px;
+  height: 42px;
   object-fit: contain;
   filter: drop-shadow(0 0 10px var(--cc-glow-soft));
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -512,23 +499,54 @@ nav.site-nav a:hover {
   filter: drop-shadow(0 0 14px var(--cc-glow-strong));
 }
 
+/* COPYRIGHT LINE — centered */
 .footer-lower {
-  font-size: 0.9rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
   opacity: 0.85;
   margin-top: 10px;
 }
 
+/* CC icon inline with text */
+.footer-cc-inline {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-left: 6px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px var(--cc-glow-soft));
+}
+
+/* UP ARROW — far right corner */
 .footer-up-arrow {
-  display: inline-block;
-  margin-left: 12px;
-  font-size: 1.2rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
   cursor: pointer;
+  filter: drop-shadow(0 0 8px var(--cc-glow-soft));
   transition: transform 0.3s ease;
 }
 
 .footer-up-arrow:hover {
-  transform: translateY(-4px);
+  transform: translateY(-60%);
 }
+
+/* Optional: subtle watermark behind footer */
+.footer-watermark {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/icons/cc-magic.svg') center/120px no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
 /* ============================================================
    RESPONSIVE + FINAL POLISH (PART 4 OF 4)
    ============================================================ */
