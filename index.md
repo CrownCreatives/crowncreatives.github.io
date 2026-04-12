@@ -10,7 +10,7 @@ permalink: /
   <div class="hero-visual">
     <img src="/assets/images/illuminus-crown.png" class="hero-crown-cinematic">
 
-    <!-- NEW: Side Gallery Images -->
+    <!-- Side Gallery Images -->
     <div class="hero-side-gallery">
       <img class="hero-side-image" src="/assets/images/gallery/Face.jpeg">
       <img class="hero-side-image" src="/assets/images/gallery/Flower.jpeg">
@@ -21,14 +21,19 @@ permalink: /
     <div class="hero-mist-rise"></div>
   </div>
 
+  <!-- NEW: Crown Explanation Integrated Under Crown -->
   <div class="hero-text-block">
     <h1 class="hero-title-cinematic cc-soft-glow">
       Artistry in the Face of Adversity
     </h1>
 
-    <p class="hero-subtitle-cinematic cc-soft-glow">
-      Crown Creatives celebrates imagination, resilience, and the quiet magic of making something beautiful anyway.
+    <p class="hero-subtitle-cinematic cc-soft-glow" style="max-width: 620px; margin: 0 auto;">
+      A symbol of imagination, resilience, and the quiet magic of creating something beautiful anyway.
     </p>
+  </div>
+
+</section>
+
 
 <!-- ✨ FIRST CARD ROW (3D Models + Creative Projects) -->
 <section class="cards-grid top-row">
