@@ -182,73 +182,125 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   FOOTER — MAGICAL, GLOWING, CLEAN
+   FOOTER — SLIM, MAGICAL, ANIMATED
    ============================================================ */
 .site-footer {
-  margin-top: 80px;
-  padding: 40px 0 30px;
+  margin-top: 50px;
+  padding: 22px 0 18px;
   text-align: center;
   background: transparent;
   color: var(--cc-text);
   position: relative;
 }
 
-.footer-divider {
-  width: 100%;
-  height: 2px;
-  background: var(--cc-glow-soft);
-  box-shadow: 0 0 12px var(--cc-glow-strong);
-  margin-bottom: 25px;
-}
-
-.footer-icons {
+/* Unified icon row */
+.footer-icons-row {
   display: flex;
   justify-content: center;
-  gap: 22px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 18px;
+  position: relative;
 }
 
-.footer-icon {
-  width: 32px;
-  height: 32px;
-  filter: drop-shadow(0 0 8px var(--cc-glow-strong));
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.footer-icon:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 14px var(--cc-glow-strong));
-}
-
-.footer-brand {
-  margin-bottom: 12px;
-}
-
-.footer-brand img {
-  width: 38px;
-  height: 38px;
+/* Large magical icons */
+.footer-icon-lg {
+  width: 48px;
+  height: 48px;
+  position: relative;
   filter: drop-shadow(0 0 10px var(--cc-glow-strong));
+  animation: shimmerPulse 4s ease-in-out infinite;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+}
+
+/* Hover effects: scale + rotate */
+.footer-icon-lg:hover {
+  transform: scale(1.15) rotate(2deg);
+  filter: drop-shadow(0 0 18px var(--cc-glow-strong));
+}
+
+/* Ripple effect */
+.footer-icon-lg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.footer-icon-lg:hover::after {
+  animation: ripple 0.6s ease-out;
+}
+
+/* Shimmer pulse */
+@keyframes shimmerPulse {
+  0%   { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
+  50%  { filter: drop-shadow(0 0 16px var(--cc-glow-strong)); }
+  100% { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
+}
+
+/* Ripple animation */
+@keyframes ripple {
+  0%   { opacity: 0.4; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(1.6); }
+}
+
+/* Up-arrow particle trail */
+.back-to-top {
+  position: static;
+  animation: particleTrail 2.5s infinite ease-in-out;
+}
+
+@keyframes particleTrail {
+  0%   { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
+  50%  { filter: drop-shadow(0 0 20px var(--cc-glow-strong)); }
+  100% { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
+}
+
+.back-to-top::before,
+.back-to-top::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--cc-text);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat 2s infinite ease-out;
+}
+
+.back-to-top::before {
+  left: -10px;
+  animation-delay: 0.2s;
+}
+
+.back-to-top::after {
+  right: -10px;
+  animation-delay: 0.5s;
+}
+
+@keyframes particleFloat {
+  0%   { transform: translateY(0); opacity: 0.6; }
+  100% { transform: translateY(-18px); opacity: 0; }
+}
+
+/* Footer text */
+.footer-tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 6px;
 }
 
 .footer-copy {
   font-size: 0.8rem;
   opacity: 0.7;
-}
-
-/* Back to top button */
-.back-to-top {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 38px;
-  height: 38px;
-  cursor: pointer;
-  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
-  transition: transform 0.25s ease;
-}
-
-.back-to-top:hover {
-  transform: scale(1.2);
+  text-align: center;
 }
 
 /* ============================================================
@@ -267,48 +319,4 @@ nav.site-nav a:hover {
   .site-title { font-size: 1.6rem; }
   .hero-emblem-text { font-size: 1.1rem; }
   .hero-crown { width: 200px; }
-}
-/* ============================================================
-   FOOTER — UNIFIED LARGE ICON ROW
-   ============================================================ */
-
-.footer-icons-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 34px; /* spacing between icons */
-  margin-bottom: 25px;
-}
-
-/* Large magical icons */
-.footer-icon-lg {
-  width: 64px;   /* twice the size */
-  height: 64px;
-  filter: drop-shadow(0 0 12px var(--cc-glow-strong));
-  transition: transform 0.25s ease, filter 0.25s ease;
-  cursor: pointer;
-}
-
-.footer-icon-lg:hover {
-  transform: scale(1.18);
-  filter: drop-shadow(0 0 20px var(--cc-glow-strong));
-}
-
-/* Up arrow stays clickable but no absolute positioning */
-.back-to-top {
-  position: static;
-}
-
-/* Tagline + copyright remain centred */
-.footer-tagline {
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-bottom: 6px;
-}
-
-.footer-copy {
-  font-size: 0.8rem;
-  opacity: 0.7;
-  text-align: center;
 }
