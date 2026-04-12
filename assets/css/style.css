@@ -34,6 +34,145 @@ body.light-mode {
 }
 
 /* ============================================================
+   GLOBAL MAGICAL BACKGROUND — ENCHANTED FOREST MIST (Balanced)
+   ============================================================ */
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background container */
+.magic-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -10;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   1. GLOBAL FOREST GRADIENT (DAY + NIGHT)
+   ------------------------------------------------------------ */
+.magic-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #0d2f2d 0%,
+    #0f3b3a 40%,
+    #0a1f2e 100%
+  );
+  transition: background 1s ease;
+  z-index: -10;
+}
+
+body.light-mode .magic-bg-gradient {
+  background: linear-gradient(
+    180deg,
+    #b8ffe3 0%,
+    #8be7d1 40%,
+    #6cc4e0 100%
+  );
+}
+
+/* ------------------------------------------------------------
+   2. FLOATING PARTICLE FIELD (FOREST LIGHT MOTES)
+   ------------------------------------------------------------ */
+.magic-particles {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%),
+    radial-gradient(circle, rgba(180,255,220,0.25) 0%, transparent 70%),
+    radial-gradient(circle, rgba(120,220,200,0.25) 0%, transparent 70%);
+  background-size: 180px 180px, 240px 240px, 200px 200px;
+  background-position: 20% 80%, 70% 40%, 50% 20%;
+  animation: forestParticles 22s ease-in-out infinite;
+  opacity: 0.22;
+  z-index: -9;
+}
+
+@keyframes forestParticles {
+  0%   { background-position: 20% 80%, 70% 40%, 50% 20%; }
+  50%  { background-position: 25% 75%, 65% 45%, 55% 25%; }
+  100% { background-position: 20% 80%, 70% 40%, 50% 20%; }
+}
+
+/* ------------------------------------------------------------
+   3. DUAL MIST LAYERS (MEDIUM DENSITY)
+   ------------------------------------------------------------ */
+.magic-mist-layer {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  background: url('/assets/magic/mist-soft.png') repeat-x;
+  opacity: 0.22;
+  animation: mistDrift 38s linear infinite;
+  filter: blur(18px);
+  z-index: -8;
+}
+
+.magic-mist-layer-2 {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  background: url('/assets/magic/mist-soft.png') repeat-x;
+  opacity: 0.28;
+  animation: mistDrift2 52s linear infinite;
+  filter: blur(22px);
+  z-index: -7;
+}
+
+@keyframes mistDrift {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+@keyframes mistDrift2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ------------------------------------------------------------
+   4. OPTIONAL LEAF-GLOW PARALLAX (SUBTLE)
+   ------------------------------------------------------------ */
+.magic-leaf-glow {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/magic/leaf-glow.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  animation: leafParallax 60s ease-in-out infinite;
+  z-index: -6;
+}
+
+@keyframes leafParallax {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* ------------------------------------------------------------
+   5. SCROLL-REACTIVE GLOW SHIFT
+   ------------------------------------------------------------ */
+body.scrolled .magic-bg-gradient {
+  filter: brightness(1.12) saturate(1.15);
+}
+
+body.scrolled .magic-mist-layer,
+body.scrolled .magic-mist-layer-2 {
+  opacity: 0.32;
+}
+
+/* ============================================================
    HEADER — TRANSPARENT, GLOWING, DAY/NIGHT REACTIVE
    ============================================================ */
 .site-header {
