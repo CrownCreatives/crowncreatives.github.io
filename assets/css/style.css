@@ -377,3 +377,17 @@ nav.site-nav a:hover {
     padding: 10px 20px;
   }
 }
+body.light-mode {
+  --cc-glow-strong: rgba(120, 200, 255, 0.9);
+  --cc-glow-soft: rgba(120, 200, 255, 0.4);
+  --cc-text: #ffffff;
+  --cc-card-bg: rgba(255, 255, 255, 0.12);
+  --cc-footer-bg: rgba(255, 255, 255, 0.08);
+}
+body {
+  --cc-glow-strong: rgba(90, 60, 200, 0.9);
+  --cc-glow-soft: rgba(90, 60, 200, 0.4);
+  --cc-text: #e0e6ff;
+  --cc-card-bg: rgba(0, 0, 0, 0.25);
+  --cc-footer-bg: rgba(0, 0, 0, 0.18);
+}
