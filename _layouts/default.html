@@ -2,47 +2,35 @@
 <html lang="en">
 <head>
   {% include head.html %}
-  <title>{{ page.title }} — Crown Creatives</title>
 </head>
 
-<body class="theme-light">
+<body class="magic-bg-gradient">
 
-  <!-- 🌿 Enchanted Forest Background System -->
-  <div class="magic-bg-container">
-    <div class="magic-bg-gradient"></div>
-    <div class="magic-particles"></div>
-    <div class="magic-mist-layer"></div>
-    <div class="magic-mist-layer-2"></div>
-    <div class="magic-leaf-glow"></div>
-  </div>
+  <!-- 🌫️ BACKGROUND LAYERS -->
+  <div class="magic-bg-fog"></div>
+  <div class="magic-bg-bubbles"></div>
+  <div class="magic-bg-swirl"></div>
 
-  <!-- ✨ HEADER -->
+  <!-- 🌟 HEADER -->
   {% include header.html %}
 
-  <!-- ✨ MAIN CONTENT -->
+  <!-- 🌟 PAGE CONTENT -->
   <main class="page-wrapper">
     {{ content }}
   </main>
 
-  <!-- ✨ FOOTER -->
+  <!-- 🌟 FOOTER -->
   {% include footer.html %}
 
-  <!-- ✨ JAVASCRIPT -->
-  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
+  <!-- ✨ FOOTER GRADIENT BAR -->
+  <div class="footer-gradient-bar"></div>
 
-  <!-- Scroll-reactive glow -->
-  <script>
-    document.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
-      }
-    });
-  </script>
-<script src="/assets/js/magic.js"></script>
+  <!-- 🌟 CORE SCRIPTS -->
+  <script src="/assets/js/theme-toggle.js"></script>
+  <script src="/assets/js/lightbox.js"></script>
+
+  <!-- 🔮 ARCANE MAGIC ENGINE (Side‑Gallery Animation) -->
+  <script src="/assets/js/magic.js"></script>
 
 </body>
 </html>
-
