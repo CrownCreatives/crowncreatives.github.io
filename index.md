@@ -10,11 +10,10 @@ permalink: /
   <div class="hero-visual">
     <img src="/assets/images/illuminus-crown.png" class="hero-crown-cinematic">
 
-    <!-- Side Gallery Images -->
+    <!-- Side Gallery Container (JS controls this) -->
     <div class="hero-side-gallery">
-      <img class="hero-side-image" src="/assets/images/gallery/Face.jpeg">
-      <img class="hero-side-image" src="/assets/images/gallery/Flower.jpeg">
-      <img class="hero-side-image" src="/assets/images/gallery/Fly.jpeg">
+      <div class="hero-side-particles"></div>
+      <img class="hero-side-image">
     </div>
 
     <div class="hero-light-beam"></div>
