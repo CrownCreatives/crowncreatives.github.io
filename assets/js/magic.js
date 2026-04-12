@@ -1,6 +1,7 @@
 /* ------------------------------------------------------------
-   HERO SIDE GALLERY — ENHANCED RANDOM MAGIC ENGINE
-   ------------------------------------------------------------ */
+   HERO SIDE GALLERY — ARCANE MAGIC ENGINE (STRONG MODE)
+   Crown Creatives — Magical Drifting Memory System
+------------------------------------------------------------ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -8,8 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!window.location.pathname.endsWith("/")) return;
 
   const sideImg = document.querySelector(".hero-side-image");
+  const particles = document.querySelector(".hero-side-particles");
 
-  // Your gallery folder images
+  // Add as many images as you want here
   const galleryImages = [
     "/assets/images/gallery/Face.jpeg",
     "/assets/images/gallery/Flower.jpeg",
@@ -21,58 +23,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let side = "left"; // start on the left
 
-  function showRandomImage() {
-    if (!sideImg) return;
+  function showArcaneImage() {
+    if (!sideImg || !particles) return;
 
-    // Pick a random image
+    /* ------------------------------------------------------------
+       1. RANDOM IMAGE SELECTION
+    ------------------------------------------------------------ */
     const randomSrc = galleryImages[Math.floor(Math.random() * galleryImages.length)];
     sideImg.src = randomSrc;
 
-    // Alternate left/right
+    /* ------------------------------------------------------------
+       2. ALTERNATE LEFT / RIGHT
+    ------------------------------------------------------------ */
     if (side === "left") {
       sideImg.style.left = "8%";
       sideImg.style.right = "auto";
+      particles.style.left = "4%";
+      particles.style.right = "auto";
       side = "right";
     } else {
       sideImg.style.right = "8%";
       sideImg.style.left = "auto";
+      particles.style.right = "4%";
+      particles.style.left = "auto";
       side = "left";
     }
 
-    // Random vertical position (20%–60%)
-    const randomTop = Math.floor(Math.random() * 40) + 20;
+    /* ------------------------------------------------------------
+       3. RANDOM VERTICAL POSITION
+    ------------------------------------------------------------ */
+    const randomTop = Math.floor(Math.random() * 40) + 20; // 20%–60%
     sideImg.style.top = randomTop + "%";
+    particles.style.top = (randomTop - 10) + "%";
 
-    // Random drift amount
-    const driftX = (Math.random() * 20 - 10);   // -10px to +10px
-    const driftY = (Math.random() * 20 - 10);   // -10px to +10px
+    /* ------------------------------------------------------------
+       4. DRIFT + ROTATION (MAGICAL LEVITATION)
+    ------------------------------------------------------------ */
+    const driftX = (Math.random() * 30 - 15);  // -15px to +15px
+    const driftY = (Math.random() * 30 - 15);  // -15px to +15px
+    const rotate = (Math.random() * 10 - 5);   // -5deg to +5deg
 
-    // Random gentle rotation
-    const rotate = (Math.random() * 6 - 3);     // -3deg to +3deg
-
-    // Apply drift + rotation
     sideImg.style.transform = `translate(${driftX}px, ${driftY}px) rotate(${rotate}deg)`;
 
-    // Add sparkle pulse class
-    sideImg.classList.add("sparkle");
+    /* ------------------------------------------------------------
+       5. ACTIVATE PARTICLE BURST + GLOW PULSE
+    ------------------------------------------------------------ */
+    particles.classList.add("active");
+    sideImg.classList.add("magic-pulse");
 
-    // Fade in
+    /* ------------------------------------------------------------
+       6. FADE IN
+    ------------------------------------------------------------ */
     sideImg.style.opacity = 1;
 
-    // Remove sparkle class after animation
+    // Remove pulse classes after animation
     setTimeout(() => {
-      sideImg.classList.remove("sparkle");
-    }, 2400);
+      particles.classList.remove("active");
+      sideImg.classList.remove("magic-pulse");
+    }, 2600);
 
-    // Fade out after 15 seconds
+    /* ------------------------------------------------------------
+       7. FADE OUT AFTER 15 SECONDS
+    ------------------------------------------------------------ */
     setTimeout(() => {
       sideImg.style.opacity = 0;
     }, 15000);
   }
 
-  // Start immediately
-  showRandomImage();
+  /* ------------------------------------------------------------
+     START THE MAGIC
+  ------------------------------------------------------------ */
+  showArcaneImage();
 
   // Repeat every 18 seconds (fade in → hold → fade out → gap)
-  setInterval(showRandomImage, 18000);
+  setInterval(showArcaneImage, 18000);
 });
