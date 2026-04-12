@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------
-   HERO SIDE GALLERY — RANDOM DRIFTING IMAGE ENGINE
+   HERO SIDE GALLERY — ENHANCED RANDOM MAGIC ENGINE
    ------------------------------------------------------------ */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -43,8 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const randomTop = Math.floor(Math.random() * 40) + 20;
     sideImg.style.top = randomTop + "%";
 
+    // Random drift amount
+    const driftX = (Math.random() * 20 - 10);   // -10px to +10px
+    const driftY = (Math.random() * 20 - 10);   // -10px to +10px
+
+    // Random gentle rotation
+    const rotate = (Math.random() * 6 - 3);     // -3deg to +3deg
+
+    // Apply drift + rotation
+    sideImg.style.transform = `translate(${driftX}px, ${driftY}px) rotate(${rotate}deg)`;
+
+    // Add sparkle pulse class
+    sideImg.classList.add("sparkle");
+
     // Fade in
     sideImg.style.opacity = 1;
+
+    // Remove sparkle class after animation
+    setTimeout(() => {
+      sideImg.classList.remove("sparkle");
+    }, 2400);
 
     // Fade out after 15 seconds
     setTimeout(() => {
