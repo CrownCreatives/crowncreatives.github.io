@@ -787,3 +787,37 @@ body.light-mode .magic-bg-gradient {
   left: 12%;
   top: 55%;
 }
+.hero-side-image {
+  position: absolute;
+  width: 180px;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+  filter: drop-shadow(0 0 14px var(--cc-glow-strong));
+  border-radius: 12px;
+}
+/* ============================================================
+   ENHANCED SIDE-GALLERY MAGIC
+   ============================================================ */
+
+.hero-side-image {
+  position: absolute;
+  width: 200px;
+  opacity: 0;
+  filter: drop-shadow(0 0 16px var(--cc-glow-strong));
+  border-radius: 14px;
+  transition:
+    opacity 1.8s ease,
+    transform 12s ease-in-out,
+    filter 4s ease-in-out;
+}
+
+/* Sparkle pulse when appearing */
+.hero-side-image.sparkle {
+  animation: sideSparkle 2.4s ease-out;
+}
+
+@keyframes sideSparkle {
+  0%   { filter: drop-shadow(0 0 0px var(--cc-glow-strong)); }
+  40%  { filter: drop-shadow(0 0 22px var(--cc-glow-strong)); }
+  100% { filter: drop-shadow(0 0 14px var(--cc-glow-strong)); }
+}
