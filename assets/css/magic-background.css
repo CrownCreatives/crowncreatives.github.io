@@ -101,10 +101,13 @@
 .magic-swirl    { z-index: -8; }
 .magic-fog      { z-index: -7; }
 .magic-bg-layer {
+.magic-bg-layer {
+   }
   background: linear-gradient(
     180deg,
-    #3a2e7b 0%,
-    #2b3c8f 40%,
-    #1a1f3b 100%
+    #4de2c9 0%,     /* teal-green glow */
+    #6ab8ff 30%,    /* lighter blue */
+    #9d7bff 60%,    /* soft violet */
+    #2b3c8f 100%    /* deep indigo-blue */
   );
 }
