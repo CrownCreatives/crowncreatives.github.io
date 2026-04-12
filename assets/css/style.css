@@ -157,14 +157,15 @@ nav.site-nav a:hover {
 
 .hero-emblem-text {
   font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
+  font-size: 1.35rem;        /* larger */
+  line-height: 1.55;
+  max-width: 760px;
+  margin: 6px auto 0;        /* closer to crown */
   color: var(--cc-text);
-  text-shadow: 0 0 12px var(--cc-glow-soft);
-  opacity: 0.9;
+  text-shadow: 0 0 14px var(--cc-glow-soft);
+  opacity: 0.95;
 }
+
 
 /* ============================================================
    FOOTER — GLOWING, DAY/NIGHT REACTIVE
