@@ -1,12 +1,11 @@
 // ===============================
 //  Crown Creatives Theme Toggle
 //  Click the magical orb to switch
-//  between Neon Dark Mode and
-//  Pastel Light Mode.
+//  between Dark Mode and Light Mode.
 // ===============================
 
-// Select the orb
-const themeOrb = document.querySelector('.theme-toggle-orb');
+// Select the orb (updated class)
+const themeOrb = document.querySelector('.theme-toggle');
 
 // Select the body
 const body = document.body;
@@ -25,5 +24,3 @@ themeOrb.addEventListener('click', () => {
   // Save preference
   localStorage.setItem('cc-theme', isLight ? 'light' : 'dark');
 });
-// cache-bust 2026-04-11
-
