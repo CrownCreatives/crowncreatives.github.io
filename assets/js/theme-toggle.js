@@ -1,26 +1,18 @@
-// ===============================
-//  Crown Creatives Theme Toggle
-//  Click the magical orb to switch
-//  between Dark Mode and Light Mode.
-// ===============================
+document.addEventListener('DOMContentLoaded', () => {
 
-// Select the orb (updated class)
-const themeOrb = document.querySelector('.theme-toggle');
+  const themeOrb = document.querySelector('.theme-toggle');
+  const body = document.body;
 
-// Select the body
-const body = document.body;
+  if (!themeOrb) return; // prevents console errors
 
-// Load saved theme (if any)
-const savedTheme = localStorage.getItem('cc-theme');
+  const savedTheme = localStorage.getItem('cc-theme');
+  if (savedTheme === 'light') {
+    body.classList.add('light-mode');
+  }
 
-if (savedTheme === 'light') {
-  body.classList.add('light-mode');
-}
+  themeOrb.addEventListener('click', () => {
+    const isLight = body.classList.toggle('light-mode');
+    localStorage.setItem('cc-theme', isLight ? 'light' : 'dark');
+  });
 
-// Toggle on click
-themeOrb.addEventListener('click', () => {
-  const isLight = body.classList.toggle('light-mode');
-
-  // Save preference
-  localStorage.setItem('cc-theme', isLight ? 'light' : 'dark');
 });
