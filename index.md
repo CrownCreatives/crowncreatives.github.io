@@ -30,26 +30,7 @@ permalink: /
       Crown Creatives celebrates imagination, resilience, and the quiet magic of making something beautiful anyway.
     </p>
 
-    <a href="/gallery/" class="cc-button hero-button">
-      Enter the Gallery
-    </a>
-  </div>
-
-</section>
-
-<!-- ✨ INTRO TEXT -->
-<div class="intro-box fade-in" style="max-width: 820px; margin: 0 auto 60px; text-align: center;">
-  <p>
-    Crown Creatives is a space where artistry, imagination, and personal resilience come together. 
-    Explore creative projects, 3D models, podcasts, and more.
-  </p>
-
-  <p>
-    This site represents a journey — rebuilding life with intention, rediscovering creativity, 
-    and transforming challenges into something meaningful. Every piece of art, every sculpt, 
-    every post is part of that ongoing story.
-  </p>
-</div>
+  </section>
 
 <!-- ✨ FIRST CARD ROW (3D Models + Creative Projects) -->
 <section class="cards-grid top-row">
