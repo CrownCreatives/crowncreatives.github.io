@@ -291,6 +291,96 @@ nav.site-nav a:hover {
     © Crown Creatives
     <img src="/assets/icons/cc-magic.svg" class="footer-cc-inline">
   </div>
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--cc-glow-soft),
+    var(--cc-glow-strong),
+    var(--cc-glow-soft)
+  );
+  box-shadow: 0 0 12px var(--cc-glow-strong);
+  opacity: 0.85;
+}
+.footer-copy {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.footer-copy::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--cc-glow-soft);
+  box-shadow: 0 0 10px var(--cc-glow-strong);
+  opacity: 0.7;
+}
+.site-footer::after {
+  content: "CC";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 120px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--cc-text);
+  opacity: 0.05;
+  pointer-events: none;
+  filter: blur(2px);
+  animation: ccWatermarkFloat 8s ease-in-out infinite;
+}
+
+@keyframes ccWatermarkFloat {
+  0%   { transform: translateX(-50%) translateY(0); }
+  50%  { transform: translateX(-50%) translateY(-6px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+.footer-lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.footer-up-arrow {
+  margin-left: auto;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
+  animation: particleTrail 2.5s infinite ease-in-out;
+  transition: transform 0.25s ease;
+}
+
+.footer-up-arrow:hover {
+  transform: scale(1.15);
+}
+.footer-cc-inline {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 8px var(--cc-glow-strong));
+}
+
 
   <img src="/assets/icons/up-arrow.svg"
        class="footer-up-arrow"
