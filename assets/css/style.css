@@ -1,400 +1,41 @@
 /* ============================================================
-   CROWN CREATIVES — MAGICAL UI 2026
-   FULL STYLE.CSS (PART 1 + PART 2 MERGED)
-   HEADER • NAV • ORB • HERO • FOOTER • GLOW • ANIMATIONS
+   CROWN CREATIVES — UNIFIED MAGICAL THEME 2026
+   DAY/NIGHT THEME • HEADER • HERO • FOOTER • TOGGLE • GLOW
    ============================================================ */
 
 /* ------------------------------------------------------------
-   THEME VARIABLES — DARK MODE (DEFAULT)
+   GOOGLE FONT — CINZEL (Regal Fantasy Titles)
    ------------------------------------------------------------ */
-:root {
-  --cc-bg: #050510;
-  --cc-text: #e8e8ff;
-  --cc-accent-1: #7f5bff;
-  --cc-accent-2: #4de2ff;
-  --cc-glow-strong: 0 0 22px rgba(127, 91, 255, 0.9),
-                    0 0 38px rgba(77, 226, 255, 0.9);
-  --cc-glow-soft: 0 0 12px rgba(127, 91, 255, 0.6),
-                  0 0 20px rgba(77, 226, 255, 0.6);
-  --cc-glass-bg: rgba(10, 10, 25, 0.55);
-  --cc-glass-border: rgba(160, 120, 255, 0.35);
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
 
 /* ------------------------------------------------------------
-   THEME VARIABLES — LIGHT MODE (PASTEL)
-   ------------------------------------------------------------ */
-body.light-mode {
-  --cc-bg: #faf7ff;
-  --cc-text: #2a2a40;
-  --cc-accent-1: #c7a8ff;
-  --cc-accent-2: #9be7ff;
-  --cc-glow-strong: 0 0 18px rgba(199, 168, 255, 0.7),
-                    0 0 28px rgba(155, 231, 255, 0.7);
-  --cc-glow-soft: 0 0 10px rgba(199, 168, 255, 0.45),
-                  0 0 16px rgba(155, 231, 255, 0.45);
-  --cc-glass-bg: rgba(255, 255, 255, 0.55);
-  --cc-glass-border: rgba(199, 168, 255, 0.35);
-}
-
-/* ------------------------------------------------------------
-   GLOBAL RESET
+   THEME VARIABLES — NIGHT MODE (DEFAULT)
    ------------------------------------------------------------ */
 body {
-  background: var(--cc-bg);
-  color: var(--cc-text);
-  transition: background 0.5s ease, color 0.5s ease;
-}
-
-/* ============================================================
-   PART 1 — HEADER + NAV + ORB
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   HEADER — NEON / PASTEL GLASS BAR
-   ------------------------------------------------------------ */
-.site-header {
-  position: relative;
-  width: 100%;
-  padding: 20px 0 10px;
-  background: var(--cc-glass-bg);
-  border-bottom: 1px solid var(--cc-glass-border);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: var(--cc-glow-soft);
-  transition: background 0.5s ease, border-color 0.5s ease;
-}
-
-.site-header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* HEADER — LEFT (CROWN) */
-.header-left img {
-  width: 70px;
-  filter: drop-shadow(var(--cc-glow-soft));
-  transition: filter 0.5s ease;
-}
-
-/* HEADER — CENTER (TITLE + TAGLINE) */
-.header-center {
-  text-align: center;
-  flex: 1;
-}
-
-.site-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-shadow: var(--cc-glow-soft);
-  transition: text-shadow 0.5s ease;
-}
-
-.site-tagline {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  margin-top: 4px;
-  text-shadow: var(--cc-glow-soft);
-  transition: text-shadow 0.5s ease;
-}
-
-/* HEADER — MAGIC LINE */
-.header-magic-line {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--cc-accent-1),
-    var(--cc-accent-2),
-    var(--cc-accent-1)
-  );
-  box-shadow: var(--cc-glow-strong);
-  transition: background 0.5s ease, box-shadow 0.5s ease;
-}
-
-/* ------------------------------------------------------------
-   TOGGLE ORB
-   ------------------------------------------------------------ */
-.theme-toggle-orb {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 30%,
-    var(--cc-accent-2),
-    var(--cc-accent-1)
-  );
-  box-shadow: var(--cc-glow-strong);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: box-shadow 0.5s ease, transform 0.3s ease;
-  animation: cc-pulse 4s ease-in-out infinite;
-}
-
-.theme-toggle-orb:hover {
-  transform: scale(1.08);
-}
-
-.theme-icon {
-  position: absolute;
-  font-size: 1.4rem;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.theme-toggle-sun { opacity: 0; }
-.theme-toggle-moon { opacity: 1; }
-
-body.light-mode .theme-toggle-sun { opacity: 1; }
-body.light-mode .theme-toggle-moon { opacity: 0; }
-
-/* ------------------------------------------------------------
-   NAV BAR — NEON / PASTEL PILL
-   ------------------------------------------------------------ */
-nav.site-nav {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-}
-
-nav.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 26px;
-  padding: 12px 28px;
-  background: var(--cc-glass-bg);
-  border: 1px solid var(--cc-glass-border);
-  border-radius: 40px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: var(--cc-glow-soft);
-  transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
-}
-
-nav.site-nav a {
-  color: var(--cc-text);
-  font-size: 1rem;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
-}
-
-nav.site-nav a:hover {
-  text-shadow: var(--cc-glow-strong);
-}
-
-/* ============================================================
-   PART 2 — HERO + FOOTER + GLOW + ANIMATIONS
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   HERO SECTION — HALO CARD
-   ------------------------------------------------------------ */
-.hero-section {
-  max-width: 1200px;
-  margin: 60px auto 40px;
-  padding: 0 22px;
-}
-
-.hero-card {
-  background: var(--cc-glass-bg);
-  border: 1px solid var(--cc-glass-border);
-  border-radius: 28px;
-  padding: 50px 40px;
-  text-align: center;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: var(--cc-glow-strong);
-  position: relative;
-  overflow: hidden;
-  transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    var(--cc-accent-1),
-    var(--cc-accent-2),
-    var(--cc-accent-1)
-  );
-  z-index: -1;
-  filter: blur(18px);
-  opacity: 0.55;
-  transition: opacity 0.5s ease, filter 0.5s ease;
-}
-
-.hero-card h1 {
-  font-size: 2.6rem;
-  margin-bottom: 14px;
-  text-shadow: var(--cc-glow-soft);
-}
-
-.hero-card p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  line-height: 1.6;
-  text-shadow: var(--cc-glow-soft);
-}
-
-/* ------------------------------------------------------------
-   FOOTER
-   ------------------------------------------------------------ */
-.site-footer {
-  margin-top: 80px;
-  padding: 40px 0 30px;
-  text-align: center;
+  --cc-text: #e0e6ff;
+  --cc-glow-strong: rgba(90, 60, 200, 0.9);
+  --cc-glow-soft: rgba(90, 60, 200, 0.4);
+  --cc-card-bg: rgba(0, 0, 0, 0.25);
+  --cc-footer-bg: rgba(0, 0, 0, 0.18);
   background: transparent;
-}
-
-.footer-magic-line {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--cc-accent-1),
-    var(--cc-accent-2),
-    var(--cc-accent-1)
-  );
-  box-shadow: var(--cc-glow-strong);
-  margin-bottom: 26px;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 26px;
-  margin-bottom: 18px;
-}
-
-.footer-icon {
-  width: 34px;
-  height: 34px;
-  stroke: currentColor;
-  fill: none;
-  filter: drop-shadow(var(--cc-glow-soft));
-  transition: transform 0.3s ease, filter 0.5s ease;
-}
-
-.footer-icon:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(var(--cc-glow-strong));
-}
-
-.footer-text {
-  font-size: 0.9rem;
-  opacity: 0.75;
-  text-shadow: var(--cc-glow-soft);
+  color: var(--cc-text);
+  transition: color 0.5s ease, background 0.5s ease;
 }
 
 /* ------------------------------------------------------------
-   GLOW SYSTEM
+   THEME VARIABLES — DAY MODE
    ------------------------------------------------------------ */
-.cc-glow { text-shadow: var(--cc-glow-strong); }
-.cc-soft-glow { text-shadow: var(--cc-glow-soft); }
-.cc-outline-glow { box-shadow: var(--cc-glow-strong); }
-
-/* ------------------------------------------------------------
-   BUTTONS
-   ------------------------------------------------------------ */
-.cc-button {
-  display: inline-block;
-  padding: 12px 26px;
-  border-radius: 40px;
-  background: linear-gradient(135deg, var(--cc-accent-1), var(--cc-accent-2));
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  box-shadow: var(--cc-glow-strong);
-  transition: transform 0.3s ease, box-shadow 0.5s ease;
-}
-
-.cc-button:hover {
-  transform: scale(1.08);
-  box-shadow: var(--cc-glow-strong), 0 0 18px rgba(255, 255, 255, 0.4);
-}
-
-/* ------------------------------------------------------------
-   ANIMATIONS
-   ------------------------------------------------------------ */
-@keyframes cc-float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
-}
-
-.header-crown-img {
-  animation: cc-float 4s ease-in-out infinite;
-}
-
-@keyframes cc-shimmer {
-  0% { opacity: 0.1; transform: translateX(-120%); }
-  50% { opacity: 0.4; }
-  100% { opacity: 0.1; transform: translateX(120%); }
-}
-
-.hero-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.25),
-    transparent
-  );
-  animation: cc-shimmer 6s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes cc-pulse {
-  0% { box-shadow: var(--cc-glow-soft); }
-  50% { box-shadow: var(--cc-glow-strong); }
-  100% { box-shadow: var(--cc-glow-soft); }
-}
-
-/* ------------------------------------------------------------
-   RESPONSIVE
-   ------------------------------------------------------------ */
-@media (max-width: 768px) {
-  .site-title { font-size: 1.8rem; }
-  .hero-card { padding: 40px 26px; }
-  nav.site-nav ul {
-    gap: 18px;
-    padding: 10px 20px;
-  }
-}
 body.light-mode {
+  --cc-text: #ffffff;
   --cc-glow-strong: rgba(120, 200, 255, 0.9);
   --cc-glow-soft: rgba(120, 200, 255, 0.4);
-  --cc-text: #ffffff;
   --cc-card-bg: rgba(255, 255, 255, 0.12);
   --cc-footer-bg: rgba(255, 255, 255, 0.08);
 }
-body {
-  --cc-glow-strong: rgba(90, 60, 200, 0.9);
-  --cc-glow-soft: rgba(90, 60, 200, 0.4);
-  --cc-text: #e0e6ff;
-  --cc-card-bg: rgba(0, 0, 0, 0.25);
-  --cc-footer-bg: rgba(0, 0, 0, 0.18);
-}
-/* -----------------------------------------------------------
-   ✨ HEADER — Transparent, Glowing, Day/Night Reactive
-   ----------------------------------------------------------- */
 
+/* ============================================================
+   HEADER — TRANSPARENT, GLOWING, DAY/NIGHT REACTIVE
+   ============================================================ */
 .site-header {
   width: 100%;
   padding: 1.2rem 0;
@@ -414,6 +55,7 @@ body {
 }
 
 .site-title {
+  font-family: 'Cinzel', serif;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -421,6 +63,7 @@ body {
 }
 
 .site-tagline {
+  font-family: 'Cinzel', serif;
   font-size: 0.9rem;
   opacity: 0.85;
   letter-spacing: 0.25em;
@@ -428,18 +71,96 @@ body {
   color: var(--cc-text);
 }
 
-.theme-toggle {
-  position: absolute;
-  right: 1.2rem;
-  top: 1.2rem;
-  cursor: pointer;
-  font-size: 1.3rem;
-  filter: drop-shadow(0 0 6px var(--cc-glow-soft));
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav.site-nav {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
 }
-/* -----------------------------------------------------------
-   ✨ FOOTER — Glowing, Day/Night Reactive
-   ----------------------------------------------------------- */
 
+nav.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  padding: 12px 28px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 40px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 12px var(--cc-glow-soft);
+}
+
+nav.site-nav a {
+  color: var(--cc-text);
+  font-size: 1rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+nav.site-nav a:hover {
+  text-shadow: 0 0 12px var(--cc-glow-strong);
+}
+
+/* ============================================================
+   THEME TOGGLE — TOP RIGHT MAGICAL ORB
+   ============================================================ */
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  font-size: 1.3rem;
+  color: var(--cc-text);
+  box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong);
+}
+
+/* ============================================================
+   HERO — LUMINOUS CROWN + EMBLEM EXPLANATION
+   ============================================================ */
+.hero-container {
+  margin-top: 28px; /* VERY CLOSE TO NAV BAR */
+  text-align: center;
+}
+
+.hero-crown {
+  width: 260px; /* SAME SIZE AS LIVE SITE */
+  max-width: 90%;
+  filter: drop-shadow(0 0 22px var(--cc-glow-strong));
+  animation: cc-float 4s ease-in-out infinite;
+  margin-bottom: 18px;
+}
+
+.hero-emblem-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--cc-text);
+  text-shadow: 0 0 12px var(--cc-glow-soft);
+  opacity: 0.9;
+}
+
+/* ============================================================
+   FOOTER — GLOWING, DAY/NIGHT REACTIVE
+   ============================================================ */
 .site-footer {
   margin-top: 80px;
   padding: 40px 0 30px;
@@ -477,6 +198,7 @@ body {
 }
 
 .footer-tagline {
+  font-family: 'Cinzel', serif;
   font-size: 0.9rem;
   opacity: 0.85;
   margin-bottom: 6px;
@@ -502,31 +224,21 @@ body {
 .back-to-top:hover {
   transform: scale(1.2);
 }
-/* -----------------------------------------------------------
-   ✨ THEME TOGGLE — Top Right, Magical Orb
-   ----------------------------------------------------------- */
 
-.theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 22px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  font-size: 1.3rem;
-  color: var(--cc-text);
-  box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes cc-float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
 }
 
-.theme-toggle:hover {
-  transform: scale(1.12);
-  box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong);
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .site-title { font-size: 1.6rem; }
+  .hero-emblem-text { font-size: 1rem; }
+  .hero-crown { width: 200px; }
 }
