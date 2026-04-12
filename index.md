@@ -4,25 +4,30 @@ title: Home
 permalink: /
 ---
 
-<!-- ✨ HERO SECTION — Luminous Crown (Transparent, Strong Glow, Moderate Spacing) -->
-<section class="hero-section" style="margin-top: 80px; margin-bottom: 60px; text-align: center;">
-  <img 
-    src="/assets/images/illuminus-crown.png" 
-    alt="Crown Creatives Emblem" 
-    class="hero-luminous-crown"
-    style="
-      width: 40%;
-      max-width: 480px;
-      filter: drop-shadow(0 0 25px rgba(127, 91, 255, 1)) 
-              drop-shadow(0 0 45px rgba(77, 226, 255, 1));
-      animation: cc-float 4s ease-in-out infinite;
-    "
-  >
+<!-- 🌟 CINEMATIC HERO SECTION -->
+<section class="hero-cinematic">
 
-  <p class="hero-explainer" style="max-width: 720px; margin: 30px auto 0; font-size: 1.2rem; opacity: 0.9;">
-    The emblem of rebuilding, artistry, and personal transformation — a reminder that creativity is not just
-    something we make, but something we become.
-  </p>
+  <div class="hero-visual">
+    <img src="/assets/images/illuminus-crown.png" class="hero-crown-cinematic">
+
+    <div class="hero-light-beam"></div>
+    <div class="hero-mist-rise"></div>
+  </div>
+
+  <div class="hero-text-block">
+    <h1 class="hero-title-cinematic cc-soft-glow">
+      Artistry in the Face of Adversity
+    </h1>
+
+    <p class="hero-subtitle-cinematic cc-soft-glow">
+      Crown Creatives celebrates imagination, resilience, and the quiet magic of making something beautiful anyway.
+    </p>
+
+    <a href="/gallery/" class="cc-button hero-button">
+      Enter the Gallery
+    </a>
+  </div>
+
 </section>
 
 <!-- ✨ INTRO TEXT -->
@@ -58,7 +63,7 @@ permalink: /
   </div>
 </section>
 
-<!-- ⭐ MAGIC GALLERY LANE (Images Fade In/Out) -->
+<!-- ⭐ MAGIC GALLERY LANE -->
 <div class="magic-gallery-zone" style="margin: 60px 0;">
   <div class="magic-gallery">
     <img class="magic-gallery-image magic-left sparkle" src="/assets/images/gallery/Face.jpeg" style="opacity: 1; top: 60px;">
