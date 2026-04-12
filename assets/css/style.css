@@ -70,6 +70,14 @@ body.light-mode {
   text-transform: uppercase;
   color: var(--cc-text);
 }
+/* HEADER — CROWN SIZE + POSITION (RESTORED) */
+.header-left img,
+.header-crown-img {
+  width: 70px;          /* previous correct size */
+  height: auto;
+  filter: drop-shadow(var(--cc-glow-soft));
+  animation: cc-float 4s ease-in-out infinite;
+}
 
 /* ============================================================
    NAVIGATION
