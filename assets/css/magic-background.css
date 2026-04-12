@@ -100,3 +100,11 @@
 .magic-bubbles  { z-index: -9; }
 .magic-swirl    { z-index: -8; }
 .magic-fog      { z-index: -7; }
+.magic-bg-layer {
+  background: linear-gradient(
+    180deg,
+    #3a2e7b 0%,
+    #2b3c8f 40%,
+    #1a1f3b 100%
+  );
+}
