@@ -737,3 +737,10 @@ body.light-mode .footer-gradient-bar {
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+body.light-mode {
+  --cc-text: #ffffff;
+  --cc-glow-strong: rgba(150, 180, 255, 0.65);
+  --cc-glow-soft: rgba(150, 180, 255, 0.35);
+  --cc-card-bg: rgba(255, 255, 255, 0.10);
+  --cc-footer-bg: transparent;
+}
