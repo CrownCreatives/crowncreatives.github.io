@@ -744,3 +744,11 @@ body.light-mode {
   --cc-card-bg: rgba(255, 255, 255, 0.10);
   --cc-footer-bg: transparent;
 }
+body.light-mode .magic-bg-gradient {
+  background: linear-gradient(
+    180deg,
+    #d7f7e8 0%,
+    #b8e4f0 40%,
+    #c9c4f7 100%
+  );
+}
