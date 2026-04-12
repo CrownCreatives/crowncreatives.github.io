@@ -5,28 +5,43 @@
   <title>{{ page.title }} — Crown Creatives</title>
 </head>
 
-<body>
+<body class="theme-light">
 
-  <!-- ✨ MAGICAL BACKGROUND LAYERS (from original magic.js system) -->
-  <div class="magic-bg-layer"></div>
-  <div class="magic-bubbles"></div>
-  <div class="magic-swirl"></div>
-  <div class="magic-fog"></div>
-
-  <!-- ✨ HEADER (rebuilt to match original) -->
-  {% include header.html %}
-
-  <!-- ✨ PAGE WRAPPER (matches your old structure) -->
-  <div class="page-wrapper">
-    {{ content }}
+  <!-- 🌿 Enchanted Forest Background System -->
+  <div class="magic-bg-container">
+    <div class="magic-bg-gradient"></div>
+    <div class="magic-particles"></div>
+    <div class="magic-mist-layer"></div>
+    <div class="magic-mist-layer-2"></div>
+    <div class="magic-leaf-glow"></div>
   </div>
 
-  <!-- ✨ FOOTER (rebuilt to match original) -->
+  <!-- ✨ HEADER -->
+  {% include header.html %}
+
+  <!-- ✨ MAIN CONTENT -->
+  <main class="page-wrapper">
+    {{ content }}
+  </main>
+
+  <!-- ✨ FOOTER -->
   {% include footer.html %}
 
-  <!-- ✨ JAVASCRIPT (original load order) -->
+  <!-- ✨ JAVASCRIPT -->
   <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
+
+  <!-- Scroll-reactive glow -->
+  <script>
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
+      }
+    });
+  </script>
 
 </body>
 </html>
+
