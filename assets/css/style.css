@@ -272,3 +272,41 @@ nav.site-nav a:hover {
   .hero-emblem-text { font-size: 1.1rem; }
   .hero-crown { width: 200px; }
 }
+.site-footer {
+  text-align: center;
+  padding: 40px 0 30px;
+  background: transparent;
+  color: var(--cc-text);
+  position: relative;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 20px;
+}
+
+.back-to-top {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
+  transition: transform 0.25s ease;
+}
+
+.footer-tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: center;
+}
