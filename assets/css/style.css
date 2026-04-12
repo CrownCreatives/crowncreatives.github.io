@@ -286,3 +286,13 @@ nav.site-nav a:hover {
   .hero-emblem-text { font-size: 1.1rem; }
   .hero-crown { width: 200px; }
 }
+<div class="footer-lower">
+  <div class="footer-copy">
+    © Crown Creatives
+    <img src="/assets/icons/cc-magic.svg" class="footer-cc-inline">
+  </div>
+
+  <img src="/assets/icons/up-arrow.svg"
+       class="footer-up-arrow"
+       onclick="window.scrollTo({top:0, behavior:'smooth'})">
+</div>
