@@ -19,12 +19,29 @@
 }
 
 /* -----------------------------------------------------------
-   ✨ 1. Midnight Gradient Background
+   ✨ DAY MODE — Lighter Green → Blue → Purple Gradient
+   ----------------------------------------------------------- */
+body.light-mode .magic-bg-layer {
+  background: linear-gradient(
+    180deg,
+    #4de2c9 0%,     /* teal-green glow */
+    #6ab8ff 30%,    /* lighter blue */
+    #9d7bff 60%,    /* soft violet */
+    #2b3c8f 100%    /* deep indigo-blue */
+  );
+}
+
+/* -----------------------------------------------------------
+   ✨ NIGHT MODE — Deep Magical Gradient (Default)
    ----------------------------------------------------------- */
 .magic-bg-layer {
-  background: radial-gradient(circle at 50% 20%, #1a1f3b, #0a0d1a 70%);
-  opacity: 1;
-  z-index: -10;
+  background: linear-gradient(
+    180deg,
+    #1a3a36 0%,     /* deep teal-green */
+    #1b2d55 30%,    /* deep blue */
+    #3a2e7b 60%,    /* deep violet */
+    #0f162e 100%    /* cosmic indigo */
+  );
 }
 
 /* -----------------------------------------------------------
@@ -91,32 +108,4 @@
   0% { transform: scale(1); opacity: 0.18; }
   50% { transform: scale(1.15); opacity: 0.28; }
   100% { transform: scale(1); opacity: 0.18; }
-}
-
-/* -----------------------------------------------------------
-   ✨ Layer Stacking
-   ----------------------------------------------------------- */
-.magic-bg-layer { z-index: -10; }
-.magic-bubbles  { z-index: -9; }
-.magic-swirl    { z-index: -8; }
-.magic-fog      { z-index: -7; }
-.magic-bg-layer {
-.magic-bg-layer {
-   }
-  background: linear-gradient(
-    180deg,
-    #4de2c9 0%,     /* teal-green glow */
-    #6ab8ff 30%,    /* lighter blue */
-    #9d7bff 60%,    /* soft violet */
-    #2b3c8f 100%    /* deep indigo-blue */
-  );
-}
-body.dark-mode .magic-bg-layer {
-  background: linear-gradient(
-    180deg,
-    #1a3a36 0%,     /* deep teal-green */
-    #1b2d55 30%,    /* deep blue */
-    #3a2e7b 60%,    /* deep violet */
-    #0f162e 100%    /* cosmic indigo */
-  );
 }
