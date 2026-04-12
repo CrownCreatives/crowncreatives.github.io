@@ -70,12 +70,15 @@ body.light-mode {
   text-transform: uppercase;
   color: var(--cc-text);
 }
-/* HEADER — CROWN SIZE + POSITION (RESTORED) */
+
+/* ------------------------------------------------------------
+   HEADER CROWN — RESTORED SIZE + FLOAT
+   ------------------------------------------------------------ */
 .header-left img,
 .header-crown-img {
-  width: 70px;          /* previous correct size */
+  width: 70px;
   height: auto;
-  filter: drop-shadow(var(--cc-glow-soft));
+  filter: drop-shadow(0 0 12px var(--cc-glow-soft));
   animation: cc-float 4s ease-in-out infinite;
 }
 
@@ -162,29 +165,28 @@ nav.site-nav a:hover {
    HERO — LUMINOUS CROWN + EMBLEM EXPLANATION
    ============================================================ */
 .hero-container {
-  margin-top: 10px; /* VERY CLOSE TO NAV BAR */
+  margin-top: 10px; /* raised closer to nav bar */
   text-align: center;
 }
 
 .hero-crown {
-  width: 260px; /* SAME SIZE AS LIVE SITE */
+  width: 260px; /* same size as live site */
   max-width: 90%;
   filter: drop-shadow(0 0 22px var(--cc-glow-strong));
   animation: cc-float 4s ease-in-out infinite;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .hero-emblem-text {
   font-family: 'Cinzel', serif;
-  font-size: 1.35rem;        /* larger */
+  font-size: 1.35rem; /* larger */
   line-height: 1.55;
   max-width: 760px;
-  margin: 6px auto 0;        /* closer to crown */
+  margin: 6px auto 0; /* closer to crown */
   color: var(--cc-text);
   text-shadow: 0 0 14px var(--cc-glow-soft);
   opacity: 0.95;
 }
-
 
 /* ============================================================
    FOOTER — GLOWING, DAY/NIGHT REACTIVE
@@ -267,6 +269,6 @@ nav.site-nav a:hover {
    ============================================================ */
 @media (max-width: 768px) {
   .site-title { font-size: 1.6rem; }
-  .hero-emblem-text { font-size: 1rem; }
+  .hero-emblem-text { font-size: 1.1rem; }
   .hero-crown { width: 200px; }
 }
