@@ -1,13 +1,25 @@
 <svg viewBox="0 0 64 64" fill="none"
      xmlns="http://www.w3.org/2000/svg">
+
   <circle cx="32" cy="32" r="28"
           stroke="currentColor"
           stroke-width="3"
           fill="none"/>
+
+  <defs>
+    <linearGradient id="igGrad" x1="0" y1="0" x2="64" y2="64">
+      <stop offset="0%" stop-color="#FF8AE2"/>
+      <stop offset="50%" stop-color="#FFB36B"/>
+      <stop offset="100%" stop-color="#8AF3FF"/>
+    </linearGradient>
+  </defs>
+
   <rect x="20" y="20" width="24" height="24" rx="6"
-        stroke="currentColor" stroke-width="3" fill="none"/>
+        stroke="url(#igGrad)" stroke-width="3" fill="none"/>
+
   <circle cx="32" cy="32" r="6"
-          stroke="currentColor" stroke-width="3" fill="none"/>
+          stroke="url(#igGrad)" stroke-width="3" fill="none"/>
+
   <circle cx="40" cy="24" r="2.5"
-          fill="currentColor"/>
+          fill="url(#igGrad)"/>
 </svg>
