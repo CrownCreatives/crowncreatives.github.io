@@ -21,19 +21,14 @@ permalink: /
     <div class="hero-mist-rise"></div>
   </div>
 
-  <!-- NEW: Crown Explanation Integrated Under Crown -->
+  <!-- Unified Crown Explanation -->
   <div class="hero-text-block">
-    <h1 class="hero-title-cinematic cc-soft-glow">
-      Artistry in the Face of Adversity
-    </h1>
-
     <p class="hero-subtitle-cinematic cc-soft-glow" style="max-width: 620px; margin: 0 auto;">
-      A symbol of imagination, resilience, and the quiet magic of creating something beautiful anyway.
+      Rebuilding, artistry, and personal transformation — a reminder that creativity is not just something we make, but something we become.
     </p>
   </div>
 
 </section>
-
 
 <!-- ✨ FIRST CARD ROW (3D Models + Creative Projects) -->
 <section class="cards-grid top-row">
