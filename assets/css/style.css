@@ -158,7 +158,7 @@ nav.site-nav a:hover {
    HERO — CROWN + EMBLEM
    ============================================================ */
 .hero-container {
-  margin-top: 2px;
+  margin-top: 0px;
   text-align: center;
 }
 
@@ -182,18 +182,10 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   FOOTER — SLIM, MAGICAL, ANIMATED
+   FOOTER — FINAL LAYOUT WITH INLINE CC + RIGHT UP-ARROW
    ============================================================ */
-.site-footer {
-  margin-top: 50px;
-  padding: 22px 0 18px;
-  text-align: center;
-  background: transparent;
-  color: var(--cc-text);
-  position: relative;
-}
 
-/* Unified icon row */
+/* Social icons row (unchanged) */
 .footer-icons-row {
   display: flex;
   justify-content: center;
@@ -214,56 +206,48 @@ nav.site-nav a:hover {
   cursor: pointer;
 }
 
-/* Hover effects: scale + rotate */
 .footer-icon-lg:hover {
   transform: scale(1.15) rotate(2deg);
   filter: drop-shadow(0 0 18px var(--cc-glow-strong));
 }
 
-/* Ripple effect */
-.footer-icon-lg::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
+/* Lower footer layout */
+.footer-lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  margin-top: 10px;
 }
 
-.footer-icon-lg:hover::after {
-  animation: ripple 0.6s ease-out;
+/* CC inline icon */
+.footer-cc-inline {
+  width: 28px;
+  height: 28px;
+  margin-left: 8px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 8px var(--cc-glow-strong));
 }
 
-/* Shimmer pulse */
-@keyframes shimmerPulse {
-  0%   { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
-  50%  { filter: drop-shadow(0 0 16px var(--cc-glow-strong)); }
-  100% { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
-}
-
-/* Ripple animation */
-@keyframes ripple {
-  0%   { opacity: 0.4; transform: scale(1); }
-  100% { opacity: 0;   transform: scale(1.6); }
-}
-
-/* Up-arrow particle trail */
-.back-to-top {
-  position: static;
+/* Up arrow moved to far right */
+.footer-up-arrow {
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
   animation: particleTrail 2.5s infinite ease-in-out;
+  transition: transform 0.25s ease;
 }
 
-@keyframes particleTrail {
-  0%   { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
-  50%  { filter: drop-shadow(0 0 20px var(--cc-glow-strong)); }
-  100% { filter: drop-shadow(0 0 10px var(--cc-glow-strong)); }
+.footer-up-arrow:hover {
+  transform: scale(1.15);
 }
 
-.back-to-top::before,
-.back-to-top::after {
+/* Particle trail */
+.footer-up-arrow::before,
+.footer-up-arrow::after {
   content: "";
   position: absolute;
   width: 6px;
@@ -274,34 +258,16 @@ nav.site-nav a:hover {
   animation: particleFloat 2s infinite ease-out;
 }
 
-.back-to-top::before {
+.footer-up-arrow::before {
   left: -10px;
   animation-delay: 0.2s;
 }
 
-.back-to-top::after {
+.footer-up-arrow::after {
   right: -10px;
   animation-delay: 0.5s;
 }
 
-@keyframes particleFloat {
-  0%   { transform: translateY(0); opacity: 0.6; }
-  100% { transform: translateY(-18px); opacity: 0; }
-}
-
-/* Footer text */
-.footer-tagline {
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-bottom: 6px;
-}
-
-.footer-copy {
-  font-size: 0.8rem;
-  opacity: 0.7;
-  text-align: center;
-}
 
 /* ============================================================
    ANIMATIONS
