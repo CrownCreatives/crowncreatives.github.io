@@ -4,23 +4,29 @@ title: Home
 permalink: /
 ---
 
-<!-- ✨ HERO SECTION — Geometric Frosted Crown Card -->
-<section class="hero">
-  <div class="hero-crown-card">
-    <div class="hero-crown-inner">
-      <div class="hero-crown">
-        <img src="/assets/images/crown2.png" alt="Crown Emblem" style="opacity: 1;">
-      </div>
-      <p class="hero-explainer">
-        The emblem of rebuilding, artistry, and personal transformation — a reminder that creativity is not just
-        something we make, but something we become.
-      </p>
-    </div>
-  </div>
+<!-- ✨ HERO SECTION — Luminous Crown (Transparent, Strong Glow, Moderate Spacing) -->
+<section class="hero-section" style="margin-top: 80px; margin-bottom: 60px; text-align: center;">
+  <img 
+    src="/assets/images/illuminus-crown.png" 
+    alt="Crown Creatives Emblem" 
+    class="hero-luminous-crown"
+    style="
+      width: 40%;
+      max-width: 480px;
+      filter: drop-shadow(0 0 25px rgba(127, 91, 255, 1)) 
+              drop-shadow(0 0 45px rgba(77, 226, 255, 1));
+      animation: cc-float 4s ease-in-out infinite;
+    "
+  >
+
+  <p class="hero-explainer" style="max-width: 720px; margin: 30px auto 0; font-size: 1.2rem; opacity: 0.9;">
+    The emblem of rebuilding, artistry, and personal transformation — a reminder that creativity is not just
+    something we make, but something we become.
+  </p>
 </section>
 
 <!-- ✨ INTRO TEXT -->
-<div class="intro-box fade-in">
+<div class="intro-box fade-in" style="max-width: 820px; margin: 0 auto 60px; text-align: center;">
   <p>
     Crown Creatives is a space where artistry, imagination, and personal resilience come together. 
     Explore creative projects, 3D models, podcasts, and more.
@@ -33,9 +39,8 @@ permalink: /
   </p>
 </div>
 
-<!-- ✨ FIRST CARD ROW (2 cards) -->
+<!-- ✨ FIRST CARD ROW (3D Models + Creative Projects) -->
 <section class="cards-grid top-row">
-
   <div class="magic-card">
     <div class="magic-card-title">3D Models</div>
     <div class="magic-card-subtitle">Sculpting • Texturing • Rendering</div>
@@ -51,21 +56,19 @@ permalink: /
       A space for artistic exploration, visual storytelling, and imaginative expression.
     </div>
   </div>
-
 </section>
 
-<!-- ⭐ MAGIC GALLERY LANE -->
-<div class="magic-gallery-zone">
+<!-- ⭐ MAGIC GALLERY LANE (Images Fade In/Out) -->
+<div class="magic-gallery-zone" style="margin: 60px 0;">
   <div class="magic-gallery">
-    <img class="magic-gallery-image magic-left sparkle" src="/assets/images/gallery/Face.jpeg" style="opacity: 1; top: 73px;">
-    <img class="magic-gallery-image magic-left" src="/assets/images/gallery/Flower.jpeg" style="opacity: 0; top: 47px;">
-    <img class="magic-gallery-image magic-right" src="/assets/images/gallery/Fly.jpeg" style="opacity: 0; top: 37px;">
+    <img class="magic-gallery-image magic-left sparkle" src="/assets/images/gallery/Face.jpeg" style="opacity: 1; top: 60px;">
+    <img class="magic-gallery-image magic-left" src="/assets/images/gallery/Flower.jpeg" style="opacity: 0; top: 40px;">
+    <img class="magic-gallery-image magic-right" src="/assets/images/gallery/Fly.jpeg" style="opacity: 0; top: 30px;">
   </div>
 </div>
 
 <!-- ✨ SECOND CARD ROW (Podcasts + Get in Touch) -->
 <section class="cards-grid bottom-row">
-
   <div class="magic-card">
     <div class="magic-card-title">Podcasts</div>
     <div class="magic-card-subtitle">Thoughts • Stories • Growth</div>
@@ -81,5 +84,4 @@ permalink: /
       Find me on social media below — I’d love to connect.
     </div>
   </div>
-
 </section>
