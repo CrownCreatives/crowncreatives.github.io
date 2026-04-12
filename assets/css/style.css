@@ -752,3 +752,38 @@ body.light-mode .magic-bg-gradient {
     #c9c4f7 100%
   );
 }
+/* ============================================================
+   HERO SIDE GALLERY — MAGICAL DRIFT + FADE
+   ============================================================ */
+
+.hero-side-image {
+  position: absolute;
+  width: 140px;
+  opacity: 0;
+  filter: drop-shadow(0 0 12px var(--cc-glow-strong));
+  border-radius: 12px;
+  animation: sideFloat 12s ease-in-out infinite;
+}
+
+/* Slight drifting motion */
+@keyframes sideFloat {
+  0%   { opacity: 0; transform: translateY(10px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  50%  { opacity: 1; transform: translateY(-6px); }
+  90%  { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 0; }
+}
+.hero-side-image:nth-child(1) {
+  left: 8%;
+  top: 20%;
+}
+
+.hero-side-image:nth-child(2) {
+  right: 8%;
+  top: 30%;
+}
+
+.hero-side-image:nth-child(3) {
+  left: 12%;
+  top: 55%;
+}
