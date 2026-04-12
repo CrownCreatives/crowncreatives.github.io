@@ -290,6 +290,13 @@ nav.site-nav a:hover {
 /* ============================================================
    HERO — CROWN + EMBLEM
    ============================================================ */
+.hero-cinematic {
+  position: relative;
+  padding: 40px 20px 140px; /* 20–30px visual gap under nav */
+  text-align: center;
+  z-index: 5;
+}
+
 .hero-container {
   margin-top: 0px;
   text-align: center;
