@@ -112,7 +112,7 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   THEME TOGGLE — TOP RIGHT MAGICAL ORB
+   THEME TOGGLE — TOP RIGHT MAGICAL ORB (FINAL VERSION)
    ============================================================ */
 .theme-toggle {
   position: fixed;
@@ -130,13 +130,32 @@ nav.site-nav a:hover {
   z-index: 999;
   font-size: 1.3rem;
   color: var(--cc-text);
+
+  /* Glow + pulse */
   box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong);
+  animation: orbPulse 4s ease-in-out infinite;
+
+  /* Smooth transitions */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Hover — magical expansion */
 .theme-toggle:hover {
   transform: scale(1.12);
   box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong);
+}
+
+/* Active — tactile press-down */
+.theme-toggle:active {
+  transform: scale(0.92);
+  box-shadow: 0 0 8px var(--cc-glow-soft), 0 0 14px var(--cc-glow-strong);
+}
+
+/* Magical heartbeat pulse */
+@keyframes orbPulse {
+  0%   { box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong); }
+  50%  { box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong); }
+  100% { box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong); }
 }
 
 /* ============================================================
