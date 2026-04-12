@@ -111,3 +111,12 @@
     #2b3c8f 100%    /* deep indigo-blue */
   );
 }
+body.dark-mode .magic-bg-layer {
+  background: linear-gradient(
+    180deg,
+    #1a3a36 0%,     /* deep teal-green */
+    #1b2d55 30%,    /* deep blue */
+    #3a2e7b 60%,    /* deep violet */
+    #0f162e 100%    /* cosmic indigo */
+  );
+}
