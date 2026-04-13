@@ -1,12 +1,12 @@
-/* ---------------------------------------------
-   MAGIC.JS — FINAL FULLY WORKING VERSION
----------------------------------------------- */
+/* ------------------------------------------------------------
+   MAGIC.JS — FINAL AUTO‑SCAN VERSION (2026)
+------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------------------------------------------
+  /* ------------------------------------------------------------
      HERO CROWN IMAGE SWAP (EVERY 15 SECONDS)
-  ---------------------------------------------- */
+  ------------------------------------------------------------- */
 
   const crown = document.querySelector('.hero-crown-cinematic');
   const crownImages = [
@@ -29,22 +29,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 15000);
   }
 
-  /* ---------------------------------------------
-     FLOATING SIDE-IMAGE MAGIC — FINAL VERSION
-     (Auto-loads images from .gallery-lane)
-  ---------------------------------------------- */
+  /* ------------------------------------------------------------
+     AUTO‑SCAN GALLERY PAGE FOR IMAGES
+     (Loads ANY image from /gallery/ automatically)
+  ------------------------------------------------------------- */
+
+  async function loadGalleryImages() {
+    try {
+      const response = await fetch("/gallery/");
+      const html = await response.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+
+      // Supports both .magic-gallery-image and .gallery img
+      const imgs = Array.from(
+        doc.querySelectorAll(".magic-gallery-image, .gallery img")
+      );
+
+      return imgs.map(img => img.src);
+    } catch (e) {
+      console.error("Gallery scan failed:", e);
+      return [];
+    }
+  }
+
+  /* ------------------------------------------------------------
+     FLOATING SIDE‑IMAGE MAGIC — AUTO‑SCAN VERSION
+  ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
   if (!container) return;
 
-  const laneImages = Array.from(
-    document.querySelectorAll(".gallery-lane img")
-  ).map(img => img.getAttribute("src"));
-
-  const sources = laneImages.length ? laneImages : [];
+  let sources = [];
 
   const leftPositions = ["-180px", "-200px", "-160px"];
-  const rightPositions = ["280px", "320px", "360px"]; // FIXED RIGHT SIDE
+  const rightPositions = ["340px", "380px", "420px"]; // tuned for visibility
   let side = "left";
 
   function spawnSideImage() {
@@ -75,8 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 15000);
   }
 
-  // Start the magic
-  spawnSideImage();
-  setInterval(spawnSideImage, 18000);
+  /* ------------------------------------------------------------
+     START MAGIC AFTER GALLERY IMAGES ARE LOADED
+  ------------------------------------------------------------- */
+
+  loadGalleryImages().then(imgs => {
+    sources = imgs;
+
+    if (!sources.length) {
+      console.warn("No gallery images found for hero animation.");
+      return;
+    }
+
+    spawnSideImage();
+    setInterval(spawnSideImage, 18000);
+  });
 
 });
