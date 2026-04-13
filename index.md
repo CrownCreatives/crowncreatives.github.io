@@ -3,39 +3,21 @@ layout: default
 title: Home
 ---
 
-<!-- 👑 HERO SECTION — RESTORED CINEMATIC STRUCTURE + SUBTLE ROYAL MAGIC -->
-<section class="hero-section">
-
+<section class="hero-cinematic">
   <div class="hero-crown-wrapper">
-
-    <!-- Magical Aura + Ring -->
     <div class="hero-crown-aura"></div>
     <div class="hero-crown-ring"></div>
-
-    <!-- Correct Crown Image -->
     <img src="/assets/images/illuminus-crown.png"
-         alt="Crown Emblem"
-         class="hero-crown-cinematic hero-crown-core">
+         class="hero-crown-cinematic hero-crown-core"
+         alt="Crown Creatives">
+  </div>
 
-    <!-- Text merged into the emblem -->
+  <div class="hero-side-gallery"></div>
+
+  <div class="hero-text-block">
     <p class="hero-crown-explainer">
       Crown Creatives is a space for artistry, imagination, and personal resilience.
     </p>
-
-  </div>
-
-  <!-- Drifting magical gallery images appear here -->
-  <div class="hero-side-gallery"></div>
-
-</section>
-
-<!-- 🌟 INTRO CONTENT -->
-<!-- 🌟 GALLERY LANE (SIDE-SCROLLING PREVIEW) -->
-<section class="gallery-lane-container fade-in">
-  <div class="gallery-lane">
-    <img src="/assets/images/gallery/Face.jpeg" alt="Gallery Image 1">
-    <img src="/assets/images/gallery/Flower.jpeg" alt="Gallery Image 2">
-    <img src="/assets/images/gallery/Fly.jpeg" alt="Gallery Image 3">
   </div>
 </section>
 
@@ -61,3 +43,4 @@ title: Home
   </div>
 
 </section>
+
