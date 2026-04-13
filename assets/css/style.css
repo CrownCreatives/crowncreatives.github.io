@@ -513,3 +513,31 @@ body.scrolled .magic-mist-layer-2 {
   font-size: 0.9rem;
   opacity: 0.9;
 }
+/* FOOTER ICONS — MAGICAL NEON STYLE */
+.footer-icon-img {
+  width: 58px;              /* Larger, more dominant */
+  height: 58px;
+  border-radius: 50%;       /* Circular magical buttons */
+  padding: 10px;
+  background: radial-gradient(circle at 30% 30%,
+              rgba(255, 255, 255, 0.25),
+              rgba(0, 0, 0, 0.4));
+  backdrop-filter: blur(6px);
+
+  /* Neon glow */
+  box-shadow:
+    0 0 12px rgba(0, 255, 255, 0.9),
+    0 0 22px rgba(180, 0, 255, 0.8),
+    0 0 40px rgba(0, 200, 255, 0.6);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover effect — magical pulse */
+.footer-icon-img:hover {
+  transform: scale(1.25) rotate(3deg);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 1),
+    0 0 35px rgba(180, 0, 255, 1),
+    0 0 60px rgba(0, 200, 255, 1);
+}
