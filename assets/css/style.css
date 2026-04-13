@@ -784,3 +784,11 @@ body.light-mode .magic-bg-gradient {
   40%  { filter: drop-shadow(0 0 32px var(--cc-glow-strong)); }
   100% { filter: drop-shadow(0 0 18px var(--cc-glow-strong)); }
 }
+body.light-mode .magic-bg-gradient {
+  background: linear-gradient(
+    180deg,
+    #c8f7e2 0%,
+    #a8d4ff 40%,
+    #d0b8ff 100%
+  );
+}
