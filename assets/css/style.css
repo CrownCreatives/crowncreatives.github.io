@@ -285,25 +285,6 @@ nav.site-nav a:hover {
 }
 
 /* ------------------------------------------------------------
-   HERO SIDE GALLERY — Alternating Left/Right Images
------------------------------------------------------------- */
-.hero-side-gallery {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2; /* under crown, above mist */
-}
-
-.hero-side-image {
-  position: absolute;
-  width: 140px;
-  opacity: 0;
-  transition: opacity 1.2s ease;
-  filter: drop-shadow(0 0 12px var(--cc-glow-strong));
-  border-radius: 12px;
-}
-
-/* ------------------------------------------------------------
    Light Beam Behind Crown
 ------------------------------------------------------------ */
 .hero-light-beam {
@@ -385,6 +366,7 @@ nav.site-nav a:hover {
   0%   { transform: translate(-50%, 0); }
   100% { transform: translate(-50%, -20px); }
 }
+
 /* ============================================================
    FROSTED‑GLASS MAGICAL CARDS (PART 3 OF 4)
    ============================================================ */
@@ -581,15 +563,11 @@ nav.site-nav a:hover {
     max-width: 220px;
   }
 
-  /* Side images scale down + move closer */
   .hero-side-image {
     width: 90px;
   }
 }
 
-/* ------------------------------------------------------------
-   MOBILE — HERO SIDE GALLERY POSITIONING
------------------------------------------------------------- */
 @media (max-width: 600px) {
   .hero-side-image {
     width: 80px;
@@ -619,10 +597,6 @@ nav.site-nav a:hover {
     flex-direction: column;
     gap: 10px;
   }
-
-  .footer-up-arrow {
-    margin-left: 0;
-  }
 }
 
 /* ------------------------------------------------------------
@@ -646,7 +620,10 @@ html {
   background: rgba(120, 200, 255, 0.4);
   color: #fff;
 }
-/* FIX FOOTER ICON SIZES */
+
+/* ------------------------------------------------------------
+   FOOTER ICONS — CLEANED + UNIFIED
+------------------------------------------------------------ */
 .footer-cc-inline {
   width: 22px;
   height: 22px;
@@ -667,26 +644,7 @@ html {
 .footer-up-arrow:hover {
   transform: translateY(-4px);
 }
-.footer-cc-inline {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 6px var(--cc-glow-soft));
-}
 
-.footer-up-arrow {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 8px var(--cc-glow-soft));
-}
-
-.footer-up-arrow:hover {
-  transform: translateY(-4px);
-}
 /* COPYRIGHT GLOW UNDERLINE */
 .footer-copy {
   position: relative;
@@ -706,6 +664,7 @@ html {
   box-shadow: 0 0 10px var(--cc-glow-strong);
   opacity: 0.55;
 }
+
 /* FOOTER GRADIENT BAR */
 .footer-gradient-bar {
   position: absolute;
@@ -737,6 +696,10 @@ body.light-mode .footer-gradient-bar {
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* ------------------------------------------------------------
+   LIGHT MODE — CLEAN + UNIFIED
+------------------------------------------------------------ */
 body.light-mode {
   --cc-text: #ffffff;
   --cc-glow-strong: rgba(150, 180, 255, 0.65);
@@ -744,6 +707,7 @@ body.light-mode {
   --cc-card-bg: rgba(255, 255, 255, 0.10);
   --cc-footer-bg: transparent;
 }
+
 body.light-mode .magic-bg-gradient {
   background: linear-gradient(
     180deg,
@@ -752,9 +716,9 @@ body.light-mode .magic-bg-gradient {
     #c9c4f7 100%
   );
 }
+
 /* ============================================================
    HERO SIDE GALLERY — STRONG MAGICAL ENERGY MODE
-   Crown Creatives — Arcane Drift System
    ============================================================ */
 
 /* Container for the drifting image + particles */
@@ -769,9 +733,7 @@ body.light-mode .magic-bg-gradient {
   z-index: 5;
 }
 
-/* ------------------------------------------------------------
-   ARCANE PARTICLE BURST
-   ------------------------------------------------------------ */
+/* Particle burst */
 .hero-side-particles {
   position: absolute;
   width: 260px;
@@ -799,9 +761,7 @@ body.light-mode .magic-bg-gradient {
   100% { transform: scale(1); opacity: 0.4; }
 }
 
-/* ------------------------------------------------------------
-   DRIFTING IMAGE — STRONG MAGIC MODE
-   ------------------------------------------------------------ */
+/* Drifting image */
 .hero-side-image {
   position: absolute;
   width: 220px;
@@ -815,7 +775,6 @@ body.light-mode .magic-bg-gradient {
   z-index: 2;
 }
 
-/* Glow pulse when appearing */
 .hero-side-image.magic-pulse {
   animation: magicPulse 3.2s ease-out;
 }
@@ -825,4 +784,3 @@ body.light-mode .magic-bg-gradient {
   40%  { filter: drop-shadow(0 0 32px var(--cc-glow-strong)); }
   100% { filter: drop-shadow(0 0 18px var(--cc-glow-strong)); }
 }
-
