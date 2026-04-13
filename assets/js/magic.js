@@ -1,11 +1,11 @@
 /* ------------------------------------------------------------
-   MAGIC.JS — FINAL RESPONSIVE VERSION (2026)
+   MAGIC.JS — TRUE FOLDER AUTOSCAN (2026)
 ------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------------------------------------------------
-     HERO CROWN — NO MORE BLINKING (SHIMMER ONLY)
+     1. HERO CROWN — SHIMMER SWAP (NO BLINK)
   ------------------------------------------------------------- */
 
   const crown = document.querySelector('.hero-crown-cinematic');
@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (crown) {
     setInterval(() => {
       crownIndex = (crownIndex + 1) % crownImages.length;
-
-      // Magical shimmer overlay instead of fade-out blink
       crown.classList.add("fade-swap");
 
       setTimeout(() => {
@@ -33,46 +31,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------
-     AUTO‑SCAN GALLERY.HTML FOR IMAGES
+     2. TRUE FOLDER AUTOSCAN (GitHub API)
   ------------------------------------------------------------- */
 
-  async function loadGalleryImages() {
+  async function loadFolderImages() {
     try {
-      const response = await fetch("/gallery.html");
-      const html = await response.text();
-
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, "text/html");
-
-      const imgs = Array.from(
-        doc.querySelectorAll(".magic-gallery-image, .gallery img")
+      const response = await fetch(
+        "https://api.github.com/repos/CrownCreatives/crowncreatives.github.io/contents/assets/images/gallery"
       );
 
-      return imgs.map(img => img.src);
+      const files = await response.json();
+
+      // Filter only image files
+      const images = files
+        .filter(f => f.type === "file")
+        .filter(f => /\.(jpg|jpeg|png|gif|webp)$/i.test(f.name))
+        .map(f => f.path.startsWith("/") ? f.path : "/" + f.path);
+
+      return images;
+
     } catch (e) {
-      console.error("Gallery scan failed:", e);
+      console.error("Folder autoscan failed:", e);
       return [];
     }
   }
 
   /* ------------------------------------------------------------
-     FLOATING SIDE‑IMAGE MAGIC — RESPONSIVE LANES
-     (Never off-screen, always visible)
+     3. BUILD GALLERY PAGE AUTOMATICALLY
+  ------------------------------------------------------------- */
+
+  function buildGalleryGrid(images) {
+    const grid = document.querySelector(".gallery-grid");
+    if (!grid) return;
+
+    grid.innerHTML = ""; // clear existing
+
+    images.forEach(src => {
+      const img = document.createElement("img");
+      img.src = "/" + src.replace(/^\//, "");
+      img.className = "magic-gallery-image";
+      img.alt = "Artwork";
+      grid.appendChild(img);
+    });
+  }
+
+  /* ------------------------------------------------------------
+     4. HERO FLOATING IMAGES — RESPONSIVE LANES
   ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
-  if (!container) return;
-
   let sources = [];
 
-  // Percentage-based lanes — ALWAYS inside viewport
   const leftPositions = ["10%", "12%", "14%"];
   const rightPositions = ["86%", "88%", "90%"];
-
   let side = "left";
 
   function spawnSideImage() {
-    if (!sources.length) return;
+    if (!sources.length || !container) return;
 
     const img = document.createElement("img");
     img.className = "side-gallery-float";
@@ -100,16 +115,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------
-     START MAGIC AFTER IMAGES LOAD
+     5. START EVERYTHING
   ------------------------------------------------------------- */
 
-  loadGalleryImages().then(imgs => {
-    sources = imgs;
-
-    if (!sources.length) {
-      console.warn("No gallery images found for hero animation.");
+  loadFolderImages().then(images => {
+    if (!images.length) {
+      console.warn("No images found in folder.");
       return;
     }
+
+    // Build gallery page
+    buildGalleryGrid(images);
+
+    // Feed hero
+    sources = images.map(src => "/" + src.replace(/^\//, ""));
 
     spawnSideImage();
     setInterval(spawnSideImage, 18000);
