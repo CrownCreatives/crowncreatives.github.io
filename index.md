@@ -1,68 +1,61 @@
 ---
 layout: default
 title: Home
-permalink: /
 ---
 
-<!-- 🌟 CINEMATIC HERO SECTION -->
-<section class="hero-cinematic">
+<!-- 👑 ROYAL FANTASY HERO CROWN EMBLEM -->
+<section class="hero-section">
+  <div class="hero-crown-emblem">
+    <div class="hero-crown-aura"></div>
+    <div class="hero-crown-ring"></div>
 
-  <div class="hero-visual">
-    <img src="/assets/images/illuminus-crown.png" class="hero-crown-cinematic">
+    <img src="/assets/images/crown.png" alt="Crown Emblem" class="hero-crown-core">
 
-    <!-- Side Gallery Container (JS controls this) -->
-    <div class="hero-side-gallery">
-      <div class="hero-side-particles"></div>
-      <img class="hero-side-image">
+    <div class="hero-crown-text">
+      <p>Crown Creatives is a space for artistry, imagination, and personal resilience.</p>
     </div>
-
-    <div class="hero-light-beam"></div>
-    <div class="hero-mist-rise"></div>
   </div>
-
-  <!-- Unified Crown Explanation -->
-  <div class="hero-text-block">
-    <p class="hero-subtitle-cinematic cc-soft-glow" style="max-width: 620px; margin: 0 auto;">
-      Rebuilding, artistry, and personal transformation — a reminder that creativity is not just something we make, but something we become.
-    </p>
-  </div>
-
 </section>
 
-<!-- ✨ FIRST CARD ROW (3D Models + Creative Projects) -->
-<section class="cards-grid top-row">
+<!-- 🌟 INTRO CONTENT -->
+<div class="intro-box fade-in">
+  <p>
+    This site represents a journey — rebuilding life with intention, rediscovering creativity,
+    and transforming challenges into something meaningful. Every piece of art, every sculpt,
+    every post is part of that ongoing story.
+  </p>
+</div>
 
-  <div class="cc-card">
-    <h3 class="cc-card-title">3D Models</h3>
-    <p class="cc-card-text">
-      Explore a growing collection of 3D creations — characters, props, environments, and more.
-    </p>
+<!-- 🌟 GALLERY LANE (SIDE-SCROLLING PREVIEW) -->
+<section class="gallery-lane-container fade-in">
+  <div class="gallery-lane">
+    <img src="/assets/images/gallery/1.jpg" alt="Gallery Image 1">
+    <img src="/assets/images/gallery/2.jpg" alt="Gallery Image 2">
+    <img src="/assets/images/gallery/3.jpg" alt="Gallery Image 3">
+    <img src="/assets/images/gallery/4.jpg" alt="Gallery Image 4">
+    <img src="/assets/images/gallery/5.jpg" alt="Gallery Image 5">
   </div>
-
-  <div class="cc-card">
-    <h3 class="cc-card-title">Creative Projects</h3>
-    <p class="cc-card-text">
-      A space for artistic exploration, visual storytelling, and imaginative expression.
-    </p>
-  </div>
-
 </section>
 
-<!-- ✨ SECOND CARD ROW (Podcasts + Get in Touch) -->
-<section class="cards-grid bottom-row">
+<!-- 🌟 FEATURED CONTENT CARDS -->
+<section class="cards-grid fade-in">
 
   <div class="cc-card">
-    <h3 class="cc-card-title">Podcasts</h3>
-    <p class="cc-card-text">
-      Conversations about creativity, resilience, and the journey of rebuilding life.
-    </p>
+    <h2 class="cc-soft-glow">3D Models</h2>
+    <p>Explore sculpted characters, creatures, and fantasy‑themed digital models.</p>
+    <a href="/gallery/" class="cc-button">View Gallery</a>
   </div>
 
   <div class="cc-card">
-    <h3 class="cc-card-title">Get in Touch</h3>
-    <p class="cc-card-text">
-      Find me on social media below — I’d love to connect.
-    </p>
+    <h2 class="cc-soft-glow">Creative Projects</h2>
+    <p>A collection of artistic experiments, sketches, and magical world‑building.</p>
+    <a href="/projects/" class="cc-button">See Projects</a>
+  </div>
+
+  <div class="cc-card">
+    <h2 class="cc-soft-glow">Podcasts</h2>
+    <p>Thoughts on creativity, resilience, and the journey of rebuilding through art.</p>
+    <a href="/podcasts/" class="cc-button">Listen</a>
   </div>
 
 </section>
