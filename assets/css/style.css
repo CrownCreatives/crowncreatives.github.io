@@ -696,7 +696,7 @@ html { scroll-behavior: smooth; }
 
 .side-gallery-float {
   position: absolute;
-  width: 300px;
+  width: 240px;
   height: auto;
   opacity: 0;
   transform: translateY(20px) scale(0.95);
@@ -709,7 +709,7 @@ html { scroll-behavior: smooth; }
 /* FIXED: responsive floating image size */
 @media (max-width: 768px) {
   .side-gallery-float {
-    width: 180px;
+    width: 160px;
   }
 }
 
