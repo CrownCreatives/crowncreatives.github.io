@@ -528,267 +528,25 @@ nav.site-nav a:hover {
   opacity: 0.04;
   pointer-events: none;
 }
-/* ============================================================
-   RESPONSIVE + FINAL POLISH (PART 4 OF 4)
-   ============================================================ */
-
-/* TABLET + MOBILE HERO ADJUSTMENTS */
-@media (max-width: 1024px) {
-  .hero-crown-cinematic { max-width: 260px; }
-}
-
-@media (max-width: 768px) {
-  .site-title { font-size: 1.6rem; }
-  .hero-title-cinematic { font-size: 1.8rem; }
-  .hero-subtitle-cinematic { font-size: 1rem; }
-  .hero-crown-cinematic { max-width: 220px; }
-}
-
-@media (max-width: 600px) {
-  .hero-crown-cinematic { max-width: 200px; }
-}
-
-/* CARDS — MOBILE GRID */
-@media (max-width: 768px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
-  }
-  .cc-card { padding: 18px; }
-}
-
-/* FOOTER — MOBILE STACKING */
-@media (max-width: 768px) {
-  .footer-lower {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* SMOOTH SCROLL + SELECTION COLOR */
-html { scroll-behavior: smooth; }
-::selection {
-  background: rgba(120, 200, 255, 0.4);
-  color: #fff;
-}
-
-/* ============================================================
-   SUBTLE ROYAL MAGIC — HERO CROWN
-   ============================================================ */
-
-.hero-crown-wrapper {
-  position: relative;
-  width: min(360px, 80%); /* FIXED: responsive wrapper */
-  margin: 0 auto 40px auto;
-  text-align: center;
-  z-index: 10;
-  animation: heroCrownFloat 10s ease-in-out infinite;
-}
-
-@keyframes heroCrownFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
-.hero-crown-aura {
-  position: absolute;
-  inset: -35px;
-  background: radial-gradient(circle,
-    rgba(255,255,255,0.18) 0%,
-    rgba(150,180,255,0.15) 40%,
-    rgba(0,0,0,0) 80%
-  );
-  filter: blur(35px);
-  opacity: 0.45;
-  z-index: -2;
-}
-
-.hero-crown-ring {
-  position: absolute;
-  inset: -18px;
-  border-radius: 50%;
-  background: radial-gradient(circle,
-    rgba(180,140,255,0.25),
-    rgba(120,200,255,0.18),
-    transparent 70%
-  );
-  filter: blur(28px);
-  opacity: 0.35;
-  z-index: -1;
-}
-
-.hero-crown-cinematic.hero-crown-core {
-  width: 220px;
-  position: relative;
-  overflow: visible;
-  filter: drop-shadow(0 0 14px rgba(255,255,255,0.45))
-          drop-shadow(0 0 22px rgba(120,200,255,0.35));
-  animation: heroCrownPulse 7s ease-in-out infinite;
-}
-
-@keyframes heroCrownPulse {
-  0% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
-  50% { filter: drop-shadow(0 0 22px rgba(120,200,255,0.55)); }
-  100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
-}
-
-.hero-crown-explainer {
-  margin-top: 16px;
-  font-size: 1.1rem;
-  color: var(--cc-text);
-  text-shadow:
-    0 0 8px rgba(255,255,255,0.35),
-    0 0 14px rgba(120,200,255,0.25);
-  opacity: 0.95;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.4;
-}
-
-/* ============================================================
-   SUBTLE ROYAL GOLDEN SHIMMER — HERO CROWN
-   ============================================================ */
-
-.hero-crown-cinematic.hero-crown-core::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 80%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,200,0) 0%,
-    rgba(255,240,180,0.45) 50%,
-    rgba(255,255,200,0) 100%
-  );
-  filter: blur(12px);
-  opacity: 0;
-  transform: skewX(-20deg);
-  animation: crownShimmer 20s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes crownShimmer {
-  0% { left: -120%; opacity: 0; }
-  8% { opacity: 0.45; }
-  12% { left: 120%; opacity: 0; }
-  100% { left: 120%; opacity: 0; }
-}
-
-/* ============================================================
-   SIDE GALLERY FLOATING IMAGES — FINAL CLEAN VERSION
-   ============================================================ */
-
-.hero-side-gallery {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: visible;
-  z-index: 8;
-}
-
-.side-gallery-float {
-  position: absolute;
-  width: 240px;
-  height: auto;
-  opacity: 0;
-  transform: translateY(20px) scale(0.95);
-  transition: opacity 2s ease, transform 2s ease;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
-  z-index: 9;
-  pointer-events: none;
-}
-
-/* FIXED: responsive floating image size */
-@media (max-width: 768px) {
-  .side-gallery-float {
-    width: 160px;
-  }
-}
-
-.side-gallery-float.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* ============================================================
-   FOOTER — FINAL POLISH
-   ============================================================ */
-
-.site-footer {
-  margin-top: 60px;
-  padding: 20px 0 30px;
-  background: transparent;
-  backdrop-filter: none;
-  text-align: center;
-  color: var(--cc-text);
-  position: relative;
-  display: flex;              /* FIXED */
-  flex-direction: column;     /* FIXED */
-  align-items: center;        /* FIXED */
-}
-
-/* Social icons row centered */
-.footer-icons-row {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  margin-bottom: 14px;
-}
-
-.footer-icons-row svg {
-  width: 42px;
-  height: 42px;
-  filter: drop-shadow(0 0 10px var(--cc-glow-soft));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.footer-icons-row svg:hover {
-  transform: scale(1.12);
-  filter: drop-shadow(0 0 14px var(--cc-glow-strong));
-}
-
-/* Back to top bottom-right */
-.scroll-up {
-  position: absolute;
-  right: 18px;
-  bottom: 16px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.4);
-  color: var(--cc-text);
-  cursor: pointer;
-}
-
-/* Gallery lane hidden (auto-scan mode) */
-.gallery-lane {
-  display: none;
-}
 /* ------------------------------------------------------------
-   MAGICAL TICKER — CONTINUOUS LEFT → RIGHT
+   PART 4 — FOOTER + MAGICAL TICKER (2026 FINAL)
 ------------------------------------------------------------- */
 
+/* ✨ MAGICAL TICKER — CONTINUOUS LEFT → RIGHT */
 .ticker-container {
   width: 100%;
   overflow: hidden;
   position: relative;
   margin-top: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding: 10px 0;
 }
 
 .ticker-track {
-  display: flex;
+  display: inline-flex;
   white-space: nowrap;
   animation: tickerScroll 35s linear infinite;
+  will-change: transform;
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
 }
 
@@ -798,12 +556,12 @@ html { scroll-behavior: smooth; }
 }
 
 .ticker-inner {
-  display: flex;
+  display: inline-flex;
   gap: 60px;
 }
 
 .ticker-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   font-size: 1.1rem;
   color: var(--text-color);
@@ -820,3 +578,57 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 0 8px var(--accent-color);
 }
 
+/* ------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------- */
+
+.site-footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.footer-icon svg {
+  width: 38px;
+  height: 38px;
+  fill: var(--text-color);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icon:hover svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px var(--accent-color));
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* ------------------------------------------------------------
+   THEME TOGGLE
+------------------------------------------------------------- */
+
+.theme-toggle {
+  margin-top: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
