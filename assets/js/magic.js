@@ -31,28 +31,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------------------------------------------
      FLOATING SIDE-IMAGE MAGIC — FINAL VERSION
+     (Auto-loads images from .gallery-lane)
   ---------------------------------------------- */
 
-  const galleryFiles = [
-    "Face.jpeg",
-    "Flower.jpeg",
-    "Fly.jpeg"
-  ];
+  const container = document.querySelector(".hero-side-gallery");
+  if (!container) return;
+
+  const laneImages = Array.from(
+    document.querySelectorAll(".gallery-lane img")
+  ).map(img => img.getAttribute("src"));
+
+  const sources = laneImages.length ? laneImages : [];
 
   const leftPositions = ["-180px", "-200px", "-160px"];
   const rightPositions = ["180px", "200px", "160px"];
-
   let side = "left";
 
   function spawnSideImage() {
-    const container = document.querySelector(".hero-side-gallery");
-    if (!container) return;
+    if (!sources.length) return;
 
     const img = document.createElement("img");
     img.className = "side-gallery-float";
 
-    const file = galleryFiles[Math.floor(Math.random() * galleryFiles.length)];
-    img.src = `/assets/images/gallery/${file}`;
+    const src = sources[Math.floor(Math.random() * sources.length)];
+    img.src = src;
 
     const isLeft = side === "left";
     side = isLeft ? "right" : "left";
