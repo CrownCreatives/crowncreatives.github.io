@@ -1,18 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".theme-toggle");
+  if (!toggle) return;
 
-  const themeOrb = document.querySelector('.theme-toggle');
   const body = document.body;
+  const saved = localStorage.getItem("cc-theme");
 
-  if (!themeOrb) return; // prevents console errors
-
-  const savedTheme = localStorage.getItem('cc-theme');
-  if (savedTheme === 'light') {
-    body.classList.add('light-mode');
+  if (saved === "light") {
+    body.classList.add("light-mode");
   }
 
-  themeOrb.addEventListener('click', () => {
-    const isLight = body.classList.toggle('light-mode');
-    localStorage.setItem('cc-theme', isLight ? 'light' : 'dark');
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    const mode = body.classList.contains("light-mode") ? "light" : "dark";
+    localStorage.setItem("cc-theme", mode);
   });
-
 });
