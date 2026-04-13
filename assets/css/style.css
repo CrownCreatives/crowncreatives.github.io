@@ -311,9 +311,8 @@ body.scrolled .magic-mist-layer-2 {
   transform: scale(1.08);
   box-shadow: 0 0 18px var(--cc-glow-strong);
 }
-
 /* ============================================================
-   PART 4 — HEADER + TICKER + FOOTER (FINAL)
+   PART 2 — HEADER + NAVIGATION + THEME TOGGLE (64px)
 ============================================================ */
 
 /* HEADER */
@@ -331,7 +330,7 @@ body.scrolled .magic-mist-layer-2 {
   align-items: center;
 }
 
-/* PNG crown */
+/* Crown PNG */
 .header-crown-img {
   width: 80px;
   height: auto;
@@ -339,24 +338,49 @@ body.scrolled .magic-mist-layer-2 {
   margin: 0 auto 10px;
 }
 
-/* Day/night toggle */
+/* THEME TOGGLE — 64px SOFTER GLOW */
 .theme-toggle {
   position: absolute;
-  right: 20px;
-  top: 0;
-  background: none;
+  top: 20px;
+  right: 25px;
+
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   border: none;
-  font-size: 1.6rem;
   cursor: pointer;
-  color: var(--cc-text);
-  transition: transform 0.3s ease;
+
+  background: radial-gradient(circle at 30% 30%,
+              rgba(0, 255, 255, 0.22),
+              rgba(0, 0, 40, 0.65));
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 0 16px rgba(0, 255, 255, 0.7),
+    0 0 30px rgba(0, 120, 255, 0.6),
+    0 0 55px rgba(180, 0, 255, 0.5);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
+  box-shadow:
+    0 0 22px rgba(0, 255, 255, 0.9),
+    0 0 40px rgba(0, 120, 255, 0.8),
+    0 0 75px rgba(180, 0, 255, 0.7);
 }
 
-/* Title + tagline */
+/* DARK MODE — GOLDEN REACTOR */
+.dark-theme .theme-toggle {
+  box-shadow:
+    0 0 22px rgba(255, 200, 0, 0.9),
+    0 0 45px rgba(255, 150, 0, 0.8),
+    0 0 90px rgba(255, 120, 0, 0.7);
+}
+
+/* TITLE + TAGLINE */
 .site-title {
   margin: 10px 0 0;
   font-size: 2.2rem;
@@ -386,87 +410,12 @@ body.scrolled .magic-mist-layer-2 {
 .magical-nav a {
   text-decoration: none;
   font-weight: 500;
-}
-
-/* TICKER */
-.ticker-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding: 10px 0;
-}
-
-.ticker-track {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: tickerScroll 35s linear infinite;
-  will-change: transform;
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
-}
-
-@keyframes tickerScroll {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.ticker-inner {
-  display: inline-flex;
-  gap: 60px;
-}
-
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.1rem;
   color: var(--cc-text);
-  opacity: 0.9;
-  letter-spacing: 0.5px;
 }
+/* ============================================================
+   PART 3 — FOOTER + FOOTER ICONS (72px)
+============================================================ */
 
-.ticker-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--cc-glow-strong);
-  border-radius: 50%;
-  margin-right: 10px;
-  box-shadow: 0 0 8px var(--cc-glow-strong);
-}
-
-/* FOOTER */
-.site-footer {
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 40px;
-  position: relative;
-  z-index: 10;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 15px;
-}
-
-.footer-icon svg {
-  width: 38px;
-  height: 38px;
-  fill: var(--cc-text);
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.footer-icon:hover svg {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 6px var(--cc-glow-strong));
-}
-
-.footer-text {
-  font-size: 0.95rem;
-  opacity: 0.8;
-  margin-top: 10px;
-}
 .site-footer {
   position: relative;
   display: flex;
@@ -475,6 +424,8 @@ body.scrolled .magic-mist-layer-2 {
   padding: 25px 40px;
   background: transparent;
   color: #fff;
+  margin-top: 40px;
+  z-index: 10;
 }
 
 .footer-centre {
@@ -488,150 +439,13 @@ body.scrolled .magic-mist-layer-2 {
   margin-bottom: 10px;
 }
 
-.footer-icon-img {
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.8))
-          drop-shadow(0 0 20px rgba(180, 0, 255, 0.6));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.footer-icon-img:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 1))
-          drop-shadow(0 0 30px rgba(180, 0, 255, 1));
-}
-
-.footer-right {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .footer-text {
   font-size: 0.9rem;
   opacity: 0.9;
-}
-/* FOOTER ICONS — MAGICAL NEON STYLE */
-.footer-icon-img {
-  width: 58px;              /* Larger, more dominant */
-  height: 58px;
-  border-radius: 50%;       /* Circular magical buttons */
-  padding: 10px;
-  background: radial-gradient(circle at 30% 30%,
-              rgba(255, 255, 255, 0.25),
-              rgba(0, 0, 0, 0.4));
-  backdrop-filter: blur(6px);
-
-  /* Neon glow */
-  box-shadow:
-    0 0 12px rgba(0, 255, 255, 0.9),
-    0 0 22px rgba(180, 0, 255, 0.8),
-    0 0 40px rgba(0, 200, 255, 0.6);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  margin-top: 10px;
 }
 
-/* Hover effect — magical pulse */
-.footer-icon-img:hover {
-  transform: scale(1.25) rotate(3deg);
-  box-shadow:
-    0 0 20px rgba(0, 255, 255, 1),
-    0 0 35px rgba(180, 0, 255, 1),
-    0 0 60px rgba(0, 200, 255, 1);
-}
-.footer-right .footer-icon-img {
-  box-shadow:
-    0 0 18px rgba(255, 255, 0, 0.9),
-    0 0 35px rgba(255, 150, 0, 0.8),
-    0 0 60px rgba(255, 200, 0, 0.7);
-}
-
-.footer-right .footer-icon-img:hover {
-  transform: scale(1.3) rotate(-5deg);
-  box-shadow:
-    0 0 25px rgba(255, 255, 0, 1),
-    0 0 45px rgba(255, 150, 0, 1),
-    0 0 80px rgba(255, 200, 0, 1);
-}
-.footer-icon-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  padding: 12px;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(255, 255, 255, 0.25),
-              rgba(0, 0, 0, 0.55));
-
-  backdrop-filter: blur(8px);
-
-  box-shadow:
-    0 0 14px rgba(0, 255, 255, 0.9),
-    0 0 28px rgba(180, 0, 255, 0.8),
-    0 0 55px rgba(0, 200, 255, 0.7);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.footer-icon-img:hover {
-  transform: scale(1.25) rotate(4deg);
-  box-shadow:
-    0 0 22px rgba(0, 255, 255, 1),
-    0 0 40px rgba(180, 0, 255, 1),
-    0 0 75px rgba(0, 200, 255, 1);
-}
-.footer-right .footer-icon-img {
-  box-shadow:
-    0 0 18px rgba(255, 255, 0, 0.9),
-    0 0 35px rgba(255, 150, 0, 0.8),
-    0 0 60px rgba(255, 200, 0, 0.7);
-}
-
-.footer-right .footer-icon-img:hover {
-  transform: scale(1.3) rotate(-5deg);
-  box-shadow:
-    0 0 25px rgba(255, 255, 0, 1),
-    0 0 45px rgba(255, 150, 0, 1),
-    0 0 80px rgba(255, 200, 0, 1);
-}
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(255, 255, 255, 0.3),
-              rgba(0, 0, 0, 0.6));
-
-  backdrop-filter: blur(6px);
-
-  box-shadow:
-    0 0 14px rgba(0, 255, 255, 0.9),
-    0 0 28px rgba(180, 0, 255, 0.8),
-    0 0 55px rgba(0, 200, 255, 0.7);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.15);
-  box-shadow:
-    0 0 22px rgba(0, 255, 255, 1),
-    0 0 40px rgba(180, 0, 255, 1),
-    0 0 75px rgba(0, 200, 255, 1);
-}
-
-/* ================================
-   FOOTER ICONS — 72px ENERGY CORE
-   ================================ */
+/* FOOTER ICONS — 72px ENERGY CORE */
 .footer-icon-img {
   width: 72px;
   height: 72px;
@@ -661,6 +475,13 @@ body.scrolled .magic-mist-layer-2 {
 }
 
 /* GOLDEN PORTAL VARIANT — UP ARROW */
+.footer-right {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .footer-right .footer-icon-img {
   box-shadow:
     0 0 26px rgba(255, 200, 0, 0.9),
@@ -675,29 +496,3 @@ body.scrolled .magic-mist-layer-2 {
     0 0 75px rgba(255, 150, 0, 1),
     0 0 140px rgba(255, 120, 0, 1);
 }
-
-/* ================================
-   THEME TOGGLE — 64px SOFTER GLOW
-   ================================ */
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(0, 255, 255, 0.22),
-              rgba(0, 0, 40, 0.65));
-
-  backdrop-filter: blur(8px);
-
-  /* Softer glow than footer icons */
-  box-shadow:
-    0 0 16px rgba(0, 255, 255, 0.7),
-    0 0 30px rgba(0, 120, 255, 0.6),
-    0 0 55px rgba(180, 0
