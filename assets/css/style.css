@@ -773,4 +773,50 @@ html { scroll-behavior: smooth; }
 .gallery-lane {
   display: none;
 }
+/* ------------------------------------------------------------
+   MAGICAL TICKER — CONTINUOUS LEFT → RIGHT
+------------------------------------------------------------- */
+
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: tickerScroll 35s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.ticker-inner {
+  display: flex;
+  gap: 60px;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+.ticker-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0 0 8px var(--accent-color);
+}
 
