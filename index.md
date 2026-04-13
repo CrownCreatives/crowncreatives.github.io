@@ -3,18 +3,30 @@ layout: default
 title: Home
 ---
 
-<!-- 👑 ROYAL FANTASY HERO CROWN EMBLEM -->
+<!-- 👑 ROYAL FANTASY HERO CROWN (RESTORED + ENHANCED) -->
 <section class="hero-section">
-  <div class="hero-crown-emblem">
+
+  <div class="hero-crown-wrapper">
+
+    <!-- Magical Aura + Ring -->
     <div class="hero-crown-aura"></div>
     <div class="hero-crown-ring"></div>
 
-    <img src="/assets/images/crown.png" alt="Crown Emblem" class="hero-crown-core">
+    <!-- Correct Crown Image Restored -->
+    <img src="/assets/images/illuminus-crown.png"
+         alt="Crown Emblem"
+         class="hero-crown-cinematic hero-crown-core">
 
-    <div class="hero-crown-text">
-      <p>Crown Creatives is a space for artistry, imagination, and personal resilience.</p>
-    </div>
+    <!-- Text merged into the emblem -->
+    <p class="hero-crown-explainer">
+      Crown Creatives is a space for artistry, imagination, and personal resilience.
+    </p>
+
   </div>
+
+  <!-- The drifting gallery engine depends on this container -->
+  <div class="hero-side-gallery"></div>
+
 </section>
 
 <!-- 🌟 INTRO CONTENT -->
