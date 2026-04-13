@@ -24,37 +24,35 @@
 
 <footer class="site-footer">
 
-  <div class="footer-icons">
+  <!-- CENTRED SOCIAL ICONS + COPYRIGHT -->
+  <div class="footer-centre">
+    <div class="footer-icons">
 
-    <a href="https://www.instagram.com" class="footer-icon" aria-label="Instagram">
-      <img src="/assets/icons/instagram.png" alt="Instagram" class="footer-icon-img">
-    </a>
+      <a href="https://www.instagram.com" class="footer-icon" aria-label="Instagram">
+        <img src="/assets/icons/instagram.png" alt="Instagram" class="footer-icon-img">
+      </a>
 
-    <a href="https://www.facebook.com" class="footer-icon" aria-label="Facebook">
-      <img src="/assets/icons/facebook.png" alt="Facebook" class="footer-icon-img">
-    </a>
+      <a href="https://www.facebook.com" class="footer-icon" aria-label="Facebook">
+        <img src="/assets/icons/facebook.png" alt="Facebook" class="footer-icon-img">
+      </a>
 
-    <a href="mailto:contact@crowncreatives.com" class="footer-icon" aria-label="Email">
-      <img src="/assets/icons/email.png" alt="Email" class="footer-icon-img">
-    </a>
+      <a href="mailto:contact@crowncreatives.com" class="footer-icon" aria-label="Email">
+        <img src="/assets/icons/email.png" alt="Email" class="footer-icon-img">
+      </a>
 
-    <a href="/" class="footer-icon" aria-label="Home">
-      <img src="/assets/icons/cc-monogram.png" alt="Crown Creatives Home" class="footer-icon-img">
-    </a>
+    </div>
 
+    <p class="footer-text">
+      © Crown Creatives — Artistry • Resilience • Imagination
+    </p>
+  </div>
+
+  <!-- RIGHT‑SIDE SCROLL BUTTON -->
+  <div class="footer-right">
     <a href="#" class="footer-icon scroll-top" aria-label="Scroll to top">
       <img src="/assets/icons/up-arrow.png" alt="Scroll to top" class="footer-icon-img">
     </a>
-
   </div>
-
-  <p class="footer-text">
-    © Crown Creatives — Artistry • Resilience • Imagination
-  </p>
-
-  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-    <span class="theme-icon">🌙</span>
-  </button>
 
 </footer>
 
@@ -62,15 +60,5 @@
 <script>
 document.querySelector('.scroll-top')?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
-
-<!-- Theme toggle -->
-<script>
-const toggle = document.getElementById('theme-toggle');
-const root = document.documentElement;
-
-toggle?.addEventListener('click', () => {
-  root.classList.toggle('dark-theme');
 });
 </script>
