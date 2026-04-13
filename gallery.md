@@ -11,25 +11,15 @@ title: Gallery
   </p>
 
   <div class="gallery-grid">
-
-    <!-- Each image MUST have class="magic-gallery-image" -->
-    <!-- Add as many as you want — the hero auto-scanner will pick them up -->
-
-    <img src="/assets/images/gallery/Face.jpeg" class="magic-gallery-image" alt="Artwork">
-    <img src="/assets/images/gallery/Flower.jpeg" class="magic-gallery-image" alt="Artwork">
-    <img src="/assets/images/gallery/Fly.jpeg" class="magic-gallery-image" alt="Artwork">
-
-    <!-- Add more images here -->
-    <!-- Example:
-    <img src="/assets/images/gallery/MyNewArt.jpg" class="magic-gallery-image" alt="Artwork">
-    -->
-
+    <img src="/assets/images/gallery/Face.jpeg" class="magic-gallery-image">
+    <img src="/assets/images/gallery/Flower.jpeg" class="magic-gallery-image">
+    <img src="/assets/images/gallery/Fly.jpeg" class="magic-gallery-image">
   </div>
 
 </section>
 
-<!-- LIGHTBOX (required for clicking images) -->
 <div id="lightbox" class="lightbox">
   <span class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-img" alt="">
+  <img id="lightbox-img" class="lightbox-img">
 </div>
+
