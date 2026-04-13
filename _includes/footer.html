@@ -1,63 +1,35 @@
 <footer class="site-footer">
 
-  <!-- CENTRED SOCIAL ICONS + COPYRIGHT -->
   <div class="footer-centre">
+
     <div class="footer-icons">
-
-      <a href="https://www.instagram.com" class="footer-icon" aria-label="Instagram">
-        <img src="/assets/icons/instagram-reactor.png" alt="Instagram" class="footer-icon-img">
+      <a href="https://instagram.com" target="crown_creatives_uk/">
+        <img src="/assets/icons/icon-instagram-bold-cyan.png" 
+             alt="Instagram" class="footer-icon-img">
       </a>
 
-      <a href="https://www.facebook.com" class="footer-icon" aria-label="Facebook">
-        <img src="/assets/icons/facebook-reactor.png" alt="Facebook" class="footer-icon-img">
+      <a href="https://facebook.com" target="people/Crown-Creatives/61556386467490/">
+        <img src="/assets/icons/icon-facebook-bold-cyan.png" 
+             alt="Facebook" class="footer-icon-img">
       </a>
 
-      <a href="mailto:contact@crowncreatives.com" class="footer-icon" aria-label="Email">
-        <img src="/assets/icons/email-reactor.png" alt="Email" class="footer-icon-img">
+      <a href="crowncreatives@outlook.com">
+        <img src="/assets/icons/icon-email-bold-cyan.png" 
+             alt="Email" class="footer-icon-img">
       </a>
-
     </div>
 
-    <p class="footer-text">
+    <div class="footer-text">
       © Crown Creatives — Artistry • Resilience • Imagination
-    </p>
+    </div>
+
   </div>
 
-  <!-- RIGHT‑SIDE SCROLL BUTTON -->
   <div class="footer-right">
-    <a href="#" class="footer-icon scroll-top" aria-label="Scroll to top">
-      <img src="/assets/icons/up-arrow-reactor.png" alt="Scroll to top" class="footer-icon-img">
+    <a href="#top">
+      <img src="/assets/icons/icon-up-arrow-bold-cyan.png" 
+           alt="Back to top" class="footer-icon-img">
     </a>
   </div>
 
 </footer>
-
-<!-- GLOBAL LOADING SPINNER (OUTSIDE FOOTER) -->
-<div id="cc-loading-spinner" class="cc-spinner hidden">
-  <img src="/assets/icons/cc-reactor-spinner.png" alt="Loading..." class="cc-spinner-img">
-</div>
-
-<script>
-  // Scroll to top
-  document.querySelector('.scroll-top')?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Spinner controls
-  const ccSpinner = document.getElementById('cc-loading-spinner');
-
-  function showCCSpinner() {
-    ccSpinner.classList.remove('hidden');
-  }
-
-  function hideCCSpinner() {
-    ccSpinner.classList.add('hidden');
-  }
-
-  // OPTIONAL: Auto-show spinner on page load
-  showCCSpinner();
-  window.addEventListener('load', () => {
-    setTimeout(hideCCSpinner, 400);
-  });
-</script>
-
