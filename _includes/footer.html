@@ -53,4 +53,11 @@
   function hideCCSpinner() {
     ccSpinner.classList.add('hidden');
   }
+
+  // OPTIONAL: Auto-show spinner on page load
+  showCCSpinner();
+  window.addEventListener('load', () => {
+    setTimeout(hideCCSpinner, 400);
+  });
 </script>
+
