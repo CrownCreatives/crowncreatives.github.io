@@ -1,6 +1,6 @@
 /* ============================================================
    CROWN CREATIVES — MAGICAL BACKGROUND ENGINE (2026)
-   Procedural Mist • Glow • Parallax • Gradient
+   Procedural Mist • Glow • Sparkles • Parallax • Gradient
    No external images required
    ============================================================ */
 
@@ -16,33 +16,36 @@
 }
 
 /* ------------------------------------------------------------
-   1. BASE GRADIENT — DARK MODE
+   1. BASE GRADIENT — DARK MODE (deeper, richer, more magical)
 ------------------------------------------------------------ */
 .magic-bg-gradient {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    #0d2f2d 0%,
-    #0f3b3a 40%,
+    #052726 0%,
+    #0b3a4a 35%,
+    #13294b 70%,
     #0a1f2e 100%
   );
   transition: background 1s ease;
   z-index: -10;
 }
 
-/* Light mode — toned down, colourful, magical */
+/* ------------------------------------------------------------
+   2. LIGHT MODE — brighter, colourful, magical
+------------------------------------------------------------ */
 body.light-mode .magic-bg-gradient {
   background: linear-gradient(
     180deg,
-    #a8e8d4 0%,
-    #8fcde6 40%,
-    #b3a8f0 100%
+    #b8f2e0 0%,
+    #a4d4ff 40%,
+    #c7b8ff 100%
   );
 }
 
 /* ------------------------------------------------------------
-   2. SOFT DRIFTING MIST (procedural)
+   3. SOFT DRIFTING MIST (procedural)
 ------------------------------------------------------------ */
 .magic-mist-layer {
   position: absolute;
@@ -62,7 +65,7 @@ body.light-mode .magic-bg-gradient {
 }
 
 /* ------------------------------------------------------------
-   3. MAGICAL GLOW LAYER (procedural)
+   4. MAGICAL GLOW LAYER (procedural)
 ------------------------------------------------------------ */
 .magic-leaf-glow {
   position: absolute;
@@ -79,5 +82,27 @@ body.light-mode .magic-bg-gradient {
 @keyframes leafParallax {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* ------------------------------------------------------------
+   5. SPARKLE / HIGHLIGHT LAYER (new)
+------------------------------------------------------------ */
+.magic-sparkle-layer {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.12), transparent 70%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.10), transparent 75%),
+    radial-gradient(circle at 50% 90%, rgba(180,140,255,0.12), transparent 80%);
+  opacity: 0.18;
+  filter: blur(14px);
+  animation: sparkleFloat 60s ease-in-out infinite;
+  z-index: -6;
+}
+
+@keyframes sparkleFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
   100% { transform: translateY(0); }
 }
