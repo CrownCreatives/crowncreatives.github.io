@@ -29,15 +29,7 @@ title: Home
 
 </section>
 
-<!-- 🌟 INTRO CONTENT -->
-<div class="intro-box fade-in">
-  <p>
-    This site represents a journey — rebuilding life with intention, rediscovering creativity,
-    and transforming challenges into something meaningful. Every piece of art, every sculpt,
-    every post is part of that ongoing story.
-  </p>
-</div>
-
+<!-- 🌟 INTRO CONTENT
 <!-- 🌟 GALLERY LANE (SIDE-SCROLLING PREVIEW) -->
 <section class="gallery-lane-container fade-in">
   <div class="gallery-lane">
