@@ -677,3 +677,70 @@ nav.site-nav a:hover {
 .nav-links a {
   text-decoration: none;
 }
+/* Header container */
+.site-header {
+  text-align: center;
+  padding: 40px 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Crown + toggle row */
+.header-top {
+  position: relative;
+  display: flex;
+  justify-content: center;   /* crown stays centred */
+  align-items: center;
+}
+
+/* Crown icon */
+.header-crown svg {
+  width: 80px;               /* slightly larger */
+  height: 80px;
+  display: block;
+  margin: 0 auto 10px;
+  background: none !important;   /* removes black square */
+}
+
+/* Day/night toggle stays top-right */
+.theme-toggle {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Title + tagline */
+.site-title {
+  margin: 10px 0 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.site-tagline {
+  margin: 5px 0 20px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Magical nav bar */
+.magical-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 12px 20px;
+  margin: 0 auto;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgba(90,0,200,0.4), rgba(0,150,255,0.4));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(120,0,255,0.4);
+}
+
+.magical-nav a {
+  text-decoration: none;
+  font-weight: 500;
+}
