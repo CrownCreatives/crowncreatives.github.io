@@ -3,13 +3,13 @@
      fill="none" stroke="currentColor" stroke-width="3"
      stroke-linecap="round" stroke-linejoin="round">
 
-  <!-- Crown outline with significantly raised peaks -->
-  <path d="M6 46 L6 22 L20 34 L32 8 L44 34 L58 22 L58 46 Z" />
+  <!-- Crown outline with an extra ~10% vertical stretch on the sides -->
+  <path d="M6 46 L6 16 L20 34 L32 8 L44 34 L58 16 L58 46 Z" />
 
   <!-- Base line -->
   <line x1="6" y1="46" x2="58" y2="46" />
 
-  <!-- CC monogram (unchanged size + position) -->
+  <!-- CC monogram (unchanged position + size) -->
   <text x="32" y="40" text-anchor="middle"
         font-family="Georgia, serif"
         font-size="20"
