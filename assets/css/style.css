@@ -1,16 +1,16 @@
 /* ============================================================
    CROWN CREATIVES — UNIFIED MAGICAL THEME 2026
-   COMPLETE CLEAN BUILD — PART 1 OF 4
-   ============================================================ */
+   COMPLETE CLEAN BUILD — PARTS 1–4 MERGED
+============================================================ */
 
 /* ------------------------------------------------------------
    GOOGLE FONT — CINZEL (Regal Fantasy Titles)
-   ------------------------------------------------------------ */
+------------------------------------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
 
 /* ------------------------------------------------------------
    THEME VARIABLES — NIGHT MODE (DEFAULT)
-   ------------------------------------------------------------ */
+------------------------------------------------------------ */
 body {
   --cc-text: #e0e6ff;
   --cc-glow-strong: rgba(90, 60, 200, 0.9);
@@ -28,7 +28,7 @@ body {
 
 /* ------------------------------------------------------------
    THEME VARIABLES — DAY MODE
-   ------------------------------------------------------------ */
+------------------------------------------------------------ */
 body.light-mode {
   --cc-text: #ffffff;
   --cc-glow-strong: rgba(120, 200, 255, 0.9);
@@ -39,7 +39,7 @@ body.light-mode {
 
 /* ============================================================
    GLOBAL MAGICAL BACKGROUND — FOREST MIST ENGINE
-   ============================================================ */
+============================================================ */
 
 .magic-bg-container {
   position: fixed;
@@ -148,133 +148,16 @@ body.scrolled .magic-mist-layer-2 {
 }
 
 /* ============================================================
-   HEADER — TRANSPARENT, GLOWING
-   ============================================================ */
-
-.site-header {
-  width: 100%;
-  padding: 1.2rem 0;
-  text-align: center;
-  background: transparent;
-  color: var(--cc-text);
-  text-shadow: 0 0 12px var(--cc-glow-soft);
-  position: relative;
-  z-index: 10;
-}
-
-.site-header-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.site-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--cc-text);
-}
-
-.site-tagline {
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--cc-text);
-}
-
-/* Floating header crown */
-.header-crown-img {
-  width: 70px;
-  height: auto;
-  filter: drop-shadow(0 0 12px var(--cc-glow-soft));
-  animation: cc-float 4s ease-in-out infinite;
-}
-
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
-
-nav.site-nav {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-}
-
-nav.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 26px;
-  padding: 12px 28px;
-  background: rgba(0,0,0,0.25);
-  border-radius: 40px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 0 12px var(--cc-glow-soft);
-}
-
-nav.site-nav a {
-  color: var(--cc-text);
-  font-size: 1rem;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
-}
-
-nav.site-nav a:hover {
-  text-shadow: 0 0 12px var(--cc-glow-strong);
-}
-
-/* ============================================================
-   THEME TOGGLE — MAGICAL ORB
-   ============================================================ */
-
-.theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 22px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  font-size: 1.3rem;
-  color: var(--cc-text);
-  box-shadow: 0 0 12px var(--cc-glow-soft), 0 0 22px var(--cc-glow-strong);
-  animation: orbPulse 4s ease-in-out infinite;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.12);
-  box-shadow: 0 0 16px var(--cc-glow-strong), 0 0 28px var(--cc-glow-strong);
-}
-
-.theme-toggle:active {
-  transform: scale(0.92);
-  box-shadow: 0 0 8px var(--cc-glow-soft), 0 0 14px var(--cc-glow-strong);
-}
-/* ============================================================
-   HERO — CINEMATIC FOREST HERO (PART 2 OF 4)
-   ============================================================ */
+   HERO — CINEMATIC FOREST HERO (PART 2)
+============================================================ */
 
 .hero-cinematic {
   position: relative;
-  padding: 20px 20px 140px; /* tight under nav */
+  padding: 20px 20px 140px;
   text-align: center;
   z-index: 5;
 }
 
-/* ------------------------------------------------------------
-   Floating Crown (25% larger, centered)
------------------------------------------------------------- */
 .hero-crown-cinematic {
   width: 50%;
   max-width: 320px;
@@ -284,9 +167,6 @@ nav.site-nav a:hover {
   z-index: 3;
 }
 
-/* ------------------------------------------------------------
-   Light Beam Behind Crown
------------------------------------------------------------- */
 .hero-light-beam {
   position: absolute;
   top: 30%;
@@ -294,20 +174,15 @@ nav.site-nav a:hover {
   transform: translateX(-50%);
   width: 260px;
   height: 260px;
-  background: radial-gradient(
-    circle,
+  background: radial-gradient(circle,
     rgba(120, 255, 220, 0.35) 0%,
-    rgba(0, 0, 0, 0) 70%
-  );
+    rgba(0, 0, 0, 0) 70%);
   filter: blur(18px);
   opacity: 0.55;
   animation: heroBeamPulse 6s ease-in-out infinite;
   z-index: 1;
 }
 
-/* ------------------------------------------------------------
-   Rising Mist Under Crown
------------------------------------------------------------- */
 .hero-mist-rise {
   position: absolute;
   bottom: -20px;
@@ -322,9 +197,6 @@ nav.site-nav a:hover {
   z-index: 2;
 }
 
-/* ------------------------------------------------------------
-   HERO TEXT BLOCK
------------------------------------------------------------- */
 .hero-text-block {
   max-width: 760px;
   margin: 0 auto;
@@ -346,10 +218,7 @@ nav.site-nav a:hover {
   text-shadow: 0 0 10px var(--cc-glow-soft);
 }
 
-/* ============================================================
-   HERO ANIMATIONS — CLEAN + UNIFIED
-   ============================================================ */
-
+/* HERO ANIMATIONS */
 @keyframes heroCrownFloat {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-10px); }
@@ -368,8 +237,8 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   FROSTED‑GLASS MAGICAL CARDS (PART 3 OF 4)
-   ============================================================ */
+   PART 3 — FROSTED CARDS + GALLERY
+============================================================ */
 
 .cards-grid {
   display: grid;
@@ -415,10 +284,7 @@ nav.site-nav a:hover {
   line-height: 1.5;
 }
 
-/* ============================================================
-   MAGIC GALLERY LANE — CINEMATIC HORIZONTAL STRIP
-   ============================================================ */
-
+/* GALLERY LANE */
 .gallery-lane {
   width: 100%;
   overflow-x: auto;
@@ -447,92 +313,82 @@ nav.site-nav a:hover {
 }
 
 /* ============================================================
-   FOOTER — SLIM, TRANSPARENT, RIGHT‑ALIGNED UP ARROW
-   ============================================================ */
+   PART 4 — HEADER + TICKER + FOOTER (FINAL)
+============================================================ */
 
-.site-footer {
-  margin-top: 60px;
-  padding: 20px 0 30px;
-  background: transparent; /* no block */
-  backdrop-filter: none;
+/* HEADER */
+.site-header {
   text-align: center;
-  color: var(--cc-text);
+  padding: 40px 0 20px;
   position: relative;
+  z-index: 10;
 }
 
-/* Social icons row stays centered */
-.footer-icons-row {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  margin-bottom: 14px;
-}
-
-.footer-icons-row img {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px var(--cc-glow-soft));
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.footer-icons-row img:hover {
-  transform: scale(1.12);
-  filter: drop-shadow(0 0 14px var(--cc-glow-strong));
-}
-
-/* COPYRIGHT LINE — centered */
-.footer-lower {
+.header-top {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.95rem;
-  opacity: 0.85;
-  margin-top: 10px;
 }
 
-/* CC icon inline with text */
-.footer-cc-inline {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  margin-left: 6px;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 6px var(--cc-glow-soft));
+/* PNG crown */
+.header-crown-img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
 }
 
-/* UP ARROW — far right corner */
-.footer-up-arrow {
+/* Day/night toggle */
+.theme-toggle {
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+  right: 20px;
+  top: 0;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
   cursor: pointer;
-  filter: drop-shadow(0 0 8px var(--cc-glow-soft));
+  color: var(--cc-text);
   transition: transform 0.3s ease;
 }
 
-.footer-up-arrow:hover {
-  transform: translateY(-60%);
+.theme-toggle:hover {
+  transform: scale(1.2);
 }
 
-/* Optional: subtle watermark behind footer */
-.footer-watermark {
-  position: absolute;
-  inset: 0;
-  background: url('/assets/icons/cc-magic.svg') center/120px no-repeat;
-  opacity: 0.04;
-  pointer-events: none;
+/* Title + tagline */
+.site-title {
+  margin: 10px 0 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
 }
-/* ------------------------------------------------------------
-   PART 4 — FOOTER + MAGICAL TICKER (2026 FINAL)
-------------------------------------------------------------- */
 
-/* ✨ MAGICAL TICKER — CONTINUOUS LEFT → RIGHT */
+.site-tagline {
+  margin: 5px 0 20px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* MAGICAL NAV BAR */
+.magical-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 12px 20px;
+  margin: 0 auto;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgba(90,0,200,0.4), rgba(0,150,255,0.4));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(120,0,255,0.4);
+}
+
+.magical-nav a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* TICKER */
 .ticker-container {
   width: 100%;
   overflow: hidden;
@@ -564,7 +420,7 @@ nav.site-nav a:hover {
   display: inline-flex;
   align-items: center;
   font-size: 1.1rem;
-  color: var(--text-color);
+  color: var(--cc-text);
   opacity: 0.9;
   letter-spacing: 0.5px;
 }
@@ -572,16 +428,13 @@ nav.site-nav a:hover {
 .ticker-dot {
   width: 8px;
   height: 8px;
-  background: var(--accent-color);
+  background: var(--cc-glow-strong);
   border-radius: 50%;
   margin-right: 10px;
-  box-shadow: 0 0 8px var(--accent-color);
+  box-shadow: 0 0 8px var(--cc-glow-strong);
 }
 
-/* ------------------------------------------------------------
-   FOOTER
-------------------------------------------------------------- */
-
+/* FOOTER */
 .site-footer {
   text-align: center;
   padding: 30px 0;
@@ -600,147 +453,17 @@ nav.site-nav a:hover {
 .footer-icon svg {
   width: 38px;
   height: 38px;
-  fill: var(--text-color);
+  fill: var(--cc-text);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .footer-icon:hover svg {
   transform: scale(1.15);
-  filter: drop-shadow(0 0 6px var(--accent-color));
+  filter: drop-shadow(0 0 6px var(--cc-glow-strong));
 }
 
 .footer-text {
   font-size: 0.95rem;
   opacity: 0.8;
   margin-top: 10px;
-}
-
-/* ------------------------------------------------------------
-   THEME TOGGLE
-------------------------------------------------------------- */
-
-.theme-toggle {
-  margin-top: 15px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.4rem;
-  color: var(--text-color);
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.2);
-}
-.site-header {
-  padding: 20px 0;
-}
-
-.nav-bar {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-logo svg {
-  width: 36px;
-  height: 36px;
-  display: block;
-}
-
-.nav-title {
-  text-align: center;
-  line-height: 1.2;
-}
-
-.nav-title h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
-.nav-title p {
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-}
-/* Header container */
-.site-header {
-  text-align: center;
-  padding: 40px 0 20px;
-  position: relative;
-  z-index: 10;
-}
-
-/* Crown + toggle row */
-.header-top {
-  position: relative;
-  display: flex;
-  justify-content: center;   /* crown stays centred */
-  align-items: center;
-}
-
-/* Crown icon */
-.header-crown svg {
-  width: 80px;               /* slightly larger */
-  height: 80px;
-  display: block;
-  margin: 0 auto 10px;
-  background: none !important;   /* removes black square */
-}
-
-/* Day/night toggle stays top-right */
-.theme-toggle {
-  position: absolute;
-  right: 20px;
-  top: 0;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-/* Title + tagline */
-.site-title {
-  margin: 10px 0 0;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
-}
-
-.site-tagline {
-  margin: 5px 0 20px;
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-/* Magical nav bar */
-.magical-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  list-style: none;
-  padding: 12px 20px;
-  margin: 0 auto;
-  border-radius: 40px;
-  background: linear-gradient(135deg, rgba(90,0,200,0.4), rgba(0,150,255,0.4));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(120,0,255,0.4);
-}
-
-.magical-nav a {
-  text-decoration: none;
-  font-weight: 500;
 }
