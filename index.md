@@ -29,19 +29,19 @@ title: Home
   <div class="cc-card">
     <h2 class="cc-soft-glow">3D Models</h2>
     <p>Explore sculpted characters, creatures, and fantasy‑themed digital models.</p>
-    <a href="/gallery/" class="cc-button">View Gallery</a>
+    <a href="/gallery.html" class="cc-button">View Gallery</a>
   </div>
 
   <div class="cc-card">
     <h2 class="cc-soft-glow">Creative Projects</h2>
     <p>A collection of artistic experiments, sketches, and magical world‑building.</p>
-    <a href="/projects/" class="cc-button">See Projects</a>
+    <a href="/projects.html" class="cc-button">See Projects</a>
   </div>
 
   <div class="cc-card">
     <h2 class="cc-soft-glow">Podcasts</h2>
     <p>Thoughts on creativity, resilience, and the journey of rebuilding through art.</p>
-    <a href="/podcasts/" class="cc-button">Listen</a>
+    <a href="/podcasts.html" class="cc-button">Listen</a>
   </div>
 
 </section>
