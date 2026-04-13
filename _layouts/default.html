@@ -28,14 +28,7 @@
   </main>
 
   <!-- 👑 ROYAL FANTASY TICKER (ABOVE FOOTER) -->
-  <div class="magic-ticker">
-    <div class="magic-ticker-track">
-      <span>✨ The Crown shines brightest when imagination leads the way ✨</span>
-      <span>✨ Creativity is the royal bloodline of every great idea ✨</span>
-      <span>✨ Magic flows where vision dares to wander ✨</span>
-      <span>✨ Your story is the kingdom — your creativity is the crown ✨</span>
-    </div>
-  </div>
+  {% include ticker.html %}
 
   <!-- 👑 FOOTER -->
   {% include footer.html %}
@@ -43,12 +36,10 @@
   <!-- ✨ FOOTER GRADIENT BAR -->
   <div class="footer-gradient-bar"></div>
 
-  <!-- 👑 CORE SCRIPTS -->
-  <script src="/assets/js/theme-toggle.js"></script>
-  <script src="/assets/js/lightbox.js"></script>
-
-  <!-- 🔮 ARCANE MAGIC ENGINE (Side‑Gallery Animation) -->
-  <script src="/assets/js/magic.js"></script>
+  <!-- 👑 CORE SCRIPTS (DEFER FIXES EVERYTHING) -->
+  <script src="/assets/js/theme-toggle.js" defer></script>
+  <script src="/assets/js/lightbox.js" defer></script>
+  <script src="/assets/js/magic.js" defer></script>
 
 </body>
 </html>
