@@ -18,3 +18,4 @@ include:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+ version: 2
