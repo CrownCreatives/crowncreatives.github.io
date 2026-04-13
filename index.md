@@ -24,20 +24,18 @@ title: Home
 
   </div>
 
-  <!-- REQUIRED: This is where the drifting images appear -->
+  <!-- Drifting magical gallery images appear here -->
   <div class="hero-side-gallery"></div>
 
 </section>
 
-<!-- 🌟 INTRO CONTENT
+<!-- 🌟 INTRO CONTENT -->
 <!-- 🌟 GALLERY LANE (SIDE-SCROLLING PREVIEW) -->
 <section class="gallery-lane-container fade-in">
   <div class="gallery-lane">
-    <img src="/assets/images/gallery/1.jpg" alt="Gallery Image 1">
-    <img src="/assets/images/gallery/2.jpg" alt="Gallery Image 2">
-    <img src="/assets/images/gallery/3.jpg" alt="Gallery Image 3">
-    <img src="/assets/images/gallery/4.jpg" alt="Gallery Image 4">
-    <img src="/assets/images/gallery/5.jpg" alt="Gallery Image 5">
+    <img src="/assets/images/gallery/Face.jpeg" alt="Gallery Image 1">
+    <img src="/assets/images/gallery/Flower.jpeg" alt="Gallery Image 2">
+    <img src="/assets/images/gallery/Fly.jpeg" alt="Gallery Image 3">
   </div>
 </section>
 
