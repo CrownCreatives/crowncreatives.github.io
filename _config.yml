@@ -1,12 +1,16 @@
 title: Crown Creatives
 description: Artistry • Resilience • Imagination
+
+# GitHub Pages settings
 baseurl: ""
 url: "https://crowncreatives.github.io"
 
 markdown: kramdown
 
-version: 4
+# Force rebuild (increment this number whenever GitHub Pages gets stuck)
+version: 5
 
+# Default layout for posts (you can add more defaults later)
 defaults:
   - scope:
       path: ""
@@ -14,9 +18,11 @@ defaults:
     values:
       layout: "default"
 
+# Allow Jekyll to process custom folders
 include:
   - _pages
 
+# GitHub Pages–approved plugins only
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
