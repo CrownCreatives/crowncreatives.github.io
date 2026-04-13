@@ -29,15 +29,28 @@
       <img src="/assets/icons/up-arrow-reactor.png" alt="Scroll to top" class="footer-icon-img">
     </a>
   </div>
-  <div id="cc-loading-spinner" class="cc-spinner hidden">
-  <img src="/assets/icons/cc-reactor-spinner.png" alt="Loading..." class="cc-spinner-img">
-</div>
-
 
 </footer>
 
+<!-- GLOBAL LOADING SPINNER (OUTSIDE FOOTER) -->
+<div id="cc-loading-spinner" class="cc-spinner hidden">
+  <img src="/assets/icons/cc-reactor-spinner.png" alt="Loading..." class="cc-spinner-img">
+</div>
+
 <script>
-document.querySelector('.scroll-top')?.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  // Scroll to top
+  document.querySelector('.scroll-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Spinner controls
+  const ccSpinner = document.getElementById('cc-loading-spinner');
+
+  function showCCSpinner() {
+    ccSpinner.classList.remove('hidden');
+  }
+
+  function hideCCSpinner() {
+    ccSpinner.classList.add('hidden');
+  }
 </script>
