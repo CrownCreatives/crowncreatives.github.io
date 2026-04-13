@@ -831,3 +831,156 @@ body.light-mode {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
+/* ============================================================
+   ROYAL FANTASY HERO CROWN — RESTORED + ENHANCED
+   Works with original cinematic hero structure + gallery engine
+   ============================================================ */
+
+/* Wrapper restored for gallery engine compatibility */
+.hero-crown-wrapper {
+  position: relative;
+  width: 360px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  z-index: 10;
+  animation: heroCrownFloat 8s ease-in-out infinite;
+}
+
+/* Soft floating motion */
+@keyframes heroCrownFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Magical aura behind the crown */
+.hero-crown-aura {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle,
+    rgba(255,255,255,0.25) 0%,
+    rgba(120,200,255,0.18) 40%,
+    rgba(0,0,0,0) 80%
+  );
+  filter: blur(40px);
+  opacity: 0.55;
+  z-index: -2;
+}
+
+/* Royal glowing ring */
+.hero-crown-ring {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(180,140,255,0.35),
+    rgba(120,200,255,0.25),
+    transparent 70%
+  );
+  filter: blur(30px);
+  opacity: 0.45;
+  z-index: -1;
+}
+
+/* Crown image — restored class for gallery compatibility */
+.hero-crown-cinematic.hero-crown-core {
+  width: 220px;
+  filter: drop-shadow(0 0 18px rgba(255,255,255,0.6))
+          drop-shadow(0 0 28px rgba(120,200,255,0.5));
+  animation: heroCrownPulse 6s ease-in-out infinite;
+}
+
+/* Magical pulse */
+@keyframes heroCrownPulse {
+  0%   { filter: drop-shadow(0 0 10px rgba(255,255,255,0.4)); }
+  50%  { filter: drop-shadow(0 0 28px rgba(120,200,255,0.7)); }
+  100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.4)); }
+}
+
+/* Text merged into the emblem */
+.hero-crown-explainer {
+  margin-top: 18px;
+  font-size: 1.15rem;
+  color: var(--cc-text);
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.4),
+    0 0 20px rgba(120,200,255,0.35);
+  opacity: 0.95;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+/* ============================================================
+   SUBTLE ROYAL MAGIC — HERO CROWN ENHANCEMENTS
+   Elegant, soft, non-intrusive magical effects
+   ============================================================ */
+
+/* Gentle floating motion */
+.hero-crown-wrapper {
+  animation: heroCrownFloat 10s ease-in-out infinite;
+}
+
+@keyframes heroCrownFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Soft magical aura */
+.hero-crown-aura {
+  position: absolute;
+  inset: -35px;
+  background: radial-gradient(circle,
+    rgba(255,255,255,0.18) 0%,
+    rgba(150,180,255,0.15) 40%,
+    rgba(0,0,0,0) 80%
+  );
+  filter: blur(35px);
+  opacity: 0.45;
+  z-index: -2;
+}
+
+/* Subtle royal glow ring */
+.hero-crown-ring {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(180,140,255,0.25),
+    rgba(120,200,255,0.18),
+    transparent 70%
+  );
+  filter: blur(28px);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* Crown pulse — gentle, not flashy */
+.hero-crown-cinematic.hero-crown-core {
+  width: 220px;
+  filter: drop-shadow(0 0 14px rgba(255,255,255,0.45))
+          drop-shadow(0 0 22px rgba(120,200,255,0.35));
+  animation: heroCrownPulse 7s ease-in-out infinite;
+}
+
+@keyframes heroCrownPulse {
+  0%   { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
+  50%  { filter: drop-shadow(0 0 22px rgba(120,200,255,0.55)); }
+  100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
+}
+
+/* Text merged into the emblem — soft glow */
+.hero-crown-explainer {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: var(--cc-text);
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.35),
+    0 0 14px rgba(120,200,255,0.25);
+  opacity: 0.95;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
