@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sources = laneImages.length ? laneImages : [];
 
   const leftPositions = ["-180px", "-200px", "-160px"];
-  const rightPositions = ["180px", "200px", "160px"];
+  const rightPositions = ["280px", "320px", "360px"]; // FIXED RIGHT SIDE
   let side = "left";
 
   function spawnSideImage() {
@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 15000);
   }
 
+  // Start the magic
   spawnSideImage();
   setInterval(spawnSideImage, 18000);
 
