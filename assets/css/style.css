@@ -942,3 +942,21 @@ body.light-mode {
   12%  { left: 120%; opacity: 0; }
   100% { left: 120%; opacity: 0; }
 }
+/* ============================================================
+   SIDE GALLERY FLOATING IMAGES
+   ============================================================ */
+
+.side-gallery-float {
+  position: absolute;
+  width: 120px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 2s ease, transform 2s ease;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
+  z-index: 5;
+}
+
+.side-gallery-float.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
