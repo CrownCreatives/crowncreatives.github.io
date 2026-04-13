@@ -27,23 +27,23 @@
   <div class="footer-icons">
 
     <a href="https://www.instagram.com" class="footer-icon" aria-label="Instagram">
-      {% include icons/instagram.svg %}
+      <img src="/assets/icons/instagram.png" alt="Instagram" class="footer-icon-img">
     </a>
 
     <a href="https://www.facebook.com" class="footer-icon" aria-label="Facebook">
-      {% include icons/facebook.svg %}
+      <img src="/assets/icons/facebook.png" alt="Facebook" class="footer-icon-img">
     </a>
 
     <a href="mailto:contact@crowncreatives.com" class="footer-icon" aria-label="Email">
-      {% include icons/email.svg %}
+      <img src="/assets/icons/email.png" alt="Email" class="footer-icon-img">
     </a>
 
     <a href="/" class="footer-icon" aria-label="Home">
-      {% include icons/cc-monogram.svg %}
+      <img src="/assets/icons/cc-monogram.png" alt="Crown Creatives Home" class="footer-icon-img">
     </a>
 
     <a href="#" class="footer-icon scroll-top" aria-label="Scroll to top">
-      {% include icons/up-arrow.svg %}
+      <img src="/assets/icons/up-arrow.png" alt="Scroll to top" class="footer-icon-img">
     </a>
 
   </div>
@@ -58,12 +58,14 @@
 
 </footer>
 
+<!-- Scroll to top -->
 <script>
 document.querySelector('.scroll-top')?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 </script>
 
+<!-- Theme toggle -->
 <script>
 const toggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
