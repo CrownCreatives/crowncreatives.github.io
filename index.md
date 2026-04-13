@@ -7,11 +7,13 @@ title: Home
   <div class="hero-crown-wrapper">
     <div class="hero-crown-aura"></div>
     <div class="hero-crown-ring"></div>
+
     <img src="/assets/images/illuminus-crown.png"
          class="hero-crown-cinematic hero-crown-core"
          alt="Crown Creatives">
   </div>
 
+  <!-- Floating hero gallery (auto‑scan powered) -->
   <div class="hero-side-gallery"></div>
 
   <div class="hero-text-block">
@@ -20,13 +22,6 @@ title: Home
     </p>
   </div>
 </section>
-
-<!-- 🌟 GALLERY LANE (REQUIRED FOR FLOATING IMAGES) -->
-<div class="gallery-lane">
-  <img src="/assets/images/gallery/Face.jpeg">
-  <img src="/assets/images/gallery/Flower.jpeg">
-  <img src="/assets/images/gallery/Fly.jpeg">
-</div>
 
 <!-- 🌟 FEATURED CONTENT CARDS -->
 <section class="cards-grid fade-in">
