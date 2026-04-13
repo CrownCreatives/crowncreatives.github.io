@@ -5,7 +5,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------------------------------------------------
-     HERO CROWN IMAGE SWAP (EVERY 15 SECONDS)
+     HERO CROWN — NO MORE BLINKING
+     (We keep shimmer, remove fade-out)
   ------------------------------------------------------------- */
 
   const crown = document.querySelector('.hero-crown-cinematic');
@@ -20,29 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (crown) {
     setInterval(() => {
       crownIndex = (crownIndex + 1) % crownImages.length;
-      crown.style.opacity = 0;
+
+      // Magical shimmer cover instead of fade-out blink
+      crown.classList.add("fade-swap");
 
       setTimeout(() => {
         crown.src = crownImages[crownIndex];
-        crown.style.opacity = 1;
-      }, 800);
+        crown.classList.remove("fade-swap");
+      }, 600);
+
     }, 15000);
   }
 
   /* ------------------------------------------------------------
-     AUTO‑SCAN GALLERY PAGE FOR IMAGES
-     (Loads ANY image from /gallery/ automatically)
+     AUTO‑SCAN GALLERY.HTML FOR IMAGES
   ------------------------------------------------------------- */
 
   async function loadGalleryImages() {
     try {
-      const response = await fetch("/gallery/");
+      const response = await fetch("/gallery.html");
       const html = await response.text();
 
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
 
-      // Supports both .magic-gallery-image and .gallery img
       const imgs = Array.from(
         doc.querySelectorAll(".magic-gallery-image, .gallery img")
       );
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------
-     FLOATING SIDE‑IMAGE MAGIC — AUTO‑SCAN VERSION
+     FLOATING SIDE‑IMAGE MAGIC — 240PX + CLOSER TO CROWN
   ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
@@ -63,8 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let sources = [];
 
-  const leftPositions = ["-180px", "-200px", "-160px"];
-  const rightPositions = ["340px", "380px", "420px"]; // tuned for visibility
+  // Closer to crown — tuned for 240px images
+  const leftPositions = ["-240px", "-260px", "-280px"];
+  const rightPositions = ["240px", "260px", "280px"];
+
   let side = "left";
 
   function spawnSideImage() {
@@ -96,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------
-     START MAGIC AFTER GALLERY IMAGES ARE LOADED
+     START MAGIC AFTER IMAGES LOAD
   ------------------------------------------------------------- */
 
   loadGalleryImages().then(imgs => {
