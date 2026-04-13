@@ -533,57 +533,33 @@ nav.site-nav a:hover {
    RESPONSIVE + FINAL POLISH (PART 4 OF 4)
    ============================================================ */
 
-/* ------------------------------------------------------------
-   TABLET + MOBILE HERO ADJUSTMENTS
------------------------------------------------------------- */
+/* TABLET + MOBILE HERO ADJUSTMENTS */
 @media (max-width: 1024px) {
-  .hero-crown-cinematic {
-    max-width: 260px;
-  }
+  .hero-crown-cinematic { max-width: 260px; }
 }
 
 @media (max-width: 768px) {
-  .site-title {
-    font-size: 1.6rem;
-  }
-
-  .hero-title-cinematic {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtitle-cinematic {
-    font-size: 1rem;
-  }
-
-  .hero-crown-cinematic {
-    max-width: 220px;
-  }
+  .site-title { font-size: 1.6rem; }
+  .hero-title-cinematic { font-size: 1.8rem; }
+  .hero-subtitle-cinematic { font-size: 1rem; }
+  .hero-crown-cinematic { max-width: 220px; }
 }
 
 @media (max-width: 600px) {
-  .hero-crown-cinematic {
-    max-width: 200px;
-  }
+  .hero-crown-cinematic { max-width: 200px; }
 }
 
-/* ------------------------------------------------------------
-   CARDS — MOBILE GRID TIGHTENING
------------------------------------------------------------- */
+/* CARDS — MOBILE GRID */
 @media (max-width: 768px) {
   .cards-grid {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
   }
-
-  .cc-card {
-    padding: 18px;
-  }
+  .cc-card { padding: 18px; }
 }
 
-/* ------------------------------------------------------------
-   FOOTER — MOBILE STACKING
------------------------------------------------------------- */
+/* FOOTER — MOBILE STACKING */
 @media (max-width: 768px) {
   .footer-lower {
     flex-direction: column;
@@ -591,9 +567,7 @@ nav.site-nav a:hover {
   }
 }
 
-/* ------------------------------------------------------------
-   GALLERY LANE — MOBILE
------------------------------------------------------------- */
+/* GALLERY LANE — MOBILE */
 @media (max-width: 600px) {
   .gallery-lane img {
     height: 120px;
@@ -601,20 +575,15 @@ nav.site-nav a:hover {
   }
 }
 
-/* ------------------------------------------------------------
-   FINAL POLISH — SMOOTH SCROLLING + SELECTION COLOR
------------------------------------------------------------- */
-html {
-  scroll-behavior: smooth;
-}
-
+/* SMOOTH SCROLL + SELECTION COLOR */
+html { scroll-behavior: smooth; }
 ::selection {
   background: rgba(120, 200, 255, 0.4);
   color: #fff;
 }
 
 /* ============================================================
-   SUBTLE ROYAL MAGIC — HERO CROWN ENHANCEMENTS
+   SUBTLE ROYAL MAGIC — HERO CROWN
    ============================================================ */
 
 .hero-crown-wrapper {
@@ -627,8 +596,8 @@ html {
 }
 
 @keyframes heroCrownFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-8px); }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
 
@@ -669,8 +638,8 @@ html {
 }
 
 @keyframes heroCrownPulse {
-  0%   { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
-  50%  { filter: drop-shadow(0 0 22px rgba(120,200,255,0.55)); }
+  0% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
+  50% { filter: drop-shadow(0 0 22px rgba(120,200,255,0.55)); }
   100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
 }
 
@@ -706,16 +675,16 @@ html {
     rgba(255,255,200,0) 100%
   );
   filter: blur(12px);
-  opacity: 0.0;
+  opacity: 0;
   transform: skewX(-20deg);
   animation: crownShimmer 20s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes crownShimmer {
-  0%   { left: -120%; opacity: 0; }
-  8%   { opacity: 0.45; }
-  12%  { left: 120%; opacity: 0; }
+  0% { left: -120%; opacity: 0; }
+  8% { opacity: 0.45; }
+  12% { left: 120%; opacity: 0; }
   100% { left: 120%; opacity: 0; }
 }
 
@@ -750,3 +719,4 @@ html {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+
