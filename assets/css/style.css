@@ -467,3 +467,49 @@ body.scrolled .magic-mist-layer-2 {
   opacity: 0.8;
   margin-top: 10px;
 }
+.site-footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 40px;
+  background: transparent;
+  color: #fff;
+}
+
+.footer-centre {
+  text-align: center;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-icon-img {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.8))
+          drop-shadow(0 0 20px rgba(180, 0, 255, 0.6));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icon-img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 1))
+          drop-shadow(0 0 30px rgba(180, 0, 255, 1));
+}
+
+.footer-right {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
