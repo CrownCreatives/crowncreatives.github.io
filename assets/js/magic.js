@@ -1,12 +1,11 @@
 /* ------------------------------------------------------------
-   MAGIC.JS — FINAL AUTO‑SCAN VERSION (2026)
+   MAGIC.JS — FINAL RESPONSIVE VERSION (2026)
 ------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------------------------------------------------
-     HERO CROWN — NO MORE BLINKING
-     (We keep shimmer, remove fade-out)
+     HERO CROWN — NO MORE BLINKING (SHIMMER ONLY)
   ------------------------------------------------------------- */
 
   const crown = document.querySelector('.hero-crown-cinematic');
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
       crownIndex = (crownIndex + 1) % crownImages.length;
 
-      // Magical shimmer cover instead of fade-out blink
+      // Magical shimmer overlay instead of fade-out blink
       crown.classList.add("fade-swap");
 
       setTimeout(() => {
@@ -57,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------
-     FLOATING SIDE‑IMAGE MAGIC — 240PX + CLOSER TO CROWN
+     FLOATING SIDE‑IMAGE MAGIC — RESPONSIVE LANES
+     (Never off-screen, always visible)
   ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let sources = [];
 
-  // Closer to crown — tuned for 240px images
-  const leftPositions = ["-240px", "-260px", "-280px"];
-  const rightPositions = ["240px", "260px", "280px"];
+  // Percentage-based lanes — ALWAYS inside viewport
+  const leftPositions = ["10%", "12%", "14%"];
+  const rightPositions = ["86%", "88%", "90%"];
 
   let side = "left";
 
