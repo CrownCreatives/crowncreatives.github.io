@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<!-- 👑 ROYAL FANTASY HERO CROWN (RESTORED + ENHANCED) -->
+<!-- 👑 HERO SECTION — RESTORED CINEMATIC STRUCTURE + SUBTLE ROYAL MAGIC -->
 <section class="hero-section">
 
   <div class="hero-crown-wrapper">
@@ -12,7 +12,7 @@ title: Home
     <div class="hero-crown-aura"></div>
     <div class="hero-crown-ring"></div>
 
-    <!-- Correct Crown Image Restored -->
+    <!-- Correct Crown Image -->
     <img src="/assets/images/illuminus-crown.png"
          alt="Crown Emblem"
          class="hero-crown-cinematic hero-crown-core">
@@ -24,7 +24,7 @@ title: Home
 
   </div>
 
-  <!-- The drifting gallery engine depends on this container -->
+  <!-- REQUIRED: This is where the drifting images appear -->
   <div class="hero-side-gallery"></div>
 
 </section>
