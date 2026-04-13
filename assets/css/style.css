@@ -540,10 +540,6 @@ nav.site-nav a:hover {
   .hero-crown-cinematic {
     max-width: 260px;
   }
-
-  .hero-side-image {
-    width: 110px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -562,15 +558,11 @@ nav.site-nav a:hover {
   .hero-crown-cinematic {
     max-width: 220px;
   }
-
-  .hero-side-image {
-    width: 90px;
-  }
 }
 
 @media (max-width: 600px) {
-  .hero-side-image {
-    width: 80px;
+  .hero-crown-cinematic {
+    max-width: 200px;
   }
 }
 
@@ -621,222 +613,10 @@ html {
   color: #fff;
 }
 
-/* ------------------------------------------------------------
-   FOOTER ICONS — CLEANED + UNIFIED
------------------------------------------------------------- */
-.footer-cc-inline {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 6px var(--cc-glow-soft));
-}
-
-.footer-up-arrow {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 8px var(--cc-glow-soft));
-}
-
-.footer-up-arrow:hover {
-  transform: translateY(-4px);
-}
-
-/* COPYRIGHT GLOW UNDERLINE */
-.footer-copy {
-  position: relative;
-  padding-bottom: 6px;
-}
-
-.footer-copy::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--cc-glow-strong);
-  box-shadow: 0 0 10px var(--cc-glow-strong);
-  opacity: 0.55;
-}
-
-/* FOOTER GRADIENT BAR */
-.footer-gradient-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(90deg,
-    rgba(120,200,255,0.4),
-    rgba(180,140,255,0.4),
-    rgba(120,200,255,0.4)
-  );
-  animation: footerShimmer 8s ease-in-out infinite;
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-body.light-mode .footer-gradient-bar {
-  background: linear-gradient(90deg,
-    rgba(120,200,255,0.25),
-    rgba(160,180,255,0.25),
-    rgba(120,200,255,0.25)
-  );
-  opacity: 0.35;
-}
-
-@keyframes footerShimmer {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ------------------------------------------------------------
-   LIGHT MODE — CLEAN + UNIFIED
------------------------------------------------------------- */
-body.light-mode {
-  --cc-text: #ffffff;
-  --cc-glow-strong: rgba(150, 180, 255, 0.65);
-  --cc-glow-soft: rgba(150, 180, 255, 0.35);
-  --cc-card-bg: rgba(255, 255, 255, 0.10);
-  --cc-footer-bg: transparent;
-}
-
-/* ============================================================
-   HERO SIDE GALLERY — STRONG MAGICAL ENERGY MODE
-   ============================================================ */
-
-/* Container for the drifting image + particles */
-.hero-side-gallery {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: visible;
-  z-index: 5;
-}
-
-/* Particle burst */
-.hero-side-particles {
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  pointer-events: none;
-  opacity: 0;
-  background: radial-gradient(circle,
-    rgba(255,255,255,0.35) 0%,
-    rgba(120,200,255,0.25) 30%,
-    rgba(0,0,0,0) 70%
-  );
-  filter: blur(18px);
-  transition: opacity 1.4s ease;
-  z-index: 1;
-}
-
-.hero-side-particles.active {
-  opacity: 0.8;
-  animation: particlePulse 2.4s ease-out;
-}
-
-@keyframes particlePulse {
-  0%   { transform: scale(0.6); opacity: 0.2; }
-  40%  { transform: scale(1.2); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 0.4; }
-}
-
-/* Drifting image */
-.hero-side-image {
-  position: absolute;
-  width: 220px;
-  opacity: 0;
-  border-radius: 14px;
-  filter: drop-shadow(0 0 22px var(--cc-glow-strong));
-  transition:
-    opacity 2s ease,
-    transform 14s ease-in-out,
-    filter 6s ease-in-out;
-  z-index: 2;
-}
-
-.hero-side-image.magic-pulse {
-  animation: magicPulse 3.2s ease-out;
-}
-
-@keyframes magicPulse {
-  0%   { filter: drop-shadow(0 0 0px var(--cc-glow-strong)); }
-  40%  { filter: drop-shadow(0 0 32px var(--cc-glow-strong)); }
-  100% { filter: drop-shadow(0 0 18px var(--cc-glow-strong)); }
-
-}
-.magic-ticker {
-  width: 100%;
-  overflow: hidden;
-  padding: 14px 0;
-  margin-top: 40px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255,255,255,0.18);
-  border-bottom: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 0 20px rgba(120,200,255,0.25);
-  position: relative;
-  z-index: 20;
-}
-
-.magic-ticker::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(120,200,255,0.15),
-    rgba(180,140,255,0.15),
-    rgba(120,200,255,0.15)
-  );
-  opacity: 0.25;
-  animation: tickerGlow 8s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes tickerGlow {
-  0%   { opacity: 0.15; }
-  50%  { opacity: 0.35; }
-  100% { opacity: 0.15; }
-}
-
-.magic-ticker-track {
-  display: inline-block;
-  white-space: nowrap;
-  animation: tickerScrollLTR 22s linear infinite;
-}
-
-.magic-ticker-track span {
-  margin: 0 50px;
-  font-size: 1.1rem;
-  color: var(--cc-text);
-  text-shadow:
-    0 0 10px var(--cc-glow-soft),
-    0 0 20px rgba(255,255,255,0.25);
-  letter-spacing: 0.5px;
-}
-
-@keyframes tickerScrollLTR {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
 /* ============================================================
    SUBTLE ROYAL MAGIC — HERO CROWN ENHANCEMENTS
-   Elegant, soft, non-intrusive magical effects
    ============================================================ */
 
-/* Gentle floating motion */
 .hero-crown-wrapper {
   position: relative;
   width: 360px;
@@ -852,7 +632,6 @@ body.light-mode {
   100% { transform: translateY(0); }
 }
 
-/* Soft magical aura */
 .hero-crown-aura {
   position: absolute;
   inset: -35px;
@@ -866,7 +645,6 @@ body.light-mode {
   z-index: -2;
 }
 
-/* Subtle royal glow ring */
 .hero-crown-ring {
   position: absolute;
   inset: -18px;
@@ -881,7 +659,6 @@ body.light-mode {
   z-index: -1;
 }
 
-/* Crown pulse — gentle, not flashy */
 .hero-crown-cinematic.hero-crown-core {
   width: 220px;
   position: relative;
@@ -897,7 +674,6 @@ body.light-mode {
   100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.35)); }
 }
 
-/* Text merged into the emblem — soft glow */
 .hero-crown-explainer {
   margin-top: 16px;
   font-size: 1.1rem;
@@ -942,38 +718,32 @@ body.light-mode {
   12%  { left: 120%; opacity: 0; }
   100% { left: 120%; opacity: 0; }
 }
+
 /* ============================================================
-   SIDE GALLERY FLOATING IMAGES
+   SIDE GALLERY FLOATING IMAGES — FINAL CLEAN VERSION
    ============================================================ */
+
+.hero-side-gallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 8;
+}
 
 .side-gallery-float {
   position: absolute;
   width: 120px;
-  opacity: 0;
-  transform: translateY(20px) scale(0.95);
-  transition: opacity 2s ease, transform 2s ease;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
-  z-index: 5;
-}
-/* ============================================================
-   SIDE GALLERY FLOATING IMAGES — FIXED SIZE + MAGIC
-   ============================================================ */
-
-.side-gallery-float {
-  position: absolute;
-  width: 120px;              /* FIX: forces small size */
   height: auto;
   opacity: 0;
   transform: translateY(20px) scale(0.95);
   transition: opacity 2s ease, transform 2s ease;
   filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
-  z-index: 5;
+  z-index: 9;
   pointer-events: none;
-}
-
-.side-gallery-float.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
 }
 
 .side-gallery-float.visible {
