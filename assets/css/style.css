@@ -705,7 +705,7 @@ html { scroll-behavior: smooth; }
 
 .side-gallery-float {
   position: absolute;
-  width: 120px;
+  width: 300px;
   height: auto;
   opacity: 0;
   transform: translateY(20px) scale(0.95);
