@@ -708,15 +708,6 @@ body.light-mode {
   --cc-footer-bg: transparent;
 }
 
-body.light-mode .magic-bg-gradient {
-  background: linear-gradient(
-    180deg,
-    #d7f7e8 0%,
-    #b8e4f0 40%,
-    #c9c4f7 100%
-  );
-}
-
 /* ============================================================
    HERO SIDE GALLERY — STRONG MAGICAL ENERGY MODE
    ============================================================ */
@@ -783,12 +774,33 @@ body.light-mode .magic-bg-gradient {
   0%   { filter: drop-shadow(0 0 0px var(--cc-glow-strong)); }
   40%  { filter: drop-shadow(0 0 32px var(--cc-glow-strong)); }
   100% { filter: drop-shadow(0 0 18px var(--cc-glow-strong)); }
+
 }
-body.light-mode .magic-bg-gradient {
-  background: linear-gradient(
-    180deg,
-    #c8f7e2 0%,
-    #a8d4ff 40%,
-    #d0b8ff 100%
-  );
+.magic-ticker {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  margin-top: 40px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.magic-ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickerScrollLTR 22s linear infinite;
+}
+
+.magic-ticker-track span {
+  margin: 0 40px;
+  font-size: 1rem;
+  color: var(--cc-text);
+  text-shadow: 0 0 10px var(--cc-glow-soft);
+}
+
+@keyframes tickerScrollLTR {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
