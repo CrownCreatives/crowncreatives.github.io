@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const crown = document.querySelector('.hero-crown-cinematic');
   const crownImages = [
     '/assets/images/illuminus-crown.png',
-    '/assets/images/illuminus-crown.png', // duplicate for subtle swap
-    '/assets/images/illuminus-crown.png'  // keeps animation smooth
+    '/assets/images/illuminus-crown.png',
+    '/assets/images/illuminus-crown.png'
   ];
 
   let crownIndex = 0;
@@ -30,8 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------------------------------------------
-     FLOATING SIDE-IMAGE MAGIC — FIXED VERSION
-     (Random image, left/right, fade in/out)
+     FLOATING SIDE-IMAGE MAGIC — FINAL VERSION
   ---------------------------------------------- */
 
   const galleryFiles = [
@@ -52,11 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const img = document.createElement("img");
     img.className = "side-gallery-float";
 
-    // Pick a random image
     const file = galleryFiles[Math.floor(Math.random() * galleryFiles.length)];
     img.src = `/assets/images/gallery/${file}`;
 
-    // Alternate left/right
     const isLeft = side === "left";
     side = isLeft ? "right" : "left";
 
@@ -64,22 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
       ? leftPositions[Math.floor(Math.random() * leftPositions.length)]
       : rightPositions[Math.floor(Math.random() * rightPositions.length)];
 
-    // Random vertical offset
     img.style.top = `${Math.floor(Math.random() * 80) + 20}px`;
 
     container.appendChild(img);
 
-    // Fade in
     setTimeout(() => img.classList.add("visible"), 50);
 
-    // Fade out + remove
     setTimeout(() => {
       img.classList.remove("visible");
       setTimeout(() => img.remove(), 2000);
-    }, 15000); // stays for 15 seconds
+    }, 15000);
   }
 
-  // Run every 18 seconds
   spawnSideImage();
   setInterval(spawnSideImage, 18000);
 
