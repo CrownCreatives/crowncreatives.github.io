@@ -21,6 +21,13 @@ title: Home
   </div>
 </section>
 
+<!-- 🌟 GALLERY LANE (REQUIRED FOR FLOATING IMAGES) -->
+<div class="gallery-lane">
+  <img src="/assets/images/gallery/Face.jpeg">
+  <img src="/assets/images/gallery/Flower.jpeg">
+  <img src="/assets/images/gallery/Fly.jpeg">
+</div>
+
 <!-- 🌟 FEATURED CONTENT CARDS -->
 <section class="cards-grid fade-in">
 
@@ -43,4 +50,3 @@ title: Home
   </div>
 
 </section>
-
