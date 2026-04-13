@@ -632,3 +632,48 @@ nav.site-nav a:hover {
 .theme-toggle:hover {
   transform: scale(1.2);
 }
+.site-header {
+  padding: 20px 0;
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-logo svg {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.nav-title {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.nav-title h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.nav-title p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
