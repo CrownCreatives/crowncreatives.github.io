@@ -872,3 +872,23 @@ body.light-mode {
         0 0 24px rgba(0,234,255,0.7),
         inset 0 0 10px rgba(0,234,255,0.5);
 }
+.footer-icons img[alt="Email"] {
+    width: 42px; /* smaller than the others */
+    height: 42px;
+    padding: 6px; /* smaller sphere */
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,234,255,0.25), rgba(0,234,255,0.05));
+    box-shadow:
+        0 0 6px rgba(0,234,255,0.6),
+        0 0 12px rgba(0,234,255,0.4),
+        inset 0 0 4px rgba(0,234,255,0.3);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.footer-icons img[alt="Email"]:hover {
+    transform: scale(1.15);
+    box-shadow:
+        0 0 10px rgba(0,234,255,0.9),
+        0 0 20px rgba(0,234,255,0.7),
+        inset 0 0 8px rgba(0,234,255,0.5);
+}
