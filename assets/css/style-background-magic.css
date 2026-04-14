@@ -1,102 +1,149 @@
 /* ============================================================
-   GLOBAL MAGICAL BACKGROUND LAYER
-   Stars + particles + nebula (full cinematic fantasy)
+   MAGICAL BACKGROUND ENGINE — GLOBAL
+   Layers: nebula, swirl, bubbles, fog
 ============================================================ */
 
-/* Ensure body can host fixed background layers */
-body {
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Master container for all background magic */
 .cc-bg-magic-layer {
   position: fixed;
   inset: 0;
-  z-index: -1;              /* Critical: keeps magic behind all content */
-  pointer-events: none;     /* Prevents blocking clicks */
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ============================================================
-   NEBULA LAYER
-   Soft drifting colour clouds
+   1. NEBULA BACKGROUND
 ============================================================ */
 .cc-bg-nebula {
   position: absolute;
-  inset: -20%; /* Oversize for smooth drift */
-  background:
-    radial-gradient(circle at 20% 10%, rgba(0, 255, 255, 0.18), transparent 55%),
-    radial-gradient(circle at 80% 80%, rgba(176, 0, 255, 0.22), transparent 60%),
-    radial-gradient(circle at 50% 40%, rgba(0, 120, 255, 0.18), transparent 55%);
-  filter: blur(18px);
-  opacity: 0.7;
-  animation: nebulaDrift 40s ease-in-out infinite alternate;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%,
+      rgba(0, 200, 255, 0.25),
+      rgba(150, 0, 255, 0.18),
+      rgba(255, 255, 255, 0.05),
+      transparent 80%);
+  filter: blur(45px);
+  animation: nebulaFloat 18s ease-in-out infinite;
 }
 
-@keyframes nebulaDrift {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  50%  { transform: translate3d(-20px, 10px, 0) scale(1.05); }
-  100% { transform: translate3d(20px, -10px, 0) scale(1.08); }
+@keyframes nebulaFloat {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-20px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
 }
 
 /* ============================================================
-   STARFIELD LAYER
-   Subtle twinkling stars
+   2. SWIRL LAYER
 ============================================================ */
-.cc-bg-stars {
+.cc-bg-swirl {
   position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.9) 0, transparent 55%),
-    radial-gradient(circle, rgba(255,255,255,0.7) 0, transparent 55%),
-    radial-gradient(circle, rgba(255,255,255,0.5) 0, transparent 55%);
-  background-size: 2px 2px, 3px 3px, 1px 1px;
-  background-position:
-    10% 20%,
-    60% 40%,
-    80% 70%;
-  opacity: 0.6;
-  animation: starTwinkle 6s ease-in-out infinite alternate;
-}
-
-@keyframes starTwinkle {
-  0%   { opacity: 0.4; }
-  50%  { opacity: 0.9; }
-  100% { opacity: 0.5; }
-}
-
-/* ============================================================
-   PARTICLE LAYER
-   Rising magical motes
-============================================================ */
-.cc-bg-particles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.cc-bg-particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+      from 0deg,
+      rgba(0,255,255,0.15),
+      rgba(180,0,255,0.15),
+      rgba(0,255,255,0.15)
+  );
   border-radius: 50%;
-  background: rgba(0, 234, 255, 0.9);
-  box-shadow: 0 0 10px rgba(0, 234, 255, 0.9);
-  opacity: 0.8;
-  animation: particleRise 18s linear infinite;
+  filter: blur(60px);
+  opacity: 0.35;
+  animation: swirlRotate 55s linear infinite;
 }
 
-/* Particle positions + staggered timing */
-.cc-bg-particle.p1 { left: 10%; bottom: -10%; animation-delay: 0s; }
-.cc-bg-particle.p2 { left: 30%; bottom: -15%; animation-delay: 4s; }
-.cc-bg-particle.p3 { left: 55%; bottom: -12%; animation-delay: 8s; }
-.cc-bg-particle.p4 { left: 75%; bottom: -18%; animation-delay: 2s; }
-.cc-bg-particle.p5 { left: 90%; bottom: -20%; animation-delay: 10s; }
+@keyframes swirlRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
-@keyframes particleRise {
-  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
-  10%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { transform: translate3d(0, -120vh, 0); opacity: 0; }
+/* ============================================================
+   3. FLOATING BUBBLES
+============================================================ */
+.cc-bg-bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+.cc-bg-bubbles span {
+  position: absolute;
+  bottom: -120px;
+  width: 22px;
+  height: 22px;
+  background: rgba(0,255,255,0.35);
+  border-radius: 50%;
+  filter: blur(2px) drop-shadow(0 0 12px rgba(0,255,255,0.6));
+  animation: bubbleRise 14s linear infinite;
+}
+
+.cc-bg-bubbles span:nth-child(odd) {
+  width: 14px;
+  height: 14px;
+  background: rgba(180,0,255,0.35);
+  filter: blur(2px) drop-shadow(0 0 10px rgba(180,0,255,0.6));
+  animation-duration: 18s;
+}
+
+@keyframes bubbleRise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0.4; }
+  50%  { opacity: 0.9; }
+  100% { transform: translateY(-140vh) translateX(40px); opacity: 0; }
+}
+
+/* ============================================================
+   4. FOG LAYER
+============================================================ */
+.cc-bg-fog {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 80%,
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.05),
+      transparent 70%);
+  filter: blur(55px);
+  opacity: 0.45;
+  animation: fogBreath 22s ease-in-out infinite;
+}
+
+@keyframes fogBreath {
+  0%   { opacity: 0.35; transform: scale(1); }
+  50%  { opacity: 0.55; transform: scale(1.08); }
+  100% { opacity: 0.35; transform: scale(1); }
+}
+
+/* ============================================================
+   5. DARK MODE OVERRIDES
+============================================================ */
+:root[data-theme="dark"] .cc-bg-nebula {
+  background: radial-gradient(circle at 50% 20%,
+      rgba(0, 255, 255, 0.22),
+      rgba(150, 0, 255, 0.22),
+      rgba(255, 255, 255, 0.05),
+      transparent 80%);
+  filter: blur(55px);
+}
+
+:root[data-theme="dark"] .cc-bg-swirl {
+  opacity: 0.45;
+  filter: blur(70px);
+}
+
+:root[data-theme="dark"] .cc-bg-bubbles span {
+  background: rgba(0,255,255,0.45);
+  filter: blur(2px) drop-shadow(0 0 16px rgba(0,255,255,0.9));
+}
+
+:root[data-theme="dark"] .cc-bg-bubbles span:nth-child(odd) {
+  background: rgba(200,0,255,0.45);
+  filter: blur(2px) drop-shadow(0 0 14px rgba(200,0,255,0.9));
+}
+
+:root[data-theme="dark"] .cc-bg-fog {
+  opacity: 0.55;
+  filter: blur(65px);
 }
