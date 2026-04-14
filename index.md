@@ -9,13 +9,20 @@ title: Home
   <!-- Floating image lanes (magic.js uses this) -->
   <div class="hero-side-gallery"></div>
 
-  <!-- Crown + Emblem Text (merged magical emblem) -->
+  <!-- Magical Rune Ring + Halo -->
+  <div class="hero-magic-backlayer">
+    <div class="rune-ring"></div>
+    <div class="particle-halo"></div>
+  </div>
+
+  <!-- Crown -->
   <div class="hero-crown-wrapper">
     <img src="/assets/images/illuminus-crown.png"
          alt="Crown Creatives Emblem"
          class="hero-crown-cinematic">
   </div>
 
+  <!-- Emblem Text -->
   <div class="hero-emblem-text">
     Crown Creatives is a space for artistry, imagination, and personal resilience.
   </div>
