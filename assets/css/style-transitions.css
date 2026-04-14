@@ -84,3 +84,22 @@ body,
     transform: scale(1);
   }
 }
+/* ============================================================
+   FINAL TRANSITION POLISH
+============================================================ */
+
+/* Slightly softer mist edges */
+.page-transition-overlay {
+  backdrop-filter: blur(6px);
+}
+
+/* Smooth fade-in on page load */
+body {
+  opacity: 0;
+  animation: pageLoadFade 0.8s ease-out forwards;
+}
+
+@keyframes pageLoadFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
