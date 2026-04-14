@@ -1,8 +1,18 @@
 /* ------------------------------------------------------------
-   MAGIC.JS — TRUE AUTOSCAN + NARROW LANE FLOATERS (2026)
+   MAGIC.JS — AUTOSCAN • FLOATERS • LIGHTBOX (2026)
 ------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ------------------------------------------------------------
+     0. HERO ENTRANCE FADE-IN
+  ------------------------------------------------------------- */
+
+  const heroEl = document.querySelector('.hero');
+  if (heroEl) {
+    heroEl.classList.add('hero-enter');
+  }
+
 
   /* ------------------------------------------------------------
      1. HERO CROWN — SHIMMER SWAP (NO BLINK)
@@ -33,8 +43,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     2. TRUE FOLDER AUTOSCAN (GitHub API)
+     2. TRUE FOLDER AUTOSCAN (GitHub API) + PRELOAD
   ------------------------------------------------------------- */
+
+  function preloadImages(urls) {
+    return Promise.all(
+      urls.map(
+        src =>
+          new Promise(resolve => {
+            const img = new Image();
+            img.onload = img.onerror = resolve;
+            img.src = src;
+          })
+      )
+    );
+  }
 
   async function loadFolderImages() {
     try {
@@ -49,6 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .filter(f => /\.(jpg|jpeg|png|gif|webp)$/i.test(f.name))
         .map(f => "/" + f.path.replace(/^\//, ""));
 
+      // Preload to avoid pop-in
+      await preloadImages(images);
+
       return images;
 
     } catch (e) {
@@ -59,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     3. BUILD GALLERY PAGE AUTOMATICALLY
+     3. BUILD GALLERY PAGE AUTOMATICALLY + LIGHTBOX HOOKS
   ------------------------------------------------------------- */
 
   function buildGalleryGrid(images) {
@@ -69,17 +95,26 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.innerHTML = "";
 
     images.forEach(src => {
+      const wrapper = document.createElement("button");
+      wrapper.className = "gallery-item";
+      wrapper.type = "button";
+      wrapper.setAttribute("data-src", src);
+
       const img = document.createElement("img");
       img.src = src;
       img.className = "magic-gallery-image";
       img.alt = "Artwork";
-      grid.appendChild(img);
+
+      wrapper.appendChild(img);
+      grid.appendChild(wrapper);
     });
+
+    attachLightboxHandlers();
   }
 
 
   /* ------------------------------------------------------------
-     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (NARROW LANES)
+     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (MOBILE-AWARE)
   ------------------------------------------------------------- */
 
   function getLanePositions() {
@@ -87,9 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!crownEl) return { leftLane: "10%", rightLane: "90%" };
 
     const rect = crownEl.getBoundingClientRect();
-    const imageWidth = 180;
-    const laneOffset = 40;
     const viewportWidth = window.innerWidth;
+
+    // Mobile: lanes closer + smaller images
+    const isMobile = viewportWidth < 768;
+    const imageWidth = isMobile ? 130 : 180;
+    const laneOffset = isMobile ? 20 : 40;
 
     let leftLane = rect.left - imageWidth - laneOffset;
     let rightLane = rect.right + laneOffset;
@@ -106,15 +144,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     5. HERO FLOATING IMAGES — NARROW LANES + ALTERNATING SIDES
+     5. HERO FLOATING IMAGES — NARROW LANES + THROTTLED SPAWN
   ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
   let sources = [];
   let side = "left";
 
-  function spawnSideImage() {
+  let lastSpawnTime = 0;
+  const SPAWN_INTERVAL = 3500; // ms
+
+  function spawnSideImage(timestamp = performance.now()) {
     if (!sources.length || !container) return;
+
+    if (timestamp - lastSpawnTime < SPAWN_INTERVAL) return;
+    lastSpawnTime = timestamp;
 
     const { leftLane, rightLane } = getLanePositions();
 
@@ -129,34 +173,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
     img.style.left = isLeft ? leftLane : rightLane;
 
-    // Tighter vertical drift
-    img.style.top = `${Math.floor(Math.random() * 120) + 40}px`;
+    const isMobile = window.innerWidth < 768;
+    const maxVertical = isMobile ? 80 : 120;
+    const baseOffset = isMobile ? 20 : 40;
+    img.style.top = `${Math.floor(Math.random() * maxVertical) + baseOffset}px`;
 
     container.appendChild(img);
 
-    // Fade in
-    setTimeout(() => img.classList.add("visible"), 50);
+    requestAnimationFrame(() => img.classList.add("visible"));
 
-    // Fade out + remove
     setTimeout(() => {
       img.classList.remove("visible");
       setTimeout(() => img.remove(), 2000);
     }, 12000);
   }
 
+  function startFloatLoop() {
+    function loop(timestamp) {
+      spawnSideImage(timestamp);
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  }
+
 
   /* ------------------------------------------------------------
-     6. INITIALISE AUTOSCAN + HERO FLOATERS
+     6. SIMPLE GALLERY LIGHTBOX
+  ------------------------------------------------------------- */
+
+  function createLightbox() {
+    let overlay = document.querySelector(".cc-lightbox-overlay");
+    if (overlay) return overlay;
+
+    overlay = document.createElement("div");
+    overlay.className = "cc-lightbox-overlay";
+
+    const img = document.createElement("img");
+    img.className = "cc-lightbox-image";
+    overlay.appendChild(img);
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.remove("visible");
+    });
+
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  function attachLightboxHandlers() {
+    const items = document.querySelectorAll(".gallery-item");
+    if (!items.length) return;
+
+    const overlay = createLightbox();
+    const overlayImg = overlay.querySelector(".cc-lightbox-image");
+
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        const src = item.getAttribute("data-src");
+        overlayImg.src = src;
+        overlay.classList.add("visible");
+      });
+    });
+  }
+
+
+  /* ------------------------------------------------------------
+     7. INITIALISE AUTOSCAN + HERO FLOATERS
   ------------------------------------------------------------- */
 
   loadFolderImages().then(imgs => {
     sources = imgs;
 
-    // Build gallery page if present
     buildGalleryGrid(imgs);
 
-    // Spawn floating images every 3.5 seconds
-    setInterval(spawnSideImage, 3500);
+    if (container && sources.length) {
+      startFloatLoop();
+    }
   });
 
 });
