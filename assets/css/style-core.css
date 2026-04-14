@@ -255,3 +255,18 @@ body {
 .theme-icon.active {
   display: block;
 }
+/* ============================================================
+   FINAL CROWN SHIMMER TUNING
+============================================================ */
+
+.header-crown-hero,
+.page-crown {
+  transition: filter 1.2s ease-in-out;
+}
+
+:root[data-theme="dark"] .header-crown-hero,
+:root[data-theme="dark"] .page-crown {
+  filter:
+    drop-shadow(0 0 18px rgba(0,234,255,1))
+    drop-shadow(0 0 32px rgba(176,0,255,1));
+}
