@@ -1,16 +1,19 @@
 /* ============================================================
    CROWN CREATIVES — UNIFIED MAGICAL THEME 2026
-   COMPLETE CLEAN BUILD — PARTS 1–4 MERGED
+   FINAL CLEAN BUILD — COMPLETE & CORRECTED
 ============================================================ */
 
-/* ------------------------------------------------------------
-   GOOGLE FONT — CINZEL (Regal Fantasy Titles)
------------------------------------------------------------- */
+
+/* ============================================================
+   1. GOOGLE FONT — CINZEL (Regal Fantasy Titles)
+============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
 
-/* ------------------------------------------------------------
-   THEME VARIABLES — NIGHT MODE (DEFAULT)
------------------------------------------------------------- */
+
+/* ============================================================
+   2. THEME VARIABLES — NIGHT + DAY MODES
+============================================================ */
+
 body {
   --cc-text: #e0e6ff;
   --cc-glow-strong: rgba(90, 60, 200, 0.9);
@@ -26,9 +29,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ------------------------------------------------------------
-   THEME VARIABLES — DAY MODE
------------------------------------------------------------- */
 body.light-mode {
   --cc-text: #ffffff;
   --cc-glow-strong: rgba(120, 200, 255, 0.9);
@@ -37,8 +37,9 @@ body.light-mode {
   --cc-footer-bg: rgba(255, 255, 255, 0.08);
 }
 
+
 /* ============================================================
-   GLOBAL MAGICAL BACKGROUND — FOREST MIST ENGINE
+   3. GLOBAL MAGICAL BACKGROUND — FOREST MIST ENGINE
 ============================================================ */
 
 .magic-bg-container {
@@ -51,7 +52,7 @@ body.light-mode {
   pointer-events: none;
 }
 
-/* 1. Forest Gradient */
+/* Gradient */
 .magic-bg-gradient {
   position: absolute;
   inset: 0;
@@ -64,7 +65,7 @@ body.light-mode .magic-bg-gradient {
   background: linear-gradient(180deg, #b8ffe3 0%, #8be7d1 40%, #6cc4e0 100%);
 }
 
-/* 2. Particle Field */
+/* Particle Field */
 .magic-particles {
   position: absolute;
   inset: 0;
@@ -85,7 +86,7 @@ body.light-mode .magic-bg-gradient {
   100% { background-position: 20% 80%, 70% 40%, 50% 20%; }
 }
 
-/* 3. Mist Layers */
+/* Mist Layers */
 .magic-mist-layer,
 .magic-mist-layer-2 {
   position: absolute;
@@ -119,7 +120,7 @@ body.light-mode .magic-bg-gradient {
   100% { transform: translateX(-50%); }
 }
 
-/* 4. Leaf Glow */
+/* Leaf Glow */
 .magic-leaf-glow {
   position: absolute;
   inset: 0;
@@ -137,107 +138,238 @@ body.light-mode .magic-bg-gradient {
   100% { transform: translateY(0); }
 }
 
-/* Scroll-reactive glow */
-body.scrolled .magic-bg-gradient {
-  filter: brightness(1.12) saturate(1.15);
-}
-
-body.scrolled .magic-mist-layer,
-body.scrolled .magic-mist-layer-2 {
-  opacity: 0.32;
-}
 
 /* ============================================================
-   HERO — CINEMATIC FOREST HERO (PART 2)
+   4. HEADER + NAVIGATION + THEME TOGGLE
 ============================================================ */
 
-.hero-cinematic {
-  position: relative;
-  padding: 20px 20px 140px;
+.site-header {
   text-align: center;
+  padding: 40px 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.header-top {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-crown-img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: radial-gradient(circle at 30% 30%,
+              rgba(0, 255, 255, 0.22),
+              rgba(0, 0, 40, 0.65));
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 0 16px rgba(0, 255, 255, 0.7),
+    0 0 30px rgba(0, 120, 255, 0.6),
+    0 0 55px rgba(180, 0, 255, 0.5);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 22px rgba(0, 255, 255, 0.9),
+    0 0 40px rgba(0, 120, 255, 0.8),
+    0 0 75px rgba(180, 0, 255, 0.7);
+}
+
+.theme-toggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Nav Bar */
+.magical-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 12px 30px;
+  margin: 0 auto;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(90, 0, 200, 0.4),
+    rgba(0, 150, 255, 0.4)
+  );
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 20px rgba(120, 0, 255, 0.4),
+    0 0 40px rgba(0, 150, 255, 0.3);
+}
+
+.magical-nav a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--cc-text);
+  padding: 6px 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background 0.3s ease, padding 0.3s ease, color 0.25s ease;
+}
+
+.magical-nav a:hover {
+  background: rgba(0, 255, 255, 0.15);
+  padding: 6px 14px;
+  color: #aefaff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+/* Underline Glow */
+.magical-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.9);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.magical-nav a:hover::after,
+.magical-nav a.active::after {
+  width: 60%;
+}
+
+/* Ripple Glow */
+.magical-nav a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 255, 255, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.magical-nav a:hover::before {
+  width: 140%;
+  height: 140%;
+}
+
+
+/* ============================================================
+   5. HERO — CENTRED CROWN + AUTOSCAN FLOATING GALLERY
+============================================================ */
+
+.hero {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 80px;
   z-index: 5;
 }
 
+.hero-crown-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  z-index: 10;
+}
+
 .hero-crown-cinematic {
-  width: 50%;
-  max-width: 320px;
+  width: 240px;
+  height: auto;
+  display: block;
   filter: drop-shadow(0 0 22px var(--cc-glow-strong));
   animation: heroCrownFloat 5s ease-in-out infinite;
-  position: relative;
-  z-index: 3;
 }
 
-.hero-light-beam {
+/* Floating gallery container */
+.hero-side-gallery {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 260px;
-  height: 260px;
-  background: radial-gradient(circle,
-    rgba(120, 255, 220, 0.35) 0%,
-    rgba(0, 0, 0, 0) 70%);
-  filter: blur(18px);
-  opacity: 0.55;
-  animation: heroBeamPulse 6s ease-in-out infinite;
-  z-index: 1;
-}
-
-.hero-mist-rise {
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200%;
-  height: 160px;
-  background: url('/assets/magic/mist-soft.png') repeat-x;
-  opacity: 0.28;
-  filter: blur(22px);
-  animation: heroMistRise 18s linear infinite;
+  inset: 0;
+  pointer-events: none;
   z-index: 2;
 }
 
-.hero-text-block {
-  max-width: 760px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 4;
+/* Floating images */
+.side-gallery-float {
+  position: absolute;
+  width: min(22vw, 180px);
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+
+  filter:
+    drop-shadow(0 0 10px rgba(0,255,255,0.55))
+    drop-shadow(0 0 20px rgba(0,150,255,0.45));
+
+  animation:
+    soft-drift 18s ease-in-out infinite,
+    glow-pulse 6s ease-in-out infinite,
+    parallax-shift 12s ease-in-out infinite;
 }
 
-.hero-title-cinematic {
-  font-family: 'Cinzel', serif;
-  font-size: 2.4rem;
-  margin-bottom: 12px;
-  text-shadow: 0 0 14px var(--cc-glow-soft);
+.side-gallery-float.visible {
+  opacity: 1;
+  transition: opacity 2s ease;
 }
 
-.hero-subtitle-cinematic {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin-bottom: 26px;
-  text-shadow: 0 0 10px var(--cc-glow-soft);
+/* Sparkle overlay */
+.hero-side-gallery::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255,255,255,0.6) 0px,
+    rgba(255,255,255,0) 8px
+  );
+
+  background-size: 120px 120px;
+  opacity: 0.25;
+  animation: sparkle-fade 8s linear infinite;
 }
 
-/* HERO ANIMATIONS */
-@keyframes heroCrownFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes heroBeamPulse {
-  0%   { opacity: 0.45; transform: scale(1); }
-  50%  { opacity: 0.65; transform: scale(1.08); }
-  100% { opacity: 0.45; transform: scale(1); }
-}
-
-@keyframes heroMistRise {
-  0%   { transform: translate(-50%, 0); }
-  100% { transform: translate(-50%, -20px); }
-}
 
 /* ============================================================
-   PART 3 — FROSTED CARDS + GALLERY
+   6. CARDS + GALLERY GRID
 ============================================================ */
 
 .cards-grid {
@@ -271,503 +403,6 @@ body.scrolled .magic-mist-layer-2 {
   box-shadow: 0 0 12px var(--cc-glow-soft);
 }
 
-.cc-card-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px var(--cc-glow-soft);
-}
-
-.cc-card-text {
-  font-size: 1rem;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-
-/* GALLERY LANE */
-.gallery-lane {
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 20px 0;
-  margin: 40px 0;
-  scrollbar-width: none;
-}
-
-.gallery-lane::-webkit-scrollbar {
-  display: none;
-}
-
-.gallery-lane img {
-  height: 160px;
-  margin: 0 12px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 0 14px var(--cc-glow-soft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-lane img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 18px var(--cc-glow-strong);
-}
-/* ============================================================
-   PART 2 — HEADER + NAVIGATION + THEME TOGGLE (64px)
-============================================================ */
-
-/* HEADER */
-.site-header {
-  text-align: center;
-  padding: 40px 0 20px;
-  position: relative;
-  z-index: 10;
-}
-
-.header-top {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Crown PNG */
-.header-crown-img {
-  width: 80px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-/* THEME TOGGLE — 64px SOFTER GLOW */
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(0, 255, 255, 0.22),
-              rgba(0, 0, 40, 0.65));
-
-  backdrop-filter: blur(8px);
-
-  box-shadow:
-    0 0 16px rgba(0, 255, 255, 0.7),
-    0 0 30px rgba(0, 120, 255, 0.6),
-    0 0 55px rgba(180, 0, 255, 0.5);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.15);
-  box-shadow:
-    0 0 22px rgba(0, 255, 255, 0.9),
-    0 0 40px rgba(0, 120, 255, 0.8),
-    0 0 75px rgba(180, 0, 255, 0.7);
-}
-
-/* DARK MODE — GOLDEN REACTOR */
-.dark-theme .theme-toggle {
-  box-shadow:
-    0 0 22px rgba(255, 200, 0, 0.9),
-    0 0 45px rgba(255, 150, 0, 0.8),
-    0 0 90px rgba(255, 120, 0, 0.7);
-}
-
-/* TITLE + TAGLINE */
-.site-title {
-  margin: 10px 0 0;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
-}
-
-.site-tagline {
-  margin: 5px 0 20px;
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-/* MAGICAL NAV BAR */
-.magical-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  list-style: none;
-  padding: 12px 20px;
-  margin: 0 auto;
-  border-radius: 40px;
-
-  background: linear-gradient(
-    135deg,
-    rgba(90, 0, 200, 0.4),
-    rgba(0, 150, 255, 0.4)
-  );
-
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 0 20px rgba(120, 0, 255, 0.4),
-    0 0 40px rgba(0, 150, 255, 0.3);
-}
-
-.magical-nav a {
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--cc-text);
-  padding: 6px 10px;
-  transition: opacity 0.25s ease;
-}
-
-.magical-nav a:hover {
-  opacity: 0.7;
-}
-
-/* ============================================================
-   PART 3 — FOOTER + FOOTER ICONS (72px)
-============================================================ */
-
-.site-footer {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 40px;
-  background: transparent;
-  color: #fff;
-  margin-top: 40px;
-  z-index: 10;
-}
-
-.footer-centre {
-  text-align: center;
-}
-
-.footer-icons {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.footer-text {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-top: 10px;
-}
-
-/* FOOTER ICONS — 72px ENERGY CORE */
-.footer-icon-img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  padding: 14px;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(0, 255, 255, 0.25),
-              rgba(0, 0, 40, 0.75));
-
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 0 22px rgba(0, 255, 255, 0.9),
-    0 0 45px rgba(0, 120, 255, 0.8),
-    0 0 85px rgba(180, 0, 255, 0.7);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.footer-icon-img:hover {
-  transform: scale(1.25) rotate(3deg);
-  box-shadow:
-    0 0 30px rgba(0, 255, 255, 1),
-    0 0 60px rgba(0, 120, 255, 1),
-    0 0 130px rgba(180, 0, 255, 1);
-}
-
-/* GOLDEN PORTAL VARIANT — UP ARROW */
-.footer-right {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.footer-right .footer-icon-img {
-  box-shadow:
-    0 0 26px rgba(255, 200, 0, 0.9),
-    0 0 55px rgba(255, 150, 0, 0.8),
-    0 0 95px rgba(255, 120, 0, 0.7);
-}
-
-.footer-right .footer-icon-img:hover {
-  transform: scale(1.3) rotate(-4deg);
-  box-shadow:
-    0 0 35px rgba(255, 200, 0, 1),
-    0 0 75px rgba(255, 150, 0, 1),
-    0 0 140px rgba(255, 120, 0, 1);
-}
-/* ============================================================
-   PART 3 — FOOTER + FOOTER ICONS (72px)
-============================================================ */
-
-.site-footer {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 40px;
-  background: transparent;
-  color: #fff;
-  margin-top: 40px;
-  z-index: 10;
-}
-
-.footer-centre {
-  text-align: center;
-}
-
-.footer-icons {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.footer-text {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-top: 10px;
-}
-
-/* FOOTER ICONS — 72px ENERGY CORE */
-.footer-icon-img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  padding: 14px;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(0, 255, 255, 0.25),
-              rgba(0, 0, 40, 0.75));
-
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 0 22px rgba(0, 255, 255, 0.9),
-    0 0 45px rgba(0, 120, 255, 0.8),
-    0 0 85px rgba(180, 0, 255, 0.7);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.footer-icon-img:hover {
-  transform: scale(1.25) rotate(3deg);
-  box-shadow:
-    0 0 30px rgba(0, 255, 255, 1),
-    0 0 60px rgba(0, 120, 255, 1),
-    0 0 130px rgba(180, 0, 255, 1);
-}
-
-/* GOLDEN PORTAL VARIANT — UP ARROW */
-.footer-right {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.footer-right .footer-icon-img {
-  box-shadow:
-    0 0 26px rgba(255, 200, 0, 0.9),
-    0 0 55px rgba(255, 150, 0, 0.8),
-    0 0 95px rgba(255, 120, 0, 0.7);
-}
-
-.footer-right .footer-icon-img:hover {
-  transform: scale(1.3) rotate(-4deg);
-  box-shadow:
-    0 0 35px rgba(255, 200, 0, 1),
-    0 0 75px rgba(255, 150, 0, 1),
-    0 0 140px rgba(255, 120, 0, 1);
-}
-.magical-nav a {
-  position: relative;
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--cc-text);
-  padding: 6px 10px;
-  transition: color 0.25s ease;
-}
-
-.magical-nav a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: rgba(0, 255, 255, 0.9);
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.9);
-  border-radius: 2px;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.magical-nav a:hover::after,
-.magical-nav a.active::after {
-  width: 60%;
-}
-.magical-nav a {
-  border-radius: 20px;
-  transition: background 0.3s ease, padding 0.3s ease;
-}
-
-.magical-nav a:hover {
-  background: rgba(0, 255, 255, 0.15);
-  padding: 6px 14px;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
-}
-.magical-nav a:hover {
-  color: #aefaff;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
-}
-.magical-nav a {
-  overflow: hidden;
-}
-
-.magical-nav a::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(0, 255, 255, 0.25);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
-}
-
-.magical-nav a:hover::before {
-  width: 140%;
-  height: 140%;
-}
-.magical-nav ul {
-  padding-left: 30px;
-  padding-right: 30px;
-  border-radius: 50px;
-}
-.theme-toggle img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-}
-.magical-nav ul {
-  padding-left: 30px;
-  padding-right: 30px;
-  border-radius: 50px;
-}
-/* ============================================================
-   HERO SIDE GALLERY — FLOATING IMAGES (MAGICAL EDITION)
-============================================================ */
-
-.side-gallery-float {
-  position: absolute;
-  width: min(22vw, 180px);   /* Auto-fit: never too big */
-  height: auto;
-  opacity: 0;
-  pointer-events: none;
-
-  /* Glow + soft edges */
-  filter:
-    drop-shadow(0 0 10px rgba(0,255,255,0.55))
-    drop-shadow(0 0 20px rgba(0,150,255,0.45));
-
-  /* Animations */
-  animation:
-    soft-drift 18s ease-in-out infinite,
-    glow-pulse 6s ease-in-out infinite,
-    parallax-shift 12s ease-in-out infinite;
-}
-
-.side-gallery-float.visible {
-  opacity: 1;
-  transition: opacity 2s ease;
-}
-@keyframes soft-drift {
-  0%   { transform: translateY(0px) translateX(0px); }
-  50%  { transform: translateY(-12px) translateX(6px); }
-  100% { transform: translateY(0px) translateX(0px); }
-}
-@keyframes glow-pulse {
-  0% {
-    filter:
-      drop-shadow(0 0 8px rgba(0,255,255,0.4))
-      drop-shadow(0 0 16px rgba(0,150,255,0.35));
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 16px rgba(0,255,255,0.7))
-      drop-shadow(0 0 28px rgba(0,150,255,0.55));
-  }
-  100% {
-    filter:
-      drop-shadow(0 0 8px rgba(0,255,255,0.4))
-      drop-shadow(0 0 16px rgba(0,150,255,0.35));
-  }
-}
-@keyframes parallax-shift {
-  0%   { transform: translateX(0px); }
-  50%  { transform: translateX(-8px); }
-  100% { transform: translateX(0px); }
-}
-.hero-side-gallery::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-
-  background-image: radial-gradient(
-    circle,
-    rgba(255,255,255,0.6) 0px,
-    rgba(255,255,255,0) 8px
-  );
-
-  background-size: 120px 120px;
-  opacity: 0.25;
-  animation: sparkle-fade 8s linear infinite;
-}
-
-@keyframes sparkle-fade {
-  0%   { opacity: 0.15; }
-  50%  { opacity: 0.35; }
-  100% { opacity: 0.15; }
-}
-width: min(22vw, 180px);
-.hero-crown-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  z-index: 10;
-}
-
-.hero-crown-cinematic {
-  width: 240px;
-  height: auto;
-  display: block;
-}
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -787,3 +422,111 @@ width: min(22vw, 180px);
   transform: scale(1.03);
   box-shadow: 0 0 20px rgba(0,255,255,0.55);
 }
+
+
+/* ============================================================
+   7. FOOTER + ICONS
+============================================================ */
+
+.site-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background: transparent;
+  color: #fff;
+  margin-top: 40px;
+  z-index: 10;
+}
+
+.footer-centre {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+/* Footer icons */
+.footer-icon-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  padding: 14px;
+
+  background: radial-gradient(circle at 30% 30%,
+              rgba(0, 255, 255, 0.25),
+              rgba(0, 0, 40, 0.75));
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 22px rgba(0, 255, 255, 0.9),
+    0 0 45px rgba(0, 120, 255, 0.8),
+    0 0 85px rgba(180, 0, 255, 0.7);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.footer-icon-img:hover {
+  transform: scale(1.25) rotate(3deg);
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 1),
+    0 0 60px rgba(0, 120, 255, 1),
+    0 0 130px rgba(180, 0, 255, 1);
+}
+
+/* Up arrow variant */
+.footer-right .footer-icon-img {
+  box-shadow:
+    0 0 26px rgba(255, 200, 0, 0.9),
+    0 0 55px rgba(255, 150, 0, 0.8),
+    0 0 95px rgba(255, 120, 0, 0.7);
+}
+
+.footer-right .footer-icon-img:hover {
+  transform: scale(1.3) rotate(-4deg);
+  box-shadow:
+    0 0 35px rgba(255, 200, 0, 1),
+    0 0 75px rgba(255, 150, 0, 1),
+    0 0 140px rgba(255, 120, 0, 1);
+}
+
+
+/* ============================================================
+   8. HERO ANIMATIONS
+============================================================ */
+
+@keyframes heroCrownFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes soft-drift {
+  0%   { transform: translateY(0px) translateX(0px); }
+  50%  { transform: translateY(-12px) translateX(6px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes glow-pulse {
+  0% {
+    filter:
+      drop-shadow(0 0 8px rgba(0,255,255,0.4))
+      drop-shadow(0 0 16px rgba(0,150,255,0.35));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 16px rgba(0,255,255,0.7))
+      drop-shadow(0 0 28px rgba(0,150
