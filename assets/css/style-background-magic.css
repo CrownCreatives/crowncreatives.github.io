@@ -1,0 +1,102 @@
+/* ============================================================
+   GLOBAL MAGICAL BACKGROUND LAYER
+   Stars + particles + nebula (full cinematic fantasy)
+============================================================ */
+
+/* Ensure body can host fixed background layers */
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Master container for all background magic */
+.cc-bg-magic-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;              /* Critical: keeps magic behind all content */
+  pointer-events: none;     /* Prevents blocking clicks */
+  overflow: hidden;
+}
+
+/* ============================================================
+   NEBULA LAYER
+   Soft drifting colour clouds
+============================================================ */
+.cc-bg-nebula {
+  position: absolute;
+  inset: -20%; /* Oversize for smooth drift */
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0, 255, 255, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(176, 0, 255, 0.22), transparent 60%),
+    radial-gradient(circle at 50% 40%, rgba(0, 120, 255, 0.18), transparent 55%);
+  filter: blur(18px);
+  opacity: 0.7;
+  animation: nebulaDrift 40s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-20px, 10px, 0) scale(1.05); }
+  100% { transform: translate3d(20px, -10px, 0) scale(1.08); }
+}
+
+/* ============================================================
+   STARFIELD LAYER
+   Subtle twinkling stars
+============================================================ */
+.cc-bg-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.9) 0, transparent 55%),
+    radial-gradient(circle, rgba(255,255,255,0.7) 0, transparent 55%),
+    radial-gradient(circle, rgba(255,255,255,0.5) 0, transparent 55%);
+  background-size: 2px 2px, 3px 3px, 1px 1px;
+  background-position:
+    10% 20%,
+    60% 40%,
+    80% 70%;
+  opacity: 0.6;
+  animation: starTwinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes starTwinkle {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.9; }
+  100% { opacity: 0.5; }
+}
+
+/* ============================================================
+   PARTICLE LAYER
+   Rising magical motes
+============================================================ */
+.cc-bg-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cc-bg-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 234, 255, 0.9);
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.9);
+  opacity: 0.8;
+  animation: particleRise 18s linear infinite;
+}
+
+/* Particle positions + staggered timing */
+.cc-bg-particle.p1 { left: 10%; bottom: -10%; animation-delay: 0s; }
+.cc-bg-particle.p2 { left: 30%; bottom: -15%; animation-delay: 4s; }
+.cc-bg-particle.p3 { left: 55%; bottom: -12%; animation-delay: 8s; }
+.cc-bg-particle.p4 { left: 75%; bottom: -18%; animation-delay: 2s; }
+.cc-bg-particle.p5 { left: 90%; bottom: -20%; animation-delay: 10s; }
+
+@keyframes particleRise {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  10%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translate3d(0, -120vh, 0); opacity: 0; }
+}
