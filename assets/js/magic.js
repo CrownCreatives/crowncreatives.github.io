@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getLanePositions() {
     const crownEl = document.querySelector('.hero-crown-wrapper');
-    if (!crownEl) return { leftLane: "45%", rightLane: "55%" };
+    if (!crownEl) return { leftLane: "30%", rightLane: "30%" };
 
     const rect = crownEl.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
