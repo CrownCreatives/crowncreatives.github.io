@@ -270,3 +270,12 @@ body {
     drop-shadow(0 0 18px rgba(0,234,255,1))
     drop-shadow(0 0 32px rgba(176,0,255,1));
 }
+/* HERO CROWN — stable cinematic size */
+.hero-crown-cinematic,
+.header-crown-hero {
+  width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  image-rendering: auto;
+}
