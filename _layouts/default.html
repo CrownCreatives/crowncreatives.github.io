@@ -10,23 +10,50 @@ layout: null
 
   <title>{{ page.title }} | Crown Creatives</title>
 
+  <!-- Core Site Styles -->
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Full Magical Background Engine -->
+  <link rel="stylesheet" href="/assets/css/magic-background.css">
 </head>
 
 <body id="top">
 
+<!-- ============================================================
+     MAGICAL BACKGROUND ENGINE (LAYER STACK)
+============================================================ -->
+<div class="magic-bg-container">
+  <div class="magic-bg-gradient"></div>
+  <div class="magic-mist-layer"></div>
+  <div class="magic-leaf-glow"></div>
+  <div class="magic-sparkle-layer"></div>
+  <div class="magic-particles"></div>
+  <div class="magic-aurora"></div>
+  <div class="magic-stars"></div>
+  <div class="magic-nebula"></div>
+  <div class="magic-vignette"></div>
+</div>
+
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
 <header class="site-header">
 
   <div class="header-top">
+
+    <!-- CC Monogram -->
     <img src="/assets/icons/cc-monogram.png"
          alt="Crown Creatives Crown"
          class="header-crown-img">
 
+    <!-- Theme Toggle -->
     <button class="theme-toggle">
       <img src="/assets/icons/icon-theme-toggle-bold-cyan.png"
            alt="Toggle theme"
            class="theme-toggle-icon">
     </button>
+
   </div>
 
   <h1 class="site-title">CROWN CREATIVES</h1>
@@ -47,11 +74,18 @@ layout: null
 
 </header>
 
-<!-- ⭐ THIS IS THE ONLY MAIN TAG ⭐ -->
+
+<!-- ============================================================
+     PAGE CONTENT (from index.md, gallery.md, etc.)
+============================================================ -->
 <main>
   {{ content }}
 </main>
 
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
 <footer class="site-footer">
 
   <div class="footer-centre">
@@ -88,6 +122,10 @@ layout: null
 
 </footer>
 
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
 <script src="/assets/js/theme.js"></script>
 <script src="/assets/js/magic.js"></script>
 
