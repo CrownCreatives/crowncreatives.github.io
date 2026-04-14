@@ -3,12 +3,10 @@ layout: default
 title: Home
 ---
 
-<main>
-
-<!-- ⭐ HERO SECTION — MUST BE DIRECTLY UNDER HEADER ⭐ -->
+<!-- ⭐ HERO SECTION — DIRECTLY UNDER HEADER ⭐ -->
 <section class="hero">
 
-  <!-- Floating image lanes (autoscan uses this) -->
+  <!-- Floating image lanes (magic.js uses this) -->
   <div class="hero-side-gallery"></div>
 
   <!-- Cinematic crown (centred by CSS) -->
@@ -53,7 +51,6 @@ title: Home
 
 </section>
 
-</main>
 
 <!-- MAGIC ENGINE -->
 <script src="/assets/js/magic.js"></script>
