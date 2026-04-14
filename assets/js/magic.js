@@ -246,3 +246,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+/* ------------------------------------------------------------
+   SCROLL-REACTIVE MIST
+------------------------------------------------------------- */
+
+window.addEventListener("scroll", () => {
+  const mist = document.querySelector(".hero::before");
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  const scrollY = window.scrollY;
+  const offset = Math.min(scrollY * 0.15, 40);
+
+  hero.style.setProperty("--mist-offset", `${offset}px`);
+});
+
+
+/* ------------------------------------------------------------
+   PARALLAX TILT ON MOUSE MOVE
+------------------------------------------------------------- */
+
+document.addEventListener("mousemove", (e) => {
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  const x = (e.clientX / window.innerWidth - 0.5) * 10;
+  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+  const tiltTargets = document.querySelectorAll(
+    ".hero-crown-wrapper, .hero-emblem-text, .hero-magic-backlayer"
+  );
+
+  tiltTargets.forEach(el => {
+    el.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+  });
+});
