@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (NARROW + MOBILE)
+     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (SUPER NARROW)
   ------------------------------------------------------------- */
 
   function getLanePositions() {
@@ -123,10 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = crownEl.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
 
-    // Much tighter lanes
+    // EXTREMELY tight lanes
     const isMobile = viewportWidth < 768;
-    const imageWidth = isMobile ? 110 : 150;
-    const laneOffset = isMobile ? 10 : 20;
+    const imageWidth = isMobile ? 90 : 120;   // smaller images
+    const laneOffset = isMobile ? 4 : 8;      // VERY close to crown
 
     let leftLane = rect.left - imageWidth - laneOffset;
     let rightLane = rect.right + laneOffset;
@@ -143,21 +143,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     5. HERO FLOATING IMAGES — NARROW LANES + 10s HOLD + RAF LOOP
+     5. HERO FLOATING IMAGES — ONE AT A TIME, 10s HOLD
   ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
   let sources = [];
   let side = "left";
+  let isImageActive = false;   // ensures only ONE image at a time
 
-  let lastSpawnTime = 0;
-  const SPAWN_INTERVAL = 3500; // ms
-
-  function spawnSideImage(timestamp = performance.now()) {
+  function spawnSideImage() {
     if (!sources.length || !container) return;
+    if (isImageActive) return;   // prevent overlap
 
-    if (timestamp - lastSpawnTime < SPAWN_INTERVAL) return;
-    lastSpawnTime = timestamp;
+    isImageActive = true;
 
     const { leftLane, rightLane } = getLanePositions();
 
@@ -173,32 +171,43 @@ document.addEventListener("DOMContentLoaded", () => {
     img.style.left = isLeft ? leftLane : rightLane;
 
     const isMobile = window.innerWidth < 768;
-    const maxVertical = isMobile ? 50 : 80;
-    const baseOffset = isMobile ? 20 : 40;
+    const maxVertical = isMobile ? 40 : 60;
+    const baseOffset = isMobile ? 10 : 20;
     img.style.top = `${Math.floor(Math.random() * maxVertical) + baseOffset}px`;
 
     container.appendChild(img);
 
     requestAnimationFrame(() => img.classList.add("visible"));
 
-    // Hold for 10 seconds, then fade out
+    // Hold for EXACTLY 10 seconds
     setTimeout(() => {
       img.classList.remove("visible");
-      setTimeout(() => img.remove(), 2000);
-    }, 10000);
-  }
 
-  function startFloatLoop() {
-    function loop(timestamp) {
-      spawnSideImage(timestamp);
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
+      // Remove after fade-out
+      setTimeout(() => {
+        img.remove();
+        isImageActive = false;   // allow next image
+      }, 2000);
+
+    }, 10000);
   }
 
 
   /* ------------------------------------------------------------
-     6. SIMPLE GALLERY LIGHTBOX
+     6. FLOAT LOOP — NEXT IMAGE WAITS FOR PREVIOUS TO END
+  ------------------------------------------------------------- */
+
+  function startFloatLoop() {
+    function loop() {
+      spawnSideImage();
+      setTimeout(loop, 12000); // 10s hold + 2s fade-out
+    }
+    loop();
+  }
+
+
+  /* ------------------------------------------------------------
+     7. SIMPLE GALLERY LIGHTBOX
   ------------------------------------------------------------- */
 
   function createLightbox() {
@@ -238,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     7. INITIALISE AUTOSCAN + HERO FLOATERS
+     8. INITIALISE AUTOSCAN + HERO FLOATERS
   ------------------------------------------------------------- */
 
   loadFolderImages().then(imgs => {
