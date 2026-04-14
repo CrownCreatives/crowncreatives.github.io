@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------
-   MAGIC.JS — AUTOSCAN • FLOATERS • LIGHTBOX (2026)
+   MAGIC.JS — AUTOSCAN • FLOATERS • LIGHTBOX • PERFORMANCE (2026)
 ------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -72,8 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .filter(f => /\.(jpg|jpeg|png|gif|webp)$/i.test(f.name))
         .map(f => "/" + f.path.replace(/^\//, ""));
 
-      // Preload to avoid pop-in
-      await preloadImages(images);
+      await preloadImages(images); // eliminate pop‑in
 
       return images;
 
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     3. BUILD GALLERY PAGE AUTOMATICALLY + LIGHTBOX HOOKS
+     3. BUILD GALLERY PAGE + LIGHTBOX
   ------------------------------------------------------------- */
 
   function buildGalleryGrid(images) {
@@ -114,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (MOBILE-AWARE)
+     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (NARROW + MOBILE)
   ------------------------------------------------------------- */
 
   function getLanePositions() {
@@ -124,10 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = crownEl.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
 
-    // Mobile: lanes closer + smaller images
+    // Much tighter lanes
     const isMobile = viewportWidth < 768;
-    const imageWidth = isMobile ? 130 : 180;
-    const laneOffset = isMobile ? 20 : 40;
+    const imageWidth = isMobile ? 110 : 150;
+    const laneOffset = isMobile ? 10 : 20;
 
     let leftLane = rect.left - imageWidth - laneOffset;
     let rightLane = rect.right + laneOffset;
@@ -144,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     5. HERO FLOATING IMAGES — NARROW LANES + THROTTLED SPAWN
+     5. HERO FLOATING IMAGES — NARROW LANES + 10s HOLD + RAF LOOP
   ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
@@ -174,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     img.style.left = isLeft ? leftLane : rightLane;
 
     const isMobile = window.innerWidth < 768;
-    const maxVertical = isMobile ? 80 : 120;
+    const maxVertical = isMobile ? 50 : 80;
     const baseOffset = isMobile ? 20 : 40;
     img.style.top = `${Math.floor(Math.random() * maxVertical) + baseOffset}px`;
 
@@ -182,10 +181,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(() => img.classList.add("visible"));
 
+    // Hold for 10 seconds, then fade out
     setTimeout(() => {
       img.classList.remove("visible");
       setTimeout(() => img.remove(), 2000);
-    }, 12000);
+    }, 10000);
   }
 
   function startFloatLoop() {
