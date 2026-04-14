@@ -674,3 +674,83 @@ body.scrolled .magic-mist-layer-2 {
   padding-right: 30px;
   border-radius: 50px;
 }
+/* ============================================================
+   HERO SIDE GALLERY — FLOATING IMAGES (MAGICAL EDITION)
+============================================================ */
+
+.side-gallery-float {
+  position: absolute;
+  width: min(22vw, 180px);   /* Auto-fit: never too big */
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+
+  /* Glow + soft edges */
+  filter:
+    drop-shadow(0 0 10px rgba(0,255,255,0.55))
+    drop-shadow(0 0 20px rgba(0,150,255,0.45));
+
+  /* Animations */
+  animation:
+    soft-drift 18s ease-in-out infinite,
+    glow-pulse 6s ease-in-out infinite,
+    parallax-shift 12s ease-in-out infinite;
+}
+
+.side-gallery-float.visible {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+@keyframes soft-drift {
+  0%   { transform: translateY(0px) translateX(0px); }
+  50%  { transform: translateY(-12px) translateX(6px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+@keyframes glow-pulse {
+  0% {
+    filter:
+      drop-shadow(0 0 8px rgba(0,255,255,0.4))
+      drop-shadow(0 0 16px rgba(0,150,255,0.35));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 16px rgba(0,255,255,0.7))
+      drop-shadow(0 0 28px rgba(0,150,255,0.55));
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 8px rgba(0,255,255,0.4))
+      drop-shadow(0 0 16px rgba(0,150,255,0.35));
+  }
+}
+@keyframes parallax-shift {
+  0%   { transform: translateX(0px); }
+  50%  { transform: translateX(-8px); }
+  100% { transform: translateX(0px); }
+}
+.hero-side-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255,255,255,0.6) 0px,
+    rgba(255,255,255,0) 8px
+  );
+
+  background-size: 120px 120px;
+  opacity: 0.25;
+  animation: sparkle-fade 8s linear infinite;
+}
+
+@keyframes sparkle-fade {
+  0%   { opacity: 0.15; }
+  50%  { opacity: 0.35; }
+  100% { opacity: 0.15; }
+}
+width: min(22vw, 180px);
