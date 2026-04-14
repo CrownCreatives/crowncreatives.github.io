@@ -1,894 +1,282 @@
 /* ============================================================
-   CROWN CREATIVES — UNIFIED MAGICAL THEME 2026
-   FINAL CLEAN BUILD — COMPLETE & CORRECTED
+   0. GLOBAL BASE + THEME VARIABLES
+   - Fonts
+   - Light/Dark gradients
+   - Core colours
+   - Glow + card system
 ============================================================ */
-
+:root { ... }
+:root[data-theme="dark"] { ... }
 
 /* ============================================================
-   1. GOOGLE FONT — CINZEL (Regal Fantasy Titles)
+   1. GLOBAL RESET + BODY
+   - Box sizing
+   - Base typography
+   - Background gradient
+   - Main container
 ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+*,
+*::before,
+*::after { ... }
 
+html, body { ... }
+body { ... }
+.site-main { ... }
 
 /* ============================================================
-   2. THEME VARIABLES — NIGHT + DAY MODES
+   2. HEADER + NAV + THEME TOGGLE
+   - Crown logo
+   - Title + tagline
+   - Neon toggle sphere
+   - Magical nav hover underline
+============================================================ */
+.site-header { ... }
+.site-header-inner { ... }
+.header-left .header-crown { ... }
+.header-centre { ... }
+.site-title { ... }
+.site-tagline { ... }
+.header-right { ... }
+
+.theme-toggle { ... }
+.theme-toggle-sphere { ... }
+.theme-toggle-sphere:hover { ... }
+.theme-icon { ... }
+.theme-icon.active { ... }
+
+.site-nav { ... }
+.site-nav ul { ... }
+.nav-link { ... }
+.nav-link::after { ... }
+.nav-link:hover { ... }
+.nav-link:hover::after { ... }
+
+.header-magic-line { ... }
+
+/* ============================================================
+   3. HERO — CROWN + EMBLEM + FRAME
+   - Hero container + entrance
+   - Magical backlayer (rune ring + particles)
+   - Crown float + glow pulse
+   - Emblem text (Cinzel Decorative)
+   - Soft rising mist
+============================================================ */
+.hero { ... }
+.hero.hero-enter { ... }
+.hero-inner { ... }
+
+.hero-magic-backlayer { ... }
+.rune-ring { ... }
+@keyframes runeSpin { ... }
+
+.particle-halo { ... }
+.particle-halo::before,
+.particle-halo::after { ... }
+@keyframes orbit { ... }
+
+.hero-crown-wrapper { ... }
+.hero-crown-cinematic { ... }
+@keyframes heroCrownFloat { ... }
+@keyframes crownPulse { ... }
+
+.hero-emblem-text { ... }
+@keyframes emblemShimmer { ... }
+
+.hero::before { ... }
+
+/* ============================================================
+   4. CONTENT CARDS / GALLERY LANES
+   - 3‑column → 2‑column → 1‑column
+   - Narrowed lanes to prevent drift
+============================================================ */
+.content-section { ... }
+.content-row { ... }
+.content-card { ... }
+.content-card h2 { ... }
+.content-card p { ... }
+.content-link { ... }
+.content-link::after { ... }
+.content-link:hover::after { ... }
+
+@media (max-width: 1024px) { ... }
+@media (max-width: 720px) { ... }
+
+/* ============================================================
+   5. LIGHTBOX
+============================================================ */
+.cc-lightbox-overlay { ... }
+.cc-lightbox-overlay.visible { ... }
+.cc-lightbox-image { ... }
+.gallery-item { ... }
+
+/* ============================================================
+   6. TICKER ABOVE FOOTER
+   - Left→right scroll
+   - Shimmer overlay
+============================================================ */
+.cc-ticker-wrapper { ... }
+.cc-ticker-track { ... }
+@keyframes tickerMove { ... }
+.cc-ticker-text { ... }
+.cc-ticker-wrapper::after { ... }
+@keyframes tickerShimmer { ... }
+
+/* ============================================================
+   7. FOOTER — MEDIUM NEON SPHERES
+   - Unified medium spheres
+   - Email fixed
+   - Up‑arrow matches
+============================================================ */
+.site-footer { ... }
+.footer-icons { ... }
+.footer-icons img { ... }
+.footer-icons img:hover { ... }
+.footer-bottom { ... }
+.cc-inline { ... }
+
+/* ============================================================
+   8. RESPONSIVE HERO + HEADER
+============================================================ */
+@media (max-width: 900px) { ... }
+@media (max-width: 640px) { ... }
+/* ============================================================
+   DARK MODE — HERO EMPHASIS
+   Stronger neon, deeper rune ring, subtle inner nebula
+============================================================ */
+:root[data-theme="dark"] .hero-magic-backlayer {
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.9));
+}
+
+:root[data-theme="dark"] .rune-ring {
+  background: radial-gradient(circle,
+    rgba(0,255,255,0.25) 0%,
+    rgba(0,120,255,0.12) 55%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 55px rgba(0,255,255,0.7),
+    0 0 95px rgba(176,0,255,0.6);
+}
+
+:root[data-theme="dark"] .hero-crown-cinematic {
+  filter:
+    drop-shadow(0 0 26px rgba(0,255,255,1))
+    drop-shadow(0 0 48px rgba(0,150,255,0.95))
+    drop-shadow(0 0 90px rgba(176,0,255,0.9));
+}
+
+:root[data-theme="dark"] .hero-emblem-text {
+  text-shadow:
+    0 0 16px rgba(0,255,255,0.9),
+    0 0 32px rgba(0,150,255,0.85),
+    0 0 60px rgba(176,0,255,0.85);
+}
+
+/* Subtle inner nebula behind crown in dark mode */
+:root[data-theme="dark"] .hero-magic-backlayer::before {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%,
+      rgba(0, 255, 255, 0.25),
+      transparent 55%),
+    radial-gradient(circle at 70% 70%,
+      rgba(176, 0, 255, 0.28),
+      transparent 60%);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+/* ============================================================
+   GLOBAL MAGICAL BACKGROUND LAYER
+   Stars + particles + nebula (full cinematic fantasy)
 ============================================================ */
 
 body {
-  --cc-text: #e0e6ff;
-  --cc-glow-strong: rgba(90, 60, 200, 0.9);
-  --cc-glow-soft: rgba(90, 60, 200, 0.4);
-  --cc-card-bg: rgba(0, 0, 0, 0.25);
-  --cc-footer-bg: rgba(0, 0, 0, 0.18);
-
-  background: transparent;
-  color: var(--cc-text);
-  transition: color 0.5s ease, background 0.5s ease;
-
   position: relative;
   overflow-x: hidden;
 }
 
-body.light-mode {
-  --cc-text: #ffffff;
-  --cc-glow-strong: rgba(120, 200, 255, 0.9);
-  --cc-glow-soft: rgba(120, 200, 255, 0.4);
-  --cc-card-bg: rgba(255, 255, 255, 0.12);
-  --cc-footer-bg: rgba(255, 255, 255, 0.08);
-}
-
-/* ============================================================
-   4. HEADER + NAVIGATION + THEME TOGGLE
-============================================================ */
-
-.site-header {
-  text-align: center;
-  padding: 40px 0 20px;
-  position: relative;
-  z-index: 10;
-}
-
-.header-top {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-crown-img {
-  width: 80px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-/* Theme Toggle */
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(0, 255, 255, 0.22),
-              rgba(0, 0, 40, 0.65));
-
-  backdrop-filter: blur(8px);
-
-  box-shadow:
-    0 0 16px rgba(0, 255, 255, 0.7),
-    0 0 30px rgba(0, 120, 255, 0.6),
-    0 0 55px rgba(180, 0, 255, 0.5);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.15);
-  box-shadow:
-    0 0 22px rgba(0, 255, 255, 0.9),
-    0 0 40px rgba(0, 120, 255, 0.8),
-    0 0 75px rgba(180, 0, 255, 0.7);
-}
-
-.theme-toggle img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-}
-
-/* Nav Bar */
-.magical-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  list-style: none;
-  padding: 12px 30px;
-  margin: 0 auto;
-  border-radius: 50px;
-
-  background: linear-gradient(
-    135deg,
-    rgba(90, 0, 200, 0.4),
-    rgba(0, 150, 255, 0.4)
-  );
-
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 0 20px rgba(120, 0, 255, 0.4),
-    0 0 40px rgba(0, 150, 255, 0.3);
-}
-
-.magical-nav a {
-  position: relative;
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--cc-text);
-  padding: 6px 10px;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: background 0.3s ease, padding 0.3s ease, color 0.25s ease;
-}
-
-.magical-nav a:hover {
-  background: rgba(0, 255, 255, 0.15);
-  padding: 6px 14px;
-  color: #aefaff;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
-}
-
-/* Underline Glow */
-.magical-nav a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: rgba(0, 255, 255, 0.9);
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.9);
-  border-radius: 2px;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.magical-nav a:hover::after,
-.magical-nav a.active::after {
-  width: 60%;
-}
-
-/* Ripple Glow */
-.magical-nav a::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(0, 255, 255, 0.25);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
-}
-
-.magical-nav a:hover::before {
-  width: 140%;
-  height: 140%;
-}
-
-
-/* ============================================================
-   5. HERO — CENTRED CROWN + AUTOSCAN FLOATING GALLERY
-============================================================ */
-
-.hero {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 0 80px;
-  z-index: 5;
-}
-
-.hero-crown-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  z-index: 10;
-}
-
-.hero-crown-cinematic {
-  width: 240px;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 0 22px var(--cc-glow-strong));
-  animation: heroCrownFloat 5s ease-in-out infinite;
-}
-
-/* Floating gallery container */
-.hero-side-gallery {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Floating images */
-.side-gallery-float {
-  position: absolute;
-  width: min(22vw, 180px);
-  height: auto;
-  opacity: 0;
-  pointer-events: none;
-
-  filter:
-    drop-shadow(0 0 10px rgba(0,255,255,0.55))
-    drop-shadow(0 0 20px rgba(0,150,255,0.45));
-
-  animation:
-    soft-drift 18s ease-in-out infinite,
-    glow-pulse 6s ease-in-out infinite,
-    parallax-shift 12s ease-in-out infinite;
-}
-
-.side-gallery-float.visible {
-  opacity: 1;
-  transition: opacity 2s ease;
-}
-
-/* Sparkle overlay */
-.hero-side-gallery::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  background-image: radial-gradient(
-    circle,
-    rgba(255,255,255,0.6) 0px,
-    rgba(255,255,255,0) 8px
-  );
-
-  background-size: 120px 120px;
-  opacity: 0.25;
-  animation: sparkle-fade 8s linear infinite;
-}
-
-
-/* ============================================================
-   6. CARDS + GALLERY GRID
-============================================================ */
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 26px;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.cc-card {
-  background: var(--cc-card-bg);
-  border-radius: 18px;
-  padding: 22px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 0 18px var(--cc-glow-soft);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  text-align: center;
-}
-
-.cc-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 22px var(--cc-glow-strong);
-}
-
-.cc-card img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  box-shadow: 0 0 12px var(--cc-glow-soft);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,255,255,0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(0,255,255,0.55);
-}
-
-
-/* ============================================================
-   7. FOOTER + ICONS
-============================================================ */
-
-.site-footer {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 40px;
-  background: transparent;
-  color: #fff;
-  margin-top: 40px;
-  z-index: 10;
-}
-
-.footer-centre {
-  text-align: center;
-  flex: 1;
-}
-
-.footer-icons {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.footer-text {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-top: 10px;
-}
-
-/* Footer icons */
-.footer-icon-img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  padding: 14px;
-
-  background: radial-gradient(circle at 30% 30%,
-              rgba(0, 255, 255, 0.25),
-              rgba(0, 0, 40, 0.75));
-
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 0 22px rgba(0, 255, 255, 0.9),
-    0 0 45px rgba(0, 120, 255, 0.8),
-    0 0 85px rgba(180, 0, 255, 0.7);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.footer-icon-img:hover {
-  transform: scale(1.25) rotate(3deg);
-  box-shadow:
-    0 0 30px rgba(0, 255, 255, 1),
-    0 0 60px rgba(0, 120, 255, 1),
-    0 0 130px rgba(180, 0, 255, 1);
-}
-
-/* Up arrow variant */
-.footer-right .footer-icon-img {
-  box-shadow:
-    0 0 26px rgba(255, 200, 0, 0.9),
-    0 0 55px rgba(255, 150, 0, 0.8),
-    0 0 95px rgba(255, 120, 0, 0.7);
-}
-
-.footer-right .footer-icon-img:hover {
-  transform: scale(1.3) rotate(-4deg);
-  box-shadow:
-    0 0 35px rgba(255, 200, 0, 1),
-    0 0 75px rgba(255, 150, 0, 1),
-    0 0 140px rgba(255, 120, 0, 1);
-}
-
-
-/* ============================================================
-   8. HERO ANIMATIONS
-============================================================ */
-
-@keyframes heroCrownFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes soft-drift {
-  0%   { transform: translateY(0px) translateX(0px); }
-  50%  { transform: translateY(-12px) translateX(6px); }
-  100% { transform: translateY(0px) translateX(0px); }
-}
-
-@keyframes glow-pulse {
-  0% {
-    filter:
-      drop-shadow(0 0 8px rgba(0,255,255,0.4))
-      drop-shadow(0 0 16px rgba(0,150,255,0.35));
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 16px rgba(0,255,255,0.7))
-      drop-shadow(0 0 28px rgba(0,150
-/* Hero entrance */
-.hero {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.hero.hero-enter {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Lightbox */
-.cc-lightbox-overlay {
+/* Container for all background magic */
+.cc-bg-magic-layer {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
+  z-index: -1;
   pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 999;
-}
-
-.cc-lightbox-overlay.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.cc-lightbox-image {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(0,255,255,0.7);
-}
-
-/* Gallery item button reset */
-.gallery-item {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-  cursor: pointer;
-}
-/* ============================================================
-   HERO EMBLEM TEXT — MERGED WITH CROWN
-============================================================ */
-
-.hero-emblem-text {
-  margin-top: -10px; /* pulls text closer to crown */
-  text-align: center;
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem; /* doubled size */
-  font-weight: 600;
-  max-width: 900px;
-  line-height: 1.25;
-  padding: 0 20px;
-
-  /* Magical glow */
-  color: #e8faff;
-  text-shadow:
-    0 0 12px rgba(0,255,255,0.7),
-    0 0 22px rgba(0,150,255,0.6),
-    0 0 45px rgba(180,0,255,0.5);
-
-  /* Merge with crown */
-  position: relative;
-  z-index: 12;
-  transform: translateY(-8px);
-
-  /* Soft shimmer */
-  animation: emblemShimmer 6s ease-in-out infinite;
-}
-
-@keyframes emblemShimmer {
-  0%   { opacity: 0.85; text-shadow: 0 0 12px rgba(0,255,255,0.6); }
-  50%  { opacity: 1;    text-shadow: 0 0 22px rgba(0,255,255,0.9); }
-  100% { opacity: 0.85; text-shadow: 0 0 12px rgba(0,255,255,0.6); }
-}
-
-/* Crown glow sync */
-.hero-crown-cinematic {
-  filter:
-    drop-shadow(0 0 18px rgba(0,255,255,0.8))
-    drop-shadow(0 0 35px rgba(0,150,255,0.7))
-    drop-shadow(0 0 65px rgba(180,0,255,0.6));
-
-  animation: crownPulse 6s ease-in-out infinite;
-}
-
-@keyframes crownPulse {
-  0%   { filter: drop-shadow(0 0 18px rgba(0,255,255,0.7)); }
-  50%  { filter: drop-shadow(0 0 35px rgba(0,255,255,1)); }
-  100% { filter: drop-shadow(0 0 18px rgba(0,255,255,0.7)); }
-}
-
-/* Mobile scaling */
-@media (max-width: 768px) {
-  .hero-emblem-text {
-    font-size: 1.6rem;
-    transform: translateY(-4px);
-  }
-}
-/* ============================================================
-   MAGICAL RUNE RING BEHIND CROWN + TEXT
-============================================================ */
-
-.hero-magic-backlayer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  width: 420px;
-  height: 420px;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.rune-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle,
-    rgba(0,255,255,0.15) 0%,
-    rgba(0,150,255,0.05) 60%,
-    transparent 100%
-  );
-  box-shadow: 0 0 40px rgba(0,255,255,0.4);
-  animation: runeSpin 22s linear infinite;
-  mask-image: url('/assets/images/runes-mask.png'); /* optional */
-  mask-size: cover;
-}
-
-@keyframes runeSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-
-/* ============================================================
-   PARTICLE HALO — SLOW ORBITING PARTICLES
-============================================================ */
-
-.particle-halo {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.particle-halo::before,
-.particle-halo::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: rgba(0,255,255,0.9);
-  border-radius: 50%;
-  box-shadow: 0 0 12px rgba(0,255,255,1);
-  animation: orbit 14s linear infinite;
-}
-
-.particle-halo::after {
-  width: 8px;
-  height: 8px;
-  background: rgba(180,0,255,0.9);
-  box-shadow: 0 0 10px rgba(180,0,255,1);
-  animation-duration: 18s;
-}
-
-@keyframes orbit {
-  0%   { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-}
-
-
-/* ============================================================
-   SOFT RISING MIST (SCROLL-REACTIVE)
-============================================================ */
-
-.hero::before {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 100%;
-  height: 180px;
-  background: radial-gradient(circle at 50% 100%,
-    rgba(255,255,255,0.15),
-    rgba(255,255,255,0.05),
-    transparent
-  );
-  filter: blur(18px);
-  opacity: 0.4;
-  transform: translateY(0px);
-  transition: transform 0.2s ease-out;
-  pointer-events: none;
-  z-index: 3;
-}
-
-
-/* ============================================================
-   HOVER GLOW SURGE (CROWN + TEXT)
-============================================================ */
-
-.hero-crown-wrapper:hover .hero-crown-cinematic,
-.hero-emblem-text:hover {
-  filter: drop-shadow(0 0 40px rgba(0,255,255,1))
-          drop-shadow(0 0 80px rgba(180,0,255,0.9));
-  transition: filter 0.4s ease-out;
-}
-
-
-/* ============================================================
-   PARALLAX TILT (MOUSE MOVEMENT)
-============================================================ */
-
-.hero {
-  perspective: 1200px;
-}
-
-.hero-crown-wrapper,
-.hero-emblem-text,
-.hero-magic-backlayer {
-  transition: transform 0.2s ease-out;
-  transform-style: preserve-3d;
-}
-.cc-ticker-wrapper {
-  width: 100%;
   overflow: hidden;
-  position: relative;
-  padding: 10px 0;
-  margin-top: 40px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(6px);
-  border-top: 1px solid rgba(0,255,255,0.25);
-  box-shadow: 0 0 20px rgba(0,255,255,0.25);
 }
 
-.cc-ticker-track {
-  white-space: nowrap;
-  display: inline-block;
-  animation: tickerMove 28s linear infinite;
-  padding-left: 100%;
+/* Nebula base */
+.cc-bg-nebula {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0, 255, 255, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(176, 0, 255, 0.22), transparent 60%),
+    radial-gradient(circle at 50% 40%, rgba(0, 120, 255, 0.18), transparent 55%);
+  filter: blur(18px);
+  opacity: 0.7;
+  animation: nebulaDrift 40s ease-in-out infinite alternate;
 }
 
-@keyframes tickerMove {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-.cc-ticker-text {
-  font-size: 1.25rem;
-  color: #e8faff;
-  text-shadow:
-    0 0 8px rgba(0,255,255,0.8),
-    0 0 16px rgba(180,0,255,0.7);
-  letter-spacing: 1px;
-  font-family: 'Cinzel', serif;
-  display: inline-block;
-  padding-right: 100%;
-}
-
-/* Magical shimmer overlay */
-.cc-ticker-wrapper::after {
-  content: "";
+/* Stars */
+.cc-bg-stars {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255,255,255,0.15) 50%,
-    transparent 100%
-  );
-  animation: tickerShimmer 6s ease-in-out infinite;
-  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.9) 0, transparent 55%),
+    radial-gradient(circle, rgba(255,255,255,0.7) 0, transparent 55%),
+    radial-gradient(circle, rgba(255,255,255,0.5) 0, transparent 55%);
+  background-size: 2px 2px, 3px 3px, 1px 1px;
+  background-position:
+    10% 20%,
+    60% 40%,
+    80% 70%;
+  opacity: 0.6;
+  animation: starTwinkle 6s ease-in-out infinite alternate;
 }
 
-@keyframes tickerShimmer {
-  0%   { opacity: 0; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-/* ===========================
-   GLOBAL NEON VARIABLES
-=========================== */
-:root {
-    --cyan: #00eaff;
-    --cyan-glow: 0 0 12px #00eaff;
-    --cyan-glow-strong: 0 0 22px #00eaff;
+/* Floating particles */
+.cc-bg-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
-/* ===========================
-   HEADER
-=========================== */
-
-.site-header {
-    width: 100%;
-    padding: 20px 40px 0;
-    background: transparent;
+.cc-bg-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 234, 255, 0.9);
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.9);
+  opacity: 0.8;
+  animation: particleRise 18s linear infinite;
 }
 
-.site-header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* A few positioned particles */
+.cc-bg-particle.p1 { left: 10%; bottom: -10%; animation-delay: 0s; }
+.cc-bg-particle.p2 { left: 30%; bottom: -15%; animation-delay: 4s; }
+.cc-bg-particle.p3 { left: 55%; bottom: -12%; animation-delay: 8s; }
+.cc-bg-particle.p4 { left: 75%; bottom: -18%; animation-delay: 2s; }
+.cc-bg-particle.p5 { left: 90%; bottom: -20%; animation-delay: 10s; }
+
+@keyframes nebulaDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-20px, 10px, 0) scale(1.05); }
+  100% { transform: translate3d(20px, -10px, 0) scale(1.08); }
 }
 
-.header-left .header-crown {
-    width: 72px;
-    filter: drop-shadow(var(--cyan-glow));
+@keyframes starTwinkle {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.9; }
+  100% { opacity: 0.5; }
 }
 
-.header-centre {
-    text-align: center;
+@keyframes particleRise {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  10%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translate3d(0, -120vh, 0); opacity: 0; }
 }
 
-.site-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--cyan);
-    text-shadow: var(--cyan-glow);
-}
-
-.site-tagline {
-    font-size: 14px;
-    opacity: 0.85;
-    color: var(--cyan);
-}
-
-.theme-toggle img {
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    transition: transform .25s ease, filter .25s ease;
-}
-
-.theme-toggle img:hover {
-    transform: scale(1.15);
-    filter: drop-shadow(var(--cyan-glow-strong));
-}
-
-/* Navigation */
-.site-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    padding: 20px 0;
-    list-style: none;
-}
-
-.nav-link {
-    color: var(--cyan);
-    font-size: 16px;
-    text-decoration: none;
-    transition: color .25s ease, text-shadow .25s ease;
-}
-
-.nav-link:hover {
-    text-shadow: var(--cyan-glow-strong);
-}
-
-/* Divider line */
-.header-magic-line {
-    width: 100%;
-    height: 2px;
-    margin-top: 10px;
-    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-    filter: drop-shadow(var(--cyan-glow));
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-.site-footer {
-    padding: 40px 0 20px;
-    text-align: center;
-}
-
-.footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    margin-bottom: 20px;
-}
-
-.footer-icons img {
-    width: 48px;
-    height: 48px;
-    transition: transform .25s ease, filter .25s ease;
-}
-
-.footer-icons img:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(var(--cyan-glow-strong));
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    color: var(--cyan);
-    font-size: 16px;
-}
-
-.cc-inline {
-    width: 32px;
-    filter: drop-shadow(var(--cyan-glow));
-}
-
-.back-to-top img {
-    width: 42px;
-    transition: transform .25s ease, filter .25s ease;
-}
-
-.back-to-top img:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(var(--cyan-glow-strong));
-}
-:root{--cyan:#00eaff;--cyan-glow:0 0 12px #00eaff;--cyan-glow-strong:0 0 22px #00eaff}.site-header{width:100%;padding:20px 40px 0;background:transparent}.site-header-inner{display:flex;justify-content:space-between;align-items:center}.header-left .header-crown{width:72px;filter:drop-shadow(0 0 12px #00eaff)}.header-centre{text-align:center}.site-title{font-size:32px;font-weight:700;color:#00eaff;text-shadow:0 0 12px #00eaff}.site-tagline{font-size:14px;opacity:.85;color:#00eaff}.theme-toggle img{width:42px;height:42px;cursor:pointer;transition:transform .25s ease,filter .25s ease}.theme-toggle img:hover{transform:scale(1.15);filter:drop-shadow(0 0 22px #00eaff)}.site-nav ul{display:flex;justify-content:center;gap:28px;padding:20px 0;list-style:none}.nav-link{color:#00eaff;font-size:16px;text-decoration:none;transition:color .25s ease,text-shadow .25s ease}.nav-link:hover{text-shadow:0 0 22px #00eaff}.header-magic-line{width:100%;height:2px;margin-top:10px;background:linear-gradient(90deg,transparent,#00eaff,transparent);filter:drop-shadow(0 0 12px #00eaff)}.site-footer{padding:40px 0 20px;text-align:center}.footer-icons{display:flex;justify-content:center;gap:28px;margin-bottom:20px}.footer-icons img{width:48px;height:48px;transition:transform .25s ease,filter .25s ease}.footer-icons img:hover{transform:scale(1.2);filter:drop-shadow(0 0 22px #00eaff)}.footer-bottom{display:flex;justify-content:center;align-items:center;gap:12px;color:#00eaff;font-size:16px}.cc-inline{width:32px;filter:drop-shadow(0 0 12px #00eaff)}.back-to-top img{width:42px;transition:transform .25s ease,filter .25s ease}.back-to-top img:hover{transform:scale(1.2);filter:drop-shadow(0 0 22px #00eaff)}
-.footer-icons img {
-    width: 48px;
-    height: 48px;
-    padding: 10px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,234,255,0.25), rgba(0,234,255,0.05));
-    box-shadow:
-        0 0 8px rgba(0,234,255,0.6),
-        0 0 16px rgba(0,234,255,0.4),
-        inset 0 0 6px rgba(0,234,255,0.3);
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.footer-icons img:hover {
-    transform: scale(1.15);
-    box-shadow:
-        0 0 12px rgba(0,234,255,0.9),
-        0 0 24px rgba(0,234,255,0.7),
-        inset 0 0 10px rgba(0,234,255,0.5);
-}
-.footer-icons img[alt="Email"] {
-    width: 42px; /* smaller than the others */
-    height: 42px;
-    padding: 6px; /* smaller sphere */
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,234,255,0.25), rgba(0,234,255,0.05));
-    box-shadow:
-        0 0 6px rgba(0,234,255,0.6),
-        0 0 12px rgba(0,234,255,0.4),
-        inset 0 0 4px rgba(0,234,255,0.3);
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.footer-icons img[alt="Email"]:hover {
-    transform: scale(1.15);
-    box-shadow:
-        0 0 10px rgba(0,234,255,0.9),
-        0 0 20px rgba(0,234,255,0.7),
-        inset 0 0 8px rgba(0,234,255,0.5);
-}
