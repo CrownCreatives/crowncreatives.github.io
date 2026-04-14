@@ -2,8 +2,32 @@
 layout: default
 ---
 
-{% include header-page.html %}
+<!-- ============================================================
+     PAGE HEADER (Mini Crown + Title)
+============================================================ -->
+<header class="header-page fade-section">
 
-<main class="site-main">
+  <div class="header-page-inner">
+
+    <!-- Mini Crown -->
+    <img 
+      src="/assets/icons/cc-magic.svg" 
+      alt="Crown Creatives Mini Crown" 
+      class="header-crown-page"
+    >
+
+    <!-- Page Title -->
+    <h1 class="page-title">
+      {{ page.title }}
+    </h1>
+
+  </div>
+
+</header>
+
+<!-- ============================================================
+     MAIN PAGE CONTENT
+============================================================ -->
+<main class="page-content fade-section">
   {{ content }}
 </main>
