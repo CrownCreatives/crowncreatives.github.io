@@ -303,3 +303,16 @@ body {
   gap: 26px;
   margin-bottom: 25px;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.backtotop-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
