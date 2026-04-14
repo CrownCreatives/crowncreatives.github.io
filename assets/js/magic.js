@@ -139,27 +139,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     4. SUPER‑NARROW LANE CALCULATION (CLOSER TO MIDLINE)
+     4. SUPER‑NARROW MIDLINE LANE CALCULATION
+     (Guaranteed NOT to overlap the crown)
   ------------------------------------------------------------- */
 
   function getLanePositions() {
     const crownEl = document.querySelector('.hero-crown-wrapper');
-    if (!crownEl) return { leftLane: "30%", rightLane: "30%" };
+    if (!crownEl) return { leftLane: "45%", rightLane: "55%" };
 
     const rect = crownEl.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
 
     // EXTREMELY tight lanes near midline
     const isMobile = viewportWidth < 768;
-    const imageWidth = isMobile ? 80 : 110;
-    const laneOffset = isMobile ? 6 : 10;
+    const imageWidth = isMobile ? 70 : 100;
+    const laneOffset = isMobile ? 4 : 8;
 
-    // Midline reference
     const mid = viewportWidth / 2;
 
-    // Lanes sit just left and right of midline, but outside crown width
-    const leftLane = Math.max(mid - rect.width / 1 - imageWidth - laneOffset, 10);
-    const rightLane = Math.min(mid + rect.width / 1 + laneOffset, viewportWidth - imageWidth - 10);
+    // Lanes sit just outside the crown width
+    const leftLane = Math.max(mid - rect.width / 2 - imageWidth - laneOffset, 20);
+    const rightLane = Math.min(mid + rect.width / 2 + laneOffset, viewportWidth - imageWidth - 20);
 
     return {
       leftLane: `${leftLane}px`,
@@ -196,18 +196,20 @@ document.addEventListener("DOMContentLoaded", () => {
     img.style.left = isLeft ? leftLane : rightLane;
 
     const isMobile = window.innerWidth < 768;
-    const maxVertical = isMobile ? 30 : 50;
+    const maxVertical = isMobile ? 20 : 40;
     const baseOffset = isMobile ? 10 : 20;
     img.style.top = `${Math.floor(Math.random() * maxVertical) + baseOffset}px`;
 
     container.appendChild(img);
 
+    // Smooth magical fade-in
     requestAnimationFrame(() => img.classList.add("visible"));
 
     // Hold for EXACTLY 10 seconds
     setTimeout(() => {
       img.classList.remove("visible");
 
+      // Remove after fade-out
       setTimeout(() => {
         img.remove();
         isImageActive = false;
