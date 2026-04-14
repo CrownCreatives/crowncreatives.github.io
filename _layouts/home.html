@@ -2,8 +2,37 @@
 layout: default
 ---
 
-{% include header-home.html %}
+<!-- ============================================================
+     HOME HERO HEADER
+============================================================ -->
+<header class="header-home">
 
-<main class="site-main">
+  <div class="header-home-inner fade-section">
+
+    <!-- Hero Crown -->
+    <img 
+      src="/assets/icons/crown-hero.png" 
+      alt="Crown Creatives Hero Crown" 
+      class="header-crown-hero"
+    >
+
+    <!-- Hero Title -->
+    <h1 class="hero-title">
+      {{ page.hero_title | default: "Crown Creatives" }}
+    </h1>
+
+    <!-- Hero Tagline -->
+    <p class="hero-tagline">
+      {{ page.hero_tagline | default: "Where imagination becomes reality" }}
+    </p>
+
+  </div>
+
+</header>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="home-content fade-section">
   {{ content }}
 </main>
