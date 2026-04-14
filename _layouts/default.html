@@ -4,19 +4,63 @@
   {% include head.html %}
 </head>
 
-<body>
+<body class="magic-bg-gradient">
 
-  <!-- Page transition overlay (mist effect) -->
+  <!-- ============================================================
+       MAGICAL BACKGROUND ENGINE (already in your repo)
+  ============================================================= -->
+  <div class="cc-bg-magic-layer">
+    <div class="cc-bg-nebula"></div>
+    <div class="cc-bg-stars"></div>
+    <div class="cc-bg-particles">
+      <div class="cc-bg-particle p1"></div>
+      <div class="cc-bg-particle p2"></div>
+      <div class="cc-bg-particle p3"></div>
+      <div class="cc-bg-particle p4"></div>
+      <div class="cc-bg-particle p5"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MIST OVERLAY (for page transitions)
+  ============================================================= -->
   <div class="page-transition-overlay"></div>
 
-  <!-- Page content -->
-  {{ content }}
+  <!-- ============================================================
+       FLOATING PARTICLES (MAGICAL ENHANCEMENT)
+       — You asked for this placed correctly
+  ============================================================= -->
+  <div class="magic-particles">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
 
+  <!-- ============================================================
+       HEADER (home or page header is chosen by layout)
+  ============================================================= -->
+  {% include nav.html %}
+  {% include theme-toggle.html %}
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================= -->
+  <main class="page-content" aria-label="Content">
+    {{ content }}
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================= -->
   {% include footer.html %}
+  {% include backtotop.html %}
 
-  <!-- Scripts -->
+  <!-- ============================================================
+       SCRIPTS (correct order)
+  ============================================================= -->
   <script src="/assets/js/theme-toggle.js"></script>
   <script src="/assets/js/page-transition.js"></script>
+  <script src="/assets/js/mobile-menu.js"></script>
+  <script src="/assets/js/lightbox.js"></script>
 
 </body>
 </html>
