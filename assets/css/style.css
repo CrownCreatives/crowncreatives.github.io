@@ -681,3 +681,35 @@ body.light-mode {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
+.cc-ticker-text {
+  font-size: 1.25rem;
+  color: #e8faff;
+  text-shadow:
+    0 0 8px rgba(0,255,255,0.8),
+    0 0 16px rgba(180,0,255,0.7);
+  letter-spacing: 1px;
+  font-family: 'Cinzel', serif;
+  display: inline-block;
+  padding-right: 100%;
+}
+
+/* Magical shimmer overlay */
+.cc-ticker-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.15) 50%,
+    transparent 100%
+  );
+  animation: tickerShimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes tickerShimmer {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
