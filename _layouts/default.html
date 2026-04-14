@@ -1,50 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{{ page.title | default: "Crown Creatives" }}</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Main Stylesheet -->
-<link rel="stylesheet" href="/assets/css/style-core.css">
-<link rel="stylesheet" href="/assets/css/style-hero-dark.css">
-<link rel="stylesheet" href="/assets/css/style-background-magic.css">
-
+  {% include head.html %}
 </head>
 
 <body>
 
-  <!-- GLOBAL MAGICAL BACKGROUND LAYER -->
-  <div class="cc-bg-magic-layer">
-    <div class="cc-bg-nebula"></div>
-    <div class="cc-bg-stars"></div>
-    <div class="cc-bg-particles">
-      <div class="cc-bg-particle p1"></div>
-      <div class="cc-bg-particle p2"></div>
-      <div class="cc-bg-particle p3"></div>
-      <div class="cc-bg-particle p4"></div>
-      <div class="cc-bg-particle p5"></div>
-    </div>
-  </div>
+  <!-- Page transition overlay (mist effect) -->
+  <div class="page-transition-overlay"></div>
 
-  <!-- HEADER -->
-  {% include header.html %}
+  <!-- Page content -->
+  {{ content }}
 
-  <!-- MAIN CONTENT -->
-  <main class="site-main">
-    {{ content }}
-  </main>
-
-  <!-- FOOTER (includes magical ticker) -->
   {% include footer.html %}
 
-  <!-- Theme Toggle Script -->
+  <!-- Scripts -->
   <script src="/assets/js/theme-toggle.js"></script>
+  <script src="/assets/js/page-transition.js"></script>
 
 </body>
 </html>
-
