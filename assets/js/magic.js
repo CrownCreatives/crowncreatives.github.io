@@ -158,8 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const mid = viewportWidth / 2;
 
     // Lanes sit just left and right of midline, but outside crown width
-    const leftLane = Math.max(mid - rect.width / 2 - imageWidth - laneOffset, 20);
-    const rightLane = Math.min(mid + rect.width / 2 + laneOffset, viewportWidth - imageWidth - 20);
+    const leftLane = Math.max(mid - rect.width / 1 - imageWidth - laneOffset, 10);
+    const rightLane = Math.min(mid + rect.width / 1 + laneOffset, viewportWidth - imageWidth - 10);
 
     return {
       leftLane: `${leftLane}px`,
