@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------
-   MAGIC.JS — TRUE AUTOSCAN + DYNAMIC LANES (2026)
+   MAGIC.JS — TRUE AUTOSCAN + NARROW LANE FLOATERS (2026)
 ------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------
-     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION
+     4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (NARROW LANES)
   ------------------------------------------------------------- */
 
   function getLanePositions() {
@@ -84,16 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!crownEl) return { leftLane: "10%", rightLane: "90%" };
 
     const rect = crownEl.getBoundingClientRect();
-    const imageWidth = 240;
-    const padding = 20;
+    const imageWidth = 180;     // narrower images
+    const laneOffset = 40;      // tighter lanes
     const viewportWidth = window.innerWidth;
 
-    let leftLane = rect.left - imageWidth - padding;
-    let rightLane = rect.right + padding;
+    let leftLane = rect.left - imageWidth - laneOffset;
+    let rightLane = rect.right + laneOffset;
 
-    if (leftLane < 0) leftLane = 0;
-    if (rightLane + imageWidth > viewportWidth)
-      rightLane = viewportWidth - imageWidth;
+    if (leftLane < 10) leftLane = 10;
+    if (rightLane + imageWidth > viewportWidth - 10)
+      rightLane = viewportWidth - imageWidth - 10;
 
     return {
       leftLane: `${leftLane}px`,
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------------------------------------------------
-     5. HERO FLOATING IMAGES — PERFECTLY CENTERED LANES
+     5. HERO FLOATING IMAGES — NARROW LANES + ALTERNATING SIDES
   ------------------------------------------------------------- */
 
   const container = document.querySelector(".hero-side-gallery");
@@ -124,34 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
     side = isLeft ? "right" : "left";
 
     img.style.left = isLeft ? leftLane : rightLane;
-    img.style.top = `${Math.floor(Math.random() * 80) + 20}px`;
 
-    container.appendChild(img);
-
-    setTimeout(() => img.classList.add("visible"), 50);
-
-    setTimeout(() => {
-      img.classList.remove("visible");
-      setTimeout(() => img.remove(), 2000);
-    }, 15000);
-  }
-
-  /* ------------------------------------------------------------
-     6. START EVERYTHING
-  ------------------------------------------------------------- */
-
-  loadFolderImages().then(images => {
-    if (!images.length) {
-      console.warn("No images found in folder.");
-      return;
-    }
-
-    buildGalleryGrid(images);
-
-    sources = images;
-
-    spawnSideImage();
-    setInterval(spawnSideImage, 18000);
-  });
-
-});
+    // Tighter vertical drift
+    img.style.top = `${Math.floor
