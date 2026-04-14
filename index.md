@@ -1,64 +1,71 @@
 ---
 layout: default
-title: Home
+title: Crown Creatives
 ---
 
-<!-- ⭐ HERO SECTION ⭐ -->
-<section class="hero">
+<!-- ===========================
+     HERO SECTION
+=========================== -->
+<section id="hero" class="hero hero-enter">
+  <div class="hero-inner">
 
-  <!-- Floating image lanes (magic.js uses this) -->
-  <div class="hero-side-gallery"></div>
+    <!-- Magical circular frame (runes + particles) -->
+    <div class="hero-magic-backlayer">
+      <div class="rune-ring"></div>
+      <div class="particle-halo"></div>
+    </div>
 
-  <!-- Magical Rune Ring + Halo -->
-  <div class="hero-magic-backlayer">
-    <div class="rune-ring"></div>
-    <div class="particle-halo"></div>
+    <!-- Crown -->
+    <div class="hero-crown-wrapper">
+      <img src="/assets/icons/crown-hero.png"
+           alt="Crown Creatives"
+           class="hero-crown-cinematic">
+    </div>
+
+    <!-- Emblem text -->
+    <div class="hero-emblem-text">
+      Crown Creatives is a space for artistry, imagination, and personal resilience.
+    </div>
+
   </div>
-
-  <!-- Crown -->
-  <div class="hero-crown-wrapper">
-    <img src="/assets/images/illuminus-crown.png"
-         alt="Crown Creatives Emblem"
-         class="hero-crown-cinematic">
-  </div>
-
-  <!-- Emblem Text -->
-  <div class="hero-emblem-text">
-    Crown Creatives is a space for artistry, imagination, and personal resilience.
-  </div>
-
-</section>
-<!-- ⭐ END HERO SECTION ⭐ -->
-
-
-<!-- ⭐ INTRO TEXT ⭐ -->
-<section class="intro-text fade-in">
-  <p>
-    Crown Creatives is a space where artistry, imagination, and personal resilience come together.
-    Explore creative projects, 3D models, podcasts, and more.
-  </p>
 </section>
 
 
-<!-- ⭐ FEATURED CONTENT CARDS ⭐ -->
-<section class="cards-grid fade-in">
+<!-- ===========================
+     CONTENT CARDS (3‑column)
+=========================== -->
+<section id="gallery" class="content-section">
+  <div class="content-row">
 
-  <div class="cc-card">
-    <h2 class="cc-soft-glow">3D Models</h2>
-    <p>Explore sculpted characters, creatures, and fantasy‑themed digital models.</p>
-    <a href="/gallery/" class="cc-button">View Gallery</a>
+    <!-- 3D Models -->
+    <article class="content-card">
+      <h2>3D Models</h2>
+      <p>Explore sculpted characters, creatures, and fantasy-themed digital models.</p>
+      <a href="/3d-models" class="content-link">Browse Gallery</a>
+    </article>
+
+    <!-- Creative Projects -->
+    <article id="projects" class="content-card">
+      <h2>Creative Projects</h2>
+      <p>A collection of artistic experiments, sketches, and magical world-building.</p>
+      <a href="/projects" class="content-link">Read More Here</a>
+    </article>
+
+    <!-- Podcasts -->
+    <article id="podcasts" class="content-card">
+      <h2>Podcasts</h2>
+      <p>Thoughts on creativity, resilience, and the journey of rebuilding through art.</p>
+      <a href="/podcasts" class="content-link">Listen</a>
+    </article>
+
   </div>
-
-  <div class="cc-card">
-    <h2 class="cc-soft-glow">Creative Projects</h2>
-    <p>A collection of artistic experiments, sketches, and magical world‑building.</p>
-    <a href="/projects/" class="cc-button">See Projects</a>
-  </div>
-
-  <div class="cc-card">
-    <h2 class="cc-soft-glow">Podcasts</h2>
-    <p>Thoughts on creativity, resilience, and the journey of rebuilding through art.</p>
-    <a href="/podcasts/" class="cc-button">Listen</a>
-  </div>
-
 </section>
+
+
+<!-- ===========================
+     OPTIONAL: LIGHTBOX AREA
+     (Only needed if you use gallery images)
+=========================== -->
+<div class="cc-lightbox-overlay" id="lightbox">
+  <img class="cc-lightbox-image" id="lightbox-img" src="" alt="">
+</div>
