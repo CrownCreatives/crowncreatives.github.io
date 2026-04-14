@@ -3,27 +3,69 @@ layout: default
 title: Home
 ---
 
-<section class="hero-cinematic">
-  <div class="hero-crown-wrapper">
-    <div class="hero-crown-aura"></div>
-    <div class="hero-crown-ring"></div>
+<header class="site-header">
 
-    <img src="/assets/images/illuminus-crown.png"
-         class="hero-crown-cinematic hero-crown-core"
-         alt="Crown Creatives">
+  <div class="header-top">
+
+    <!-- CC Monogram -->
+    <img src="/assets/icons/cc-monogram.png"
+         alt="Crown Creatives Crown"
+         class="header-crown-img">
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle">
+      <img src="/assets/icons/icon-theme-toggle-bold-cyan.png"
+           alt="Toggle theme"
+           class="theme-toggle-icon">
+    </button>
+
   </div>
 
-  <!-- Floating hero gallery (auto‑scan powered) -->
+  <h1 class="site-title">CROWN CREATIVES</h1>
+  <p class="site-tagline">ARTISTRY • RESILIENCE • IMAGINATION</p>
+
+  <nav class="magical-nav">
+    <ul>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/videos.html">Videos</a></li>
+      <li><a href="/podcasts.html">Podcasts</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<main>
+
+<!-- ⭐ HERO SECTION — MUST BE DIRECTLY UNDER HEADER ⭐ -->
+<section class="hero">
+
+  <!-- Floating image lanes -->
   <div class="hero-side-gallery"></div>
 
-  <div class="hero-text-block">
-    <p class="hero-crown-explainer">
-      Crown Creatives is a space for artistry, imagination, and personal resilience.
-    </p>
+  <!-- Cinematic crown -->
+  <div class="hero-crown-wrapper">
+    <img src="/assets/images/illuminus-crown.png"
+         alt="Illuminus Crown"
+         class="hero-crown-cinematic">
   </div>
+
+</section>
+<!-- ⭐ END HERO SECTION ⭐ -->
+
+
+<!-- ⭐ INTRO TEXT (OPTIONAL) ⭐ -->
+<section class="intro-text fade-in">
+  <p class="hero-crown-explainer">
+    Crown Creatives is a space for artistry, imagination, and personal resilience.
+  </p>
 </section>
 
-<!-- 🌟 FEATURED CONTENT CARDS -->
+
+<!-- ⭐ FEATURED CONTENT CARDS ⭐ -->
 <section class="cards-grid fade-in">
 
   <div class="cc-card">
@@ -45,3 +87,46 @@ title: Home
   </div>
 
 </section>
+
+
+<!-- ⭐ FOOTER ⭐ -->
+<footer class="site-footer">
+
+  <div class="footer-centre">
+
+    <div class="footer-icons">
+      <a href="https://instagram.com" target="_blank">
+        <img src="/assets/icons/icon-instagram-bold-cyan.png"
+             alt="Instagram" class="footer-icon-img">
+      </a>
+
+      <a href="https://facebook.com" target="_blank">
+        <img src="/assets/icons/icon-facebook-bold-cyan.png"
+             alt="Facebook" class="footer-icon-img">
+      </a>
+
+      <a href="mailto:you@example.com">
+        <img src="/assets/icons/icon-email-bold-cyan.png"
+             alt="Email" class="footer-icon-img">
+      </a>
+    </div>
+
+    <div class="footer-text">
+      © Crown Creatives — Artistry • Resilience • Imagination
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+    <a href="#top">
+      <img src="/assets/icons/icon-up-arrow-bold-cyan.png"
+           alt="Back to top" class="footer-icon-img">
+    </a>
+  </div>
+
+</footer>
+
+</main>
+
+<!-- MAGIC ENGINE -->
+<script src="/assets/js/magic.js"></script>
