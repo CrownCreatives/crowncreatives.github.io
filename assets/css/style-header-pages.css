@@ -1,82 +1,30 @@
 /* ============================================================
-   SUB-PAGE MINI HERO HEADER
-   Crown above page title, centred, fixed position
+   FINAL HEADER ALIGNMENT + POLISH
 ============================================================ */
 
-.page-header {
+/* Ensure perfect centring of mini-hero block */
+.page-header .page-hero-centre {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* Ensure consistent spacing under nav */
+.header-magic-line {
   width: 100%;
-  padding: 20px 40px 0;
-  background: transparent;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(0,234,255,0.4),
+    rgba(176,0,255,0.4),
+    rgba(0,234,255,0.4)
+  );
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.page-header .site-header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Centre block: crown + title */
-.page-hero-centre {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-}
-
-/* Medium shimmering crown */
-.page-crown {
-  width: 96px;
-  display: block;
-  margin: 0 auto 8px;
+/* Improve glow consistency in dark mode */
+:root[data-theme="dark"] .page-crown {
   filter:
-    drop-shadow(0 0 12px rgba(0, 234, 255, 0.9))
-    drop-shadow(0 0 22px rgba(176, 0, 255, 0.9));
-  animation: pageCrownShimmer 4.5s ease-in-out infinite;
-}
-
-/* Glowing Cinzel Decorative page title */
-.page-title {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin: 0;
-  color: var(--accent-cyan);
-  text-shadow:
-    0 0 10px rgba(0, 234, 255, 0.9),
-    0 0 22px rgba(176, 0, 255, 0.8);
-}
-
-/* Shimmer animation for sub-page crown */
-@keyframes pageCrownShimmer {
-  0% {
-    filter:
-      drop-shadow(0 0 10px rgba(0, 234, 255, 0.7))
-      drop-shadow(0 0 18px rgba(176, 0, 255, 0.7));
-    transform: translateY(0);
-  }
-  40% {
-    filter:
-      drop-shadow(0 0 16px rgba(0, 234, 255, 1))
-      drop-shadow(0 0 28px rgba(176, 0, 255, 1));
-    transform: translateY(-2px);
-  }
-  100% {
-    filter:
-      drop-shadow(0 0 10px rgba(0, 234, 255, 0.7))
-      drop-shadow(0 0 18px rgba(176, 0, 255, 0.7));
-    transform: translateY(0);
-  }
-}
-
-/* Dark mode tweaks */
-:root[data-theme="dark"] .page-title {
-  color: #e8faff;
-  text-shadow:
-    0 0 14px rgba(0, 234, 255, 1),
-    0 0 26px rgba(176, 0, 255, 1);
+    drop-shadow(0 0 16px rgba(0,234,255,1))
+    drop-shadow(0 0 28px rgba(176,0,255,1));
 }
