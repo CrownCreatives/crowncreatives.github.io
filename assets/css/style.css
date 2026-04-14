@@ -663,3 +663,14 @@ body.scrolled .magic-mist-layer-2 {
   padding-right: 30px;
   border-radius: 50px;
 }
+.theme-toggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.magical-nav ul {
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 50px;
+}
