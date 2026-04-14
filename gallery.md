@@ -1,22 +1,21 @@
 ---
 layout: default
 title: Gallery
+permalink: /gallery/
 ---
 
 <section class="gallery-page fade-in">
 
-  <h1 class="gallery-title cc-soft-glow">Gallery</h1>
-  <p class="gallery-subtitle">
-    A growing collection of artwork, models, sketches, and magical experiments.
+  <h1 class="page-title cc-soft-glow">Gallery</h1>
+
+  <p class="gallery-intro">
+    A collection of artwork, models, and creative experiments.
   </p>
 
-  <!-- TRUE AUTOSCAN: magic.js will populate this automatically -->
+  <!-- ⭐ Autoscan will populate this grid automatically ⭐ -->
   <div class="gallery-grid"></div>
 
 </section>
 
-<!-- LIGHTBOX (still required for clicking images) -->
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-img" alt="">
-</div>
+<!-- Magic engine (same as index) -->
+<script src="/assets/js/magic.js"></script>
