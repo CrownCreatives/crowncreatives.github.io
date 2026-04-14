@@ -754,3 +754,17 @@ body.scrolled .magic-mist-layer-2 {
   100% { opacity: 0.15; }
 }
 width: min(22vw, 180px);
+.hero-crown-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  z-index: 10;
+}
+
+.hero-crown-cinematic {
+  width: 240px;
+  height: auto;
+  display: block;
+}
