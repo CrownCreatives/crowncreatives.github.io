@@ -596,3 +596,70 @@ body.scrolled .magic-mist-layer-2 {
     0 0 75px rgba(255, 150, 0, 1),
     0 0 140px rgba(255, 120, 0, 1);
 }
+.magical-nav a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--cc-text);
+  padding: 6px 10px;
+  transition: color 0.25s ease;
+}
+
+.magical-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.9);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.magical-nav a:hover::after,
+.magical-nav a.active::after {
+  width: 60%;
+}
+.magical-nav a {
+  border-radius: 20px;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.magical-nav a:hover {
+  background: rgba(0, 255, 255, 0.15);
+  padding: 6px 14px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+.magical-nav a:hover {
+  color: #aefaff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+.magical-nav a {
+  overflow: hidden;
+}
+
+.magical-nav a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 255, 255, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.magical-nav a:hover::before {
+  width: 140%;
+  height: 140%;
+}
+.magical-nav ul {
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 50px;
+}
