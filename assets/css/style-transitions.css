@@ -1,0 +1,86 @@
+/* ============================================================
+   THEME + PAGE TRANSITIONS (MAGICAL)
+   Smooth 5s fade between day/night + mystical page mist
+============================================================ */
+
+/* Smooth 5s theme transition for key elements */
+body,
+.site-header,
+.site-main,
+.site-footer,
+.cc-bg-magic-layer,
+.header-crown-hero,
+.page-crown,
+.site-title,
+.page-title,
+.site-tagline {
+  transition:
+    background-color 5s ease-in-out,
+    color 5s ease-in-out,
+    text-shadow 5s ease-in-out,
+    filter 5s ease-in-out,
+    box-shadow 5s ease-in-out;
+}
+
+/* ============================================================
+   PAGE TRANSITION OVERLAY
+============================================================ */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%,
+      rgba(0, 234, 255, 0.18),
+      rgba(176, 0, 255, 0.22),
+      rgba(0, 0, 0, 0.85));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Fade in/out for page transitions */
+.page-transition-overlay.is-active {
+  animation: pageMistFade 0.9s ease-in-out forwards;
+}
+
+@keyframes pageMistFade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   OPTIONAL: Crown shimmer pulse during transitions
+============================================================ */
+
+.page-transition-pulse .header-crown-hero,
+.page-transition-pulse .page-crown {
+  animation: crownPulse 1.4s ease-out;
+}
+
+@keyframes crownPulse {
+  0% {
+    filter:
+      drop-shadow(0 0 10px rgba(0, 234, 255, 0.7))
+      drop-shadow(0 0 18px rgba(176, 0, 255, 0.7));
+    transform: scale(1);
+  }
+  40% {
+    filter:
+      drop-shadow(0 0 22px rgba(0, 234, 255, 1))
+      drop-shadow(0 0 32px rgba(176, 0, 255, 1));
+    transform: scale(1.04);
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 10px rgba(0, 234, 255, 0.7))
+      drop-shadow(0 0 18px rgba(176, 0, 255, 0.7));
+    transform: scale(1);
+  }
+}
