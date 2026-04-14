@@ -93,7 +93,7 @@ body {
 }
 
 .header-left .header-crown {
-  width: 72px;
+  width:110px;
   filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
 }
 
