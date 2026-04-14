@@ -139,8 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ------------------------------------------------------------
-     4. SUPER‑NARROW MIDLINE LANE CALCULATION
-     (Guaranteed NOT to overlap the crown)
+     4. SUPER‑NARROW MIDLINE LANE CALCULATION (Corrected)
   ------------------------------------------------------------- */
 
   function getLanePositions() {
@@ -150,20 +149,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = crownEl.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
 
-    // EXTREMELY tight lanes near midline
     const isMobile = viewportWidth < 768;
     const imageWidth = isMobile ? 70 : 100;
-    const laneOffset = isMobile ? 4 : 8;
+    const safeGap = isMobile ? 12 : 20;
 
     const mid = viewportWidth / 2;
 
-    // Lanes sit just outside the crown width
-    const leftLane = Math.max(mid - rect.width / 2 - imageWidth - laneOffset, 20);
-    const rightLane = Math.min(mid + rect.width / 2 + laneOffset, viewportWidth - imageWidth - 20);
+    const leftLane = mid - rect.width / 2 - imageWidth - safeGap;
+    const rightLane = mid + rect.width / 2 + safeGap;
 
     return {
-      leftLane: `${leftLane}px`,
-      rightLane: `${rightLane}px`
+      leftLane: `${Math.max(leftLane, 20)}px`,
+      rightLane: `${Math.min(rightLane, viewportWidth - imageWidth - 20)}px`
     };
   }
 
@@ -202,14 +199,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.appendChild(img);
 
-    // Smooth magical fade-in
     requestAnimationFrame(() => img.classList.add("visible"));
 
-    // Hold for EXACTLY 10 seconds
     setTimeout(() => {
       img.classList.remove("visible");
 
-      // Remove after fade-out
       setTimeout(() => {
         img.remove();
         isImageActive = false;
@@ -226,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function startFloatLoop() {
     function loop() {
       spawnSideImage();
-      setTimeout(loop, 12000); // 10s hold + 2s fade-out
+      setTimeout(loop, 12000);
     }
     loop();
   }
@@ -246,12 +240,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
 /* ------------------------------------------------------------
-   SCROLL-REACTIVE MIST
+   8. SCROLL-REACTIVE MIST (Corrected)
 ------------------------------------------------------------- */
 
 window.addEventListener("scroll", () => {
-  const mist = document.querySelector(".hero::before");
   const hero = document.querySelector(".hero");
   if (!hero) return;
 
@@ -263,21 +258,19 @@ window.addEventListener("scroll", () => {
 
 
 /* ------------------------------------------------------------
-   PARALLAX TILT ON MOUSE MOVE
+   9. PARALLAX TILT (Corrected)
 ------------------------------------------------------------- */
 
 document.addEventListener("mousemove", (e) => {
   const hero = document.querySelector(".hero");
   if (!hero) return;
 
-  const x = (e.clientX / window.innerWidth - 0.5) * 10;
-  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+  const x = (e.clientX / window.innerWidth - 0.5) * 8;
+  const y = (e.clientY / window.innerHeight - 0.5) * 8;
 
-  const tiltTargets = document.querySelectorAll(
-    ".hero-crown-wrapper, .hero-emblem-text, .hero-magic-backlayer"
-  );
+  const tiltWrapper = document.querySelector(".hero-magic-backlayer");
 
-  tiltTargets.forEach(el => {
-    el.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
-  });
+  if (tiltWrapper) {
+    tiltWrapper.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+  }
 });
