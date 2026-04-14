@@ -28,6 +28,7 @@ title: Home
     <ul>
       <li><a href="/" class="active">Home</a></li>
       <li><a href="/about.html">About</a></li>
+      <li><a href="/projects.html">Projects</a></li>
       <li><a href="/gallery.html">Gallery</a></li>
       <li><a href="/videos.html">Videos</a></li>
       <li><a href="/podcasts.html">Podcasts</a></li>
