@@ -216,3 +216,42 @@ body {
   background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
   filter: drop-shadow(var(--cyan-glow));
 }
+/* ============================================================
+   THEME TOGGLE — 30% LARGER + MAGICAL GLOW
+============================================================ */
+
+.theme-toggle-sphere {
+  width: 68px;   /* was 52px */
+  height: 68px;  /* was 52px */
+  padding: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(0,234,255,0.28),
+      rgba(0,234,255,0.10));
+  box-shadow:
+      0 0 14px rgba(0,234,255,0.75),
+      0 0 28px rgba(0,234,255,0.55),
+      inset 0 0 10px rgba(0,234,255,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.theme-toggle-sphere:hover {
+  transform: scale(1.12);
+  box-shadow:
+      0 0 20px rgba(0,234,255,1),
+      0 0 40px rgba(0,234,255,0.85),
+      inset 0 0 14px rgba(0,234,255,0.55);
+}
+
+.theme-icon {
+  width: 38px;  /* was 32px */
+  height: 38px; /* was 32px */
+  display: none;
+}
+
+.theme-icon.active {
+  display: block;
+}
