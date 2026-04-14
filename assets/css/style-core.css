@@ -1,0 +1,536 @@
+/* ============================================================
+   0. GLOBAL BASE + THEME VARIABLES
+============================================================ */
+:root {
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-emblem: 'Cinzel Decorative', serif;
+
+  --bg-gradient: radial-gradient(circle at top,
+      #e6fbff 0%,
+      #b7e7ff 25%,
+      #a9c4ff 55%,
+      #f5ecff 100%);
+
+  --bg-surface: rgba(255,255,255,0.08);
+
+  --text-main: #0b1020;
+  --text-soft: #1b2340;
+
+  --accent-cyan: #00eaff;
+  --accent-violet: #b000ff;
+  --accent-gold: #ffd86b;
+
+  --cyan-glow: 0 0 12px rgba(0,234,255,0.9);
+  --cyan-glow-strong: 0 0 22px rgba(0,234,255,1);
+  --violet-glow: 0 0 18px rgba(176,0,255,0.9);
+
+  --card-radius: 18px;
+  --card-shadow: 0 18px 45px rgba(5,10,40,0.35);
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient: radial-gradient(circle at top,
+      #04101f 0%,
+      #071a33 25%,
+      #10163b 55%,
+      #050712 100%);
+
+  --bg-surface: rgba(10,16,40,0.85);
+
+  --text-main: #e8faff;
+  --text-soft: #c5d7ff;
+
+  --accent-cyan: #00eaff;
+  --accent-violet: #d070ff;
+
+  --cyan-glow: 0 0 14px rgba(0,234,255,1);
+  --cyan-glow-strong: 0 0 26px rgba(0,234,255,1);
+  --violet-glow: 0 0 22px rgba(208,112,255,1);
+
+  --card-shadow: 0 22px 55px rgba(0,0,0,0.75);
+}
+
+/* ============================================================
+   1. GLOBAL RESET + BODY
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-main {
+  padding: 40px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   2. HEADER + NAV + THEME TOGGLE
+============================================================ */
+.site-header {
+  width: 100%;
+  padding: 20px 40px 0;
+  background: transparent;
+}
+
+.site-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-left .header-crown {
+  width: 72px;
+  filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
+}
+
+.header-centre { text-align: center; }
+
+.site-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-shadow: var(--cyan-glow);
+}
+
+.site-tagline {
+  font-size: 14px;
+  opacity: 0.9;
+  color: var(--text-soft);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.theme-toggle-sphere {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  padding: 8px;
+  background: radial-gradient(circle,
+      rgba(0,234,255,0.22),
+      rgba(0,234,255,0.06));
+  box-shadow:
+      0 0 10px rgba(0,234,255,0.65),
+      0 0 20px rgba(0,234,255,0.45),
+      inset 0 0 6px rgba(0,234,255,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.theme-toggle-sphere:hover {
+  transform: scale(1.08);
+  box-shadow:
+      0 0 14px rgba(0,234,255,0.95),
+      0 0 28px rgba(0,234,255,0.75),
+      inset 0 0 10px rgba(0,234,255,0.55);
+}
+
+.theme-icon { width: 32px; height: 32px; display: none; }
+.theme-icon.active { display: block; }
+
+.site-nav {
+  max-width: 1200px;
+  margin: 10px auto 0;
+}
+
+.site-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 20px 0;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-link {
+  color: var(--text-soft);
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color .25s ease, text-shadow .25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+  transform: translateX(-50%);
+  transition: width .25s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-cyan);
+  text-shadow: var(--cyan-glow-strong);
+}
+
+.nav-link:hover::after { width: 100%; }
+
+.header-magic-line {
+  width: 100%;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  filter: drop-shadow(var(--cyan-glow));
+}
+
+/* ============================================================
+   3. HERO — CROWN + EMBLEM + FRAME
+============================================================ */
+.hero {
+  position: relative;
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  padding: 80px 20px 60px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s ease, transform .8s ease;
+  perspective: 1200px;
+}
+
+.hero.hero-enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-magic-backlayer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 460px;
+  height: 460px;
+  pointer-events: none;
+  z-index: 5;
+  transition: transform .2s ease-out;
+  transform-style: preserve-3d;
+}
+
+.rune-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(0,255,255,0.15) 0%,
+      rgba(0,150,255,0.05) 60%,
+      transparent 100%);
+  box-shadow: 0 0 40px rgba(0,255,255,0.4);
+  animation: runeSpin 22s linear infinite;
+}
+
+@keyframes runeSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.particle-halo {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.particle-halo::before,
+.particle-halo::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(0,255,255,0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0,255,255,1);
+  animation: orbit 14s linear infinite;
+}
+
+.particle-halo::after {
+  width: 8px;
+  height: 8px;
+  background: rgba(180,0,255,0.9);
+  box-shadow: 0 0 10px rgba(180,0,255,1);
+  animation-duration: 18s;
+}
+
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+.hero-crown-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 10px;
+  transition: transform .2s ease-out;
+  transform-style: preserve-3d;
+}
+
+.hero-crown-cinematic {
+  width: 260px;
+  filter:
+      drop-shadow(0 0 18px rgba(0,255,255,0.8))
+      drop-shadow(0 0 35px rgba(0,150,255,0.7))
+      drop-shadow(0 0 65px rgba(180,0,255,0.6));
+  animation:
+      crownPulse 6s ease-in-out infinite,
+      heroCrownFloat 8s ease-in-out infinite;
+}
+
+@keyframes heroCrownFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes crownPulse {
+  0%   { filter: drop-shadow(0 0 18px rgba(0,255,255,0.7)); }
+  50%  { filter: drop-shadow(0 0 35px rgba(0,255,255,1)); }
+  100% { filter: drop-shadow(0 0 18px rgba(0,255,255,0.7)); }
+}
+
+.hero-emblem-text {
+  margin-top: -6px;
+  text-align: center;
+  font-family: var(--font-emblem);
+  font-size: 2.4rem;
+  font-weight: 600;
+  max-width: 900px;
+  line-height: 1.25;
+  padding: 0 20px;
+  color: #e8faff;
+  text-shadow:
+      0 0 12px rgba(0,255,255,0.7),
+      0 0 22px rgba(0,150,255,0.6),
+      0 0 45px rgba(180,0,255,0.5);
+  position: relative;
+  z-index: 12;
+  transform: translateY(-4px);
+  animation: emblemShimmer 6s ease-in-out infinite;
+}
+
+@keyframes emblemShimmer {
+  0%   { opacity: 0.85; text-shadow: 0 0 12px rgba(0,255,255,0.6); }
+  50%  { opacity: 1;    text-shadow: 0 0 22px rgba(0,255,255,0.9); }
+  100% { opacity: 0.85; text-shadow: 0 0 12px rgba(0,255,255,0.6); }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: radial-gradient(circle at 50% 100%,
+      rgba(255,255,255,0.15),
+      rgba(255,255,255,0.05),
+      transparent);
+  filter: blur(18px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ============================================================
+   4. CONTENT CARDS / GALLERY LANES
+============================================================ */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.content-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 24px;
+}
+
+.content-card {
+  background: var(--bg-surface);
+  border-radius: var(--card-radius);
+  padding: 22px 20px;
+  box-shadow: var(--card-shadow);
+  color: var(--text-main);
+  backdrop-filter: blur(14px);
+}
+
+.content-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-family: var(--font-emblem);
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+  text-shadow: var(--cyan-glow);
+}
+
+.content-card p {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+}
+
+.content-link {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.content-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+  transition: width .25s ease;
+}
+
+.content-link:hover::after { width: 100%; }
+
+@media (max-width: 1024px) {
+  .content-row {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .content-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   5. LIGHTBOX
+============================================================ */
+.cc-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 999;
+}
+
+.cc-lightbox-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cc-lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0,255,255,0.7);
+}
+
+.gallery-item {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* ============================================================
+   6. TICKER ABOVE FOOTER
+============================================================ */
+.cc-ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+  margin-top: 40px;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(0,255,255,0.25);
+  box-shadow: 0 0 20px rgba(0,255,255,0.25);
+}
+
+.cc-ticker-track {
+  white-space: nowrap;
+  display: inline-block;
+  animation: tickerMove 28s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes tickerMove {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.cc-ticker-text {
+  font-size: 1.1rem;
+  color: #e8faff;
+  text-shadow:
+      0 0 8px rgba(0,255,255,0.8),
+      0 0 16px rgba(180,0,255,0.7);
+  letter-spacing: 1px;
+  font-family: var(--font-emblem);
+  display: inline-block;
+  padding-right: 100%;
+}
+
+.cc-ticker-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(255,255,255,0.15) 50%,
+      transparent 100%);
+  animation: tickerShimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes tickerShimmer {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ============================================================
+   7. FOOTER — MEDIUM NEON SPHERES
+============================================================ */
