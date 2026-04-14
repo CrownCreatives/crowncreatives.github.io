@@ -279,3 +279,27 @@ body {
   margin: 0 auto;
   image-rendering: auto;
 }
+/* FOOTER ICONS — magical circular set */
+.footer-icons img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 50%;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  filter: drop-shadow(0 0 10px var(--cc-glow-strong));
+}
+
+/* Hover glow */
+.footer-icons img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 18px var(--cc-glow-strong));
+}
+
+/* Icon row layout */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 25px;
+}
