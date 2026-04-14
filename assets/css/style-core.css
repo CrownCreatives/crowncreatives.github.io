@@ -93,7 +93,7 @@ body {
 }
 
 .header-left .header-crown {
-  width: 108px;
+  width: 72px;
   filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
 }
 
@@ -533,4 +533,10 @@ body {
 
 /* ============================================================
    7. FOOTER — MEDIUM NEON SPHERES
-============================================================ */
+=========.header-centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+=================================================== */
+
