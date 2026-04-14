@@ -1,0 +1,19 @@
+<header class="site-header home-header">
+  <div class="site-header-inner">
+
+    {% include theme-toggle.html %}
+
+    <div class="header-centre">
+      <img src="/assets/icons/crown-hero.png"
+           class="header-crown-hero"
+           alt="{{ page.hero_title }}">
+
+      <h1 class="site-title">{{ page.hero_title }}</h1>
+      <p class="site-tagline">{{ page.hero_tagline }}</p>
+    </div>
+
+  </div>
+
+  {% include nav.html %}
+  <div class="header-magic-line"></div>
+</header>
