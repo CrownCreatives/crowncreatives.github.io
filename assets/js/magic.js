@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 15000);
   }
 
+
   /* ------------------------------------------------------------
      2. TRUE FOLDER AUTOSCAN (GitHub API)
   ------------------------------------------------------------- */
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
   /* ------------------------------------------------------------
      3. BUILD GALLERY PAGE AUTOMATICALLY
   ------------------------------------------------------------- */
@@ -75,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   /* ------------------------------------------------------------
      4. DYNAMIC CROWN‑RELATIVE LANE CALCULATION (NARROW LANES)
   ------------------------------------------------------------- */
@@ -84,8 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!crownEl) return { leftLane: "10%", rightLane: "90%" };
 
     const rect = crownEl.getBoundingClientRect();
-    const imageWidth = 180;     // narrower images
-    const laneOffset = 40;      // tighter lanes
+    const imageWidth = 180;
+    const laneOffset = 40;
     const viewportWidth = window.innerWidth;
 
     let leftLane = rect.left - imageWidth - laneOffset;
@@ -100,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       rightLane: `${rightLane}px`
     };
   }
+
 
   /* ------------------------------------------------------------
      5. HERO FLOATING IMAGES — NARROW LANES + ALTERNATING SIDES
@@ -126,4 +130,33 @@ document.addEventListener("DOMContentLoaded", () => {
     img.style.left = isLeft ? leftLane : rightLane;
 
     // Tighter vertical drift
-    img.style.top = `${Math.floor
+    img.style.top = `${Math.floor(Math.random() * 120) + 40}px`;
+
+    container.appendChild(img);
+
+    // Fade in
+    setTimeout(() => img.classList.add("visible"), 50);
+
+    // Fade out + remove
+    setTimeout(() => {
+      img.classList.remove("visible");
+      setTimeout(() => img.remove(), 2000);
+    }, 12000);
+  }
+
+
+  /* ------------------------------------------------------------
+     6. INITIALISE AUTOSCAN + HERO FLOATERS
+  ------------------------------------------------------------- */
+
+  loadFolderImages().then(imgs => {
+    sources = imgs;
+
+    // Build gallery page if present
+    buildGalleryGrid(imgs);
+
+    // Spawn floating images every 3.5 seconds
+    setInterval(spawnSideImage, 3500);
+  });
+
+});
