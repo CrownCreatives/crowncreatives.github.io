@@ -3,17 +3,21 @@ layout: default
 title: Home
 ---
 
-<!-- ⭐ HERO SECTION — DIRECTLY UNDER HEADER ⭐ -->
+<!-- ⭐ HERO SECTION ⭐ -->
 <section class="hero">
 
   <!-- Floating image lanes (magic.js uses this) -->
   <div class="hero-side-gallery"></div>
 
-  <!-- Cinematic crown (centred by CSS) -->
+  <!-- Crown + Emblem Text (merged magical emblem) -->
   <div class="hero-crown-wrapper">
     <img src="/assets/images/illuminus-crown.png"
-         alt="Illuminus Crown"
+         alt="Crown Creatives Emblem"
          class="hero-crown-cinematic">
+  </div>
+
+  <div class="hero-emblem-text">
+    Crown Creatives is a space for artistry, imagination, and personal resilience.
   </div>
 
 </section>
@@ -22,8 +26,9 @@ title: Home
 
 <!-- ⭐ INTRO TEXT ⭐ -->
 <section class="intro-text fade-in">
-  <p class="hero-crown-explainer">
-    Crown Creatives is a space for artistry, imagination, and personal resilience.
+  <p>
+    Crown Creatives is a space where artistry, imagination, and personal resilience come together.
+    Explore creative projects, 3D models, podcasts, and more.
   </p>
 </section>
 
@@ -50,7 +55,3 @@ title: Home
   </div>
 
 </section>
-
-
-<!-- MAGIC ENGINE -->
-<script src="/assets/js/magic.js"></script>
