@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".theme-toggle");
-  if (!toggle) return;
+    const sun = document.getElementById("theme-toggle-sun");
+    const moon = document.getElementById("theme-toggle-moon");
 
-  const body = document.body;
-  const saved = localStorage.getItem("cc-theme");
+    function setTheme(mode) {
+        document.documentElement.setAttribute("data-theme", mode);
+        localStorage.setItem("theme", mode);
 
-  if (saved === "light") {
-    body.classList.add("light-mode");
-  }
+        sun.style.display = mode === "light" ? "none" : "block";
+        moon.style.display = mode === "light" ? "block" : "none";
+    }
 
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-    const mode = body.classList.contains("light-mode") ? "light" : "dark";
-    localStorage.setItem("cc-theme", mode);
-  });
+    const saved = localStorage.getItem("theme") || "light";
+    setTheme(saved);
+
+    sun.addEventListener("click", () => setTheme("dark"));
+    moon.addEventListener("click", () => setTheme("light"));
 });
