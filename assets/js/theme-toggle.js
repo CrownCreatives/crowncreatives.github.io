@@ -1,8 +1,10 @@
-// ===============================
-//  Crown Creatives Theme Toggle
-//  Day ↔ Night Mode Switch
-//  Saves user preference
-// ===============================
+// ===========================================
+//  Crown Creatives — Day/Night Theme Toggle
+//  Production-Ready Version
+//  - Swaps sun/moon icons
+//  - Saves theme preference
+//  - Loads correct theme on refresh
+// ===========================================
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-toggle");
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!toggle || !icon) return;
 
-  // Load saved theme
+  // Load saved theme from localStorage
   const savedTheme = localStorage.getItem("cc-theme");
 
   if (savedTheme === "dark") {
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.src = "/assets/icons/sun.svg";
   }
 
-  // Toggle on click
+  // Toggle theme on click
   toggle.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
 
