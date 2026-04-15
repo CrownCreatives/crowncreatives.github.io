@@ -16,22 +16,21 @@ layout: none
     {% endif %}
   </title>
 
-  <!-- Favicon -->
   <link rel="icon" href="/assets/icons/cc-monogram.svg" type="image/svg+xml">
-
-  <!-- Core Styles -->
   <link rel="stylesheet" href="/assets/css/style-core.css">
 </head>
 
 <body id="top">
 
   <!-- ============================================================
-       GLOBAL PAGE HEADER (used on ALL non-home pages)
+       HEADER (Only include on NON-HOME pages)
   ============================================================= -->
-  {% include header-page.html %}
+  {% unless page.layout == "home" %}
+    {% include header-page.html %}
+  {% endunless %}
 
   <!-- ============================================================
-       PAGE CONTENT (from child layouts)
+       PAGE CONTENT (Home layout or Page layout)
   ============================================================= -->
   {{ content }}
 
@@ -74,7 +73,7 @@ layout: none
   </footer>
 
   <!-- ============================================================
-       BACK TO TOP BUTTON (same visual weight as toggle)
+       BACK TO TOP BUTTON
   ============================================================= -->
   <button class="back-to-top" type="button"
           onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
