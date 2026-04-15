@@ -2,38 +2,53 @@
 layout: default
 ---
 
-<!-- HERO MAIN SECTION -->
+<!-- ============================================================
+     AUTO‑GALLERY DATA (Hero + Lane Images)
+     Jekyll scans folders and outputs JSON for JS to read
+============================================================ -->
+{% assign hero_files = site.static_files | where_exp: "f", "f.path contains '/assets/images/hero/'" %}
+{% assign hero_paths = hero_files | map: "path" %}
+
+{% assign lane_files = site.static_files | where_exp: "f", "f.path contains '/assets/images/gallery/'" %}
+{% assign lane_paths = lane_files | map: "path" %}
+
+<div id="gallery-data"
+     data-hero-images='{{ hero_paths | jsonify }}'
+     data-lane-images='{{ lane_paths | jsonify }}'>
+</div>
+
+<!-- ============================================================
+     HERO SECTION — Crown + Explainer + Hero Gallery + Lanes
+============================================================ -->
 <section class="hero-main fade-section">
 
   <div class="hero-main-inner">
-    <img 
-      src="/assets/icons/cc-monogram.svg"
-      alt="Crown Creatives Emblem"
-      class="hero-main-crown">
+
+    <!-- Crown (always centred, always safe) -->
+    <img src="/assets/icons/crownogram.svg"
+         alt="Crown Creatives Emblem"
+         class="hero-main-crown">
+
+    <!-- Explainer text -->
     <p class="hero-main-explainer">
-      The Crown represents creativity, resilience, and the courage to imagine boldly.
+      Sculpted characters, creatures, and fantasy‑themed digital worlds brought to life with resilience and imagination.
     </p>
-  </div>
 
-  <div class="hero-gallery-lane lane-left">
-    <div class="lane-image-container" id="lane-left"></div>
-  </div>
+    <!-- HERO GALLERY (auto‑scan, crossfade, no drift) -->
+    <div id="hero-gallery" class="hero-gallery-surface"></div>
 
-  <div class="hero-gallery-lane lane-right">
-    <div class="lane-image-container" id="lane-right"></div>
+    <!-- LANE GALLERIES (auto‑scan, alternating, magical) -->
+    <div class="hero-gallery-lane lane-left"></div>
+    <div class="hero-gallery-lane lane-right"></div>
+
   </div>
 
 </section>
 
-<!-- HERO GALLERY -->
-<section class="hero-gallery fade-section">
-  <div class="hero-gallery-inner" id="hero-gallery"></div>
-</section>
-
-<!-- MAIN CONTENT -->
-<main class="home-content fade-section">
+<!-- ============================================================
+     PAGE CONTENT
+============================================================ -->
+<main class="site-main fade-section">
   {{ content }}
 </main>
 
-{% include footer.html %}
-{% include scripts.html %}
