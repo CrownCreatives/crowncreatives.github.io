@@ -1,13 +1,28 @@
-<div class="header-right">
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <span class="theme-toggle-sphere">
-      <img src="/assets/icons/icon-sun-bold-cyan.png"
-           alt="Light mode"
-           class="theme-icon theme-icon-light active">
+<!-- ============================================================
+     THEME TOGGLE (Accessible + Modern)
+============================================================ -->
+<button 
+  class="theme-toggle" 
+  id="themeToggle" 
+  aria-label="Toggle light and dark theme"
+>
 
-      <img src="/assets/icons/icon-moon-bold-cyan.png"
-           alt="Dark mode"
-           class="theme-icon theme-icon-dark">
-    </span>
-  </button>
-</div>
+  <div class="theme-toggle-sphere">
+
+    <!-- Sun Icon (Light Mode) -->
+    <img 
+      src="/assets/icons/sun.svg" 
+      alt="Light mode icon" 
+      class="theme-icon theme-icon-light"
+    >
+
+    <!-- Moon Icon (Dark Mode) -->
+    <img 
+      src="/assets/icons/moon.svg" 
+      alt="Dark mode icon" 
+      class="theme-icon theme-icon-dark"
+    >
+
+  </div>
+
+</button>
