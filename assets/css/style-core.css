@@ -231,32 +231,7 @@ body {
 .header-home-inner {
   position: relative;
   z-index: 2;
-}
 
-/* Background crown (¼ screen) */
-.hero-background-crown {
-  position: absolute;
-  top: 5vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 42vw;
-  opacity: 0.22;
-  pointer-events: none;
-  z-index: 0;
-  text-align: center;
-}
-
-.hero-background-crown img {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
-}
-
-.hero-emblem-text {
-  margin-top: 12px;
-  font-size: 1.1rem;
-  color: var(--text-soft);
-  text-shadow: var(--cyan-glow);
 }
 
 /* Header crown (100px) */
