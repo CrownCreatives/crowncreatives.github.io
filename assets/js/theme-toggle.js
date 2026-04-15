@@ -1,38 +1,30 @@
-// ===========================================
-//  Crown Creatives — Day/Night Theme Toggle
-//  Production-Ready Version
-//  - Swaps sun/moon icons
-//  - Saves theme preference
-//  - Loads correct theme on refresh
-// ===========================================
-
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-toggle");
   const icon = toggle?.querySelector(".theme-icon");
 
   if (!toggle || !icon) return;
 
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem("cc-theme");
+  // Load saved theme
+  const savedTheme = localStorage.getItem("cc-theme") || "light";
+  document.documentElement.setAttribute("data-theme", savedTheme);
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    icon.src = "/assets/icons/moon.svg";
-  } else {
-    document.body.classList.remove("dark-mode");
-    icon.src = "/assets/icons/sun.svg";
-  }
+  icon.src = savedTheme === "dark"
+    ? "/assets/icons/moon.svg"
+    : "/assets/icons/sun.svg";
 
-  // Toggle theme on click
+  // Toggle theme
   toggle.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-mode");
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
 
-    if (isDark) {
-      icon.src = "/assets/icons/moon.svg";
-      localStorage.setItem("cc-theme", "dark");
-    } else {
-      icon.src = "/assets/icons/sun.svg";
-      localStorage.setItem("cc-theme", "light");
-    }
+    // 8-second animated transition
+    document.documentElement.style.transition = "background 8s ease, filter 8s ease";
+
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("cc-theme", next);
+
+    icon.src = next === "dark"
+      ? "/assets/icons/moon.svg"
+      : "/assets/icons/sun.svg";
   });
 });
