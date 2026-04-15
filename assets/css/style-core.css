@@ -467,3 +467,25 @@ body {
 .hero-gallery-lane.lane-right {
   right: 4%;
 }
+.header-crown {
+  width: 80px;          /* 20% smaller than ~100px+ */
+  height: auto;
+  display: block;
+  margin: 0 auto 6px;   /* centred above text */
+}
+.header-title-block {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header-title-block h1,
+.header-title-block p {
+  margin: 0;
+  padding: 0;
+}
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;        /* spacing between nav items */
+  margin-top: 10px; /* breathing room under text */
+}
