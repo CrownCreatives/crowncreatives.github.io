@@ -374,3 +374,57 @@ body {
   .hero-main-explainer { font-size: 1.1rem; }
   .hero-gallery-inner img { width: 90%; }
 }
+/* ============================================================
+   HERO CROWN — 30% Bigger + Magical Glow + Shimmer Animation
+============================================================ */
+.hero-main-crown {
+  width: 182px; /* 30% bigger than 140px */
+  height: auto;
+  margin-bottom: 24px;
+
+  /* Base magical glow */
+  filter:
+    drop-shadow(0 0 14px rgba(0,234,255,0.85))
+    drop-shadow(0 0 26px rgba(176,0,255,0.85));
+
+  /* Smooth shimmer + breathing glow */
+  animation: crownShimmer 12s ease-in-out infinite;
+}
+
+/* Shimmer + glow cycle */
+@keyframes crownShimmer {
+  0% {
+    filter:
+      drop-shadow(0 0 10px rgba(0,234,255,0.6))
+      drop-shadow(0 0 18px rgba(176,0,255,0.6));
+    transform: scale(1);
+  }
+
+  25% {
+    filter:
+      drop-shadow(0 0 22px rgba(0,234,255,1))
+      drop-shadow(0 0 34px rgba(176,0,255,1));
+    transform: scale(1.03);
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 16px rgba(0,234,255,0.8))
+      drop-shadow(0 0 26px rgba(176,0,255,0.8));
+    transform: scale(1.01);
+  }
+
+  75% {
+    filter:
+      drop-shadow(0 0 28px rgba(0,234,255,1))
+      drop-shadow(0 0 40px rgba(176,0,255,1));
+    transform: scale(1.04);
+  }
+
+  100% {
+    filter:
+      drop-shadow(0 0 10px rgba(0,234,255,0.6))
+      drop-shadow(0 0 18px rgba(176,0,255,0.6));
+    transform: scale(1);
+  }
+}
