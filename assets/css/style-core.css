@@ -440,3 +440,30 @@ body {
   .hero-main-explainer { font-size: 1.1rem; }
   .hero-gallery-inner img { width: 90%; }
 }
+.hero-main-crown {
+  width: 340px;          /* Bigger crown */
+  max-width: 70vw;       /* Responsive scaling */
+  display: block;
+  margin: 0 auto 18px;   /* Centre + breathing room */
+  filter: drop-shadow(0 0 18px rgba(255, 180, 80, 0.55))
+          drop-shadow(0 0 28px rgba(255, 140, 66, 0.45));
+}
+.hero-main-inner {
+  text-align: center;
+  position: relative;
+  padding-top: 40px; /* subtle lift */
+}
+.hero-gallery-lane {
+  width: 180px;
+  max-width: 22vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-gallery-lane.lane-left {
+  left: 4%;
+}
+
+.hero-gallery-lane.lane-right {
+  right: 4%;
+}
