@@ -407,3 +407,7 @@ body {
   .hero-main-explainer { font-size: 1.1rem; }
   .hero-gallery-inner img { width: 90%; }
 }
+.back-to-top {
+  background: none;
+  border: none;
+}
