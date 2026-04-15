@@ -318,3 +318,14 @@ body {
 .site-nav {
   margin-top: 20px; /* pushes nav downward */
 }
+.header-crown-hero {
+  margin-top: -10px;   /* lifts crown upward */
+  margin-bottom: 14px; /* spacing before title */
+}
+.header-home {
+  position: relative;
+  overflow: hidden;
+  padding-top: 40px;     /* space above crown */
+  padding-bottom: 40px;  /* space below tagline */
+  min-height: 42vh;      /* ensures nav sits below hero */
+}
