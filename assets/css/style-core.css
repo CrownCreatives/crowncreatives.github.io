@@ -76,7 +76,7 @@ body {
 }
 
 /* ============================================================
-   2. HEADER + NAV + THEME TOGGLE (Unified + Corrected)
+   2. HEADER + NAV + THEME TOGGLE (Unified)
 ============================================================ */
 .site-header {
   width: 100%;
@@ -178,7 +178,7 @@ body {
 }
 
 /* ============================================================
-   3. NAVIGATION (Unified + Moved Up 10mm)
+   3. NAVIGATION
 ============================================================ */
 .site-nav {
   max-width: 1200px;
@@ -240,7 +240,7 @@ body {
   padding: 0 20px;
 }
 
-/* FINAL HERO CROWN — 182px + SHIMMER */
+/* HERO CROWN */
 .hero-main-crown {
   width: 182px;
   height: auto;
@@ -284,7 +284,6 @@ body {
   }
 }
 
-/* Emblem Explanation */
 .hero-main-explainer {
   font-size: 1.25rem;
   line-height: 1.6;
@@ -293,7 +292,9 @@ body {
   opacity: 0.9;
 }
 
-/* GALLERY LANES */
+/* ============================================================
+   4B. GALLERY LANES
+============================================================ */
 .hero-gallery-lane {
   position: absolute;
   top: 0;
@@ -321,7 +322,9 @@ body {
   100% { opacity: 0; transform: translateY(-20px); }
 }
 
-/* HERO GALLERY */
+/* ============================================================
+   4C. HERO GALLERY
+============================================================ */
 .hero-gallery {
   margin-top: 40px;
   text-align: center;
@@ -370,10 +373,8 @@ body {
 }
 
 /* ============================================================
-   6. BACK TO TOP — FINAL VERSION
-   Transparent Orb + Black Arrow + Cyan Glow (Both Themes)
+   6. BACK TO TOP — MATCH THE THEME TOGGLE EXACTLY
 ============================================================ */
-
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -385,74 +386,14 @@ body {
   padding: 0;
 }
 
-/* Orb container */
 .backtotop-icon {
   width: 68px;
   height: 68px;
   border-radius: 50%;
   display: block;
-  background: none; /* fully transparent */
-  content: url("assets/icons/up-arrow.svg"); /* black arrow always */
-  transition: transform .25s ease, box-shadow .25s ease;
-
-  /* Light mode glow */
-  box-shadow:
-      0 0 14px rgba(0,234,255,0.55),
-      0 0 28px rgba(0,234,255,0.35),
-      inset 0 0 10px rgba(0,234,255,0.25);
-}
-
-/* Hover */
-.backtotop-icon:hover {
-  transform: scale(1.12);
-  box-shadow:
-      0 0 20px rgba(0,234,255,0.85),
-      0 0 40px rgba(0,234,255,0.65),
-      inset 0 0 14px rgba(0,234,255,0.45);
-}
-
-/* Dark mode — stronger glow so black arrow stays visible */
-:root[data-theme="dark"] .backtotop-icon {
-  box-shadow:
-      0 0 18px rgba(0,234,255,1),
-      0 0 36px rgba(176,0,255,1),
-      inset 0 0 14px rgba(0,234,255,0.55);
-}
-
-/* ============================================================
-   7. RESPONSIVE TWEAKS
-============================================================ */
-@media (max-width: 900px) {
-  .hero-gallery-lane { display: none; }
-  .hero-main-crown { width: 150px; }
-  .hero-main-explainer { font-size: 1.1rem; }
-  .hero-gallery-inner img { width: 90%; }
-}
-/* ============================================================
-   BACK TO TOP — MATCH THE DAY/NIGHT TOGGLE EXACTLY
-============================================================ */
-
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  cursor: pointer;
-  z-index: 9999;
   background: none;
-  border: none;
-  padding: 0;
-}
+  content: url("assets/icons/up-arrow.svg");
 
-/* Orb container — identical glow to theme toggle */
-.backtotop-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  display: block;
-  background: none; /* fully transparent */
-  content: url("assets/icons/up-arrow.svg"); /* black arrow always */
-
-  /* MATCHED GLOW (same as theme-toggle-sphere) */
   box-shadow:
       0 0 14px rgba(0,234,255,0.75),
       0 0 28px rgba(0,234,255,0.55),
@@ -461,7 +402,6 @@ body {
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* Hover — identical to theme toggle hover */
 .backtotop-icon:hover {
   transform: scale(1.12);
   box-shadow:
@@ -470,10 +410,33 @@ body {
       inset 0 0 14px rgba(0,234,255,0.55);
 }
 
-/* Dark mode — stronger glow (same logic as theme toggle) */
 :root[data-theme="dark"] .backtotop-icon {
   box-shadow:
       0 0 20px rgba(0,234,255,1),
       0 0 40px rgba(0,234,255,0.85),
       inset 0 0 14px rgba(0,234,255,0.55);
+}
+
+/* ============================================================
+   7. FADE SECTIONS (JS Integration)
+============================================================ */
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+
+.fade-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   8. RESPONSIVE TWEAKS
+============================================================ */
+@media (max-width: 900px) {
+  .hero-gallery-lane { display: none; }
+  .hero-main-crown { width: 150px; }
+  .hero-main-explainer { font-size: 1.1rem; }
+  .hero-gallery-inner img { width: 90%; }
 }
