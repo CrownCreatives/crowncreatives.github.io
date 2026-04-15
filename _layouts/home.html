@@ -3,17 +3,23 @@ layout: default
 ---
 
 <!-- ============================================================
-     HOME HERO HEADER (Clean — SVG Crown, No Background Crown)
+     GLOBAL HEADER (from _includes/header-home.html)
 ============================================================ -->
-<header class="header-home">
+{% include header-home.html %}
 
-  <div class="header-home-inner fade-section">
+<!-- ============================================================
+     OPTIONAL HERO SECTION (clean + minimal)
+     You can customise this or remove it entirely.
+============================================================ -->
+<section class="home-hero fade-section">
 
-    <!-- Header Crown (SVG) -->
+  <div class="home-hero-inner">
+
+    <!-- Hero Crown -->
     <img 
       src="/assets/icons/cc-monogram.svg" 
       alt="Crown Creatives Monogram Crown" 
-      class="header-crown-hero"
+      class="hero-crown"
     >
 
     <!-- Hero Title -->
@@ -28,7 +34,7 @@ layout: default
 
   </div>
 
-</header>
+</section>
 
 <!-- ============================================================
      MAIN CONTENT
