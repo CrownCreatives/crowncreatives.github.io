@@ -2,16 +2,14 @@
 layout: default
 ---
 
-{% include header-home.html %}
-
+<!-- HERO MAIN SECTION -->
 <section class="hero-main fade-section">
 
   <div class="hero-main-inner">
     <img 
       src="/assets/icons/cc-monogram.svg"
       alt="Crown Creatives Emblem"
-      class="hero-main-crown"
-    >
+      class="hero-main-crown">
     <p class="hero-main-explainer">
       The Crown represents creativity, resilience, and the courage to imagine boldly.
     </p>
@@ -27,12 +25,15 @@ layout: default
 
 </section>
 
+<!-- HERO GALLERY -->
 <section class="hero-gallery fade-section">
   <div class="hero-gallery-inner" id="hero-gallery"></div>
 </section>
 
+<!-- MAIN CONTENT -->
 <main class="home-content fade-section">
   {{ content }}
 </main>
 
+{% include footer.html %}
 {% include scripts.html %}
