@@ -21,41 +21,26 @@ layout: none
 
   <!-- Core Styles -->
   <link rel="stylesheet" href="/assets/css/style-core.css">
-
-  <!-- Page-Specific Styles -->
-  {% if page.styles %}
-    <link rel="stylesheet" href="{{ page.styles }}">
-  {% endif %}
 </head>
 
-<body>
+<body id="top">
 
   <!-- ============================================================
-       HEADER (Injected by child layouts)
+       PAGE CONTENT (Header, Hero, Main, etc. from child layouts)
   ============================================================= -->
-  {{ content | replace: '<header-insert>', '' }}
+  {{ content }}
 
   <!-- ============================================================
-       NAVIGATION (Global)
+       MAGICAL TICKER ABOVE FOOTER
   ============================================================= -->
-  <nav class="site-nav fade-section">
-    <ul>
-      <li><a class="nav-link" href="/">Home</a></li>
-      <li><a class="nav-link" href="/about/">About</a></li>
-      <li><a class="nav-link" href="/projects/">Projects</a></li>
-      <li><a class="nav-link" href="/gallery/">Gallery</a></li>
-      <li><a class="nav-link" href="/podcasts/">Podcasts</a></li>
-      <li><a class="nav-link" href="/blog/">Blog</a></li>
-      <li><a class="nav-link" href="/videos/">Videos</a></li>
-    </ul>
-  </nav>
-
-  <!-- ============================================================
-       MAIN CONTENT (Injected by child layouts)
-  ============================================================= -->
-  <main class="site-main fade-section">
-    {{ content }}
-  </main>
+  <section class="magic-ticker">
+    <div class="magic-ticker-inner">
+      <span>✨ You are rebuilding something extraordinary — keep going. ✨</span>
+      <span>Creativity is courage in motion. ✨</span>
+      <span>Every spark of imagination matters. ✨</span>
+      <span>Crown Creatives believes in your magic. ✨</span>
+    </div>
+  </section>
 
   <!-- ============================================================
        FOOTER
@@ -63,10 +48,10 @@ layout: none
   <footer class="site-footer fade-section">
 
     <div class="footer-icons">
-      <a href="https://facebook.com" target="_blank">
+      <a href="https://facebook.com" target="_blank" rel="noopener">
         <img src="/assets/icons/facebook.svg" alt="Facebook">
       </a>
-      <a href="https://instagram.com" target="_blank">
+      <a href="https://instagram.com" target="_blank" rel="noopener">
         <img src="/assets/icons/instagram.svg" alt="Instagram">
       </a>
       <a href="mailto:contact@crowncreatives.com">
@@ -74,9 +59,6 @@ layout: none
       </a>
       <a href="#">
         <img src="/assets/icons/copilot.svg" alt="Copilot">
-      </a>
-      <a href="#top">
-        <img src="/assets/icons/up-arrow.svg" alt="Back to Top">
       </a>
     </div>
 
@@ -87,27 +69,22 @@ layout: none
   </footer>
 
   <!-- ============================================================
-       BACK TO TOP BUTTON
+       BACK TO TOP BUTTON (same visual weight as toggle)
   ============================================================= -->
-  <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+  <button class="back-to-top" type="button"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          aria-label="Back to top">
     <img src="/assets/icons/up-arrow.svg" class="backtotop-icon" alt="Back to Top">
-  </div>
+  </button>
 
   <!-- ============================================================
        SCRIPTS
   ============================================================= -->
-
-  <!-- Theme Toggle -->
   <script src="/assets/js/theme-toggle.js"></script>
-
-  <!-- Fade-in Scroll Animation -->
-  <script src="/assets/js/fade-sections.js"></script>
-
-  <!-- Hero Gallery Engine -->
   <script src="/assets/js/hero-gallery.js"></script>
-
-  <!-- Lane Gallery Engine -->
   <script src="/assets/js/lane-gallery.js"></script>
+  <script src="/assets/js/fade-sections.js"></script>
+  <script src="/assets/js/magic-ticker.js"></script>
 
 </body>
 </html>
