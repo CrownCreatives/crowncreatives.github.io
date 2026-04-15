@@ -1,21 +1,11 @@
 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="upGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00e0ff"/>
-      <stop offset="100%" stop-color="#ff3fd1"/>
+    <linearGradient id="upGradAlt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd86b"/>
+      <stop offset="100%" stop-color="#ff8c42"/>
     </linearGradient>
-    <filter id="iconGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feColorMatrix in="blur" type="matrix"
-        values="0 0 0 0 0.0
-                0 0 0 0 0.9
-                0 0 0 0 1.0
-                0 0 0 0.7 0"/>
-    </filter>
   </defs>
   <circle cx="24" cy="24" r="20" fill="#050816"/>
-  <circle cx="24" cy="24" r="20" fill="url(#upGrad)" opacity="0.18"/>
-  <path d="M18 26l6-8 6 8" fill="none" stroke="#e0f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 26v8" stroke="#e0f7ff" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="24" cy="24" r="19" fill="none" stroke="url(#upGrad)" stroke-width="1.4" filter="url(#iconGlow)"/>
+  <circle cx="24" cy="24" r="18" fill="none" stroke="url(#upGradAlt)" stroke-width="2"/>
+  <path d="M18 26l6-7 6 7" fill="none" stroke="#fff4d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
