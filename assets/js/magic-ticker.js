@@ -1,23 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".cc-ticker-track");
-  if (!track) return;
+  const ticker = document.querySelector(".magic-ticker");
+  if (!ticker) return;
 
-  let speed = 60; // Medium magical speed
-  let position = 0;
+  let index = 0;
+  const messages = [
+    "Artistry in every stroke",
+    "Resilience in every challenge",
+    "Imagination in every world"
+  ];
 
-  function animate() {
-    position -= 0.5;
-    track.style.transform = `translateX(${position}px)`;
-
-    if (Math.abs(position) > track.scrollWidth / 2) {
-      position = 0;
-    }
-
-    requestAnimationFrame(animate);
+  function updateTicker() {
+    ticker.textContent = messages[index];
+    index = (index + 1) % messages.length;
   }
 
-  track.addEventListener("mouseenter", () => speed = 0);
-  track.addEventListener("mouseleave", () => speed = 60);
-
-  animate();
+  updateTicker();
+  setInterval(updateTicker, 6000);
 });
