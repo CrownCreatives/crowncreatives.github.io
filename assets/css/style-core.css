@@ -100,7 +100,7 @@ body {
   text-align: center;
 }
 
-/* HEADER CROWN — MEDIUM SIZE (used on non-home pages) */
+/* HEADER CROWN — MEDIUM SIZE (non-home pages) */
 .header-crown {
   width: 108px;
   display: block;
@@ -138,7 +138,6 @@ body {
   cursor: pointer;
 }
 
-/* THEME TOGGLE — 30% LARGER + MAGICAL GLOW */
 .theme-toggle-sphere {
   width: 68px;
   height: 68px;
@@ -180,7 +179,7 @@ body {
 ============================================================ */
 .site-nav {
   max-width: 1200px;
-  margin: 10px auto 0;
+  margin: 20px auto 0; /* spacing below hero */
 }
 
 .site-nav ul {
@@ -221,25 +220,28 @@ body {
 .nav-link:hover::after { width: 100%; }
 
 /* ============================================================
-   4. HOME HERO — BACKGROUND CROWN + HEADER CROWN
+   4. HOME HERO — HEADER CROWN + TITLE + TAGLINE
 ============================================================ */
 .header-home {
   position: relative;
   overflow: hidden;
+  padding-top: 40px;      /* space above crown */
+  padding-bottom: 40px;   /* space below tagline */
+  min-height: 42vh;       /* ensures nav sits below hero */
 }
 
 .header-home-inner {
   position: relative;
   z-index: 2;
-
+  text-align: center;
 }
 
-/* Header crown (100px) */
+/* Header crown (100px) — Option A: slightly raised */
 .header-crown-hero {
   width: 100px;
   height: auto;
   display: block;
-  margin: 0 auto 10px;
+  margin: -10px auto 14px;
   filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
 }
 
@@ -298,34 +300,4 @@ body {
   filter:
     drop-shadow(0 0 18px rgba(0,234,255,1))
     drop-shadow(0 0 32px rgba(176,0,255,1));
-}
-.header-crown-hero {
-  margin-top: -20px; /* lifts the crown upward */
-  margin-bottom: 12px;
-}
-.header-home {
-  position: relative;
-  overflow: hidden;
-  padding-top: 40px;   /* NEW: adds space above crown */
-  padding-bottom: 40px; /* NEW: adds space below tagline */
-  min-height: 38vh;     /* ensures the hero has enough height */
-}
-.hero-background-crown {
-  top: -6vh;      /* was 5vh — now sits higher */
-  width: 18vw;    /* slightly smaller so it doesn’t dominate */
-  opacity: 0.18;  /* softened */
-}
-.site-nav {
-  margin-top: 20px; /* pushes nav downward */
-}
-.header-crown-hero {
-  margin-top: -10px;   /* lifts crown upward */
-  margin-bottom: 14px; /* spacing before title */
-}
-.header-home {
-  position: relative;
-  overflow: hidden;
-  padding-top: 40px;     /* space above crown */
-  padding-bottom: 40px;  /* space below tagline */
-  min-height: 42vh;      /* ensures nav sits below hero */
 }
