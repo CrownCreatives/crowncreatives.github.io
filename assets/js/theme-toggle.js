@@ -1,55 +1,36 @@
-/* ============================================================
-   THEME TOGGLE — Light / Dark with 10s Fade-to-Dark
-============================================================ */
+// ===============================
+//  Crown Creatives Theme Toggle
+//  Day ↔ Night Mode Switch
+//  Saves user preference
+// ===============================
 
 document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".theme-toggle");
+  const icon = toggle?.querySelector(".theme-icon");
 
-  const root = document.documentElement;
-  const toggleButton = document.querySelector(".theme-toggle");
-  const sunIcon = document.querySelector(".theme-icon-sun");
-  const moonIcon = document.querySelector(".theme-icon-moon");
+  if (!toggle || !icon) return;
 
-  /* ------------------------------------------------------------
-     1. Load saved theme (if any)
-  ------------------------------------------------------------ */
-  const savedTheme = localStorage.getItem("theme");
+  // Load saved theme
+  const savedTheme = localStorage.getItem("cc-theme");
 
   if (savedTheme === "dark") {
-    root.setAttribute("data-theme", "dark");
-    sunIcon.classList.remove("active");
-    moonIcon.classList.add("active");
+    document.body.classList.add("dark-mode");
+    icon.src = "/assets/icons/moon.svg";
+  } else {
+    document.body.classList.remove("dark-mode");
+    icon.src = "/assets/icons/sun.svg";
   }
 
-  /* ------------------------------------------------------------
-     2. Toggle theme instantly on click
-  ------------------------------------------------------------ */
-  toggleButton.addEventListener("click", () => {
-    const isDark = root.getAttribute("data-theme") === "dark";
+  // Toggle on click
+  toggle.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
 
     if (isDark) {
-      root.removeAttribute("data-theme");
-      sunIcon.classList.add("active");
-      moonIcon.classList.remove("active");
-      localStorage.setItem("theme", "light");
+      icon.src = "/assets/icons/moon.svg";
+      localStorage.setItem("cc-theme", "dark");
     } else {
-      root.setAttribute("data-theme", "dark");
-      sunIcon.classList.remove("active");
-      moonIcon.classList.add("active");
-      localStorage.setItem("theme", "dark");
+      icon.src = "/assets/icons/sun.svg";
+      localStorage.setItem("cc-theme", "light");
     }
   });
-
-  /* ------------------------------------------------------------
-     3. Automatic 10-second fade to dark mode
-        (Only if user has not chosen a theme)
-  ------------------------------------------------------------ */
-  if (!savedTheme) {
-    setTimeout(() => {
-      root.setAttribute("data-theme", "dark");
-      sunIcon.classList.remove("active");
-      moonIcon.classList.add("active");
-      localStorage.setItem("theme", "dark");
-    }, 10000);
-  }
-
 });
