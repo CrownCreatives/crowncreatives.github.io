@@ -239,7 +239,7 @@ body {
   top: 5vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 22vw;
+  width: 42vw;
   opacity: 0.22;
   pointer-events: none;
   z-index: 0;
