@@ -16,23 +16,15 @@ layout: none
     {% endif %}
   </title>
 
-  <!-- Favicon -->
   <link rel="icon" href="/assets/icons/cc-monogram.svg" type="image/svg+xml">
-
-  <!-- Core Styles -->
   <link rel="stylesheet" href="/assets/css/style-core.css">
 </head>
 
 <body id="top">
 
-  <!-- ============================================================
-       PAGE CONTENT (Header, Hero, Main, etc. from child layouts)
-  ============================================================= -->
   {{ content }}
 
-  <!-- ============================================================
-       MAGICAL TICKER ABOVE FOOTER
-  ============================================================= -->
+  <!-- ===================== MAGICAL TICKER ABOVE FOOTER ===================== -->
   <section class="magic-ticker">
     <div class="magic-ticker-inner">
       <span>✨ You are rebuilding something extraordinary — keep going. ✨</span>
@@ -42,16 +34,14 @@ layout: none
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================= -->
+  <!-- =============================== FOOTER =============================== -->
   <footer class="site-footer fade-section">
 
     <div class="footer-icons">
-      <a href="https://facebook.com" target="_blank" rel="noopener">
+      <a href="https://facebook.com" target="_blank">
         <img src="/assets/icons/facebook.svg" alt="Facebook">
       </a>
-      <a href="https://instagram.com" target="_blank" rel="noopener">
+      <a href="https://instagram.com" target="_blank">
         <img src="/assets/icons/instagram.svg" alt="Instagram">
       </a>
       <a href="mailto:contact@crowncreatives.com">
@@ -68,18 +58,12 @@ layout: none
 
   </footer>
 
-  <!-- ============================================================
-       BACK TO TOP BUTTON (same visual weight as toggle)
-  ============================================================= -->
-  <button class="back-to-top" type="button"
-          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-          aria-label="Back to top">
+  <!-- BACK TO TOP (same size feel as toggle) -->
+  <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
     <img src="/assets/icons/up-arrow.svg" class="backtotop-icon" alt="Back to Top">
   </button>
 
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================= -->
+  <!-- SCRIPTS -->
   <script src="/assets/js/theme-toggle.js"></script>
   <script src="/assets/js/hero-gallery.js"></script>
   <script src="/assets/js/lane-gallery.js"></script>
