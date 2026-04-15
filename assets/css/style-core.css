@@ -217,3 +217,7 @@ body {
   margin: 0 auto 10px;
   filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
 }
+.header-home {
+  position: relative;
+  overflow: hidden;
+}
