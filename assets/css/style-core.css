@@ -326,3 +326,125 @@ body {
 .site-nav {
   margin-top: 20px;
 }
+/* ============================================================
+   HERO MAIN SECTION — Crown, Explanation, Gallery Lanes
+============================================================ */
+
+.hero-main {
+    position: relative;
+    width: 100%;
+    padding: 80px 0 60px;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-main-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 50% Reduced Crown */
+.hero-main-crown {
+    width: 140px;        /* adjust if needed */
+    height: auto;
+    margin-bottom: 20px;
+    filter:
+        drop-shadow(0 0 12px rgba(0,234,255,0.8))
+        drop-shadow(0 0 22px rgba(176,0,255,0.8));
+}
+
+/* Emblem Explanation */
+.hero-main-explainer {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+/* ============================================================
+   GALLERY LANES — Left & Right Narrow Image Strips
+============================================================ */
+
+.hero-gallery-lane {
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.lane-left {
+    left: 0;
+}
+
+.lane-right {
+    right: 0;
+}
+
+.lane-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    animation: laneFade 6s ease-in-out infinite;
+}
+
+@keyframes laneFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* ============================================================
+   HERO GALLERY — Randomised Main Image
+============================================================ */
+
+.hero-gallery {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.hero-gallery-inner img {
+    width: 70%;
+    max-width: 900px;
+    border-radius: 14px;
+    box-shadow:
+        0 0 20px rgba(0,234,255,0.4),
+        0 0 40px rgba(176,0,255,0.4);
+    animation: heroFade 8s ease-in-out infinite;
+}
+
+@keyframes heroFade {
+    0% { opacity: 0; transform: scale(0.96); }
+    15% { opacity: 1; transform: scale(1); }
+    85% { opacity: 1; }
+    100% { opacity: 0; transform: scale(1.02); }
+}
+
+/* ============================================================
+   RESPONSIVE TWEAKS
+============================================================ */
+
+@media (max-width: 900px) {
+    .hero-gallery-lane {
+        display: none; /* hide lanes on mobile */
+    }
+
+    .hero-main-crown {
+        width: 110px;
+    }
+
+    .hero-main-explainer {
+        font-size: 1.1rem;
+    }
+
+    .hero-gallery-inner img {
+        width: 90%;
+    }
+}
