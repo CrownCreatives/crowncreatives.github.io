@@ -7,7 +7,7 @@
 <body class="magic-bg-gradient">
 
   <!-- ============================================================
-       MAGICAL BACKGROUND ENGINE (already in your repo)
+       MAGICAL BACKGROUND ENGINE
   ============================================================= -->
   <div class="cc-bg-magic-layer">
     <div class="cc-bg-nebula"></div>
@@ -22,13 +22,12 @@
   </div>
 
   <!-- ============================================================
-       MIST OVERLAY (for page transitions)
+       PAGE TRANSITION OVERLAY
   ============================================================= -->
   <div class="page-transition-overlay"></div>
 
   <!-- ============================================================
-       FLOATING PARTICLES (MAGICAL ENHANCEMENT)
-       — You asked for this placed correctly
+       FOREGROUND MAGIC PARTICLES
   ============================================================= -->
   <div class="magic-particles">
     <span></span><span></span><span></span><span></span><span></span>
@@ -36,26 +35,27 @@
   </div>
 
   <!-- ============================================================
-       HEADER (home or page header is chosen by layout)
+       HEADER AREA
+       (Theme toggle first, nav underneath, hero inside page content)
   ============================================================= -->
-  {% include nav.html %}
   {% include theme-toggle.html %}
+  {% include nav.html %}
 
   <!-- ============================================================
-       MAIN CONTENT
+       MAIN CONTENT (home.html or page.html injects hero)
   ============================================================= -->
   <main class="page-content" aria-label="Content">
     {{ content }}
   </main>
 
   <!-- ============================================================
-       FOOTER
+       FOOTER + BACK TO TOP
   ============================================================= -->
   {% include footer.html %}
   {% include backtotop.html %}
 
   <!-- ============================================================
-       SCRIPTS (correct order)
+       SCRIPTS
   ============================================================= -->
   <script src="/assets/js/theme-toggle.js"></script>
   <script src="/assets/js/page-transition.js"></script>
