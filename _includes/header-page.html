@@ -1,18 +1,20 @@
-<header class="site-header page-header">
+<header class="site-header">
   <div class="site-header-inner">
 
-    {% include theme-toggle.html %}
+    <div class="header-centre">
+      <img src="/assets/icons/cc-monogram.svg" class="header-crown-hero">
+      <h1 class="site-title">Crown Creatives</h1>
+      <p class="site-tagline">Artistry • Resilience • Imagination</p>
+    </div>
 
-    <div class="page-hero-centre">
-      <img src="/assets/icons/crown-header.png"
-           class="page-crown"
-           alt="{{ page.title }}">
-
-      <h1 class="page-title">{{ page.title }}</h1>
+    <div class="header-right">
+      <button class="theme-toggle">
+        <div class="theme-toggle-sphere">
+          <img src="/assets/icons/sun.svg" class="theme-icon active">
+          <img src="/assets/icons/moon.svg" class="theme-icon">
+        </div>
+      </button>
     </div>
 
   </div>
-
-  {% include nav.html %}
-  <div class="header-magic-line"></div>
 </header>
