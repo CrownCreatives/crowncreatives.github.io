@@ -1,95 +1,25 @@
----
-layout: none
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — Crown Creatives</title>
 
-  <title>
-    {% if page.title %}
-      {{ page.title }} • Crown Creatives
-    {% else %}
-      Crown Creatives • Artistry • Resilience • Imagination
-    {% endif %}
-  </title>
-
-  <link rel="icon" href="/assets/icons/cc-monogram.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/css/style-core.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
-<body id="top">
+<body data-theme="light">
 
-  <!-- ============================================================
-       HEADER (Only include on NON-HOME pages)
-  ============================================================= -->
-  {% unless page.layout == "home" %}
-    {% include header-page.html %}
-  {% endunless %}
+  {% include header.html %}
 
-  <!-- ============================================================
-       PAGE CONTENT (Home layout or Page layout)
-  ============================================================= -->
-  {{ content }}
+  <main class="page-content fade-section">
+    {{ content }}
+  </main>
 
-  <!-- ============================================================
-       MAGICAL TICKER ABOVE FOOTER
-  ============================================================= -->
-  <section class="magic-ticker">
-    <div class="magic-ticker-inner">
-      <span>✨ You are rebuilding something extraordinary — keep going. ✨</span>
-      <span>Creativity is courage in motion. ✨</span>
-      <span>Every spark of imagination matters. ✨</span>
-      <span>Crown Creatives believes in your magic. ✨</span>
-    </div>
-  </section>
+  {% include footer.html %}
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================= -->
-  <footer class="site-footer fade-section">
-
-    <div class="footer-icons">
-      <a href="https://facebook.com" target="_blank" rel="noopener">
-        <img src="/assets/icons/facebook.svg" alt="Facebook">
-      </a>
-      <a href="https://instagram.com" target="_blank" rel="noopener">
-        <img src="/assets/icons/instagram.svg" alt="Instagram">
-      </a>
-      <a href="mailto:contact@crowncreatives.com">
-        <img src="/assets/icons/email.svg" alt="Email">
-      </a>
-      <a href="#">
-        <img src="/assets/icons/copilot.svg" alt="Copilot">
-      </a>
-    </div>
-
-    <p class="footer-text">
-      © Crown Creatives — Artistry • Resilience • Imagination
-    </p>
-
-  </footer>
-
-  <!-- ============================================================
-       BACK TO TOP BUTTON
-  ============================================================= -->
-  <button class="back-to-top" type="button"
-          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-          aria-label="Back to top">
-    <img src="/assets/icons/up-arrow.svg" class="backtotop-icon" alt="Back to Top">
-  </button>
-
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================= -->
-  <script src="/assets/js/theme-toggle.js"></script>
-  <script src="/assets/js/hero-gallery.js"></script>
-  <script src="/assets/js/lane-gallery.js"></script>
-  <script src="/assets/js/fade-sections.js"></script>
-  <script src="/assets/js/magic-ticker.js"></script>
-{% include scripts.html %}
+  {% include scripts.html %}
 
 </body>
 </html>
