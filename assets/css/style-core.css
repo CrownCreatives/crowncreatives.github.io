@@ -428,3 +428,42 @@ body {
     transform: scale(1);
   }
 }
+/* ============================================================
+   GLOBAL HEADER ALIGNMENT FIX
+   - Moves nav up by ~10mm (38px)
+   - Ensures identical header spacing on all pages
+============================================================ */
+
+/* Header container spacing */
+.site-header {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+/* Inner header alignment */
+.site-header-inner {
+  margin-bottom: 10px; /* tighten spacing */
+}
+
+/* Title + tagline spacing */
+.header-centre {
+  margin-bottom: 10px; /* consistent across all pages */
+}
+
+/* NAVIGATION — move up by ~10mm (38px) */
+.site-nav {
+  margin-top: -38px;   /* pulls nav upward */
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+/* Ensure nav stays centred and consistent */
+.site-nav ul {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Toggle stays aligned right */
+.header-right {
+  top: 20px; /* consistent across all pages */
+}
