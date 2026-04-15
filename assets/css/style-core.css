@@ -182,7 +182,7 @@ body {
 ============================================================ */
 .site-nav {
   max-width: 1200px;
-  margin: -38px auto 0; /* moved up 10mm */
+  margin: -38px auto 0;
   padding-bottom: 10px;
 }
 
@@ -370,77 +370,8 @@ body {
 }
 
 /* ============================================================
-   6. BACK TO TOP BUTTON
-============================================================ */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.backtotop-icon {
-  width: 68px;
-  height: 68px;
-  display: block;
-  border-radius: 50%;
-  box-shadow:
-    0 0 14px rgba(0,234,255,0.75),
-    0 0 28px rgba(0,234,255,0.55);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.backtotop-icon:hover {
-  transform: scale(1.12);
-  box-shadow:
-    0 0 20px rgba(0,234,255,1),
-    0 0 40px rgba(0,234,255,0.85);
-}
-
-/* ============================================================
-   7. RESPONSIVE TWEAKS (Updated for 182px crown)
-============================================================ */
-@media (max-width: 900px) {
-  .hero-gallery-lane { display: none; }
-  .hero-main-crown { width: 150px; }
-  .hero-main-explainer { font-size: 1.1rem; }
-  .hero-gallery-inner img { width: 90%; }
-}
-.back-to-top {
-  background: none;
-  border: none;
-}
-/* ============================================================
-   BACK TO TOP — Transparent + Dark Mode Icon Swap
-============================================================ */
-
-.back-to-top {
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.backtotop-icon {
-  width: 68px;
-  height: 68px;
-  display: block;
-  border-radius: 50%;
-  background: none;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-/* Light mode arrow */
-:root:not([data-theme="dark"]) .backtotop-icon {
-  content: url("/assets/icons/up-arrow.svg");
-}
-
-/* Dark mode arrow */
-:root[data-theme="dark"] .backtotop-icon {
-  content: url("/assets/icons/up-arrow-dark.svg");
-}
-/* ============================================================
-   BACK TO TOP — Magical Orb + Dark Mode Glow + Icon Swap
+   6. BACK TO TOP — FINAL VERSION
+   Transparent Orb + Black Arrow + Cyan Glow (Both Themes)
 ============================================================ */
 
 .back-to-top {
@@ -454,69 +385,16 @@ body {
   padding: 0;
 }
 
-/* The orb container */
-.backtotop-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  display: block;
-  background: radial-gradient(circle,
-      rgba(0,234,255,0.20),
-      rgba(0,234,255,0.05));
-  box-shadow:
-      0 0 14px rgba(0,234,255,0.55),
-      0 0 28px rgba(0,234,255,0.35),
-      inset 0 0 10px rgba(0,234,255,0.25);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-/* Hover effect */
-.backtotop-icon:hover {
-  transform: scale(1.12);
-  box-shadow:
-      0 0 20px rgba(0,234,255,0.85),
-      0 0 40px rgba(0,234,255,0.65),
-      inset 0 0 14px rgba(0,234,255,0.45);
-}
-
-/* Light mode arrow */
-:root:not([data-theme="dark"]) .backtotop-icon {
-  content: url("/assets/icons/up-arrow.svg");
-}
-
-/* Dark mode arrow + stronger glow */
-:root[data-theme="dark"] .backtotop-icon {
-  content: url("/assets/icons/up-arrow-dark.svg");
-  box-shadow:
-      0 0 18px rgba(0,234,255,1),
-      0 0 36px rgba(176,0,255,1),
-      inset 0 0 14px rgba(0,234,255,0.55);
-}
-/* ============================================================
-   BACK TO TOP — Magical Orb + Dark Mode Glow + Transparent BG
-============================================================ */
-
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  cursor: pointer;
-  z-index: 9999;
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-/* The orb container */
+/* Orb container */
 .backtotop-icon {
   width: 68px;
   height: 68px;
   border-radius: 50%;
   display: block;
   background: none; /* fully transparent */
-  content: url("/assets/icons/up-arrow.svg"); /* ALWAYS black arrow */
+  content: url("assets/icons/up-arrow.svg"); /* black arrow always */
   transition: transform .25s ease, box-shadow .25s ease;
-  
+
   /* Light mode glow */
   box-shadow:
       0 0 14px rgba(0,234,255,0.55),
@@ -524,7 +402,7 @@ body {
       inset 0 0 10px rgba(0,234,255,0.25);
 }
 
-/* Hover effect */
+/* Hover */
 .backtotop-icon:hover {
   transform: scale(1.12);
   box-shadow:
@@ -533,10 +411,20 @@ body {
       inset 0 0 14px rgba(0,234,255,0.45);
 }
 
-/* DARK MODE — stronger glow so black arrow stays visible */
+/* Dark mode — stronger glow so black arrow stays visible */
 :root[data-theme="dark"] .backtotop-icon {
   box-shadow:
       0 0 18px rgba(0,234,255,1),
       0 0 36px rgba(176,0,255,1),
       inset 0 0 14px rgba(0,234,255,0.55);
+}
+
+/* ============================================================
+   7. RESPONSIVE TWEAKS
+============================================================ */
+@media (max-width: 900px) {
+  .hero-gallery-lane { display: none; }
+  .hero-main-crown { width: 150px; }
+  .hero-main-explainer { font-size: 1.1rem; }
+  .hero-gallery-inner img { width: 90%; }
 }
