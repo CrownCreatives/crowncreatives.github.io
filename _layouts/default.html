@@ -26,7 +26,12 @@ layout: none
 <body id="top">
 
   <!-- ============================================================
-       PAGE CONTENT (Header, Hero, Main, etc. from child layouts)
+       GLOBAL PAGE HEADER (used on ALL non-home pages)
+  ============================================================= -->
+  {% include header-page.html %}
+
+  <!-- ============================================================
+       PAGE CONTENT (from child layouts)
   ============================================================= -->
   {{ content }}
 
