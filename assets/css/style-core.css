@@ -76,7 +76,7 @@ body {
 }
 
 /* ============================================================
-   2. HEADER + NAV + THEME TOGGLE
+   2. HEADER + NAV + THEME TOGGLE (Unified)
 ============================================================ */
 .site-header {
   width: 100%;
@@ -86,10 +86,11 @@ body {
 
 .site-header-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 /* CENTRED HEADER BLOCK */
@@ -100,11 +101,12 @@ body {
   text-align: center;
 }
 
-/* HEADER CROWN — MEDIUM SIZE (non-home pages) */
-.header-crown {
-  width: 108px;
+/* HEADER CROWN */
+.header-crown-hero {
+  width: 100px;
+  height: auto;
   display: block;
-  margin: 0 auto 8px;
+  margin: -10px auto 14px;
   filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
 }
 
@@ -126,9 +128,9 @@ body {
 
 /* THEME TOGGLE */
 .header-right {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
+  position: absolute;
+  right: 40px;
+  top: 20px;
 }
 
 .theme-toggle {
@@ -179,7 +181,7 @@ body {
 ============================================================ */
 .site-nav {
   max-width: 1200px;
-  margin: 20px auto 0; /* spacing below hero */
+  margin: 20px auto 0;
 }
 
 .site-nav ul {
@@ -220,33 +222,94 @@ body {
 .nav-link:hover::after { width: 100%; }
 
 /* ============================================================
-   4. HOME HERO — HEADER CROWN + TITLE + TAGLINE
+   4. NEW HERO SYSTEM — Crown, Explanation, Lanes, Gallery
 ============================================================ */
-.header-home {
+.hero-main {
   position: relative;
-  overflow: hidden;
-  padding-top: 40px;      /* space above crown */
-  padding-bottom: 40px;   /* space below tagline */
-  min-height: 42vh;       /* ensures nav sits below hero */
+  width: 100%;
+  padding: 80px 0 60px;
+  text-align: center;
+  z-index: 2;
 }
 
-.header-home-inner {
-  position: relative;
-  z-index: 2;
+.hero-main-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 50% Reduced Crown */
+.hero-main-crown {
+  width: 140px;
+  height: auto;
+  margin-bottom: 20px;
+  filter:
+    drop-shadow(0 0 12px rgba(0,234,255,0.8))
+    drop-shadow(0 0 22px rgba(176,0,255,0.8));
+}
+
+/* Emblem Explanation */
+.hero-main-explainer {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+}
+
+/* GALLERY LANES */
+.hero-gallery-lane {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.lane-left { left: 0; }
+.lane-right { right: 0; }
+
+.lane-image-container img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  animation: laneFade 6s ease-in-out infinite;
+}
+
+@keyframes laneFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* HERO GALLERY */
+.hero-gallery {
+  margin-top: 40px;
   text-align: center;
 }
 
-/* Header crown (100px) — Option A: slightly raised */
-.header-crown-hero {
-  width: 100px;
-  height: auto;
-  display: block;
-  margin: -10px auto 14px;
-  filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
+.hero-gallery-inner img {
+  width: 70%;
+  max-width: 900px;
+  border-radius: 14px;
+  box-shadow:
+    0 0 20px rgba(0,234,255,0.4),
+    0 0 40px rgba(176,0,255,0.4);
+  animation: heroFade 8s ease-in-out infinite;
+}
+
+@keyframes heroFade {
+  0% { opacity: 0; transform: scale(0.96); }
+  15% { opacity: 1; transform: scale(1); }
+  85% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.02); }
 }
 
 /* ============================================================
-   5. FOOTER ICONS — MAGICAL CIRCULAR SET
+   5. FOOTER ICONS
 ============================================================ */
 .footer-icons img {
   width: 48px;
@@ -301,150 +364,13 @@ body {
     drop-shadow(0 0 18px rgba(0,234,255,1))
     drop-shadow(0 0 32px rgba(176,0,255,1));
 }
-/* HEADER LAYOUT FIXES */
-.site-header-inner {
-  display: flex;
-  justify-content: center; /* center the crown + title block */
-  align-items: flex-start;
-  position: relative;
-}
-
-/* Move toggle to far right */
-.header-right {
-  position: absolute;
-  right: 40px;
-  top: 20px;
-}
-
-/* Crown slightly raised */
-.header-crown-hero {
-  margin-top: -10px;
-  margin-bottom: 14px;
-}
-
-/* Navigation pushed down */
-.site-nav {
-  margin-top: 20px;
-}
-/* ============================================================
-   HERO MAIN SECTION — Crown, Explanation, Gallery Lanes
-============================================================ */
-
-.hero-main {
-    position: relative;
-    width: 100%;
-    padding: 80px 0 60px;
-    text-align: center;
-    z-index: 2;
-}
-
-.hero-main-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* 50% Reduced Crown */
-.hero-main-crown {
-    width: 140px;        /* adjust if needed */
-    height: auto;
-    margin-bottom: 20px;
-    filter:
-        drop-shadow(0 0 12px rgba(0,234,255,0.8))
-        drop-shadow(0 0 22px rgba(176,0,255,0.8));
-}
-
-/* Emblem Explanation */
-.hero-main-explainer {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    opacity: 0.9;
-}
 
 /* ============================================================
-   GALLERY LANES — Left & Right Narrow Image Strips
+   8. RESPONSIVE TWEAKS
 ============================================================ */
-
-.hero-gallery-lane {
-    position: absolute;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.8;
-}
-
-.lane-left {
-    left: 0;
-}
-
-.lane-right {
-    right: 0;
-}
-
-.lane-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    animation: laneFade 6s ease-in-out infinite;
-}
-
-@keyframes laneFade {
-    0% { opacity: 0; transform: translateY(20px); }
-    20% { opacity: 1; transform: translateY(0); }
-    80% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(-20px); }
-}
-
-/* ============================================================
-   HERO GALLERY — Randomised Main Image
-============================================================ */
-
-.hero-gallery {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.hero-gallery-inner img {
-    width: 70%;
-    max-width: 900px;
-    border-radius: 14px;
-    box-shadow:
-        0 0 20px rgba(0,234,255,0.4),
-        0 0 40px rgba(176,0,255,0.4);
-    animation: heroFade 8s ease-in-out infinite;
-}
-
-@keyframes heroFade {
-    0% { opacity: 0; transform: scale(0.96); }
-    15% { opacity: 1; transform: scale(1); }
-    85% { opacity: 1; }
-    100% { opacity: 0; transform: scale(1.02); }
-}
-
-/* ============================================================
-   RESPONSIVE TWEAKS
-============================================================ */
-
 @media (max-width: 900px) {
-    .hero-gallery-lane {
-        display: none; /* hide lanes on mobile */
-    }
-
-    .hero-main-crown {
-        width: 110px;
-    }
-
-    .hero-main-explainer {
-        font-size: 1.1rem;
-    }
-
-    .hero-gallery-inner img {
-        width: 90%;
-    }
+  .hero-gallery-lane { display: none; }
+  .hero-main-crown { width: 110px; }
+  .hero-main-explainer { font-size: 1.1rem; }
+  .hero-gallery-inner img { width: 90%; }
 }
