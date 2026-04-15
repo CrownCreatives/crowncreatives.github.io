@@ -2,57 +2,37 @@
 layout: default
 ---
 
-<!-- ============================================================
-     HOME PAGE HEADER (Hero Crown + Nav + Toggle)
-============================================================ -->
 {% include header-home.html %}
 
-<!-- ============================================================
-     HERO MAIN SECTION — Crown, Explanation, Gallery Lanes
-============================================================ -->
 <section class="hero-main fade-section">
 
   <div class="hero-main-inner">
-
-    <!-- Hero Crown (will be enlarged + animated in later steps) -->
     <img 
       src="/assets/icons/cc-monogram.svg"
       alt="Crown Creatives Emblem"
       class="hero-main-crown"
     >
-
-    <!-- Emblem Explanation -->
     <p class="hero-main-explainer">
       The Crown represents creativity, resilience, and the courage to imagine boldly.
     </p>
-
   </div>
 
-  <!-- Left Narrow Gallery Lane -->
   <div class="hero-gallery-lane lane-left">
     <div class="lane-image-container" id="lane-left"></div>
   </div>
 
-  <!-- Right Narrow Gallery Lane -->
   <div class="hero-gallery-lane lane-right">
     <div class="lane-image-container" id="lane-right"></div>
   </div>
 
 </section>
 
-<!-- ============================================================
-     HERO GALLERY (Randomised Main Image)
-============================================================ -->
 <section class="hero-gallery fade-section">
   <div class="hero-gallery-inner" id="hero-gallery"></div>
 </section>
 
-<!-- ============================================================
-     MAIN CONTENT (Homepage body content)
-============================================================ -->
 <main class="home-content fade-section">
   {{ content }}
-
 </main>
 
 {% include scripts.html %}
