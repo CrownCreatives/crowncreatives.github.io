@@ -428,3 +428,52 @@ body {
   .hero-main-explainer { font-size: 1.1rem; }
   .hero-gallery-inner img { width: 90%; }
 }
+/* ============================================================
+   BACK TO TOP — MATCH THE DAY/NIGHT TOGGLE EXACTLY
+============================================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 9999;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Orb container — identical glow to theme toggle */
+.backtotop-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: block;
+  background: none; /* fully transparent */
+  content: url("assets/icons/up-arrow.svg"); /* black arrow always */
+
+  /* MATCHED GLOW (same as theme-toggle-sphere) */
+  box-shadow:
+      0 0 14px rgba(0,234,255,0.75),
+      0 0 28px rgba(0,234,255,0.55),
+      inset 0 0 10px rgba(0,234,255,0.35);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Hover — identical to theme toggle hover */
+.backtotop-icon:hover {
+  transform: scale(1.12);
+  box-shadow:
+      0 0 20px rgba(0,234,255,1),
+      0 0 40px rgba(0,234,255,0.85),
+      inset 0 0 14px rgba(0,234,255,0.55);
+}
+
+/* Dark mode — stronger glow (same logic as theme toggle) */
+:root[data-theme="dark"] .backtotop-icon {
+  box-shadow:
+      0 0 20px rgba(0,234,255,1),
+      0 0 40px rgba(0,234,255,0.85),
+      inset 0 0 14px rgba(0,234,255,0.55);
+}
