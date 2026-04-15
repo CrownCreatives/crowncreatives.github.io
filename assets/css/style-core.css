@@ -76,155 +76,92 @@ body {
 }
 
 /* ============================================================
-   2. HEADER + NAV + THEME TOGGLE (Unified)
+   2. HEADER (NEW) + NAV + THEME TOGGLE
 ============================================================ */
 .site-header {
-  width: 100%;
-  padding: 20px 40px 0;
-  background: transparent;
+  position: relative;
+  padding: 10px 0;
 }
 
 .site-header-inner {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.header-centre {
-  display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  margin-bottom: 10px;
+  position: relative;
 }
 
-/* HEADER CROWN */
-.header-crown-hero {
-  width: 100px;
+/* Crown (80px compact) */
+.header-crown {
+  width: 80px;
   height: auto;
   display: block;
-  margin: -10px auto 14px;
-  filter: drop-shadow(var(--cyan-glow)) drop-shadow(var(--violet-glow));
+  margin: 0 auto 6px;
 }
 
-/* TITLE + TAGLINE */
+/* Title + Tagline */
+.header-title-block {
+  text-align: center;
+}
+
 .site-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--accent-cyan);
-  text-shadow: var(--cyan-glow);
   margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
 }
 
 .site-tagline {
-  font-size: 14px;
-  opacity: 0.9;
-  color: var(--text-soft);
-  margin-top: 6px;
-}
-
-/* THEME TOGGLE */
-.header-right {
-  position: absolute;
-  right: 40px;
-  top: 20px;
-}
-
-.theme-toggle {
-  border: none;
-  background: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.theme-toggle-sphere {
-  width: 68px;
-  height: 68px;
-  padding: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle,
-      rgba(0,234,255,0.28),
-      rgba(0,234,255,0.10));
-  box-shadow:
-      0 0 14px rgba(0,234,255,0.75),
-      0 0 28px rgba(0,234,255,0.55),
-      inset 0 0 10px rgba(0,234,255,0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.theme-toggle-sphere:hover {
-  transform: scale(1.12);
-  box-shadow:
-      0 0 20px rgba(0,234,255,1),
-      0 0 40px rgba(0,234,255,0.85),
-      inset 0 0 14px rgba(0,234,255,0.55);
-}
-
-.theme-icon {
-  width: 57px;
-  height: 57px;
-  display: none;
-}
-
-.theme-icon.active {
-  display: block;
-}
-
-/* ============================================================
-   3. NAVIGATION
-============================================================ */
-.site-nav {
-  max-width: 1200px;
-  margin: -38px auto 0;
-  padding-bottom: 10px;
-}
-
-.site-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  padding: 20px 0;
-  list-style: none;
   margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
 
-.nav-link {
-  color: var(--text-soft);
-  font-size: 16px;
+/* Navigation (tight modern) */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.site-nav a {
   text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
+  font-weight: 500;
+  color: var(--text-soft);
   transition: color .25s ease, text-shadow .25s ease;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
-  transform: translateX(-50%);
-  transition: width .25s ease;
-}
-
-.nav-link:hover {
+.site-nav a:hover {
   color: var(--accent-cyan);
   text-shadow: var(--cyan-glow-strong);
 }
 
-.nav-link:hover::after { width: 100%; }
+/* Theme Toggle (top-right) */
+.theme-toggle {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 50;
+}
+
+.theme-toggle .theme-icon {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 6px rgba(255, 180, 80, 0.6));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: scale(1.12);
+}
 
 /* ============================================================
-   4. HERO SYSTEM — Crown, Explanation, Lanes, Gallery
+   3. HERO SYSTEM — Crown, Explanation
 ============================================================ */
 .hero-main {
   position: relative;
@@ -238,50 +175,29 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
+  text-align: center;
+  position: relative;
+  padding-top: 40px;
 }
 
-/* HERO CROWN */
+/* Hero Crown (new shimmer) */
 .hero-main-crown {
-  width: 182px;
-  height: auto;
-  margin-bottom: 24px;
+  width: 340px;
+  max-width: 70vw;
+  display: block;
+  margin: 0 auto 18px;
   filter:
-    drop-shadow(0 0 14px rgba(0,234,255,0.85))
-    drop-shadow(0 0 26px rgba(176,0,255,0.85));
+    drop-shadow(0 0 18px rgba(255, 180, 80, 0.55))
+    drop-shadow(0 0 28px rgba(255, 140, 66, 0.45));
   animation: crownShimmer 12s ease-in-out infinite;
 }
 
 @keyframes crownShimmer {
-  0% {
-    filter:
-      drop-shadow(0 0 10px rgba(0,234,255,0.6))
-      drop-shadow(0 0 18px rgba(176,0,255,0.6));
-    transform: scale(1);
-  }
-  25% {
-    filter:
-      drop-shadow(0 0 22px rgba(0,234,255,1))
-      drop-shadow(0 0 34px rgba(176,0,255,1));
-    transform: scale(1.03);
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 16px rgba(0,234,255,0.8))
-      drop-shadow(0 0 26px rgba(176,0,255,0.8));
-    transform: scale(1.01);
-  }
-  75% {
-    filter:
-      drop-shadow(0 0 28px rgba(0,234,255,1))
-      drop-shadow(0 0 40px rgba(176,0,255,1));
-    transform: scale(1.04);
-  }
-  100% {
-    filter:
-      drop-shadow(0 0 10px rgba(0,234,255,0.6))
-      drop-shadow(0 0 18px rgba(176,0,255,0.6));
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  25% { transform: scale(1.03); }
+  50% { transform: scale(1.01); }
+  75% { transform: scale(1.04); }
+  100% { transform: scale(1); }
 }
 
 .hero-main-explainer {
@@ -293,37 +209,33 @@ body {
 }
 
 /* ============================================================
-   4B. GALLERY LANES
+   4. GALLERY LANES (NEW SYSTEM)
 ============================================================ */
 .hero-gallery-lane {
   position: absolute;
-  top: 0;
-  width: 120px;
-  height: 100%;
-  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  max-width: 26vw;
+  height: 260px;
+  overflow: visible;
   pointer-events: none;
-  opacity: 0.8;
 }
 
-.lane-left { left: 0; }
-.lane-right { right: 0; }
+.hero-gallery-lane.lane-left { left: 6%; }
+.hero-gallery-lane.lane-right { right: 6%; }
 
-.lane-image-container img {
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  animation: laneFade 6s ease-in-out infinite;
-}
-
-@keyframes laneFade {
-  0% { opacity: 0; transform: translateY(20px); }
-  20% { opacity: 1; transform: translateY(0); }
-  80% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(-20px); }
+.hero-gallery-lane img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
 }
 
 /* ============================================================
-   4C. HERO GALLERY
+   5. HERO GALLERY (main image)
 ============================================================ */
 .hero-gallery {
   margin-top: 40px;
@@ -348,8 +260,16 @@ body {
 }
 
 /* ============================================================
-   5. FOOTER ICONS
+   6. FOOTER ICONS
 ============================================================ */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 25px;
+}
+
 .footer-icons img {
   width: 48px;
   height: 48px;
@@ -364,16 +284,8 @@ body {
   filter: drop-shadow(0 0 18px var(--cyan-glow-strong));
 }
 
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
-  margin-bottom: 25px;
-}
-
 /* ============================================================
-   6. BACK TO TOP — MATCH THE THEME TOGGLE EXACTLY
+   7. BACK TO TOP — MATCH TOGGLE
 ============================================================ */
 .back-to-top {
   position: fixed;
@@ -391,14 +303,11 @@ body {
   height: 68px;
   border-radius: 50%;
   display: block;
-  background: none;
   content: url("assets/icons/up-arrow.svg");
-
   box-shadow:
       0 0 14px rgba(0,234,255,0.75),
       0 0 28px rgba(0,234,255,0.55),
       inset 0 0 10px rgba(0,234,255,0.35);
-
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
@@ -418,7 +327,7 @@ body {
 }
 
 /* ============================================================
-   7. FADE SECTIONS (JS Integration)
+   8. FADE SECTIONS (JS Integration)
 ============================================================ */
 .fade-section {
   opacity: 0;
@@ -432,236 +341,11 @@ body {
 }
 
 /* ============================================================
-   8. RESPONSIVE TWEAKS
+   9. RESPONSIVE TWEAKS
 ============================================================ */
 @media (max-width: 900px) {
   .hero-gallery-lane { display: none; }
   .hero-main-crown { width: 150px; }
   .hero-main-explainer { font-size: 1.1rem; }
   .hero-gallery-inner img { width: 90%; }
-}
-.hero-main-crown {
-  width: 340px;          /* Bigger crown */
-  max-width: 70vw;       /* Responsive scaling */
-  display: block;
-  margin: 0 auto 18px;   /* Centre + breathing room */
-  filter: drop-shadow(0 0 18px rgba(255, 180, 80, 0.55))
-          drop-shadow(0 0 28px rgba(255, 140, 66, 0.45));
-}
-.hero-main-inner {
-  text-align: center;
-  position: relative;
-  padding-top: 40px; /* subtle lift */
-}
-.hero-gallery-lane {
-  width: 180px;
-  max-width: 22vw;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.hero-gallery-lane.lane-left {
-  left: 4%;
-}
-
-.hero-gallery-lane.lane-right {
-  right: 4%;
-}
-.header-crown {
-  width: 80px;          /* 20% smaller than ~100px+ */
-  height: auto;
-  display: block;
-  margin: 0 auto 6px;   /* centred above text */
-}
-.header-title-block {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.header-title-block h1,
-.header-title-block p {
-  margin: 0;
-  padding: 0;
-}
-.site-nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;        /* spacing between nav items */
-  margin-top: 10px; /* breathing room under text */
-}
-.hero-gallery-lane {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 180px;              /* wider lane */
-  max-width: 26vw;           /* responsive width */
-  height: 260px;             /* taller lane for full images */
-  overflow: visible;         /* allow glow + fade */
-  pointer-events: none;
-}
-
-.hero-gallery-lane img {
-  position: absolute;
-  max-width: 100%;           /* scale down to fit lane width */
-  max-height: 100%;          /* scale down to fit lane height */
-  object-fit: contain;       /* NEVER crop — always show full image */
-  opacity: 0;
-  transition: opacity 1.8s ease-in-out; /* magical fade */
-}
-.hero-gallery-lane.lane-left {
-  left: 6%;
-}
-
-.hero-gallery-lane.lane-right {
-  right: 6%;
-}
-/* Header container */
-.site-header {
-  position: relative;
-  padding: 10px 0;
-}
-
-.site-header-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-/* Crown (20% smaller) */
-.header-crown {
-  width: 80px;
-  height: auto;
-  display: block;
-  margin: 0 auto 6px;
-}
-
-/* Title + Tagline */
-.header-title-block {
-  text-align: center;
-}
-
-.site-title {
-  margin: 0;
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-}
-
-.site-tagline {
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* Navigation */
-.site-nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 10px;
-}
-
-.site-nav a {
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Day/Night Toggle */
-.theme-toggle {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  width: 38px;
-  height: 38px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 50;
-}
-
-.theme-toggle .theme-icon {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 6px rgba(255, 180, 80, 0.6));
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.theme-toggle:hover .theme-icon {
-  transform: scale(1.12);
-}
-/* Header container */
-.site-header {
-  position: relative;
-  padding: 10px 0;
-}
-
-.site-header-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-/* Crown (20% smaller) */
-.header-crown {
-  width: 80px;
-  height: auto;
-  display: block;
-  margin: 0 auto 6px;
-}
-
-/* Title + Tagline */
-.header-title-block {
-  text-align: center;
-}
-
-.site-title {
-  margin: 0;
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-}
-
-.site-tagline {
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-/* Navigation */
-.site-nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 10px;
-}
-
-.site-nav a {
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Day/Night Toggle */
-.theme-toggle {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  width: 38px;
-  height: 38px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 50;
-}
-
-.theme-toggle .theme-icon {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 6px rgba(255, 180, 80, 0.6));
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.theme-toggle:hover .theme-icon {
-  transform: scale(1.12);
 }
