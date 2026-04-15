@@ -1,7 +1,24 @@
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-     stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
-     xmlns="http://www.w3.org/2000/svg">
-  <rect x="4" y="4" width="16" height="16" rx="4"/>
-  <circle cx="12" cy="12" r="3.2"/>
-  <circle cx="17" cy="7" r="0.9" fill="currentColor"/>
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="igGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e0ff"/>
+      <stop offset="100%" stop-color="#ff3fd1"/>
+    </linearGradient>
+    <filter id="iconGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.0
+                0 0 0 0 0.9
+                0 0 0 0 1.0
+                0 0 0 0.7 0"/>
+    </filter>
+  </defs>
+  <circle cx="24" cy="24" r="20" fill="#050816"/>
+  <circle cx="24" cy="24" r="20" fill="url(#igGrad)" opacity="0.18"/>
+  <rect x="16" y="16" width="16" height="16" rx="5" ry="5"
+        fill="none" stroke="#e0f7ff" stroke-width="1.8"/>
+  <circle cx="24" cy="24" r="4.2" fill="none" stroke="#e0f7ff" stroke-width="1.6"/>
+  <circle cx="29.5" cy="18.5" r="1.4" fill="#e0f7ff"/>
+  <circle cx="24" cy="24" r="19" fill="none" stroke="url(#igGrad)" stroke-width="1.4" filter="url(#iconGlow)"/>
 </svg>
+
