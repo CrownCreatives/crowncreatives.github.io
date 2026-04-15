@@ -301,3 +301,28 @@ body {
     drop-shadow(0 0 18px rgba(0,234,255,1))
     drop-shadow(0 0 32px rgba(176,0,255,1));
 }
+/* HEADER LAYOUT FIXES */
+.site-header-inner {
+  display: flex;
+  justify-content: center; /* center the crown + title block */
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Move toggle to far right */
+.header-right {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+/* Crown slightly raised */
+.header-crown-hero {
+  margin-top: -10px;
+  margin-bottom: 14px;
+}
+
+/* Navigation pushed down */
+.site-nav {
+  margin-top: 20px;
+}
