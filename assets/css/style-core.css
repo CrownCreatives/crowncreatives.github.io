@@ -489,3 +489,29 @@ body {
   gap: 24px;        /* spacing between nav items */
   margin-top: 10px; /* breathing room under text */
 }
+.hero-gallery-lane {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;              /* wider lane */
+  max-width: 26vw;           /* responsive width */
+  height: 260px;             /* taller lane for full images */
+  overflow: visible;         /* allow glow + fade */
+  pointer-events: none;
+}
+
+.hero-gallery-lane img {
+  position: absolute;
+  max-width: 100%;           /* scale down to fit lane width */
+  max-height: 100%;          /* scale down to fit lane height */
+  object-fit: contain;       /* NEVER crop — always show full image */
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out; /* magical fade */
+}
+.hero-gallery-lane.lane-left {
+  left: 6%;
+}
+
+.hero-gallery-lane.lane-right {
+  right: 6%;
+}
