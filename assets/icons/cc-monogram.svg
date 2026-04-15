@@ -1,14 +1,14 @@
-<svg viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Royal Gold → Amber Gradient -->
-    <linearGradient id="cpRoyalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="pilotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffd86b"/>
       <stop offset="50%" stop-color="#ffb347"/>
       <stop offset="100%" stop-color="#ff8c42"/>
     </linearGradient>
 
     <!-- Magical Glow -->
-    <filter id="cpRoyalGlow" x="-50%" y="-50%" width="200%" height="200%">
+    <filter id="pilotGlow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="6" result="b"/>
       <feColorMatrix in="b" type="matrix"
         values="1 0 0 0 0
@@ -18,27 +18,48 @@
     </filter>
   </defs>
 
-  <!-- Letter C -->
-  <path d="M70 20
-           c-18 0 -32 12 -32 20
-           s14 20 32 20
-           c8 0 14 -2 20 -6"
-        fill="none"
-        stroke="url(#cpRoyalGrad)"
-        stroke-width="10"
-        stroke-linecap="round"
-        filter="url(#cpRoyalGlow)"/>
-
-  <!-- Letter P -->
-  <path d="M95 20v40
-           M95 20h15
+  <!-- P -->
+  <path d="M30 20v40
+           M30 20h20
            c12 0 20 7 20 15
-           s-8 15 -20 15H95"
+           s-8 15 -20 15H30"
         fill="none"
-        stroke="url(#cpRoyalGrad)"
+        stroke="url(#pilotGrad)"
         stroke-width="10"
         stroke-linecap="round"
         stroke-linejoin="round"
-        filter="url(#cpRoyalGlow)"/>
-</svg>
+        filter="url(#pilotGlow)"/>
 
+  <!-- I -->
+  <line x1="90" y1="20" x2="90" y2="60"
+        stroke="url(#pilotGrad)"
+        stroke-width="10"
+        stroke-linecap="round"
+        filter="url(#pilotGlow)"/>
+
+  <!-- L -->
+  <path d="M130 20v40h25"
+        fill="none"
+        stroke="url(#pilotGrad)"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        filter="url(#pilotGlow)"/>
+
+  <!-- O -->
+  <circle cx="190" cy="40" r="20"
+          fill="none"
+          stroke="url(#pilotGrad)"
+          stroke-width="10"
+          filter="url(#pilotGlow)"/>
+
+  <!-- T -->
+  <path d="M230 20h40
+           M250 20v40"
+        fill="none"
+        stroke="url(#pilotGrad)"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        filter="url(#pilotGlow)"/>
+</svg>
