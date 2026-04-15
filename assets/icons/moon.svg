@@ -1,12 +1,1 @@
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="moonGradAlt" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffd86b"/>
-      <stop offset="100%" stop-color="#ff8c42"/>
-    </linearGradient>
-  </defs>
-  <path d="M21 7a8 8 0 1 0 0 18 7 7 0 1 1 0-18z"
-        fill="url(#moonGradAlt)"/>
-  <path d="M22.5 11.5l0.7 1.4 1.6 0.2-1.2 1.1 0.3 1.6-1.4-0.8-1.4 0.8 0.3-1.6-1.2-1.1 1.6-0.2z"
-        fill="#fff4d0"/>
-</svg>
+
