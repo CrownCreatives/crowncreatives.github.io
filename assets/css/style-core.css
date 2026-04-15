@@ -411,3 +411,31 @@ body {
   background: none;
   border: none;
 }
+/* ============================================================
+   BACK TO TOP — Transparent + Dark Mode Icon Swap
+============================================================ */
+
+.back-to-top {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.backtotop-icon {
+  width: 68px;
+  height: 68px;
+  display: block;
+  border-radius: 50%;
+  background: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Light mode arrow */
+:root:not([data-theme="dark"]) .backtotop-icon {
+  content: url("/assets/icons/up-arrow.svg");
+}
+
+/* Dark mode arrow */
+:root[data-theme="dark"] .backtotop-icon {
+  content: url("/assets/icons/up-arrow-dark.svg");
+}
