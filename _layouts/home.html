@@ -2,38 +2,46 @@
 layout: default
 ---
 
-<!-- ============================================================
-     GLOBAL HEADER (from _includes/header-home.html)
-============================================================ -->
 {% include header-home.html %}
 
 <!-- ============================================================
-     OPTIONAL HERO SECTION (clean + minimal)
-     You can customise this or remove it entirely.
+     HERO SECTION — Crown, Explanation, Gallery Lanes
 ============================================================ -->
-<section class="home-hero fade-section">
+<section class="hero-main fade-section">
 
-  <div class="home-hero-inner">
+  <div class="hero-main-inner">
 
-    <!-- Hero Crown -->
+    <!-- Hero Crown (50% size) -->
     <img 
-      src="/assets/icons/cc-monogram.svg" 
-      alt="Crown Creatives Monogram Crown" 
-      class="hero-crown"
+      src="/assets/icons/cc-monogram.svg"
+      alt="Crown Creatives Emblem"
+      class="hero-main-crown"
     >
 
-    <!-- Hero Title -->
-    <h1 class="hero-title">
-      {{ page.hero_title | default: "Crown Creatives" }}
-    </h1>
-
-    <!-- Hero Tagline -->
-    <p class="hero-tagline">
-      {{ page.hero_tagline | default: "Artistry • Imagination • Resilience" }}
+    <!-- Emblem Explanation -->
+    <p class="hero-main-explainer">
+      The Crown represents creativity, resilience, and the courage to imagine boldly.
     </p>
 
   </div>
 
+  <!-- Left Narrow Gallery Lane -->
+  <div class="hero-gallery-lane lane-left">
+    <div class="lane-image-container" id="lane-left"></div>
+  </div>
+
+  <!-- Right Narrow Gallery Lane -->
+  <div class="hero-gallery-lane lane-right">
+    <div class="lane-image-container" id="lane-right"></div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     HERO GALLERY (Randomised Images)
+============================================================ -->
+<section class="hero-gallery fade-section">
+  <div class="hero-gallery-inner" id="hero-gallery"></div>
 </section>
 
 <!-- ============================================================
