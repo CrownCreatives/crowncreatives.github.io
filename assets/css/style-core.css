@@ -76,7 +76,7 @@ body {
 }
 
 /* ============================================================
-   2. HEADER + NAV + THEME TOGGLE (Unified)
+   2. HEADER + NAV + THEME TOGGLE (Unified + Corrected)
 ============================================================ */
 .site-header {
   width: 100%;
@@ -91,14 +91,15 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  margin-bottom: 10px;
 }
 
-/* CENTRED HEADER BLOCK */
 .header-centre {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 /* HEADER CROWN */
@@ -177,11 +178,12 @@ body {
 }
 
 /* ============================================================
-   3. NAVIGATION
+   3. NAVIGATION (Unified + Moved Up 10mm)
 ============================================================ */
 .site-nav {
   max-width: 1200px;
-  margin: 20px auto 0;
+  margin: -38px auto 0; /* moved up 10mm */
+  padding-bottom: 10px;
 }
 
 .site-nav ul {
@@ -222,7 +224,7 @@ body {
 .nav-link:hover::after { width: 100%; }
 
 /* ============================================================
-   4. NEW HERO SYSTEM — Crown, Explanation, Lanes, Gallery
+   4. HERO SYSTEM — Crown, Explanation, Lanes, Gallery
 ============================================================ */
 .hero-main {
   position: relative;
@@ -238,14 +240,48 @@ body {
   padding: 0 20px;
 }
 
-/* 50% Reduced Crown */
+/* FINAL HERO CROWN — 182px + SHIMMER */
 .hero-main-crown {
-  width: 140px;
+  width: 182px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   filter:
-    drop-shadow(0 0 12px rgba(0,234,255,0.8))
-    drop-shadow(0 0 22px rgba(176,0,255,0.8));
+    drop-shadow(0 0 14px rgba(0,234,255,0.85))
+    drop-shadow(0 0 26px rgba(176,0,255,0.85));
+  animation: crownShimmer 12s ease-in-out infinite;
+}
+
+@keyframes crownShimmer {
+  0% {
+    filter:
+      drop-shadow(0 0 10px rgba(0,234,255,0.6))
+      drop-shadow(0 0 18px rgba(176,0,255,0.6));
+    transform: scale(1);
+  }
+  25% {
+    filter:
+      drop-shadow(0 0 22px rgba(0,234,255,1))
+      drop-shadow(0 0 34px rgba(176,0,255,1));
+    transform: scale(1.03);
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 16px rgba(0,234,255,0.8))
+      drop-shadow(0 0 26px rgba(176,0,255,0.8));
+    transform: scale(1.01);
+  }
+  75% {
+    filter:
+      drop-shadow(0 0 28px rgba(0,234,255,1))
+      drop-shadow(0 0 40px rgba(176,0,255,1));
+    transform: scale(1.04);
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 10px rgba(0,234,255,0.6))
+      drop-shadow(0 0 18px rgba(176,0,255,0.6));
+    transform: scale(1);
+  }
 }
 
 /* Emblem Explanation */
@@ -345,125 +381,29 @@ body {
 }
 
 .backtotop-icon {
-  width: 48px;
-  height: 48px;
+  width: 68px;
+  height: 68px;
   display: block;
+  border-radius: 50%;
+  box-shadow:
+    0 0 14px rgba(0,234,255,0.75),
+    0 0 28px rgba(0,234,255,0.55);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.backtotop-icon:hover {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 20px rgba(0,234,255,1),
+    0 0 40px rgba(0,234,255,0.85);
 }
 
 /* ============================================================
-   7. FINAL CROWN SHIMMER
-============================================================ */
-.header-crown-hero,
-.page-crown {
-  transition: filter 1.2s ease-in-out;
-}
-
-:root[data-theme="dark"] .header-crown-hero,
-:root[data-theme="dark"] .page-crown {
-  filter:
-    drop-shadow(0 0 18px rgba(0,234,255,1))
-    drop-shadow(0 0 32px rgba(176,0,255,1));
-}
-
-/* ============================================================
-   8. RESPONSIVE TWEAKS
+   7. RESPONSIVE TWEAKS (Updated for 182px crown)
 ============================================================ */
 @media (max-width: 900px) {
   .hero-gallery-lane { display: none; }
-  .hero-main-crown { width: 110px; }
+  .hero-main-crown { width: 150px; }
   .hero-main-explainer { font-size: 1.1rem; }
   .hero-gallery-inner img { width: 90%; }
-}
-/* ============================================================
-   HERO CROWN — 30% Bigger + Magical Glow + Shimmer Animation
-============================================================ */
-.hero-main-crown {
-  width: 182px; /* 30% bigger than 140px */
-  height: auto;
-  margin-bottom: 24px;
-
-  /* Base magical glow */
-  filter:
-    drop-shadow(0 0 14px rgba(0,234,255,0.85))
-    drop-shadow(0 0 26px rgba(176,0,255,0.85));
-
-  /* Smooth shimmer + breathing glow */
-  animation: crownShimmer 12s ease-in-out infinite;
-}
-
-/* Shimmer + glow cycle */
-@keyframes crownShimmer {
-  0% {
-    filter:
-      drop-shadow(0 0 10px rgba(0,234,255,0.6))
-      drop-shadow(0 0 18px rgba(176,0,255,0.6));
-    transform: scale(1);
-  }
-
-  25% {
-    filter:
-      drop-shadow(0 0 22px rgba(0,234,255,1))
-      drop-shadow(0 0 34px rgba(176,0,255,1));
-    transform: scale(1.03);
-  }
-
-  50% {
-    filter:
-      drop-shadow(0 0 16px rgba(0,234,255,0.8))
-      drop-shadow(0 0 26px rgba(176,0,255,0.8));
-    transform: scale(1.01);
-  }
-
-  75% {
-    filter:
-      drop-shadow(0 0 28px rgba(0,234,255,1))
-      drop-shadow(0 0 40px rgba(176,0,255,1));
-    transform: scale(1.04);
-  }
-
-  100% {
-    filter:
-      drop-shadow(0 0 10px rgba(0,234,255,0.6))
-      drop-shadow(0 0 18px rgba(176,0,255,0.6));
-    transform: scale(1);
-  }
-}
-/* ============================================================
-   GLOBAL HEADER ALIGNMENT FIX
-   - Moves nav up by ~10mm (38px)
-   - Ensures identical header spacing on all pages
-============================================================ */
-
-/* Header container spacing */
-.site-header {
-  padding-top: 20px;
-  padding-bottom: 0;
-}
-
-/* Inner header alignment */
-.site-header-inner {
-  margin-bottom: 10px; /* tighten spacing */
-}
-
-/* Title + tagline spacing */
-.header-centre {
-  margin-bottom: 10px; /* consistent across all pages */
-}
-
-/* NAVIGATION — move up by ~10mm (38px) */
-.site-nav {
-  margin-top: -38px;   /* pulls nav upward */
-  padding-top: 0;
-  padding-bottom: 10px;
-}
-
-/* Ensure nav stays centred and consistent */
-.site-nav ul {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-/* Toggle stays aligned right */
-.header-right {
-  top: 20px; /* consistent across all pages */
 }
