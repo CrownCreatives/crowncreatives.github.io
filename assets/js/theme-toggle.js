@@ -1,51 +1,55 @@
 /* ============================================================
-   THEME TOGGLE SCRIPT
-   30% larger toggle + 5s magical fade + persistent theme
+   THEME TOGGLE — Light / Dark with 10s Fade-to-Dark
 ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const toggleButton = document.getElementById("themeToggle");
   const root = document.documentElement;
+  const toggleButton = document.querySelector(".theme-toggle");
+  const sunIcon = document.querySelector(".theme-icon-sun");
+  const moonIcon = document.querySelector(".theme-icon-moon");
 
-  // Load saved theme
+  /* ------------------------------------------------------------
+     1. Load saved theme (if any)
+  ------------------------------------------------------------ */
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    root.setAttribute("data-theme", savedTheme);
-    updateIcons(savedTheme);
+
+  if (savedTheme === "dark") {
+    root.setAttribute("data-theme", "dark");
+    sunIcon.classList.remove("active");
+    moonIcon.classList.add("active");
   }
 
-  // Toggle theme on click
+  /* ------------------------------------------------------------
+     2. Toggle theme instantly on click
+  ------------------------------------------------------------ */
   toggleButton.addEventListener("click", () => {
-    const currentTheme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-    const newTheme = currentTheme === "light" ? "dark" : "light";
+    const isDark = root.getAttribute("data-theme") === "dark";
 
-    // Apply theme
-    root.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-
-    // Update icons
-    updateIcons(newTheme);
-
-    // Add shimmer pulse to crowns
-    document.body.classList.add("page-transition-pulse");
-    setTimeout(() => {
-      document.body.classList.remove("page-transition-pulse");
-    }, 1400);
+    if (isDark) {
+      root.removeAttribute("data-theme");
+      sunIcon.classList.add("active");
+      moonIcon.classList.remove("active");
+      localStorage.setItem("theme", "light");
+    } else {
+      root.setAttribute("data-theme", "dark");
+      sunIcon.classList.remove("active");
+      moonIcon.classList.add("active");
+      localStorage.setItem("theme", "dark");
+    }
   });
 
-  // Swap sun/moon icons
-  function updateIcons(theme) {
-    const sun = document.querySelector(".theme-icon-light");
-    const moon = document.querySelector(".theme-icon-dark");
-
-    if (theme === "light") {
-      sun.classList.add("active");
-      moon.classList.remove("active");
-    } else {
-      sun.classList.remove("active");
-      moon.classList.add("active");
-    }
+  /* ------------------------------------------------------------
+     3. Automatic 10-second fade to dark mode
+        (Only if user has not chosen a theme)
+  ------------------------------------------------------------ */
+  if (!savedTheme) {
+    setTimeout(() => {
+      root.setAttribute("data-theme", "dark");
+      sunIcon.classList.remove("active");
+      moonIcon.classList.add("active");
+      localStorage.setItem("theme", "dark");
+    }, 10000);
   }
 
 });
