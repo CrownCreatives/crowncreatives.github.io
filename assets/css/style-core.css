@@ -310,3 +310,11 @@ body {
   padding-bottom: 40px; /* NEW: adds space below tagline */
   min-height: 38vh;     /* ensures the hero has enough height */
 }
+.hero-background-crown {
+  top: -6vh;      /* was 5vh — now sits higher */
+  width: 18vw;    /* slightly smaller so it doesn’t dominate */
+  opacity: 0.18;  /* softened */
+}
+.site-nav {
+  margin-top: 20px; /* pushes nav downward */
+}
