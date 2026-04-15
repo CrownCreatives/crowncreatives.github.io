@@ -1,66 +1,113 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% include head.html %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    {% if page.title %}
+      {{ page.title }} • Crown Creatives
+    {% else %}
+      Crown Creatives • Artistry • Resilience • Imagination
+    {% endif %}
+  </title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/icons/cc-monogram.svg" type="image/svg+xml">
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="/assets/css/style-core.css">
+
+  <!-- Page-Specific Styles -->
+  {% if page.styles %}
+    <link rel="stylesheet" href="{{ page.styles }}">
+  {% endif %}
 </head>
 
-<body class="magic-bg-gradient">
+<body>
 
   <!-- ============================================================
-       MAGICAL BACKGROUND ENGINE
+       HEADER (Injected by child layouts)
   ============================================================= -->
-  <div class="cc-bg-magic-layer">
-    <div class="cc-bg-nebula"></div>
-    <div class="cc-bg-stars"></div>
-    <div class="cc-bg-particles">
-      <div class="cc-bg-particle p1"></div>
-      <div class="cc-bg-particle p2"></div>
-      <div class="cc-bg-particle p3"></div>
-      <div class="cc-bg-particle p4"></div>
-      <div class="cc-bg-particle p5"></div>
-    </div>
-  </div>
+  {{ content | replace: '<header-insert>', '' }}
 
   <!-- ============================================================
-       PAGE TRANSITION OVERLAY
+       NAVIGATION (Global)
   ============================================================= -->
-  <div class="page-transition-overlay"></div>
+  <nav class="site-nav fade-section">
+    <ul>
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="/about/">About</a></li>
+      <li><a class="nav-link" href="/projects/">Projects</a></li>
+      <li><a class="nav-link" href="/gallery/">Gallery</a></li>
+      <li><a class="nav-link" href="/podcasts/">Podcasts</a></li>
+      <li><a class="nav-link" href="/blog/">Blog</a></li>
+      <li><a class="nav-link" href="/videos/">Videos</a></li>
+    </ul>
+  </nav>
 
   <!-- ============================================================
-       FOREGROUND MAGIC PARTICLES
+       MAIN CONTENT (Injected by child layouts)
   ============================================================= -->
-  <div class="magic-particles">
-    <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-
-  <!-- ============================================================
-       HEADER AREA
-       (Theme toggle first, nav underneath, hero inside page content)
-  ============================================================= -->
-  {% include theme-toggle.html %}
-  {% include nav.html %}
-
-  <!-- ============================================================
-       MAIN CONTENT (home.html or page.html injects hero)
-  ============================================================= -->
-  <main class="page-content" aria-label="Content">
+  <main class="site-main fade-section">
     {{ content }}
   </main>
 
   <!-- ============================================================
-       FOOTER + BACK TO TOP
+       FOOTER
   ============================================================= -->
-  {% include footer.html %}
-  {% include backtotop.html %}
+  <footer class="site-footer fade-section">
+
+    <div class="footer-icons">
+      <a href="https://facebook.com" target="_blank">
+        <img src="/assets/icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <img src="/assets/icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="mailto:contact@crowncreatives.com">
+        <img src="/assets/icons/email.svg" alt="Email">
+      </a>
+      <a href="#">
+        <img src="/assets/icons/copilot.svg" alt="Copilot">
+      </a>
+      <a href="#top">
+        <img src="/assets/icons/up-arrow.svg" alt="Back to Top">
+      </a>
+    </div>
+
+    <p class="footer-text">
+      © Crown Creatives — Artistry • Resilience • Imagination
+    </p>
+
+  </footer>
+
+  <!-- ============================================================
+       BACK TO TOP BUTTON
+  ============================================================= -->
+  <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+    <img src="/assets/icons/up-arrow.svg" class="backtotop-icon" alt="Back to Top">
+  </div>
 
   <!-- ============================================================
        SCRIPTS
   ============================================================= -->
+
+  <!-- Theme Toggle -->
   <script src="/assets/js/theme-toggle.js"></script>
-  <script src="/assets/js/page-transition.js"></script>
-  <script src="/assets/js/mobile-menu.js"></script>
-  <script src="/assets/js/lightbox.js"></script>
+
+  <!-- Fade-in Scroll Animation -->
+  <script src="/assets/js/fade-sections.js"></script>
+
+  <!-- Hero Gallery Engine -->
+  <script src="/assets/js/hero-gallery.js"></script>
+
+  <!-- Lane Gallery Engine -->
+  <script src="/assets/js/lane-gallery.js"></script>
 
 </body>
 </html>
