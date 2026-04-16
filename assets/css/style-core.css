@@ -220,119 +220,88 @@ body {
 }
 
 /* ============================================================
-   3. HERO SYSTEM — Crown + Explainer
+   3. CINEMATIC HERO (NEW SYSTEM)
 ============================================================ */
-.hero-main {
+.hero-cinematic {
   position: relative;
-  width: 100%;
-  padding: 80px 0 60px;
+  padding: 120px 20px 80px;
   text-align: center;
   z-index: 2;
 }
 
-.hero-main-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  padding-top: 40px;
-}
-
-/* HERO CROWN — FINAL THEME-AWARE SYSTEM */
-.hero-main-crown {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 340px;
-  max-width: 70vw;
-  margin: 0 auto 18px;
-
-  opacity: 0;
-  transition: opacity 8s ease-in-out;
-
+.hero-crown {
+  width: 240px;
+  max-width: 60vw;
+  margin: 0 auto 20px;
+  display: block;
   filter:
-    drop-shadow(0 0 18px rgba(255, 180, 80, 0.55))
-    drop-shadow(0 0 28px rgba(255, 140, 66, 0.45));
-  animation: crownShimmer 12s ease-in-out infinite;
+    drop-shadow(0 0 18px rgba(0,234,255,0.55))
+    drop-shadow(0 0 28px rgba(176,0,255,0.45));
+  animation: heroCrownFloat 10s ease-in-out infinite;
 }
 
-@keyframes crownShimmer {
-  0% { transform: translateX(-50%) scale(1); }
-  25% { transform: translateX(-50%) scale(1.03); }
-  50% { transform: translateX(-50%) scale(1.01); }
-  75% { transform: translateX(-50%) scale(1.04); }
-  100% { transform: translateX(-50%) scale(1); }
+@keyframes heroCrownFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
-/* DAY MODE */
-:root[data-theme="light"] .hero-crown-day { opacity: 1; }
-:root[data-theme="light"] .hero-crown-night { opacity: 0; }
+.hero-text h2 {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+}
 
-/* NIGHT MODE */
-:root[data-theme="dark"] .hero-crown-night { opacity: 1; }
-:root[data-theme="dark"] .hero-crown-day { opacity: 0; }
-
-.hero-main-explainer {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  opacity: 0.9;
+.hero-text p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+  opacity: 0.85;
 }
 
 /* ============================================================
-   4. GALLERY LANES
+   4. CONTENT CARDS
 ============================================================ */
-.hero-gallery-lane {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 180px;
-  max-width: 26vw;
-  height: 260px;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.hero-gallery-lane.lane-left { left: 6%; }
-.hero-gallery-lane.lane-right { right: 6%; }
-
-.hero-gallery-lane img {
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 1.8s ease-in-out;
-}
-
-/* ============================================================
-   5. HERO GALLERY (main image)
-============================================================ */
-.hero-gallery {
+.content-section {
   margin-top: 40px;
-  text-align: center;
 }
 
-.hero-gallery-inner img {
-  width: 70%;
-  max-width: 900px;
-  border-radius: 14px;
+.content-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+.content-card {
+  background: var(--bg-surface);
+  padding: 26px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(12px);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-6px);
   box-shadow:
-    0 0 20px rgba(0,234,255,0.4),
-    0 0 40px rgba(176,0,255,0.4);
-  animation: heroFade 8s ease-in-out infinite;
+    0 22px 55px rgba(0,234,255,0.35),
+    0 0 22px rgba(176,0,255,0.35);
 }
 
-@keyframes heroFade {
-  0% { opacity: 0; transform: scale(0.96); }
-  15% { opacity: 1; transform: scale(1); }
-  85% { opacity: 1; }
-  100% { opacity: 0; transform: scale(1.02); }
+.content-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-shadow .25s ease;
+}
+
+.content-link:hover {
+  text-shadow: var(--cyan-glow-strong);
 }
 
 /* ============================================================
-   6. FOOTER ICONS
+   5. FOOTER ICONS
 ============================================================ */
 .footer-icons {
   display: flex;
@@ -356,7 +325,7 @@ body {
 }
 
 /* ============================================================
-   7. BACK TO TOP
+   6. BACK TO TOP
 ============================================================ */
 .back-to-top {
   position: fixed;
@@ -389,15 +358,8 @@ body {
       inset 0 0 14px rgba(0,234,255,0.55);
 }
 
-:root[data-theme="dark"] .backtotop-icon {
-  box-shadow:
-      0 0 20px rgba(0,234,255,1),
-      0 0 40px rgba(0,234,255,0.85),
-      inset 0 0 14px rgba(0,234,255,0.55);
-}
-
 /* ============================================================
-   8. FADE SECTIONS
+   7. FADE SECTIONS
 ============================================================ */
 .fade-section {
   opacity: 0;
@@ -411,86 +373,8 @@ body {
 }
 
 /* ============================================================
-   9. RESPONSIVE
+   8. MAGIC TICKER
 ============================================================ */
-@media (max-width: 900px) {
-  .hero-gallery-lane { display: none; }
-  .hero-main-crown { width: 150px; }
-  .hero-main-explainer { font-size: 1.1rem; }
-  .hero-gallery-inner img { width: 90%; }
-}
-
-/* ============================================================
-   10. COSMIC NEBULA NIGHT BACKDROP
-============================================================ */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 8s ease-in-out;
-}
-
-/* STARFIELD */
-body::before {
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%) 10% 20%,
-    radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%) 80% 40%,
-    radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%) 50% 70%,
-    radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%) 30% 90%,
-    radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%) 60% 10%;
-  background-size: 4px 4px, 3px 3px, 2px 2px, 3px 3px, 2px 2px;
-  animation: starDrift 60s linear infinite;
-}
-
-@keyframes starDrift {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-200px); }
-}
-
-/* NEBULA */
-body::after {
-  background: radial-gradient(circle at 30% 70%,
-      rgba(120, 0, 255, 0.35) 0%,
-      rgba(0, 120, 255, 0.25) 40%,
-      rgba(0, 0, 40, 0.9) 100%);
-  filter: blur(40px);
-  animation: nebulaDrift 90s ease-in-out infinite;
-}
-
-@keyframes nebulaDrift {
-  0%   { transform: scale(1) translate(0, 0); }
-  50%  { transform: scale(1.15) translate(-40px, -20px); }
-  100% { transform: scale(1) translate(0, 0); }
-}
-
-/* NIGHT MODE ACTIVATION */
-:root[data-theme="dark"] body::before,
-:root[data-theme="dark"] body::after {
-  opacity: 1;
-}
-
-/* NIGHT GLOW BOOST */
-:root[data-theme="dark"] .hero-gallery-lane img {
-  filter: drop-shadow(0 0 18px rgba(0,234,255,0.75))
-          drop-shadow(0 0 28px rgba(176,0,255,0.55));
-}
-
-:root[data-theme="dark"] .hero-main-crown {
-  filter:
-    drop-shadow(0 0 22px rgba(0,234,255,0.85))
-    drop-shadow(0 0 32px rgba(176,0,255,0.65));
-}
-/* ============================================================
-   CROWN CREATIVES — MAGIC TICKER (FINAL PRODUCTION VERSION)
-   Glow • Shimmer • Pulse • Gradient Text • Night Intensification
-============================================================ */
-
 .magic-ticker {
   width: 100%;
   overflow: hidden;
@@ -510,16 +394,12 @@ body::after {
   padding-left: 20px;
 }
 
-/* ------------------------------------------------------------
-   TICKER TEXT STYLE
------------------------------------------------------------- */
 .ticker-item {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   opacity: 0.9;
 
-  /* Magical gradient text */
   background: linear-gradient(90deg,
     #8be9ff,
     #b388ff,
@@ -528,7 +408,6 @@ body::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Soft glow */
   text-shadow:
     0 0 6px rgba(255, 255, 255, 0.4),
     0 0 12px rgba(150, 120, 255, 0.3);
@@ -536,9 +415,6 @@ body::after {
   animation: tickerPulse 4s ease-in-out infinite;
 }
 
-/* ------------------------------------------------------------
-   NIGHT MODE INTENSIFICATION
------------------------------------------------------------- */
 [data-theme="dark"] .ticker-item {
   background: linear-gradient(90deg,
     #00eaff,
@@ -552,9 +428,6 @@ body::after {
   opacity: 1;
 }
 
-/* ------------------------------------------------------------
-   SHIMMER EFFECT (subtle, magical)
------------------------------------------------------------- */
 .magic-ticker::after {
   content: "";
   position: absolute;
@@ -572,23 +445,12 @@ body::after {
   pointer-events: none;
 }
 
-/* ------------------------------------------------------------
-   ANIMATIONS
------------------------------------------------------------- */
 @keyframes tickerPulse {
-  0%, 100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.25);
-  }
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.25); }
 }
 
 @keyframes tickerShimmer {
-  0% {
-    transform: translateX(-200px);
-  }
-  100% {
-    transform: translateX(120%);
-  }
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(120%); }
 }
