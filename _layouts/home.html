@@ -3,15 +3,17 @@ layout: default
 ---
 
 <!-- ============================================================
-     NEW HERO SECTION (CINEMATIC)
+     CINEMATIC HERO — SINGLE, CLEAN, FINAL VERSION
 ============================================================ -->
 <section class="hero-cinematic fade-section">
 
-  <!-- HERO CROWN -->
+  <!-- HERO CROWN (Day/Night Swap Ready) -->
   <img
     src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
+    data-day="{{ '/assets/icons/day-crown.svg' | relative_url }}"
+    data-night="{{ '/assets/icons/crown-hero-night.png' | relative_url }}"
     alt="Crown Creatives Hero Emblem"
-    class="hero-crown"
+    class="hero-crown-cinematic"
   >
 
   <!-- HERO TEXT -->
@@ -23,8 +25,15 @@ layout: default
 </section>
 
 <!-- ============================================================
-     MAIN CONTENT (Homepage body content)
+     MAIN HOMEPAGE CONTENT (Cards, etc.)
 ============================================================ -->
 <main class="home-content fade-section">
   {{ content }}
 </main>
+
+<!-- ============================================================
+     LIGHTBOX (Used by Gallery or Future Media)
+============================================================ -->
+<div class="cc-lightbox-overlay" id="lightbox">
+  <img class="cc-lightbox-image" id="lightbox-img" src="" alt="">
+</div>
