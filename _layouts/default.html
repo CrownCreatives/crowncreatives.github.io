@@ -2,31 +2,92 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ page.title }} | Crown Creatives</title>
-
-  <!-- MAIN UNIFIED CSS CORE -->
   <link rel="stylesheet" href="/assets/css/style-core.css">
-
 </head>
 <body>
 
-  <!-- HEADER -->
-  {% include header.html %}
+  <!-- ============================================================
+       SITE HEADER
+  ============================================================ -->
+  <header class="site-header">
+    <div class="site-header-inner">
 
-  <!-- MAIN CONTENT -->
+      <!-- Header Crown -->
+      <img
+        src="/assets/icons/day-crown.svg"
+        alt="Crown Creatives Emblem"
+        class="header-crown"
+      >
+
+      <!-- Title + Tagline -->
+      <div class="header-title-block">
+        <h1 class="site-title">{{ site.title | default: "CROWN CREATIVES" }}</h1>
+        <p class="site-tagline">
+          {{ site.tagline | default: "Artistry • Resilience • Imagination" }}
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+        <a href="{{ '/podcasts/' | relative_url }}">Podcasts</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/videos/' | relative_url }}">Videos</a>
+      </nav>
+
+      <!-- Theme Toggle Orb -->
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <img
+          src="/assets/icons/sun.svg"
+          alt="Theme toggle"
+          class="theme-icon"
+        >
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT WRAPPER
+  ============================================================ -->
   <main class="site-main">
     {{ content }}
   </main>
 
-  <!-- FOOTER -->
-  {% include footer.html %}
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-icons">
+      <a href="https://facebook.com" aria-label="Facebook">
+        <img src="/assets/icons/footer-facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" aria-label="Instagram">
+        <img src="/assets/icons/footer-instagram.svg" alt="Instagram">
+      </a>
+      <a href="mailto:hello@crowncreatives.com" aria-label="Email">
+        <img src="/assets/icons/footer-email.svg" alt="Email">
+      </a>
+      <a href="https://copilot.microsoft.com" aria-label="Copilot">
+        <img src="/assets/icons/footer-copilot.svg" alt="Copilot">
+      </a>
+    </div>
+  </footer>
 
-  <!-- JAVASCRIPT (LOAD LAST FOR RELIABILITY) -->
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <span class="backtotop-icon"></span>
+  </button>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
   <script src="/assets/js/theme-toggle.js"></script>
-  <script src="/assets/js/gallery-lanes.js"></script>
-  <script src="/assets/js/fade-sections.js"></script>
-
 </body>
 </html>
