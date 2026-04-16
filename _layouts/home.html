@@ -9,24 +9,25 @@ layout: default
     <img src="/assets/icons/crown-hero.png" class="hero-main-crown" alt="Crown Creatives">
 
     <!-- HERO EXPLAINER -->
-    <p class="hero-main-explainer">
-      {{ page.explainer }}
-    </p>
+    {% if page.explainer %}
+      <p class="hero-main-explainer">{{ page.explainer }}</p>
+    {% endif %}
 
-    <!-- HERO GALLERY LANES -->
+    <!-- LEFT LANE -->
     <div class="hero-gallery-lane lane-left">
       {% for image in page.lane_left %}
         <img src="{{ image }}" alt="">
       {% endfor %}
     </div>
 
+    <!-- RIGHT LANE -->
     <div class="hero-gallery-lane lane-right">
       {% for image in page.lane_right %}
         <img src="{{ image }}" alt="">
       {% endfor %}
     </div>
 
-    <!-- MAIN GALLERY IMAGE -->
+    <!-- MAIN HERO IMAGE -->
     <div class="hero-gallery">
       <div class="hero-gallery-inner">
         <img src="{{ page.hero_image }}" alt="">
