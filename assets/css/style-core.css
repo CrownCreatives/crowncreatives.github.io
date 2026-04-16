@@ -375,7 +375,6 @@ body {
   height: 68px;
   border-radius: 50%;
   display: block;
-  content: url("assets/icons/up-arrow.svg");
   box-shadow:
       0 0 14px rgba(0,234,255,0.75),
       0 0 28px rgba(0,234,255,0.55),
