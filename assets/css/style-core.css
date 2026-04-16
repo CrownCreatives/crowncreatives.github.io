@@ -553,3 +553,47 @@ html[data-theme="dark"] {
     color var(--theme-transition),
     filter var(--theme-transition);
 }
+/* Smooth 8s theme transition */
+:root {
+  --theme-transition: 8s ease-in-out;
+}
+
+html[data-theme="light"],
+html[data-theme="dark"] {
+  transition:
+    background var(--theme-transition),
+    color var(--theme-transition),
+    filter var(--theme-transition);
+}
+
+/* Hero crown crossfade */
+.hero-main-crown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 8s ease-in-out;
+  opacity: 0;
+}
+
+.hero-crown-day,
+.hero-crown-night {
+  opacity: 0;
+}
+
+/* DAY MODE */
+:root[data-theme="light"] .hero-crown-day {
+  opacity: 1;
+}
+
+:root[data-theme="light"] .hero-crown-night {
+  opacity: 0;
+}
+
+/* NIGHT MODE */
+:root[data-theme="dark"] .hero-crown-night {
+  opacity: 1;
+}
+
+:root[data-theme="dark"] .hero-crown-day {
+  opacity: 0;
+}
