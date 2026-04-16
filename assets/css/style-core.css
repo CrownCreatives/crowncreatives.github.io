@@ -26,6 +26,8 @@
 
   --card-radius: 18px;
   --card-shadow: 0 18px 45px rgba(5,10,40,0.35);
+
+  --theme-transition: 8s ease-in-out;
 }
 
 :root[data-theme="dark"] {
@@ -67,6 +69,10 @@ body {
   background: var(--bg-gradient);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
+  transition:
+    background var(--theme-transition),
+    color var(--theme-transition),
+    filter var(--theme-transition);
 }
 
 .site-main {
@@ -76,7 +82,7 @@ body {
 }
 
 /* ============================================================
-   2. HEADER (NEW) + NAV + THEME TOGGLE
+   2. HEADER + NAV + THEME TOGGLE
 ============================================================ */
 .site-header {
   position: relative;
@@ -90,7 +96,6 @@ body {
   position: relative;
 }
 
-/* Crown (80px compact) */
 .header-crown {
   width: 80px;
   height: auto;
@@ -98,10 +103,7 @@ body {
   margin: 0 auto 6px;
 }
 
-/* Title + Tagline */
-.header-title-block {
-  text-align: center;
-}
+.header-title-block { text-align: center; }
 
 .site-title {
   margin: 0;
@@ -115,7 +117,6 @@ body {
   opacity: 0.85;
 }
 
-/* Navigation (tight modern) */
 .site-nav {
   display: flex;
   justify-content: center;
@@ -135,13 +136,13 @@ body {
   text-shadow: var(--cyan-glow-strong);
 }
 
-/* Theme Toggle (top-right) */
+/* Magical Theme Toggle Orb */
 .theme-toggle {
   position: absolute;
   top: 12px;
   right: 16px;
-  width: 38px;
-  height: 38px;
+  width: 72px;
+  height: 72px;
   border: none;
   background: none;
   cursor: pointer;
@@ -152,16 +153,74 @@ body {
 .theme-toggle .theme-icon {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 6px rgba(255, 180, 80, 0.6));
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 50%;
+  padding: 10px;
+
+  background: radial-gradient(circle,
+      rgba(0,234,255,0.28),
+      rgba(0,234,255,0.10));
+
+  box-shadow:
+      0 0 18px rgba(0,234,255,0.85),
+      0 0 36px rgba(0,234,255,0.65),
+      inset 0 0 14px rgba(0,234,255,0.45);
+
+  transition:
+      transform .25s ease,
+      box-shadow .25s ease,
+      opacity 8s ease,
+      filter 8s ease;
 }
 
 .theme-toggle:hover .theme-icon {
-  transform: scale(1.12);
+  transform: scale(1.14);
+  box-shadow:
+      0 0 26px rgba(0,234,255,1),
+      0 0 52px rgba(0,234,255,0.85),
+      inset 0 0 18px rgba(0,234,255,0.55);
+}
+
+:root[data-theme="dark"] .theme-icon {
+  filter: brightness(0.8) hue-rotate(180deg);
+  box-shadow:
+      0 0 26px rgba(255, 200, 80, 1),
+      0 0 52px rgba(255, 160, 60, 0.85),
+      inset 0 0 18px rgba(255, 200, 80, 0.55);
+}
+
+/* Halo Pulse */
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  pointer-events: none;
+
+  background: radial-gradient(circle,
+      rgba(0,234,255,0.35),
+      rgba(0,234,255,0.05) 70%);
+
+  animation: haloPulse 6s ease-in-out infinite;
+  filter: blur(4px);
+}
+
+@keyframes haloPulse {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  50%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1);   opacity: 0.6; }
+}
+
+:root[data-theme="dark"] .theme-toggle::before {
+  background: radial-gradient(circle,
+      rgba(255,200,80,0.45),
+      rgba(255,160,60,0.05) 70%);
 }
 
 /* ============================================================
-   3. HERO SYSTEM — Crown, Explanation
+   3. HERO SYSTEM — Crown + Explainer
 ============================================================ */
 .hero-main {
   position: relative;
@@ -175,17 +234,23 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
-  text-align: center;
   position: relative;
   padding-top: 40px;
 }
 
-/* Hero Crown (new shimmer) */
+/* HERO CROWN — FINAL THEME-AWARE SYSTEM */
 .hero-main-crown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   width: 340px;
   max-width: 70vw;
-  display: block;
   margin: 0 auto 18px;
+
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+
+  /* Shimmer on BOTH crowns */
   filter:
     drop-shadow(0 0 18px rgba(255, 180, 80, 0.55))
     drop-shadow(0 0 28px rgba(255, 140, 66, 0.45));
@@ -193,12 +258,20 @@ body {
 }
 
 @keyframes crownShimmer {
-  0% { transform: scale(1); }
-  25% { transform: scale(1.03); }
-  50% { transform: scale(1.01); }
-  75% { transform: scale(1.04); }
-  100% { transform: scale(1); }
+  0% { transform: translateX(-50%) scale(1); }
+  25% { transform: translateX(-50%) scale(1.03); }
+  50% { transform: translateX(-50%) scale(1.01); }
+  75% { transform: translateX(-50%) scale(1.04); }
+  100% { transform: translateX(-50%) scale(1); }
 }
+
+/* DAY MODE */
+:root[data-theme="light"] .hero-crown-day { opacity: 1; }
+:root[data-theme="light"] .hero-crown-night { opacity: 0; }
+
+/* NIGHT MODE */
+:root[data-theme="dark"] .hero-crown-night { opacity: 1; }
+:root[data-theme="dark"] .hero-crown-day { opacity: 0; }
 
 .hero-main-explainer {
   font-size: 1.25rem;
@@ -209,7 +282,7 @@ body {
 }
 
 /* ============================================================
-   4. GALLERY LANES (NEW SYSTEM)
+   4. GALLERY LANES
 ============================================================ */
 .hero-gallery-lane {
   position: absolute;
@@ -273,7 +346,6 @@ body {
 .footer-icons img {
   width: 48px;
   height: 48px;
-  display: block;
   border-radius: 50%;
   transition: transform 0.25s ease, filter 0.25s ease;
   filter: drop-shadow(0 0 10px var(--cyan-glow-strong));
@@ -285,7 +357,7 @@ body {
 }
 
 /* ============================================================
-   7. BACK TO TOP — MATCH TOGGLE
+   7. BACK TO TOP
 ============================================================ */
 .back-to-top {
   position: fixed;
@@ -327,7 +399,7 @@ body {
 }
 
 /* ============================================================
-   8. FADE SECTIONS (JS Integration)
+   8. FADE SECTIONS
 ============================================================ */
 .fade-section {
   opacity: 0;
@@ -341,7 +413,7 @@ body {
 }
 
 /* ============================================================
-   9. RESPONSIVE TWEAKS
+   9. RESPONSIVE
 ============================================================ */
 @media (max-width: 900px) {
   .hero-gallery-lane { display: none; }
@@ -349,251 +421,70 @@ body {
   .hero-main-explainer { font-size: 1.1rem; }
   .hero-gallery-inner img { width: 90%; }
 }
-/* Day/Night Toggle — Magical Orb */
-.theme-toggle {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  width: 68px;     /* match back-to-top */
-  height: 68px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 50;
-}
 
-.theme-toggle .theme-icon {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  padding: 10px;
-
-  background: radial-gradient(circle,
-      rgba(0,234,255,0.28),
-      rgba(0,234,255,0.10));
-
-  box-shadow:
-      0 0 14px rgba(0,234,255,0.75),
-      0 0 28px rgba(0,234,255,0.55),
-      inset 0 0 10px rgba(0,234,255,0.35);
-
-  transition:
-      transform .25s ease,
-      box-shadow .25s ease,
-      opacity 8s ease,          /* 8-second fade */
-      filter 8s ease;           /* 8-second glow shift */
-}
-
-.theme-toggle:hover .theme-icon {
-  transform: scale(1.12);
-  box-shadow:
-      0 0 20px rgba(0,234,255,1),
-      0 0 40px rgba(0,234,255,0.85),
-      inset 0 0 14px rgba(0,234,255,0.55);
-}
-
-/* Dark mode glow shift */
-:root[data-theme="dark"] .theme-icon {
-  filter: brightness(0.8) hue-rotate(180deg);
-  box-shadow:
-      0 0 20px rgba(255, 200, 80, 1),
-      0 0 40px rgba(255, 160, 60, 0.85),
-      inset 0 0 14px rgba(255, 200, 80, 0.55);
-}
 /* ============================================================
-   Magical Day/Night Toggle Orb (Large + Glowing)
+   10. COSMIC NEBULA NIGHT BACKDROP
 ============================================================ */
-.theme-toggle {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  width: 68px;     /* Larger magical orb */
-  height: 68px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 50;
-}
-
-.theme-toggle .theme-icon {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  padding: 10px;
-
-  background: radial-gradient(circle,
-      rgba(0,234,255,0.28),
-      rgba(0,234,255,0.10));
-
-  box-shadow:
-      0 0 14px rgba(0,234,255,0.75),
-      0 0 28px rgba(0,234,255,0.55),
-      inset 0 0 10px rgba(0,234,255,0.35);
-
-  transition:
-      transform .25s ease,
-      box-shadow .25s ease,
-      opacity 8s ease,
-      filter 8s ease;
-}
-
-.theme-toggle:hover .theme-icon {
-  transform: scale(1.12);
-  box-shadow:
-      0 0 20px rgba(0,234,255,1),
-      0 0 40px rgba(0,234,255,0.85),
-      inset 0 0 14px rgba(0,234,255,0.55);
-}
-
-/* Dark mode glow shift */
-:root[data-theme="dark"] .theme-icon {
-  filter: brightness(0.8) hue-rotate(180deg);
-  box-shadow:
-      0 0 20px rgba(255, 200, 80, 1),
-      0 0 40px rgba(255, 160, 60, 0.85),
-      inset 0 0 14px rgba(255, 200, 80, 0.55);
-}
-/* ============================================================
-   Magical Day/Night Toggle Orb (Large + Glowing)
-============================================================ */
-.theme-toggle {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  width: 72px;     /* Larger, more magical */
-  height: 72px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 50;
-}
-
-.theme-toggle .theme-icon {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  padding: 10px;
-
-  background: radial-gradient(circle,
-      rgba(0,234,255,0.28),
-      rgba(0,234,255,0.10));
-
-  box-shadow:
-      0 0 18px rgba(0,234,255,0.85),
-      0 0 36px rgba(0,234,255,0.65),
-      inset 0 0 14px rgba(0,234,255,0.45);
-
-  transition:
-      transform .25s ease,
-      box-shadow .25s ease,
-      opacity 8s ease,
-      filter 8s ease;
-}
-
-.theme-toggle:hover .theme-icon {
-  transform: scale(1.14);
-  box-shadow:
-      0 0 26px rgba(0,234,255,1),
-      0 0 52px rgba(0,234,255,0.85),
-      inset 0 0 18px rgba(0,234,255,0.55);
-}
-
-/* Dark mode glow shift */
-:root[data-theme="dark"] .theme-icon {
-  filter: brightness(0.8) hue-rotate(180deg);
-  box-shadow:
-      0 0 26px rgba(255, 200, 80, 1),
-      0 0 52px rgba(255, 160, 60, 0.85),
-      inset 0 0 18px rgba(255, 200, 80, 0.55);
-}
-/* ============================================================
-   Magical Halo Ring Animation for Toggle
-============================================================ */
-.theme-toggle::before {
+body::before,
+body::after {
   content: "";
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-
-  background: radial-gradient(circle,
-      rgba(0,234,255,0.35),
-      rgba(0,234,255,0.05) 70%);
-
-  animation: haloPulse 6s ease-in-out infinite;
-  filter: blur(4px);
-}
-
-@keyframes haloPulse {
-  0%   { transform: scale(1);   opacity: 0.6; }
-  50%  { transform: scale(1.15); opacity: 1; }
-  100% { transform: scale(1);   opacity: 0.6; }
-}
-
-/* Dark mode halo shift */
-:root[data-theme="dark"] .theme-toggle::before {
-  background: radial-gradient(circle,
-      rgba(255,200,80,0.45),
-      rgba(255,160,60,0.05) 70%);
-}
-:root {
-  --theme-transition: 8s ease-in-out;
-}
-
-html[data-theme="light"],
-html[data-theme="dark"] {
-  transition:
-    background var(--theme-transition),
-    color var(--theme-transition),
-    filter var(--theme-transition);
-}
-/* Smooth 8s theme transition */
-:root {
-  --theme-transition: 8s ease-in-out;
-}
-
-html[data-theme="light"],
-html[data-theme="dark"] {
-  transition:
-    background var(--theme-transition),
-    color var(--theme-transition),
-    filter var(--theme-transition);
-}
-
-/* Hero crown crossfade */
-.hero-main-crown {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: -1;
+  opacity: 0;
   transition: opacity 8s ease-in-out;
-  opacity: 0;
 }
 
-.hero-crown-day,
-.hero-crown-night {
-  opacity: 0;
+/* STARFIELD */
+body::before {
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%) 10% 20%,
+    radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%) 80% 40%,
+    radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%) 50% 70%,
+    radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%) 30% 90%,
+    radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%) 60% 10%;
+  background-size: 4px 4px, 3px 3px, 2px 2px, 3px 3px, 2px 2px;
+  animation: starDrift 60s linear infinite;
 }
 
-/* DAY MODE */
-:root[data-theme="light"] .hero-crown-day {
+@keyframes starDrift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-200px); }
+}
+
+/* NEBULA */
+body::after {
+  background: radial-gradient(circle at 30% 70%,
+      rgba(120, 0, 255, 0.35) 0%,
+      rgba(0, 120, 255, 0.25) 40%,
+      rgba(0, 0, 40, 0.9) 100%);
+  filter: blur(40px);
+  animation: nebulaDrift 90s ease-in-out infinite;
+}
+
+@keyframes nebulaDrift {
+  0%   { transform: scale(1) translate(0, 0); }
+  50%  { transform: scale(1.15) translate(-40px, -20px); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+/* NIGHT MODE ACTIVATION */
+:root[data-theme="dark"] body::before,
+:root[data-theme="dark"] body::after {
   opacity: 1;
 }
 
-:root[data-theme="light"] .hero-crown-night {
-  opacity: 0;
+/* NIGHT GLOW BOOST */
+:root[data-theme="dark"] .hero-gallery-lane img {
+  filter: drop-shadow(0 0 18px rgba(0,234,255,0.75))
+          drop-shadow(0 0 28px rgba(176,0,255,0.55));
 }
 
-/* NIGHT MODE */
-:root[data-theme="dark"] .hero-crown-night {
-  opacity: 1;
-}
-
-:root[data-theme="dark"] .hero-crown-day {
-  opacity: 0;
+:root[data-theme="dark"] .hero-main-crown {
+  filter:
+    drop-shadow(0 0 22px rgba(0,234,255,0.85))
+    drop-shadow(0 0 32px rgba(176,0,255,0.65));
 }
