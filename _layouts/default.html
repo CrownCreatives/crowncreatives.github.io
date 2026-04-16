@@ -5,20 +5,38 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- CORE -->
   <link rel="stylesheet" href="{{ '/assets/css/style-core.css' | relative_url }}">
+
+  <!-- TRANSITIONS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-transitions.css' | relative_url }}">
+
+  <!-- MAGIC BACKGROUND (mist, nebula, glow layers) -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-background-magic.css' | relative_url }}">
+
+  <!-- DARK MODE HERO ENHANCEMENTS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-hero-dark.css' | relative_url }}">
+
+  <!-- HEADER + FOOTER PAGES -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-header-pages.css' | relative_url }}">
 </head>
 
 <body>
 
+  <!-- ============================================================
+       SITE HEADER
+  ============================================================ -->
   <header class="site-header">
     <div class="site-header-inner">
 
+      <!-- Header Crown -->
       <img
         src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
         alt="Crown Creatives Emblem"
         class="header-crown"
       >
 
+      <!-- Title + Tagline -->
       <div class="header-title-block">
         <h1 class="site-title">{{ site.title | default: "CROWN CREATIVES" }}</h1>
         <p class="site-tagline">
@@ -26,6 +44,7 @@
         </p>
       </div>
 
+      <!-- Navigation -->
       <nav class="site-nav">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
@@ -36,6 +55,7 @@
         <a href="{{ '/videos/' | relative_url }}">Videos</a>
       </nav>
 
+      <!-- Theme Toggle Orb -->
       <button class="theme-toggle" aria-label="Toggle theme">
         <img
           src="{{ '/assets/icons/sun.svg' | relative_url }}"
@@ -47,10 +67,16 @@
     </div>
   </header>
 
+  <!-- ============================================================
+       MAIN CONTENT WRAPPER
+  ============================================================ -->
   <main class="site-main">
     {{ content }}
   </main>
 
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
   <footer class="site-footer">
     <div class="footer-icons">
 
@@ -71,8 +97,13 @@
       </a>
 
     </div>
+
+    <p class="footer-copy">
+      © {{ site.time | date: '%Y' }} Crown Creatives. All rights reserved.
+    </p>
   </footer>
 
+  <!-- Back to top -->
   <button class="back-to-top" aria-label="Back to top">
     <img
       src="{{ '/assets/icons/up-arrow.svg' | relative_url }}"
@@ -81,7 +112,13 @@
     >
   </button>
 
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
   <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/magic-gallery.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/magic-ticker.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/backtotop.js' | relative_url }}"></script>
 
 </body>
 </html>
