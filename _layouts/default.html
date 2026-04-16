@@ -5,26 +5,20 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Correct GitHub Pages–safe CSS path -->
   <link rel="stylesheet" href="{{ '/assets/css/style-core.css' | relative_url }}">
 </head>
 
 <body>
 
-  <!-- ============================================================
-       SITE HEADER
-  ============================================================ -->
   <header class="site-header">
     <div class="site-header-inner">
 
-      <!-- Header Crown -->
       <img
         src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
         alt="Crown Creatives Emblem"
         class="header-crown"
       >
 
-      <!-- Title + Tagline -->
       <div class="header-title-block">
         <h1 class="site-title">{{ site.title | default: "CROWN CREATIVES" }}</h1>
         <p class="site-tagline">
@@ -32,7 +26,6 @@
         </p>
       </div>
 
-      <!-- Navigation -->
       <nav class="site-nav">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
@@ -43,7 +36,6 @@
         <a href="{{ '/videos/' | relative_url }}">Videos</a>
       </nav>
 
-      <!-- Theme Toggle Orb -->
       <button class="theme-toggle" aria-label="Toggle theme">
         <img
           src="{{ '/assets/icons/sun.svg' | relative_url }}"
@@ -55,16 +47,10 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       MAIN CONTENT WRAPPER
-  ============================================================ -->
   <main class="site-main">
     {{ content }}
   </main>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
   <footer class="site-footer">
     <div class="footer-icons">
 
@@ -87,7 +73,6 @@
     </div>
   </footer>
 
-  <!-- Back to top -->
   <button class="back-to-top" aria-label="Back to top">
     <img
       src="{{ '/assets/icons/up-arrow.svg' | relative_url }}"
@@ -96,10 +81,7 @@
     >
   </button>
 
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================ -->
-  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 
 </body>
 </html>
