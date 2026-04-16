@@ -1,28 +1,56 @@
-<!-- ============================================================
-     THEME TOGGLE (Accessible + Modern)
-============================================================ -->
-<button 
-  class="theme-toggle" 
-  id="themeToggle" 
-  aria-label="Toggle light and dark theme"
->
+// ================================================================
+// Crown Creatives — Theme Toggle with 8s Magical Transition
+// ================================================================
 
-  <div class="theme-toggle-sphere">
+document.addEventListener("DOMContentLoaded", () => {
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const icon = document.querySelector(".theme-icon");
 
-    <!-- Sun Icon (Light Mode) -->
-    <img 
-      src="/assets/icons/sun.svg" 
-      alt="Light mode icon" 
-      class="theme-icon theme-icon-light"
-    >
+    if (!toggle || !icon) return;
 
-    <!-- Moon Icon (Dark Mode) -->
-    <img 
-      src="/assets/icons/moon.svg" 
-      alt="Dark mode icon" 
-      class="theme-icon theme-icon-dark"
-    >
+    // ------------------------------------------------------------
+    // Apply saved theme on load
+    // ------------------------------------------------------------
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || savedTheme === "light") {
+        root.setAttribute("data-theme", savedTheme);
+    } else {
+        root.setAttribute("data-theme", "light");
+    }
 
-  </div>
+    // ------------------------------------------------------------
+    // Apply global 8-second transition
+    // ------------------------------------------------------------
+    function applyThemeTransition() {
+        root.style.transition =
+            "background 8s ease-in-out, color 8s ease-in-out, filter 8s ease-in-out";
+    }
 
-</button>
+    setTimeout(applyThemeTransition, 50);
+
+    // ------------------------------------------------------------
+    // Update icon based on theme (plain relative paths)
+// ------------------------------------------------------------
+    function updateIcon(theme) {
+        if (theme === "dark") {
+            icon.src = "assets/icons/moon.svg";
+        } else {
+            icon.src = "assets/icons/sun.svg";
+        }
+    }
+
+    updateIcon(root.getAttribute("data-theme"));
+
+    // ------------------------------------------------------------
+    // Toggle theme on click
+    // ------------------------------------------------------------
+    toggle.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme");
+        const next = current === "light" ? "dark" : "light";
+
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        updateIcon(next);
+    });
+});
