@@ -2,37 +2,56 @@
 layout: default
 ---
 
-<div class="hero-main">
+<!-- ============================================================
+     HERO MAIN SECTION — Crown + Explainer + Gallery Lanes
+============================================================ -->
+<section class="hero-main fade-section">
+
   <div class="hero-main-inner">
 
-    <!-- HERO CROWN -->
-    <img src="/assets/icons/crown-hero.png" class="hero-main-crown" alt="Crown Creatives">
+    <!-- HERO CROWN — DAY -->
+    <img 
+      src="/assets/icons/day-crown.svg"
+      class="hero-main-crown hero-crown-day"
+      alt="Crown Creatives Day Crown"
+    >
 
-    <!-- HERO EXPLAINER -->
-    {% if page.explainer %}
-      <p class="hero-main-explainer">{{ page.explainer }}</p>
-    {% endif %}
+    <!-- HERO CROWN — NIGHT -->
+    <img 
+      src="/assets/icons/crown-hero-night.png"
+      class="hero-main-crown hero-crown-night"
+      alt="Crown Creatives Night Crown"
+    >
 
-    <!-- LEFT LANE -->
-    <div class="hero-gallery-lane lane-left">
-      {% for image in page.lane_left %}
-        <img src="{{ image }}" alt="">
-      {% endfor %}
-    </div>
-
-    <!-- RIGHT LANE -->
-    <div class="hero-gallery-lane lane-right">
-      {% for image in page.lane_right %}
-        <img src="{{ image }}" alt="">
-      {% endfor %}
-    </div>
-
-    <!-- MAIN HERO IMAGE -->
-    <div class="hero-gallery">
-      <div class="hero-gallery-inner">
-        <img src="{{ page.hero_image }}" alt="">
-      </div>
-    </div>
+    <!-- Emblem Explanation -->
+    <p class="hero-main-explainer">
+      The Crown represents creativity, resilience, and the courage to imagine boldly.
+    </p>
 
   </div>
-</div>
+
+  <!-- Left Narrow Gallery Lane -->
+  <div class="hero-gallery-lane lane-left">
+    <div class="lane-image-container" id="lane-left"></div>
+  </div>
+
+  <!-- Right Narrow Gallery Lane -->
+  <div class="hero-gallery-lane lane-right">
+    <div class="lane-image-container" id="lane-right"></div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     HERO GALLERY (Randomised Main Image)
+============================================================ -->
+<section class="hero-gallery fade-section">
+  <div class="hero-gallery-inner" id="hero-gallery"></div>
+</section>
+
+<!-- ============================================================
+     MAIN CONTENT (Homepage body content)
+============================================================ -->
+<main class="home-content fade-section">
+  {{ content }}
+</main>
