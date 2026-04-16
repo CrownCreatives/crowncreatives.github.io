@@ -454,3 +454,14 @@ body {
   0% { transform: translateX(-200px); }
   100% { transform: translateX(120%); }
 }
+/* ============================================================
+   HERO CROWN — FINAL SIZE + TRANSITION
+============================================================ */
+
+.hero-crown-cinematic {
+  width: 120px;          /* half size */
+  max-width: 30vw;       /* responsive */
+  display: block;
+  margin: 0 auto 12px;   /* center + small gap */
+  transition: opacity 8s ease-in-out, filter 8s ease-in-out;
+}
