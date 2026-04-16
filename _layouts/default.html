@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} — Crown Creatives</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/style-core.css">
+  <title>{{ page.title }} | Crown Creatives</title>
+
+  <!-- CSS Core -->
+  <link rel="stylesheet" href="/assets/css/core.css">
 
 </head>
+<body>
 
-<body data-theme="light">
-
+  <!-- HEADER -->
   {% include header.html %}
 
-  <main class="page-content fade-section">
+  <!-- MAIN CONTENT -->
+  <main class="site-main">
     {{ content }}
   </main>
 
+  <!-- FOOTER -->
   {% include footer.html %}
 
-  {% include scripts.html %}
+  <!-- JAVASCRIPT -->
+  <script src="/assets/js/theme-toggle.js"></script>
+  <script src="/assets/js/fade-sections.js"></script>
+  <script src="/assets/js/gallery-lanes.js"></script>
 
 </body>
 </html>
