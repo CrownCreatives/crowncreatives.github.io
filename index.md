@@ -6,26 +6,6 @@ hero_tagline: Where imagination becomes reality
 ---
 
 <!-- ============================================================
-     HERO SECTION (CROWN MOVED UP WITH 40mm GAP)
-============================================================ -->
-<section class="hero-cinematic">
-
-  <!-- HERO CROWN -->
-  <img
-    src="/assets/icons/day-crown.svg"
-    alt="Crown Creatives Hero Emblem"
-    class="hero-crown"
-  >
-
-  <!-- HERO TEXT -->
-  <div class="hero-text">
-    <h2>Crown Creatives</h2>
-    <p>Where imagination becomes reality</p>
-  </div>
-
-</section>
-
-<!-- ============================================================
      CONTENT CARDS (3‑column)
 ============================================================ -->
 <section id="gallery" class="content-section fade-section">
@@ -61,3 +41,4 @@ hero_tagline: Where imagination becomes reality
 <div class="cc-lightbox-overlay" id="lightbox">
   <img class="cc-lightbox-image" id="lightbox-img" src="" alt="">
 </div>
+
