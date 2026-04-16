@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- ============================================================
-     CINEMATIC HERO — SINGLE, CLEAN, FINAL VERSION
+     CINEMATIC HERO — FINAL CLEAN VERSION
 ============================================================ -->
 <section class="hero-cinematic fade-section">
 
@@ -16,9 +16,14 @@ layout: default
     class="hero-crown-cinematic"
   >
 
-  <!-- HERO TEXT -->
+  <!-- HERO GALLERY LANES (Left + Right) -->
+  <div class="hero-gallery-lanes">
+    <img src="{{ '/assets/gallery/1.jpg' | relative_url }}" class="lane-img lane-left">
+    <img src="{{ '/assets/gallery/2.jpg' | relative_url }}" class="lane-img lane-right">
+  </div>
+
+  <!-- TAGLINE ONLY -->
   <div class="hero-text">
-    <h2>{{ page.hero_title | default: "Crown Creatives" }}</h2>
     <p>{{ page.hero_tagline | default: "Where imagination becomes reality" }}</p>
   </div>
 
