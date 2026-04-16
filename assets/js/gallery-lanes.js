@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     img.style.opacity = "0";
 
     // Magical drift + rotation
-    img.style.transform = `translateX(0) rotate(${(Math.random() * 6) - 3}deg)`;
+    const rotation = (Math.random() * 6) - 3; // -3deg to +3deg
+    img.style.transform = `translateX(0) rotate(${rotation}deg)`;
 
     lane.appendChild(img);
 
