@@ -1,0 +1,48 @@
+/* ============================================================
+   CROWN CREATIVES — HERO SECTION POSITIONING (FINAL VERSION)
+   Moves hero crown up with a 40mm gap under navigation
+   Allows cards to sit underneath the crown
+============================================================ */
+
+/* HERO WRAPPER */
+.hero-cinematic {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  /* Move hero crown UP */
+  margin-top: -80px;
+
+  /* Create 40mm gap under navigation (≈150px) */
+  padding-top: 150px;
+
+  z-index: 2;
+}
+
+/* HERO CROWN IMAGE */
+.hero-crown {
+  width: 240px; /* adjust if needed */
+  max-width: 80%;
+  position: relative;
+  z-index: 3; /* crown above cards */
+  margin-bottom: 20px;
+}
+
+/* HERO TEXT BLOCK */
+.hero-text {
+  position: relative;
+  z-index: 3;
+  margin-top: 10px;
+}
+
+/* CARDS UNDER HERO CROWN */
+.hero-card-row {
+  position: relative;
+  z-index: 2;
+  margin-top: -40px; /* allows cards to tuck under crown */
+}
+
+/* Prevent gallery lanes from drifting into crown */
+.hero-gallery-lane {
+  margin-top: 40px;
+}
