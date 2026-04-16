@@ -1,44 +1,52 @@
 /* ============================================================
-   PAGE TRANSITION SCRIPT
-   Adds mystical mist fade + crown shimmer pulse
+   CROWN CREATIVES — PAGE TRANSITIONS (FINAL PRODUCTION VERSION)
+   - Smooth fade-out on navigation
+   - Mist overlay + crown pulse
+   - Safe for all internal links
+   - No conflicts with other scripts
 ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Create the transition overlay
-  const overlay = document.createElement("div");
-  overlay.className = "page-transition-overlay";
-  document.body.appendChild(overlay);
+  const overlay = document.querySelector(".page-transition-overlay");
+  const body = document.body;
 
-  // Add pulse class to crowns during transitions
-  function pulseCrowns() {
-    document.body.classList.add("page-transition-pulse");
-    setTimeout(() => {
-      document.body.classList.remove("page-transition-pulse");
-    }, 1400);
-  }
+  if (!overlay) return;
 
-  // Trigger transition on link clicks
+  /* ------------------------------------------------------------
+     1. PAGE LOAD FADE-IN
+  ------------------------------------------------------------ */
+  body.classList.add("page-loaded");
+
+  /* ------------------------------------------------------------
+     2. INTERCEPT INTERNAL LINKS
+  ------------------------------------------------------------ */
   document.querySelectorAll("a[href]").forEach(link => {
+
     const url = link.getAttribute("href");
 
-    // Ignore anchors and external links
-    if (!url || url.startsWith("#") || url.startsWith("http")) return;
+    // Skip external links
+    if (url.startsWith("http") && !url.includes(location.host)) return;
 
-    link.addEventListener("click", event => {
-      event.preventDefault();
+    // Skip anchors
+    if (url.startsWith("#")) return;
 
-      // Activate overlay
+    // Skip JS links
+    if (url.startsWith("javascript:")) return;
+
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Activate mist overlay
       overlay.classList.add("is-active");
 
-      // Pulse crowns
-      pulseCrowns();
+      // Crown pulse class
+      body.classList.add("page-transition-pulse");
 
-      // Navigate after animation
+      // Delay navigation until fade completes
       setTimeout(() => {
-        window.location = url;
-      }, 900);
+        window.location.href = url;
+      }, 600); // matches CSS animation timing
     });
   });
-
 });
