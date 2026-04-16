@@ -8,9 +8,12 @@ url: "https://crowncreatives.github.io"
 markdown: kramdown
 
 # Force rebuild (increment this number whenever GitHub Pages gets stuck)
-version: 5
+version: 6
 
-# Default layout for posts (you can add more defaults later)
+# Disable default GitHub Pages theme
+theme: null
+
+# Default layout for posts
 defaults:
   - scope:
       path: ""
