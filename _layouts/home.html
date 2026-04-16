@@ -2,42 +2,29 @@
 layout: default
 ---
 
-<section class="hero-main fade-section">
+<!-- ============================================================
+     NEW HERO SECTION (CINEMATIC)
+============================================================ -->
+<section class="hero-cinematic fade-section">
 
-  <div class="hero-main-inner">
+  <!-- HERO CROWN -->
+  <img
+    src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
+    alt="Crown Creatives Hero Emblem"
+    class="hero-crown"
+  >
 
-    <img 
-      src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
-      class="hero-main-crown hero-crown-day"
-      alt="Crown Creatives Day Crown"
-    >
-
-    <img 
-      src="{{ '/assets/icons/crown-hero-night.png' | relative_url }}"
-      class="hero-main-crown hero-crown-night"
-      alt="Crown Creatives Night Crown"
-    >
-
-    <p class="hero-main-explainer">
-      The Crown represents creativity, resilience, and the courage to imagine boldly.
-    </p>
-
-  </div>
-
-  <div class="hero-gallery-lane lane-left">
-    <div class="lane-image-container" id="lane-left"></div>
-  </div>
-
-  <div class="hero-gallery-lane lane-right">
-    <div class="lane-image-container" id="lane-right"></div>
+  <!-- HERO TEXT -->
+  <div class="hero-text">
+    <h2>{{ page.hero_title | default: "Crown Creatives" }}</h2>
+    <p>{{ page.hero_tagline | default: "Where imagination becomes reality" }}</p>
   </div>
 
 </section>
 
-<section class="hero-gallery fade-section">
-  <div class="hero-gallery-inner" id="hero-gallery"></div>
-</section>
-
+<!-- ============================================================
+     MAIN CONTENT (Homepage body content)
+============================================================ -->
 <main class="home-content fade-section">
   {{ content }}
 </main>
