@@ -2,53 +2,36 @@
 layout: default
 ---
 
-<!-- ============================================================
-     AUTO‑GALLERY DATA (Hero + Lane Images)
-     Jekyll scans folders and outputs JSON for JS to read
-============================================================ -->
-{% assign hero_files = site.static_files | where_exp: "f", "f.path contains '/assets/images/hero/'" %}
-{% assign hero_paths = hero_files | map: "path" %}
-
-{% assign lane_files = site.static_files | where_exp: "f", "f.path contains '/assets/images/gallery/'" %}
-{% assign lane_paths = lane_files | map: "path" %}
-
-<div id="gallery-data"
-     data-hero-images='{{ hero_paths | jsonify }}'
-     data-lane-images='{{ lane_paths | jsonify }}'>
-</div>
-
-<!-- ============================================================
-     HERO SECTION — Crown + Explainer + Hero Gallery + Lanes
-============================================================ -->
-<section class="hero-main fade-section">
-
+<div class="hero-main">
   <div class="hero-main-inner">
 
-    <!-- Crown (always centred, always safe) -->
-    <img src="/assets/icons/crownogram.svg"
-         alt="Crown Creatives Emblem"
-         class="hero-main-crown">
+    <!-- HERO CROWN -->
+    <img src="/assets/icons/crown-hero.png" class="hero-main-crown" alt="Crown Creatives">
 
-    <!-- Explainer text -->
+    <!-- HERO EXPLAINER -->
     <p class="hero-main-explainer">
-      Sculpted characters, creatures, and fantasy‑themed digital worlds brought to life with resilience and imagination.
+      {{ page.explainer }}
     </p>
 
-    <!-- HERO GALLERY (auto‑scan, crossfade, no drift) -->
-    <div id="hero-gallery" class="hero-gallery-surface"></div>
+    <!-- HERO GALLERY LANES -->
+    <div class="hero-gallery-lane lane-left">
+      {% for image in page.lane_left %}
+        <img src="{{ image }}" alt="">
+      {% endfor %}
+    </div>
 
-    <!-- LANE GALLERIES (auto‑scan, alternating, magical) -->
-    <div class="hero-gallery-lane lane-left"></div>
-    <div class="hero-gallery-lane lane-right"></div>
+    <div class="hero-gallery-lane lane-right">
+      {% for image in page.lane_right %}
+        <img src="{{ image }}" alt="">
+      {% endfor %}
+    </div>
+
+    <!-- MAIN GALLERY IMAGE -->
+    <div class="hero-gallery">
+      <div class="hero-gallery-inner">
+        <img src="{{ page.hero_image }}" alt="">
+      </div>
+    </div>
 
   </div>
-
-</section>
-
-<!-- ============================================================
-     PAGE CONTENT
-============================================================ -->
-<main class="site-main fade-section">
-  {{ content }}
-</main>
-
+</div>
