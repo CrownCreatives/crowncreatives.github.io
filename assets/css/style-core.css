@@ -465,3 +465,25 @@ body {
   margin: 0 auto 12px;   /* center + small gap */
   transition: opacity 8s ease-in-out, filter 8s ease-in-out;
 }
+/* ============================================================
+   HERO GALLERY LANES
+============================================================ */
+
+.hero-gallery-lanes {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.lane-img {
+  position: absolute;
+  width: 140px;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+
+.lane-left { left: 6%; }
+.lane-right { right: 6%; }
