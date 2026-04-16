@@ -11,7 +11,7 @@
   <!-- TRANSITIONS -->
   <link rel="stylesheet" href="{{ '/assets/css/style-transitions.css' | relative_url }}">
 
-  <!-- MAGIC BACKGROUND (mist, nebula, glow layers) -->
+  <!-- MAGIC BACKGROUND -->
   <link rel="stylesheet" href="{{ '/assets/css/style-background-magic.css' | relative_url }}">
 
   <!-- DARK MODE HERO ENHANCEMENTS -->
@@ -23,14 +23,12 @@
 
 <body>
 
-  <!-- ============================================================
-       PAGE TRANSITION OVERLAY (CRITICAL)
-  ============================================================ -->
+  <!-- PAGE TRANSITION OVERLAY -->
   <div class="page-transition-overlay"></div>
 
   <!-- ============================================================
-       SITE HEADER
-  ============================================================ -->
+       GLOBAL HEADER (single, unified, correct)
+  ============================================================= -->
   <header class="site-header">
     <div class="site-header-inner">
 
@@ -74,21 +72,21 @@
 
   <!-- ============================================================
        MAIN CONTENT WRAPPER
-  ============================================================ -->
+  ============================================================= -->
   <main class="site-main fade-section">
     {{ content }}
   </main>
 
   <!-- ============================================================
-       MAGIC TICKER (GLOBAL)
-  ============================================================ -->
+       MAGIC TICKER
+  ============================================================= -->
   <div class="magic-ticker">
     <div class="magic-ticker-track"></div>
   </div>
 
   <!-- ============================================================
        FOOTER
-  ============================================================ -->
+  ============================================================= -->
   <footer class="site-footer fade-section">
     <div class="footer-icons">
 
@@ -125,8 +123,8 @@
   </button>
 
   <!-- ============================================================
-       SCRIPTS (MATCHING YOUR ACTUAL assets/js/ FOLDER)
-  ============================================================ -->
+       SCRIPTS
+  ============================================================= -->
   <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/gallery-lanes.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/magic-ticker.js' | relative_url }}"></script>
