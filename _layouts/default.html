@@ -5,8 +5,10 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="/assets/css/style-core.css">
+  <!-- Correct GitHub Pages–safe CSS path -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-core.css' | relative_url }}">
 </head>
+
 <body>
 
   <!-- ============================================================
@@ -17,7 +19,7 @@
 
       <!-- Header Crown -->
       <img
-        src="/assets/icons/day-crown.svg"
+        src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
         alt="Crown Creatives Emblem"
         class="header-crown"
       >
@@ -44,7 +46,7 @@
       <!-- Theme Toggle Orb -->
       <button class="theme-toggle" aria-label="Toggle theme">
         <img
-          src="/assets/icons/sun.svg"
+          src="{{ '/assets/icons/sun.svg' | relative_url }}"
           alt="Theme toggle"
           class="theme-icon"
         >
@@ -65,29 +67,39 @@
   ============================================================ -->
   <footer class="site-footer">
     <div class="footer-icons">
+
       <a href="https://facebook.com" aria-label="Facebook">
-        <img src="/assets/icons/footer-facebook.svg" alt="Facebook">
+        <img src="{{ '/assets/icons/footer-facebook.svg' | relative_url }}" alt="Facebook">
       </a>
+
       <a href="https://instagram.com" aria-label="Instagram">
-        <img src="/assets/icons/footer-instagram.svg" alt="Instagram">
+        <img src="{{ '/assets/icons/footer-instagram.svg' | relative_url }}" alt="Instagram">
       </a>
+
       <a href="mailto:hello@crowncreatives.com" aria-label="Email">
-        <img src="/assets/icons/footer-email.svg" alt="Email">
+        <img src="{{ '/assets/icons/footer-email.svg' | relative_url }}" alt="Email">
       </a>
+
       <a href="https://copilot.microsoft.com" aria-label="Copilot">
-        <img src="/assets/icons/footer-copilot.svg" alt="Copilot">
+        <img src="{{ '/assets/icons/footer-copilot.svg' | relative_url }}" alt="Copilot">
       </a>
+
     </div>
   </footer>
 
   <!-- Back to top -->
   <button class="back-to-top" aria-label="Back to top">
-    <span class="backtotop-icon"></span>
+    <img
+      src="{{ '/assets/icons/up-arrow.svg' | relative_url }}"
+      alt="Back to top"
+      class="backtotop-icon"
+    >
   </button>
 
   <!-- ============================================================
        SCRIPTS
   ============================================================ -->
-  <script src="/assets/js/theme-toggle.js"></script>
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+
 </body>
 </html>
