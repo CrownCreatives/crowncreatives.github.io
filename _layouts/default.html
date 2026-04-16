@@ -70,14 +70,14 @@
   <!-- ============================================================
        MAIN CONTENT WRAPPER
   ============================================================ -->
-  <main class="site-main">
+  <main class="site-main fade-section">
     {{ content }}
   </main>
 
   <!-- ============================================================
        FOOTER
   ============================================================ -->
-  <footer class="site-footer">
+  <footer class="site-footer fade-section">
     <div class="footer-icons">
 
       <a href="https://facebook.com" aria-label="Facebook">
@@ -113,11 +113,12 @@
   </button>
 
   <!-- ============================================================
-       SCRIPTS
+       SCRIPTS (MATCHING YOUR ACTUAL assets/js/ FOLDER)
   ============================================================ -->
   <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/magic-gallery.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/gallery-lanes.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/magic-ticker.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/fade-sections.js' | relative_url }}"></script>
   <script defer src="{{ '/assets/js/backtotop.js' | relative_url }}"></script>
 
 </body>
