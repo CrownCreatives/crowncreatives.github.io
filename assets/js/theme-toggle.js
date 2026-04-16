@@ -27,17 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
             "background 8s ease-in-out, color 8s ease-in-out, filter 8s ease-in-out";
     }
 
-    // Apply transition AFTER load to avoid flash
     setTimeout(applyThemeTransition, 50);
 
     // ------------------------------------------------------------
-    // Update icon based on theme (GitHub Pages–safe paths)
+    // Update icon based on theme (NO LIQUID — SAFE PATHS)
     // ------------------------------------------------------------
     function updateIcon(theme) {
         if (theme === "dark") {
-            icon.src = "{{ '/assets/icons/moon.svg' | relative_url }}";
+            icon.src = "assets/icons/moon.svg";
         } else {
-            icon.src = "{{ '/assets/icons/sun.svg' | relative_url }}";
+            icon.src = "assets/icons/sun.svg";
         }
     }
 
