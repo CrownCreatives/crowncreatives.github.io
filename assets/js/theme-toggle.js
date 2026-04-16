@@ -1,3 +1,11 @@
+// ============================================================
+//  Crown Creatives — Magical Day/Night Toggle
+//  • Sun ↔ Moon icon swap
+//  • 8-second animated transition
+//  • Glow shift (cyan → gold)
+//  • Saves user preference
+// ============================================================
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-toggle");
   const icon = toggle?.querySelector(".theme-icon");
@@ -18,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const next = current === "dark" ? "light" : "dark";
 
     // 8-second animated transition
-    document.documentElement.style.transition = "background 8s ease, filter 8s ease";
+    document.documentElement.style.transition =
+      "background 8s ease, filter 8s ease, color 8s ease";
 
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("cc-theme", next);
