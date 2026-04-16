@@ -2,7 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".back-to-top");
   if (!btn) return;
 
-  // Show button after scrolling
+  // Start hidden
+  btn.style.opacity = "0";
+  btn.style.pointerEvents = "none";
+  btn.style.transition = "opacity 0.6s ease";
+
+  // Reveal button after scrolling
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
       btn.style.opacity = "1";
@@ -15,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Smooth scroll to top
   btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 });
