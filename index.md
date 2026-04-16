@@ -31,11 +31,11 @@ hero_tagline: Where imagination becomes reality
 <section id="gallery" class="content-section fade-section">
   <div class="content-row">
 
-    <!-- 3D Models -->
+    <!-- Get in Touch Card -->
     <article class="content-card">
-      <h2>3D Models</h2>
-      <p>Explore sculpted characters, creatures, and fantasy-themed digital models.</p>
-      <a href="/3d-models" class="content-link">Browse Gallery</a>
+      <h2>Have a Question?</h2>
+      <p>If you’d like to know more about any project, model, or artwork, feel free to get in touch using the social links below.</p>
+      <a href="#footer" class="content-link">Get in Touch</a>
     </article>
 
     <!-- Creative Projects -->
