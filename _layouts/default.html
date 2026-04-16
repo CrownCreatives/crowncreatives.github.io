@@ -2,135 +2,116 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Crown Creatives</title>
 
-  <!-- CORE -->
+  <!-- Main Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/style-core.css' | relative_url }}">
-
-  <!-- TRANSITIONS -->
-  <link rel="stylesheet" href="{{ '/assets/css/style-transitions.css' | relative_url }}">
-
-  <!-- MAGIC BACKGROUND -->
   <link rel="stylesheet" href="{{ '/assets/css/style-background-magic.css' | relative_url }}">
-
-  <!-- DARK MODE HERO ENHANCEMENTS -->
-  <link rel="stylesheet" href="{{ '/assets/css/style-hero-dark.css' | relative_url }}">
-
-  <!-- HEADER + FOOTER PAGES -->
-  <link rel="stylesheet" href="{{ '/assets/css/style-header-pages.css' | relative_url }}">
 </head>
 
 <body>
 
-  <!-- PAGE TRANSITION OVERLAY -->
-  <div class="page-transition-overlay"></div>
+<!-- ============================================================
+     MAGICAL BACKGROUND ENGINE (Nebula + Stars + Particles)
+============================================================ -->
+<div class="cc-bg-magic-layer">
+  <div class="cc-bg-nebula"></div>
+  <div class="cc-bg-stars"></div>
+  <div class="cc-bg-particles">
+    <div class="cc-bg-particle p1"></div>
+    <div class="cc-bg-particle p2"></div>
+    <div class="cc-bg-particle p3"></div>
+    <div class="cc-bg-particle p4"></div>
+    <div class="cc-bg-particle p5"></div>
+  </div>
+</div>
 
-  <!-- ============================================================
-       GLOBAL HEADER (single, unified, correct)
-  ============================================================= -->
-  <header class="site-header">
-    <div class="site-header-inner">
+<div class="magic-particles">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
 
-      <!-- Header Crown -->
-      <img
-        src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
-        alt="Crown Creatives Emblem"
-        class="header-crown"
-      >
+<!-- Page Transition Overlay -->
+<div class="page-transition-overlay" id="page-transition"></div>
 
-      <!-- Title + Tagline -->
-      <div class="header-title-block">
-        <h1 class="site-title">{{ site.title | default: "CROWN CREATIVES" }}</h1>
-        <p class="site-tagline">
-          {{ site.tagline | default: "Artistry • Resilience • Imagination" }}
-        </p>
-      </div>
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header fade-section">
 
-      <!-- Navigation -->
-      <nav class="site-nav">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        <a href="{{ '/projects/' | relative_url }}">Projects</a>
-        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
-        <a href="{{ '/podcasts/' | relative_url }}">Podcasts</a>
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-        <a href="{{ '/videos/' | relative_url }}">Videos</a>
-      </nav>
-
-      <!-- Theme Toggle Orb -->
-      <button class="theme-toggle" aria-label="Toggle theme">
-        <img
-          src="{{ '/assets/icons/sun.svg' | relative_url }}"
-          alt="Theme toggle"
-          class="theme-icon"
-        >
-      </button>
-
-    </div>
-  </header>
-
-  <!-- ============================================================
-       MAIN CONTENT WRAPPER
-  ============================================================= -->
-  <main class="site-main fade-section">
-    {{ content }}
-  </main>
-
-  <!-- ============================================================
-       MAGIC TICKER
-  ============================================================= -->
-  <div class="magic-ticker">
-    <div class="magic-ticker-track"></div>
+  <div class="header-left">
+    <a href="{{ '/' | relative_url }}" class="header-logo-link">
+      <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
+           alt="Crown Creatives Logo"
+           class="header-crown">
+    </a>
+    <span class="site-title">Crown Creatives</span>
   </div>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================= -->
-  <footer class="site-footer fade-section">
-    <div class="footer-icons">
+  <nav class="site-nav">
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/about' | relative_url }}">About</a></li>
+      <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+      <li><a href="{{ '/gallery' | relative_url }}">Gallery</a></li>
+      <li><a href="{{ '/podcasts' | relative_url }}">Podcasts</a></li>
+      <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+      <li><a href="{{ '/videos' | relative_url }}">Videos</a></li>
+    </ul>
+  </nav>
 
-      <a href="https://facebook.com" aria-label="Facebook">
-        <img src="{{ '/assets/icons/footer-facebook.svg' | relative_url }}" alt="Facebook">
-      </a>
+  <!-- Mobile Menu Button -->
+  <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
 
-      <a href="https://instagram.com" aria-label="Instagram">
-        <img src="{{ '/assets/icons/footer-instagram.svg' | relative_url }}" alt="Instagram">
-      </a>
+</header>
 
-      <a href="mailto:hello@crowncreatives.com" aria-label="Email">
-        <img src="{{ '/assets/icons/footer-email.svg' | relative_url }}" alt="Email">
-      </a>
+<!-- Mobile Menu -->
+<nav id="mobile-menu" class="mobile-menu">
+  <ul>
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    <li><a href="{{ '/about' | relative_url }}">About</a></li>
+    <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+    <li><a href="{{ '/gallery' | relative_url }}">Gallery</a></li>
+    <li><a href="{{ '/podcasts' | relative_url }}">Podcasts</a></li>
+    <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+    <li><a href="{{ '/videos' | relative_url }}">Videos</a></li>
+  </ul>
+</nav>
 
-      <a href="https://copilot.microsoft.com" aria-label="Copilot">
-        <img src="{{ '/assets/icons/footer-copilot.svg' | relative_url }}" alt="Copilot">
-      </a>
+<!-- ============================================================
+     PAGE CONTENT
+============================================================ -->
+<div class="page-wrapper">
+  {{ content }}
+</div>
 
-    </div>
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer id="footer" class="site-footer fade-section">
+  <p>© {{ site.time | date: "%Y" }} Crown Creatives</p>
+</footer>
 
-    <p class="footer-copy">
-      © {{ site.time | date: '%Y' }} Crown Creatives. All rights reserved.
-    </p>
-  </footer>
+<!-- ============================================================
+     JAVASCRIPT (Correct Order)
+============================================================ -->
 
-  <!-- Back to top -->
-  <button class="back-to-top" aria-label="Back to top">
-    <img
-      src="{{ '/assets/icons/up-arrow.svg' | relative_url }}"
-      alt="Back to top"
-      class="backtotop-icon"
-    >
-  </button>
+<!-- Core Behaviour -->
+<script defer src="{{ '/assets/js/mobile-menu.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/page-transition.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/backtotop.js' | relative_url }}"></script>
 
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================= -->
-  <script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/gallery-lanes.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/magic-ticker.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/fade-sections.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/page-transition.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/backtotop.js' | relative_url }}"></script>
+<!-- Visual Effects -->
+<script defer src="{{ '/assets/js/fade-sections.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/starfield.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/magic.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/magic-ticker.js' | relative_url }}"></script>
+
+<!-- HERO GALLERY (NEW) -->
+<script defer src="{{ '/assets/js/hero-gallery.js' | relative_url }}"></script>
 
 </body>
 </html>
