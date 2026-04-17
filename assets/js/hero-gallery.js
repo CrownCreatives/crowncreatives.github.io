@@ -1,28 +1,37 @@
-// Load hero gallery images from gallery.json (GitHub Pages safe)
+// Safe, GitHub-Pages-compatible hero gallery
 async function loadHeroGallery() {
   const left = document.querySelector('.lane-left');
   const right = document.querySelector('.lane-right');
 
+  // If the hero section isn't on this page, stop immediately
   if (!left || !right) return;
 
   try {
-    const response = await fetch('/assets/images/gallery/gallery.json');
+    const response = await fetch('/assets/images/gallery/gallery.json', { cache: "no-store" });
+
+    // If JSON doesn't exist yet (first deploy), stop safely
+    if (!response.ok) return;
+
     const data = await response.json();
 
-    const images = data.images;
-    if (!images || images.length === 0) return;
+    // Validate structure
+    if (!data || !Array.isArray(data.images) || data.images.length === 0) return;
 
+    const images = data.images;
     let index = 0;
 
     function cycle() {
       const img = images[index % images.length];
       const target = index % 2 === 0 ? left : right;
 
+      // Only update if the element still exists
+      if (!target) return;
+
       target.src = img;
       target.style.opacity = 1;
 
       setTimeout(() => {
-        target.style.opacity = 0;
+        if (target) target.style.opacity = 0;
       }, 3000);
 
       index++;
@@ -32,7 +41,7 @@ async function loadHeroGallery() {
     setInterval(cycle, 4000);
 
   } catch (err) {
-    console.error('Hero gallery error:', err);
+    console.warn('Hero gallery skipped (safe mode):', err);
   }
 }
 
