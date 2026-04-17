@@ -577,3 +577,58 @@ body {
 .site-header {
   margin-bottom: 40px;
 }
+.hero-cinematic {
+  margin-top: 120px;
+  margin-bottom: 80px;
+  position: relative;
+  text-align: center;
+  z-index: 5;
+  display: block;
+}
+.hero-gallery-lanes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.lane-img {
+  width: 45%;
+  opacity: 0.35;
+  filter: blur(2px);
+}
+
+.lane-left {
+  position: absolute;
+  left: -10%;
+  transform: rotate(-4deg);
+}
+
+.lane-right {
+  position: absolute;
+  right: -10%;
+  transform: rotate(4deg);
+}
+.hero-crown-cinematic {
+  width: 220px;
+  max-width: 60vw;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
+  position: relative;
+  z-index: 6;
+  display: block;
+  margin: 0 auto;
+}
+.hero-text p {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  opacity: 0.9;
+  z-index: 6;
+  position: relative;
+}
+.site-header {
+  margin-bottom: 40px;
+}
