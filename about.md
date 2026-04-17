@@ -1,34 +1,43 @@
 ---
-layout: default
-title: About
-permalink: /about/
+layout: home
+title: Crown Creatives
+hero_title: Crown Creatives
+hero_tagline: Where imagination becomes reality
 ---
-# About
 
-<section class="hero-section">
-  <div class="hero-card">
-    <h1 class="cc-soft-glow">The Story Behind Crown Creatives</h1>
-    <p class="cc-soft-glow">
-      Crown Creatives began as a quiet act of rebuilding — a way to turn adversity into artistry, 
-      and to reclaim imagination as a form of strength.
-    </p>
+<!-- ============================================================
+     CONTENT CARDS (3‑column)
+============================================================ -->
+<section id="gallery" class="content-section fade-section">
+  <div class="content-row">
+
+    <!-- Get in Touch Card -->
+    <article class="content-card">
+      <h2>Have a Question?</h2>
+      <p>If you’d like to know more about any project, model, or artwork, feel free to get in touch using the social links below.</p>
+      <a href="#footer" class="content-link">Get in Touch</a>
+    </article>
+
+    <!-- Creative Projects -->
+    <article id="projects" class="content-card">
+      <h2>Creative Projects</h2>
+      <p>A collection of artistic experiments, sketches, and magical world‑building.</p>
+      <a href="/projects" class="content-link">Read More Here</a>
+    </article>
+
+    <!-- Podcasts -->
+    <article id="podcasts" class="content-card">
+      <h2>Podcasts</h2>
+      <p>Thoughts on creativity, resilience, and the journey of rebuilding through art.</p>
+      <a href="/podcasts" class="content-link">Listen</a>
+    </article>
+
   </div>
 </section>
 
-<div class="intro-box fade-in">
-  <p>
-    This space is shaped by resilience, curiosity, and a love for the magical. 
-    Every project, sculpt, sketch, and experiment is part of an ongoing journey: 
-    learning to create with intention, even when life becomes difficult.
-  </p>
-
-  <p>
-    Crown Creatives blends fantasy aesthetics with personal storytelling — a reminder that 
-    creativity isn’t just decoration. It’s survival, expression, and transformation.
-  </p>
-
-  <p>
-    Thank you for being here. I hope you find something that inspires you, comforts you, 
-    or sparks your own imagination.
-  </p>
+<!-- ============================================================
+     OPTIONAL: LIGHTBOX AREA
+============================================================ -->
+<div class="cc-lightbox-overlay" id="lightbox">
+  <img class="cc-lightbox-image" id="lightbox-img" src="" alt="">
 </div>
