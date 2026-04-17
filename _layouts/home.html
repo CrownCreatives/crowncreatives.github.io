@@ -1,7 +1,42 @@
 ---
 layout: default
 ---
+
+<!-- ============================
+     HERO SECTION
+============================= -->
+<section class="hero-section fade-section">
+
+  <img src="{{ '/assets/img/crown-hero.png' | relative_url }}"
+       alt="Crown Creatives Hero Crown"
+       class="hero-crown-cinematic">
+
+  <div class="hero-text">
+    <h2>{{ page.title }}</h2>
+    <p>Where imagination becomes reality</p>
+  </div>
+
+</section>
+
+<!-- ============================
+     GALLERY LANES
+============================= -->
+<div class="lane lane-left">
+  {% include gallery-lane-left.html %}
+</div>
+
+<div class="lane lane-right">
+  {% include gallery-lane-right.html %}
+</div>
+
+<!-- ============================
+     MAIN HOMEPAGE CONTENT
+============================= -->
 <main class="home-content fade-section">
   {{ content }}
 </main>
+
+<!-- ============================
+     LIGHTBOX
+============================= -->
 {% include lightbox.html %}
