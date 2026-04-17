@@ -527,3 +527,53 @@ body {
   transition: opacity 1.6s ease-in-out;
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
 }
+.hero-cinematic {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  position: relative;
+  text-align: center;
+  z-index: 3;
+}
+.hero-gallery-lanes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lane-img {
+  width: 45%;
+  opacity: 0.35;
+  filter: blur(2px);
+}
+
+.lane-left {
+  position: absolute;
+  left: -10%;
+  transform: rotate(-4deg);
+}
+
+.lane-right {
+  position: absolute;
+  right: -10%;
+  transform: rotate(4deg);
+}
+.hero-crown-cinematic {
+  width: 220px;
+  max-width: 60vw;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
+  z-index: 3;
+  position: relative;
+}
+.hero-text p {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+.site-header {
+  margin-bottom: 40px;
+}
