@@ -1,36 +1,7 @@
 ---
 layout: default
 ---
-
-<!-- HERO SECTION -->
-<section class="hero-section fade-section">
-
-  <img src="{{ '/assets/img/crown-hero.png' | relative_url }}"
-       alt="Crown Creatives Hero Crown"
-       class="hero-crown-cinematic">
-
-  <div class="hero-text">
-    <h2>Welcome to Crown Creatives</h2>
-    <p>Where imagination becomes reality</p>
-  </div>
-
-  <!-- GALLERY LANES -->
-  <div class="lane lane-left">
-    {% include gallery-lane-left.html %}
-  </div>
-
-  <div class="lane lane-right">
-    {% include gallery-lane-right.html %}
-  </div>
-
-</section>
-
-<!-- LIGHTBOX -->
+<main class="home-content fade-section">
+  {{ content }}
+</main>
 {% include lightbox.html %}
-
-<!-- TICKER -->
-<div class="magic-ticker">
-  <div class="magic-ticker-track">
-    {% include ticker.html %}
-  </div>
-</div>
