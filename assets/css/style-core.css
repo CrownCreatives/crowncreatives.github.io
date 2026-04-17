@@ -507,3 +507,23 @@ body {
   transition: opacity 1.6s ease-in-out;
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
 }
+/* HERO GALLERY — tightened, stable, cinematic */
+.hero-gallery-lanes {
+  position: absolute;
+  top: 48%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8%;
+}
+
+.lane-img {
+  width: 120px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1.6s ease-in-out;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+}
