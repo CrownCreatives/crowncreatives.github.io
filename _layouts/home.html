@@ -2,10 +2,75 @@
 layout: default
 ---
 
-{% include header-home.html %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  {% include head.html %}
+</head>
 
-<main class="home-content fade-section">
-  {{ content }}
-</main>
+<body class="page-loaded">
 
-{% include lightbox.html %}
+  <!-- MAGICAL BACKGROUND ENGINE -->
+  <div class="cc-bg-magic-layer"></div>
+  <div class="magic-particles"></div>
+  <div class="page-transition-overlay" id="page-transition"></div>
+
+  <!-- HEADER -->
+  <header class="site-header fade-section fade-visible">
+    {% include header-home.html %}
+  </header>
+
+  <!-- MOBILE MENU -->
+  <nav id="mobile-menu" class="mobile-menu">
+    {% include mobile-menu.html %}
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section fade-section">
+    <img src="{{ '/assets/img/crown-hero.png' | relative_url }}" 
+         alt="Crown Creatives Hero Crown" 
+         class="hero-crown-cinematic">
+
+    <div class="hero-text">
+      <h2>Welcome to Crown Creatives</h2>
+      <p>Where imagination becomes reality</p>
+    </div>
+
+    <!-- GALLERY LANES -->
+    <div class="lane lane-left">
+      {% include gallery-lane-left.html %}
+    </div>
+
+    <div class="lane lane-right">
+      {% include gallery-lane-right.html %}
+    </div>
+  </section>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-wrapper fade-section">
+    {{ content }}
+  </main>
+
+  <!-- LIGHTBOX -->
+  {% include lightbox.html %}
+
+  <!-- FOOTER -->
+  <footer class="site-footer fade-section">
+    {% include footer-icons.html %}
+  </footer>
+
+  <!-- THEME ORB -->
+  <div id="theme-orb" class="theme-orb"></div>
+
+  <!-- TICKER -->
+  <div class="magic-ticker">
+    <div class="magic-ticker-track">
+      {% include ticker.html %}
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+
+</body>
+</html>
