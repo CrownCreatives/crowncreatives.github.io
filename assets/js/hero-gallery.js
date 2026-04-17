@@ -1,4 +1,4 @@
-// Auto-load all images from /assets/images/gallery/
+// Load hero gallery images from gallery.json (GitHub Pages safe)
 async function loadHeroGallery() {
   const left = document.querySelector('.lane-left');
   const right = document.querySelector('.lane-right');
@@ -6,21 +6,11 @@ async function loadHeroGallery() {
   if (!left || !right) return;
 
   try {
-    const response = await fetch('/assets/images/gallery/');
-    const text = await response.text();
+    const response = await fetch('/assets/images/gallery/gallery.json');
+    const data = await response.json();
 
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, 'text/html');
-
-    const links = [...doc.querySelectorAll('a')];
-    const images = links
-      .map(a => a.getAttribute('href'))
-      .filter(href =>
-        href.match(/\.(jpg|jpeg|png|webp)$/i)
-      )
-      .map(file => '/assets/images/gallery/' + file);
-
-    if (images.length === 0) return;
+    const images = data.images;
+    if (!images || images.length === 0) return;
 
     let index = 0;
 
@@ -42,7 +32,7 @@ async function loadHeroGallery() {
     setInterval(cycle, 4000);
 
   } catch (err) {
-    console.error('Gallery load error:', err);
+    console.error('Hero gallery error:', err);
   }
 }
 
