@@ -1,45 +1,70 @@
 ---
 layout: home
 title: Crown Creatives
-hero_title: Crown Creatives
-hero_tagline: Where imagination becomes reality
 ---
 
+<!-- ============================
+     HERO SECTION
+============================= -->
+<section class="hero-section fade-section">
 
-<!-- ============================================================
-     CONTENT CARDS (3‑column)
-============================================================ -->
-<section id="gallery" class="content-section fade-section">
-  <div class="content-row">
+  <img src="{{ '/assets/img/crown-hero.png' | relative_url }}"
+       alt="Crown Creatives Hero Crown"
+       class="hero-crown-cinematic">
 
-    <!-- Get in Touch Card -->
-    <article class="content-card">
-      <h2>Have a Question?</h2>
-      <p>If you’d like to know more about any project, model, or artwork, feel free to get in touch using the social links below.</p>
-      <a href="#footer" class="content-link">Get in Touch</a>
-    </article>
-
-    <!-- Creative Projects -->
-    <article id="projects" class="content-card">
-      <h2>Creative Projects</h2>
-      <p>A collection of artistic experiments, sketches, and magical world-building.</p>
-      <a href="/projects" class="content-link">Read More Here</a>
-    </article>
-
-    <!-- Podcasts -->
-    <article id="podcasts" class="content-card">
-      <h2>Podcasts</h2>
-      <p>Thoughts on creativity, resilience, and the journey of rebuilding through art.</p>
-      <a href="/podcasts" class="content-link">Listen</a>
-    </article>
-
+  <div class="hero-text">
+    <h2>Welcome to Crown Creatives</h2>
+    <p>Where imagination becomes reality</p>
   </div>
+
 </section>
 
-<!-- ============================================================
-     OPTIONAL: LIGHTBOX AREA
-============================================================ -->
-<div class="cc-lightbox-overlay" id="lightbox">
-  <img class="cc-lightbox-image" id="lightbox-img" src="" alt="">
+<!-- ============================
+     GALLERY LANES
+============================= -->
+<div class="lane lane-left">
+  {% include gallery-lane-left.html %}
 </div>
 
+<div class="lane lane-right">
+  {% include gallery-lane-right.html %}
+</div>
+
+<!-- ============================
+     FEATURED SECTIONS
+============================= -->
+<section class="featured-blocks fade-section">
+
+  <div class="featured-card">
+    <h3>Projects</h3>
+    <p>Explore creative builds, experiments, and magical concepts.</p>
+    <a href="/projects" class="btn">View Projects</a>
+  </div>
+
+  <div class="featured-card">
+    <h3>Gallery</h3>
+    <p>A visual journey through imagination, colour, and magic.</p>
+    <a href="/gallery" class="btn">View Gallery</a>
+  </div>
+
+  <div class="featured-card">
+    <h3>Podcasts</h3>
+    <p>Listen to stories, ideas, and creative conversations.</p>
+    <a href="/podcasts" class="btn">Listen Now</a>
+  </div>
+
+</section>
+
+<!-- ============================
+     LIGHTBOX
+============================= -->
+{% include lightbox.html %}
+
+<!-- ============================
+     MAGIC TICKER
+============================= -->
+<div class="magic-ticker">
+  <div class="magic-ticker-track">
+    {% include ticker.html %}
+  </div>
+</div>
