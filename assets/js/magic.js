@@ -1,38 +1,20 @@
-const galleryImages = [
-  "assets/gallery/Face.jpeg",
-  "assets/gallery/Flower.jpeg",
-  "assets/gallery/Fly.jpeg"
-];
-
-function spawnImage(lane) {
-  const img = document.createElement("img");
-  img.src = galleryImages[Math.floor(Math.random() * galleryImages.length)];
-
-  lane.appendChild(img);
-
-  // Fade in
-  requestAnimationFrame(() => {
-    img.style.opacity = "1";
-  });
-
-  // Hold for 10 seconds
-  setTimeout(() => {
-    img.style.opacity = "0";
-
-    // Remove after fade-out
-    setTimeout(() => img.remove(), 2000);
-  }, 10000);
-}
-
-function startLane(lane) {
-  spawnImage(lane);
-  setInterval(() => spawnImage(lane), 12000);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  const leftLane = document.querySelector(".hero-gallery-lane.lane-left");
-  const rightLane = document.querySelector(".hero-gallery-lane.lane-right");
+  const container = document.querySelector(".magic-particles");
 
-  startLane(leftLane);
-  startLane(rightLane);
+  // If the element doesn't exist, stop safely
+  if (!container) return;
+
+  function spawnImage() {
+    const img = document.createElement("span");
+    container.appendChild(img);
+
+    setTimeout(() => img.remove(), 4000);
+  }
+
+  function startLane() {
+    spawnImage();
+    setInterval(spawnImage, 800);
+  }
+
+  startLane();
 });
