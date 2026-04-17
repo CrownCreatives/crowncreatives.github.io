@@ -29,5 +29,6 @@ include:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-force_rebuild: "3"
+force_rebuild: "4"
+
 
